@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-09-21T07:32:06+00:00",
+  "datasets": {
+    "cifar10": {
+      "class_count": 10,
+      "data_role": "extension_new_dataset_train_split",
+      "pool_size": 50000,
+      "pool_source": "torchvision CIFAR10 train split (official test split never read)",
+      "splits": {
+        "control_train": {
+          "count": 200,
+          "csv": "cifar10__control_train.csv",
+          "item_ids_sha256": "e17cb6c17b5dd3866536e50df754b12c1e985d310a1a814d65cf33e7208a4048",
+          "per_class": 20
+        },
+        "development": {
+          "count": 1000,
+          "csv": "cifar10__development.csv",
+          "item_ids_sha256": "c7cf246938c5bbe5482a95d2047e235cbe92608ca5e8b41e3a6f713293fb5ad4",
+          "per_class": 100
+        },
+        "evaluation": {
+          "count": 500,
+          "csv": "cifar10__evaluation.csv",
+          "item_ids_sha256": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+          "per_class": 50
+        }
+      }
+    },
+    "cifar100": {
+      "class_count": 100,
+      "data_role": "extension_reserved_accessed",
+      "pool_size": 41480,
+      "pool_source": "phase3 reserved_not_accessed minus phase4-consumed",
+      "splits": {
+        "control_train": {
+          "count": 2000,
+          "csv": "cifar100__control_train.csv",
+          "item_ids_sha256": "541cadc413afe1f4a279609f259e3c43b395907ca646631149be93ac63b1c1c0",
+          "per_class": 20
+        },
+        "development": {
+          "count": 1000,
+          "csv": "cifar100__development.csv",
+          "item_ids_sha256": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+          "per_class": 10
+        },
+        "evaluation": {
+          "count": 500,
+          "csv": "cifar100__evaluation.csv",
+          "item_ids_sha256": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+          "per_class": 5
+        }
+      }
+    },
+    "eurosat": {
+      "class_count": 10,
+      "data_role": "extension_reserved_accessed",
+      "pool_size": 24350,
+      "pool_source": "phase3 reserved_not_accessed minus phase4-consumed",
+      "splits": {
+        "control_train": {
+          "count": 200,
+          "csv": "eurosat__control_train.csv",
+          "item_ids_sha256": "e328e4379ea7c28ab4d22d00fa3257f417f5d9c4b33eb816548e7519624cd0c3",
+          "per_class": 20
+        },
+        "development": {
+          "count": 300,
+          "csv": "eurosat__development.csv",
+          "item_ids_sha256": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+          "per_class": 30
+        },
+        "evaluation": {
+          "count": 150,
+          "csv": "eurosat__evaluation.csv",
+          "item_ids_sha256": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+          "per_class": 15
+        }
+      }
+    }
+  },
+  "draw_rule": "ascending sha256('{salt}:{dataset_id}:{item_id}'), class-stratified, evaluation drawn first then development then control-training, all disjoint",
+  "draw_salt": "EXP-20260920-019:item_draw:v1",
+  "experiment_id": "EXP-20260920-019",
+  "final_test_access": false,
+  "schema_version": "satml2027.item_manifest.v1"
+}

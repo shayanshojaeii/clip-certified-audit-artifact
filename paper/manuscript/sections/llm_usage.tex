@@ -1,0 +1,31 @@
+% LLM usage considerations for the SaTML 2027 submission. Unnumbered; placed
+% after Open Science and before Ethical Considerations, which immediately
+% precedes the references (V5 review 1); it does not count towards the page limit. The call titles the section
+% "LLM usage considerations" (sentence case). IEEEtran sets section headings
+% in small caps, where the casing is visible; switch the heading below to
+% sentence case if exact matching to the call's wording is preferred. The
+% first sentence is the editorial statement required verbatim by the call.
+% 2026-09-27 (D-142/D-143): motivation, limitations and compute added as the call
+% requires (V5 reviews 1 and 2), from the authors' own statement of which tools
+% they used, why, for what, and on which hardware. No number is estimated here.
+
+\section*{LLM Usage Considerations}
+\setcounter{paragraph}{0}
+\let\satmlSavedTheHparagraph\theHparagraph
+\renewcommand{\theHparagraph}{llmusage.\arabic{paragraph}} % unique PDF anchors (review, 2026-09-29)
+
+LLMs were used for editorial purposes in this manuscript, and all outputs were inspected by the authors to ensure accuracy and originality.
+
+Beyond editing, large language model assistants were used during this project, through chat interfaces (Claude and ChatGPT) and as coding agents (Claude Code and Codex). They drafted code, derivations, documentation and review packaging, edited text, and performed adversarial technical reviews of the code, the review packages and drafts of this paper. The authors therefore state the boundary of that use. The authors determined the research questions, the experimental design, the acceptance criteria and the final theoretical claims, made every decision, and checked the assistants' outputs, including the drafted code and derivations. No reported numerical result is an LLM-generated value: all reported values are produced by deterministic scripts from recorded experimental data, and each generated value records the hash of its source. Model-drafted analysis code was tested before use and is released with the artifact. No large language model was used to generate, select, or filter experimental data, and no such model is part of the certification procedure. The review ledger released with the artifact lists, for every check reported in this paper, who performed it (by role in the anonymous version), on which immutable version, with what scope and on which date, and marks each AI-assisted review as such. The human authors are responsible for all submitted content and results.
+
+\paragraph{Motivation}
+We chose these assistants for their strength in coding, writing and technical checking, and used them for the tasks listed above: code, drafts of derivations and documentation, review packaging, text editing and adversarial technical review.
+
+\paragraph{Limitations}
+Hosted-model outputs are not deterministic and cannot be replayed; the models' sizes, weights and serving hardware are not public; and their outputs can be wrong in ways that read as plausible. For these reasons no model output is evidence in this paper: every reported value comes from deterministic scripts over recorded data, model-drafted code is tested before use, and AI-assisted reviews are labeled as such and are not counted as human verification.
+
+\paragraph{Compute and environmental footprint}
+No language model was trained or fine-tuned for this work, and none ran on the authors' own hardware; all use went through the providers' hosted services. The providers do not disclose the hardware or the energy behind a query, so we cannot report either. Keeping the research questions, the design and the decisions with the authors limited the queries to tasks whose outputs the authors could check.
+
+The experiments themselves used no language model. Their compute is reported in Appendix~\ref{app:tables}: the audit took \ExpElapsedHours{} GPU-hours on one RTX 4090, the extension was planned at 23 GPU-hours on the same GPU, and the follow-up sampled for \FUMainHours{} hours on seven RTX 5090 GPUs and \FUExtraHours{} hours on one more. This compute follows from the certification procedure, in which every certificate needs \ExpSelDraws{} selection and \ExpConfDraws{} confirmation encodings of noisy inputs, and from the follow-up's planning calculation, which fixed its sample size. We limited it by encoding each noisy draw once and scoring every bank of a follow-up cell on that encoding, by restricting the $10^5$-draw budget study to \FUCellsC{} cells of \FUItemsC{} items and \FUBanksC{} banks, and by releasing vote counts and sufficient statistics, so that every table is recomputed on a CPU without new sampling.
+\let\theHparagraph\satmlSavedTheHparagraph % later paragraphs keep their default anchors

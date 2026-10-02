@@ -1,0 +1,15 @@
+{
+  "boundary_globally_deployable": true,
+  "cell_count": 12,
+  "certificate_computed": false,
+  "elapsed_seconds": 285.90956807136536,
+  "experiment_id": "EXP-20260906-016",
+  "final_test_accessed": false,
+  "implementation_revision": "8.1",
+  "interpretation": "development_proposal_construction_only_not_certificate_or_efficacy_evidence",
+  "method_selected": false,
+  "noisy_margin_globally_deployable": true,
+  "protocol_revision": 8,
+  "status": "COMPLETE_PRIMARY_PENDING_INDEPENDENT_REVIEW",
+  "target_failure_cell_count": 0
+}

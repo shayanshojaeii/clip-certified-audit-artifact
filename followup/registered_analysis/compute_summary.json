@@ -1,0 +1,18 @@
+{
+  "schema_version": "satml2027ext.compute_summary.v1",
+  "gpu_class": "NVIDIA GeForce RTX 5090",
+  "main_host": {
+    "start_utc": "2026-09-27T18:32:43+00:00",
+    "end_utc": "2026-09-28T09:33:00+00:00",
+    "hours": 15.0,
+    "gpus_sampling_to_the_end": 7,
+    "gpus_retired_for_a_hardware_fault": 1
+  },
+  "extra_host": {
+    "start_utc": "2026-09-27T20:00:56+00:00",
+    "end_utc": "2026-09-28T11:19:58+00:00",
+    "hours": 15.32,
+    "gpus": 1
+  },
+  "sources": "the verified host packs under results/satml2027ext/host_returns (queue logs and result archives)"
+}

@@ -1,0 +1,37 @@
+% Limitations and lessons for the SaTML 2027 submission.
+% Every number in this file is a macro from generated/macros.tex; see
+% paper/satml2027/MACROS_CONTRACT.md. No result value is typed by hand.
+
+\section{Limitations and Lessons for Certified-VLM Evaluation}
+
+\subsection{Limitations}
+
+The extension and the follow-up address the audit's main gaps (a non-collapsed
+regime, fresh items, a planned sample size); the limitations that remain are these.
+
+\begin{itemize}
+\item \textit{Noise regime.} In the audit, Gaussian noise with $\sigma=\ExpSigma$ is added in the model-input space after bicubic upsampling of small native images. Our radii are distances in that model-input space; because the resize acts on quantized images, no exact conversion to native-resolution radii exists, and our radii are not comparable with certificates reported at native resolution. Smoothed accuracy collapses in this regime, as Nirala et al.\ observed for CLIP at larger noise \cite{nirala2024ovc}: without correction it ranges across cells from \RangeSmoothedLo\% to \RangeSmoothedHi\%, and raw/smoothed agreement from \RangeAgreementLo\% to \RangeAgreementHi\%.
+\item \textit{Breadth.} The audit covers two OpenAI CLIP backbones, two datasets, frozen prompt templates, and one noise level in \ExpCells{} cells. The registered extension and follow-up add backbones, datasets, and noise levels; the extension's cell sizes were fixed without a registered power calculation, and its cells reuse the same \ExtUniqueItems{} items, so its contrasts are dependent; it is reported descriptively and regardless of sign. In the follow-up, the non-collapsed evidence rests on CIFAR-100 at $\sigma=\FUSigmaLow$: Imagenette is near ceiling, where even the supervised controls barely move the certificate, and the dataset families are secondary. The follow-up spent the sealed EuroSAT holdout, so a later confirmatory study needs new items. Nothing here transfers to other prompts, class-conditioned or prompt-level methods, image-side denoising, native-resolution regimes, or certificates other than hard-label Cohen certificates, such as soft-score or feature-space ones.
+\item \textit{Power.} The audit's band (half-width \BandHalfWidth{} points) is uninformative about the proposals, which moved standard certified accuracy by $\SavedStdDelta$ and $\ExactStdDelta$ points; underpowered paired comparisons are common in this field \cite{card2020power}. The band conditions on the realized votes and establishes neither equivalence nor a uniform minimum detectable effect; a finite-stratum correction widens it to \BandHalfWidthSens{} points. Equal-cell weighting has Kish design effect \KishDesignEffect{} (effective sample size \EffectiveN{} of \ExpPositions{} positions), so item-pooled aggregates are reported alongside. The follow-up registered a planning power calculation before sampling; it assumes a paired discordance and is not the operating power of its bootstrap analysis.
+\item \textit{Gate design.} The per-cell clean rule's two-point tolerance is one image in a \ExpEurosatItemsPerCell{}-image cell, and it decided the two-sided operator's exclusion. The production gate compared in floating point and rejected exact two-point drops for \FloatGateRejectedCandidates{} candidates (exact-count re-adjudication is reported alongside), and the positive decision path required an eligible mean-centering comparator, none of which existed, so the forced fallback comparison was decided at single-image resolution.
+\item \textit{Post-selection.} The validation split both selected candidates and produced the reported outcomes. We therefore report all \ExpCandidates{} registered candidates under one simultaneous band, and describe rather than test the selected candidate. The audit registered no smallest effect of interest, so it makes no equivalence or evidence-of-absence claim \cite{lakens2017equivalence}; the follow-up registered one (\FUSESOI{} points) before sampling, and only its registered magnitude classes use it.
+\item \textit{Confirmation budget.} Each position used \ExpConfDraws{} confirmation draws at $\alpha=\ExpAlpha$. At radius $r=\sigma$, \CensoredNoCorrRQuarter{} no-correction positions have a plug-in estimate that would certify the radius but a finite-sample lower bound that does not; at radius zero, \CensoredNoCorrRZero{} positions select the correct class but abstain. In Follow-up C, \FUBudgetDraws{} instead of \FUConfDraws{} draws changed \FUQNineAllChanged{} of \FUQNineAllCerts{} certificates at $r=\sigma$; the selection budget was not varied.
+\item \textit{Positive control.} The class-specific low-rank control is supervised with \FarlaShots{} labeled images per class. Its clean accuracy rises from \FarlaIdentityClean\% to \FarlaFullClean\%, so its certified gain is not isolated from ordinary clean-accuracy improvement under supervision, and the full-versus-tail-only interval does not establish a difference ($\FarlaVsTailDelta$ points, interval $\FarlaVsTailLower$ to $\FarlaVsTailUpper$). It bounds what remains recoverable outside the shared family; it does not rescue that family and is not proposed as a method. In the follow-up, a few-shot prompt control inspired by noise-aware prompt learning \cite{hussein2024promptsmooth} gains about as much as its rank-8 adapter.
+\item \textit{Causal identification.} Active, inactive, random, and sign-reversed control interventions were never run. Anchor disagreement, certified-wrong concentration, candidate displacement, and vote collapse are descriptive observations, not identified causes.
+\item \textit{Certificate confidence.} Each certificate holds with probability at least $1-\alpha$ for its own position. The fraction of certified positions is not a family-wise event, and no simultaneous coverage across positions is claimed.
+\item \textit{Verification.} All verification was internal to the author team: other authors re-evaluated or replayed every result, several checks with AI assistance, labeled as such in the review ledger; no party outside the team has reproduced the chain (Appendix~\ref{app:deviations}).
+\end{itemize}
+
+\subsection{Lessons}
+\label{sec:lessons}
+
+The audit suggests a minimal reporting template for certified vision-language classifiers.
+\begin{enumerate}
+\item Report standard certified accuracy in the sense of Cohen et al.\ \cite{cohen2019smoothing}, and label any raw-clean-anchored or predicted-label-stability variant as a separate quantity.
+\item Report abstention and the certified-wrong rate at every radius, together with the class concentration of certified-wrong predictions.
+\item Report raw/smoothed agreement per cell.
+\item Report both equal-cell and item-pooled aggregates, with the design effect of the chosen weighting, and per-dataset and per-backbone effects beside pooled ones.
+\item State eligibility rules as exact counts, state the per-cell granularity in images, and never compare thresholds in floating point.
+\item Report the complete registered family with simultaneous bands, including inert and ineligible members.
+\item State the noise coordinate system and the native resolution, and say whether reported radii are comparable across resolutions.
+\end{enumerate}

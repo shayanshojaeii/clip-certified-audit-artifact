@@ -1,0 +1,35 @@
+{
+  "schema_version": "phase3.direction_controls_interface.v1",
+  "status": "IMPLEMENTATION_ONLY_NOT_APPROVED_FOR_SAMPLING",
+  "controls": [
+    "sign_reversed",
+    "seeded_random_gaussian"
+  ],
+  "norm_matching": {
+    "metric": "raw_common_translation_vector_l2_before_normalization",
+    "rtol": 0.000001,
+    "atol": 1e-12,
+    "realized_post_normalization_bank_displacement": "measure_and_report_separately_not_assumed_equal"
+  },
+  "random_generation": {
+    "algorithm": "torch_cpu_generator_manual_seed_randn_float64_then_cast_and_rescale",
+    "scientific_seed_list": "MUST_BE_FROZEN_BEFORE_DIRECTION_GENERATION",
+    "required_saved_fields": [
+      "torch_version",
+      "seed",
+      "source_direction_hash",
+      "generated_direction_hash",
+      "generated_direction_tensor"
+    ],
+    "global_rng_must_remain_unchanged": true
+  },
+  "finite_update": "normalize(prototype_plus_coefficient_times_control_direction)",
+  "engine_contract": {
+    "fss": "reuse_only_exact_image_cache_then_recompute_all_geometry",
+    "cohen": "fresh_independent_class_selection_and_confirmation_required"
+  },
+  "sampling": {
+    "authorized": false,
+    "reason": "Source direction, random seed list, coefficient, and split require independent review"
+  }
+}

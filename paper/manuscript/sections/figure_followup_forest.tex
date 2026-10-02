@@ -1,0 +1,72 @@
+% EXP-021B registered contrasts at both noise levels (D-146). Rows fixed before any outcome existed. Data:
+% generated/fig_followup_forest_{primary,shared,supervised}.dat, written by scripts/generate_satml2027_paper_assets.py
+% from the pooled families of analysis/exp021/021b/analysis_ext.json; a framed placeholder until that output exists.
+\begin{figure}[t]
+\centering
+\input{generated/fig_followup_forest_axis}
+\ifnum\FUForestReady=1
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.78\columnwidth,
+  height=0.66\columnwidth,
+  fuforestaxis,
+  y dir=reverse,
+  ymin=0.4, ymax=11.6,
+  set layers,
+  xlabel={Change in standard certified accuracy at $r=\sigma$ vs.\ no correction (points)},
+  yticklabel style={font=\tiny},
+  xticklabel style={font=\tiny},
+  xlabel style={font=\scriptsize},
+  legend style={font=\tiny, at={(0.5,1.02)}, anchor=south, draw=none, legend columns=2,
+                /tikz/every even column/.append style={column sep=6pt}},
+  legend cell align=left,
+  grid=major,
+  grid style={gray!25},
+  every axis plot/.append style={mark size=1.4pt},
+  error bars/error mark options={rotate=90, mark size=1.2pt},
+]
+\addplot[draw=none, fill=gray!18, on layer=axis background, forget plot]
+  coordinates {(-\FUSESOI,0.4) (\FUSESOI,0.4) (\FUSESOI,11.6) (-\FUSESOI,11.6)} \closedcycle;
+\addplot[gray!60, dashed, forget plot] coordinates {(0,0.4) (0,11.6)};
+\foreach \sep in \FUForestSeparators {
+  \edef\temp{\noexpand\addplot[gray!55, forget plot] coordinates {(\FUForestXmin,\sep) (\FUForestXmax,\sep)};}
+  \temp
+}
+% sigma low: filled black; sigma high: open blue, offset 0.3 down; marker shape by group
+\pgfplotsset{
+  fulo/.style={only marks, black, mark options={fill=black}, error bars/x dir=both, error bars/x explicit},
+  fuhi/.style={only marks, blue!70!black, mark options={fill=white}, error bars/x dir=both, error bars/x explicit},
+}
+\addplot[fulo, mark=*] table[x=lo, y=y, x error minus=lo_minus, x error plus=lo_plus]
+  {generated/fig_followup_forest_primary.dat};
+\addlegendentry{$\sigma=\FUSigmaLow$}
+\addplot[fuhi, mark=o] table[x=hi, y expr=\thisrow{y}+0.3, x error minus=hi_minus, x error plus=hi_plus]
+  {generated/fig_followup_forest_primary.dat};
+\addlegendentry{$\sigma=\FUSigmaHigh$}
+\addplot[fulo, mark=diamond*, forget plot] table[x=lo, y=y, x error minus=lo_minus, x error plus=lo_plus]
+  {generated/fig_followup_forest_shared.dat};
+\addplot[fuhi, mark=diamond, forget plot] table[x=hi, y expr=\thisrow{y}+0.3, x error minus=hi_minus, x error plus=hi_plus]
+  {generated/fig_followup_forest_shared.dat};
+\addplot[fulo, mark=square*, forget plot] table[x=lo, y=y, x error minus=lo_minus, x error plus=lo_plus]
+  {generated/fig_followup_forest_supervised.dat};
+\addplot[fuhi, mark=square, forget plot] table[x=hi, y expr=\thisrow{y}+0.3, x error minus=hi_minus, x error plus=hi_plus]
+  {generated/fig_followup_forest_supervised.dat};
+\end{axis}
+\end{tikzpicture}
+\else
+\framebox[0.95\columnwidth]{\parbox[c][0.45\columnwidth][c]{0.85\columnwidth}{\centering\scriptsize
+  Placeholder: this figure is drawn from the registered Follow-up B analysis output\\
+  (the five primary contrasts, two unsupervised reference banks and the four supervised
+  controls at both noise levels).}}
+\fi
+\caption{Registered Follow-up B contrasts on fresh items, pooled over datasets and
+backbones: change in standard certified accuracy at $r=\sigma$ against no
+correction, with unadjusted 95\% bootstrap intervals, at
+$\sigma=\FUSigmaLow$ (filled) and $\sigma=\FUSigmaHigh$ (open). The shaded band
+is the registered smallest effect of interest, $\pm\FUSESOI$ points. Circles
+are the registered primary family (magnitude classes in
+Table~\ref{tab:followup}); diamonds are two unsupervised reference banks;
+squares are the supervised controls, which use labels. The rows were fixed
+before any outcome existed.}
+\label{fig:followup-forest}
+\end{figure}

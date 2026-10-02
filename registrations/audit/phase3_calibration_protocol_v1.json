@@ -1,0 +1,356 @@
+{
+  "schema_version": "phase3.calibration_protocol.v1",
+  "protocol_revision": 8,
+  "implementation_revision": "8.1",
+  "status": "PENDING_INDEPENDENT_REVIEW_SAMPLING_LOCKED",
+  "split_seed": 20260906,
+  "fold_count": 3,
+  "experiment_ids": {
+    "development_feature_and_proposal_build": "EXP-20260906-016",
+    "validation_method_and_coefficient_selection": "EXP-20260906-017",
+    "validation_attack_and_mechanism_audit": "EXP-20260906-018"
+  },
+  "linked_frozen_protocols": {
+    "validation_attack": "configs/phase3_validation_attack_v1.json",
+    "final_test_statistical_analysis": "configs/phase3_final_test_statistical_analysis_v1.json"
+  },
+  "models": [
+    "openai-clip-vit-b32-quickgelu",
+    "openai-clip-vit-l14-quickgelu"
+  ],
+  "prompt_settings": {
+    "cifar100": "cifar100-openai-readme-single-v1",
+    "eurosat": "eurosat-openai-three-template-ensemble-v1"
+  },
+  "intervention_matrix": [
+    "no_correction",
+    "global_mean_centering",
+    "symmetric_raw_gap_decrease",
+    "symmetric_raw_gap_increase",
+    "gr_clip_style_two_sided",
+    "chowers_exact_projected_gap",
+    "clean_boundary_active",
+    "cohen_aligned_noisy_margin",
+    "locally_inactive",
+    "sign_reversed",
+    "seeded_random_norm_matched"
+  ],
+  "datasets": [
+    {
+      "dataset_id": "cifar100",
+      "class_count": 100,
+      "source_assignments": "results/EXP-20260827-003/split_assignments.csv",
+      "source_split": "train",
+      "development_per_class_per_fold": 5,
+      "validation_per_class_per_fold": 5,
+      "source_sealed_test_per_class": 0,
+      "final_test": {
+        "source": "official_cifar100_test_split",
+        "count": 10000,
+        "intervention_development_access": false,
+        "prior_access_disclosure": "ordinary clean pipeline sanity was run before Phase 3; no intervention or certificate parameter was selected from it"
+      },
+      "explicit_consumed_indices": [
+        137,
+        4211,
+        17003,
+        42017,
+        36788,
+        41471,
+        42711,
+        29217,
+        15273,
+        48498,
+        33690,
+        32577,
+        22218,
+        33677,
+        43971,
+        19411,
+        37828,
+        18918,
+        3248,
+        31047
+      ],
+      "explicit_id_template": "cifar100-train-{index}"
+    },
+    {
+      "dataset_id": "eurosat",
+      "class_count": 10,
+      "source_assignments": "results/EXP-20260827-005/split_assignments.csv",
+      "source_split": "deterministic_full_imagefolder_order",
+      "development_per_class_per_fold": 5,
+      "validation_per_class_per_fold": 5,
+      "source_sealed_test_per_class": 100,
+      "final_test": {
+        "source": "deterministic_balanced_previously_unaccessed_holdout",
+        "count": 1000,
+        "intervention_development_access": false,
+        "prior_access_disclosure": "none; selected by identifier hash without reading pixels or outcomes"
+      },
+      "explicit_consumed_indices": [],
+      "explicit_id_template": null
+    }
+  ],
+  "calibration_selection": {
+    "direction_learning_role": "calibration_development",
+    "coefficient_and_objective_selection_role": "calibration_validation",
+    "final_test_access_before_gate3": false,
+    "proposal_temperature": 0.05,
+    "proposal_sigma": 0.25,
+    "proposal_draws_per_sample": 16,
+    "proposal_base_seed": 20260918,
+    "validation_cohen_selection_base_seed": 20260919,
+    "validation_cohen_estimation_base_seed": 20260920,
+    "per_item_seed_derivation": "first_63_bits_sha256(base_seed:dataset_id:fold:item_id:stream_role)",
+    "common_unit_direction_step_grid": [0.0025, 0.005, 0.01, 0.02, 0.04],
+    "gap_coefficient_grid": [0.25, 0.5, 1.0],
+    "fixed_two_sided_gr_clip_coefficient": 1.0,
+    "random_control_seeds": [20260921, 20260922, 20260923],
+    "validation_cohen_selection_samples": 128,
+    "validation_cohen_estimation_samples": 4096,
+    "validation_cohen_alpha_per_example": 0.001,
+    "validation_cohen_sigma": 0.25,
+    "proposal_selection_estimation_streams_independent": true,
+    "proposal_target_policy": {
+      "source": "unique_raw_clean_prediction_from_frozen_unmodified_prototype_bank",
+      "applies_to": [
+        "clean_boundary_active",
+        "cohen_aligned_noisy_margin"
+      ],
+      "ground_truth_use": "evaluation_only_never_proposal_construction_or_target_selection",
+      "clean_prediction_tie_tolerance": 1e-10,
+      "nonunique_action": "mark_both_proposed_objectives_nondeployable_for_the_cell_no_sample_dropping_no_target_substitution",
+      "runtime_requirement": "derive_or_recompute_labels_from_hashed_clean_features_and_original_prototype_bank_and_assert_exact_equality"
+    },
+    "selection_scope": "one_global_proposed_objective_and_step_across_all_12_model_dataset_fold_cells",
+    "cell_weighting": "uniform_over_model_dataset_fold_cells_after_within_cell_example_aggregation",
+    "primary_selection_metric": "macro_mean_12_cell_certified_accuracy_at_radius_0.25",
+    "tie_break_order": [
+      "larger_macro_mean_12_cell_average_certified_radius",
+      "larger_macro_mean_12_cell_clean_accuracy",
+      "smaller_macro_mean_12_cell_realized_prototype_bank_frobenius_displacement",
+      "smaller_common_unit_direction_step",
+      "fixed_candidate_order"
+    ],
+    "fixed_candidate_order": [
+      "cohen_aligned_noisy_margin",
+      "clean_boundary_active"
+    ],
+    "primary_comparator_selection": {
+      "eligible_comparators": [
+        "no_correction",
+        "global_mean_centering",
+        "gr_clip_style_two_sided",
+        "chowers_exact_projected_gap"
+      ],
+      "rule": "choose_the_single_strongest_validation_comparator_by_the_same_primary_metric_and_clean_accuracy_constraint_after_each_tunable_baseline_coefficient_is_selected",
+      "tie_break_order": [
+        "larger_macro_mean_12_cell_average_certified_radius",
+        "larger_macro_mean_12_cell_clean_accuracy",
+        "smaller_macro_mean_12_cell_realized_prototype_bank_frobenius_displacement",
+        "fixed_comparator_order"
+      ],
+      "fixed_comparator_order": [
+        "no_correction",
+        "global_mean_centering",
+        "gr_clip_style_two_sided",
+        "chowers_exact_projected_gap"
+      ],
+      "final_test_role": "sole_primary_confirmatory_comparator"
+    },
+    "baseline_coefficient_selection": {
+      "tunable_baselines": [
+        "global_mean_centering",
+        "chowers_exact_projected_gap"
+      ],
+      "rule": "select_one_global_coefficient_per_baseline_over_the_same_12_validation_cells_using_the_primary_metric_clean_constraint_and_tie_breaks",
+      "coefficient_grid": [0.25, 0.5, 1.0],
+      "tie_break_order": [
+        "larger_macro_mean_12_cell_average_certified_radius",
+        "larger_macro_mean_12_cell_clean_accuracy",
+        "smaller_macro_mean_12_cell_realized_prototype_bank_frobenius_displacement",
+        "smaller_numeric_coefficient"
+      ],
+      "final_coefficient_order": [0.25, 0.5, 1.0],
+      "may_select_primary_proposed_method": false
+    },
+    "deployability_policy": {
+      "required_cell_count": 12,
+      "global_candidate_rule": "a_proposed_objective_is_eligible_only_if_its_preregistered_direction_is_deployable_in_every_required_model_dataset_fold_cell",
+      "nondeployable_cell_handling": "mark_the_entire_objective_globally_ineligible_no_cell_dropping_no_failure_skipping_no_posthoc_substitution",
+      "if_no_proposed_objective_is_globally_eligible": "stop_method_selection_and_execute_theory_negative_audit_pivot"
+    },
+    "post_validation_refit": {
+      "trigger": "only_after_objective_step_and_primary_comparator_are_frozen_by_validation_and_gate3_passes",
+      "output_scope": "one_direction_per_model_dataset_pair_four_directions_total",
+      "calibration_inputs": "deduplicated_union_of_all_three_development_and_all_three_validation_partitions_for_that_dataset",
+      "selected_hyperparameters": "reuse_exact_selected_objective_and_global_step_without_retuning",
+      "label_policy": "unique_raw_clean_predictions_from_the_frozen_unmodified_prototype_bank_ground_truth_for_evaluation_only",
+      "noisy_margin_refit_draws_per_sample": 16,
+      "noisy_margin_refit_base_seed": 20261001,
+      "noisy_margin_refit_stream_role": "phase3_final_refit_noisy_margin_proposal",
+      "nondeployable_action": "stop_and_execute_theory_negative_audit_pivot_no_fold_direction_selection_no_substitution",
+      "freeze_before_test": "save_direction_tensors_sample_ids_prototype_hashes_and_candidate_hashes_before_any_final_test_pixels_are_loaded"
+    },
+    "control_evaluation": {
+      "never_method_eligible": [
+        "symmetric_raw_gap_decrease",
+        "symmetric_raw_gap_increase",
+        "locally_inactive",
+        "sign_reversed",
+        "seeded_random_norm_matched"
+      ],
+      "direction_control_step": "selected_proposed_common_unit_direction_step",
+      "random_seed_reporting": "report_each_seed_and_the_uniform_seed_average",
+      "symmetric_gap_sweep": "report_every_frozen_gap_coefficient_without_selecting_a_control_as_the_method"
+    },
+    "clean_accuracy_constraint": {
+      "drop_definition": "no_correction_accuracy_minus_candidate_accuracy_in_percentage_points",
+      "macro_mean_drop_percentage_points_max": 1.0,
+      "any_model_dataset_fold_drop_percentage_points_max": 2.0,
+      "reference": "same-fold no-correction raw-clean accuracy"
+    }
+  },
+  "metrics": {
+    "target_pixel_l2_radii": [0.0, 0.1, 0.25, 0.5],
+    "primary_target_radius": 0.25,
+    "report": [
+      "raw_clean_accuracy",
+      "smoothed_accuracy",
+      "predicted_label_certified_stability",
+      "certified_accuracy",
+      "average_certified_radius",
+      "median_certified_radius",
+      "abstention_rate",
+      "gap_norm",
+      "clean_D_star",
+      "noisy_margin_objective",
+      "fss_diagnostic_terms"
+    ],
+    "strict_engine_separation": true,
+    "fss_diagnostic_sigma": 0.25,
+    "fss_diagnostic_sampling": {
+      "score_samples_per_unique_image_state": 4096,
+      "alpha_total_per_example": 0.001,
+      "confidence_method": "one_sided_hoeffding_for_bounded_0_1_mean",
+      "family_policy": "bonferroni_over_the_two_predeclared_unique_image_side_states_per_example",
+      "family_members": [
+        "raw_image_state_shared_by_no_correction_and_all_text_only_interventions",
+        "gr_clip_style_two_sided_coefficient_1.0"
+      ],
+      "alpha_per_bound": 0.0005,
+      "base_noise_seed": 20260924,
+      "stream_role": "phase3_fss_diagnostic_score",
+      "noise_pairing": "same_frozen_standard_normal_draws_for_the_two_predeclared_image_states_of_an_item",
+      "independent_from_proposal_cohen_and_pautov_streams": true
+    }
+  },
+  "pautov_style_auxiliary": {
+    "included": true,
+    "scope": "separately_named_geometry_aligned_sensitivity_analysis_on_the_same_frozen_examples",
+    "primary_method_selection_allowed": false,
+    "claim_name": "conservative_Pautov_style_directional_Hoeffding_certificate",
+    "not_claimed": "exact_reproduction_of_Pautov_Algorithms_1_2_or_a_Cohen_certificate",
+    "confidence_family": "separate_predeclared_per_example_directional_Hoeffding_family",
+    "sigma": 0.25,
+    "selection_samples_per_example": 128,
+    "confirmation_samples_per_example": 4096,
+    "alpha_total_per_example": 0.001,
+    "alpha_allocation": "bonferroni_over_all_K_minus_1_competing_prototype_directions_after_independent_class_selection",
+    "selection_base_seed": 20260925,
+    "confirmation_base_seed": 20260926,
+    "selection_stream_role": "phase3_pautov_class_selection",
+    "confirmation_stream_role": "phase3_pautov_directional_confirmation",
+    "selection_confirmation_streams_independent": true,
+    "independent_from_proposal_cohen_and_fss_streams": true,
+    "feature_reuse_policy": "reuse_the_same_frozen_selection_cache_and_separate_frozen_confirmation_cache_across_prototype_banks_with_bank_specific_selection_and_bounds_no_adaptive_resampling",
+    "coverage_scope": "per_example_per_prototype_bank_over_all_competitors_no_simultaneous_cross_bank_or_cross_engine_claim",
+    "per_item_seed_derivation": "first_63_bits_sha256(base_seed:dataset_id:fold:item_id:stream_role)"
+  },
+  "runtime_assets": {
+    "required_runtime_versions": {
+      "python_major_minor": "3.12",
+      "torch": "2.11.0+cu130",
+      "torchvision": "0.26.0+cu130",
+      "open_clip": "3.3.0",
+      "pillow": "12.3.0"
+    },
+    "models": [
+      {
+        "model_id": "openai-clip-vit-b32-quickgelu",
+        "clean_config": "configs/clean_pipeline_v1.json",
+        "clean_batch_size": 256,
+        "proposal_noise_batch_size": 64
+      },
+      {
+        "model_id": "openai-clip-vit-l14-quickgelu",
+        "clean_config": "configs/clean_pipeline_vit_l14_v1.json",
+        "clean_batch_size": 16,
+        "proposal_noise_batch_size": 16
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_id": "cifar100",
+        "loader": "torchvision.datasets.CIFAR100_train",
+        "root": "data",
+        "prompt_config": "configs/prompts/cifar100_openai_readme.json",
+        "archive": "data/cifar-100-python.tar.gz",
+        "archive_sha256": "85cd44d02ba6437773c5bbd22e183051d648de2e7d6b014e1ef29b855ba677a7"
+      },
+      {
+        "dataset_id": "eurosat",
+        "loader": "torchvision.datasets.EuroSAT_deterministic_imagefolder_order",
+        "root": "data",
+        "prompt_config": "configs/prompts/eurosat_openai_ensemble_v1.json",
+        "archive": "data/eurosat/EuroSAT.zip",
+        "archive_sha256": "8ebea626349354c5328b142b96d0430e647051f26efc2dc974c843f25ecf70bd"
+      }
+    ],
+    "split_assignments": "artifacts/day14/phase3_splits_v1/assignments.csv",
+    "split_manifest": "artifacts/day14/phase3_splits_v1/manifest.json",
+    "exclusion_manifest": "artifacts/day14/phase3_splits_v1/exclusion_manifest.json",
+    "phase3_output_root": "results/EXP-20260906-016",
+    "overwrite_existing_results": false,
+    "data_download_allowed": false
+  },
+  "runtime_control": {
+    "shared_target_selector": "interventions.core.select_unique_raw_clean_targets",
+    "prototype_identity_policy": "hash_original_input_tensor_before_any_computational_dtype_conversion",
+    "launch_guard": "vlm_pipeline.phase3_launch.run_registered_phase3_experiment",
+    "launch_entrypoint": "scripts/run_phase3_registered_experiment.py",
+    "launch_entrypoint_default_mode": "read_only_preflight",
+    "sampling_requires_explicit_execute_flag": true,
+    "scientific_worker_callable_contract": "public_zero_argument_callable_from_approval_hash_bound_source",
+    "initial_experiment_worker": {
+      "experiment_id": "EXP-20260906-016",
+      "source": "scripts/run_phase3_development_worker.py",
+      "callable": "run_registered_worker"
+    },
+    "later_worker_policy": "EXP_017_and_EXP_018_worker_sources_require_separate_hash_bound_approval_before_their_sequence_positions_can_launch",
+    "registry_projection_checked_at_launch": true,
+    "all_frozen_hashes_checked_at_launch": true,
+    "worker_source_must_be_approval_hash_bound": true,
+    "lifecycle_transitions": [
+      "PLANNED-LOCKED->RUNNING",
+      "RUNNING->COMPLETE-PRIMARY|FAILED",
+      "COMPLETE-PRIMARY->INDEPENDENTLY-VERIFIED|FAILED-REVIEW"
+    ],
+    "sequence_requires_prior_independent_verification": [
+      "EXP-20260906-016",
+      "EXP-20260906-017",
+      "EXP-20260906-018"
+    ]
+  },
+  "sampling": {
+    "authorized": false,
+    "unlock_requires": [
+      "independent_revision8_theory_and_protocol_review",
+      "independent_split_manifest_review",
+      "independent_complete_phase3_configuration_review",
+      "independent_attack_and_final_inference_protocol_review",
+      "signed_hash_bound_approval_record"
+    ]
+  }
+}

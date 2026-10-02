@@ -1,0 +1,105 @@
+% Open Science section for the SaTML 2027 submission. Unnumbered; the
+% disclosure order is Open Science, LLM usage considerations, Ethical
+% Considerations, references (V5 review 1). Per the call it does not count
+% towards the page limit. The anonymous repository link is entered in HotCRP, not here.
+% V3-audit correction M5 (2026-09-26): the section states the release boundary
+% per claim group; hashes of omitted files identify them but do not make them
+% replayable.
+
+\section*{Open Science}
+
+\paragraph{Release boundary}
+The anonymous artifact linked from the submission form is assembled from
+hash-identified files by the artifact deadline, and its manifest lists every
+file with its SHA-256. The table below states, for each group of claims, the
+inputs the artifact provides, what those inputs let a reviewer recompute on a
+CPU, and what is omitted. A hash identifies an omitted file; it does not make
+that file replayable.
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}p{0.19\columnwidth}p{0.47\columnwidth}p{0.24\columnwidth}@{}}
+\toprule
+\raggedright Claims & \raggedright Released inputs; recomputable on a CPU & \raggedright Omitted, listed by hash\tabularnewline
+\midrule
+\raggedright Audit metrics, bands and gate (Sec.~\ref{sec:results}) & \raggedright Protocol and registrations; per-example selection and confirmation counts, certified radii and clean predictions for all \ExpCandidates{} candidates in all \ExpCells{} cells; candidate metadata, bank hashes and development tensors; the simultaneous-analysis configuration and output. Recomputes every audit table and macro, the complete-family band and the exact-count gate. & \raggedright None\tabularnewline
+\addlinespace
+\raggedright Theory (Sec.~\ref{sec:flip}, App.~\ref{app:nonident}--\ref{app:proofs}) & \raggedright Decision-change note, verification scripts and tests, non-identification constructions. Recomputes every numerical check of the propositions. & \raggedright None\tabularnewline
+\addlinespace
+\raggedright Positive control (Sec.~\ref{sec:control}) & \raggedright Configuration snapshot, split indices, trained adapters, confirmation outputs, analysis report and custody manifest. Recomputes every aggregate and the paired bootstrap. & \raggedright Feature cache (about 0.8\,GB)\tabularnewline
+\addlinespace
+\raggedright Extension (Sec.~\ref{sec:extension}) & \raggedright Registrations and code; per-item vote counts of all 36 cells with receipts and recovery records; prototype banks; registered analysis outputs; reconstruction package. Recomputes every extension aggregate and band. & \raggedright Development and control-training caches (about 5.8\,GB)\tabularnewline
+\addlinespace
+\raggedright Fresh-noise diagnostic (Table~\ref{tab:n3c}) & \raggedright Registration, code and the recorded diagnostic outputs. Regenerates the table from those outputs only. & \raggedright Per-draw features (about 3.0\,GB); independent recomputation needs them\tabularnewline
+\addlinespace
+\raggedright Follow-up (Sec.~\ref{sec:followup}) & \raggedright Registrations, the three recorded stage approvals (approver names redacted in the anonymous version), code, data preflight and bank manifest; per-item vote counts of every cell with their custody manifests; registered analysis outputs. Recomputes every registered output from the vote counts. & \raggedright Prepared prototype banks and preparation caches, if they exceed the repository limit; recomputing them needs the public checkpoints and datasets\tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{What else is not released, and why}
+The omitted archives exceed the anonymous repository's size limits and will be
+deposited in an archival repository with the final version. Model weights and
+datasets are public third-party assets: the OpenAI CLIP checkpoints
+\cite{radford2021clip} and the LAION-2B-trained one \cite{schuhmann2022laion5b}
+are loaded through OpenCLIP \cite{cherti2023openclip}, and the CIFAR-100,
+EuroSAT, CIFAR-10 and Imagenette \cite{howard2019imagenette} images are
+obtained from their public distributions. The artifact references them by hash rather than
+redistributing them. The sealed EuroSAT holdout and the CIFAR-100 official test
+split were not read by the audit, the positive control or the extension. The
+registered follow-up spent the sealed EuroSAT holdout in full and \FUItemsCifarB{}
+CIFAR-100 official-test items, each once and for evaluation only, and their
+item lists are released with that experiment; no later experiment may use them
+for selection.
+
+\paragraph{Preregistration}
+The preregistration underlying this audit is voluntary and self-enforced
+through hashed registrations and fail-closed launch guards; it was checked
+within the author team, not by a venue. The design follows the
+pre-registration format used at machine-learning
+workshops~\cite{bertinetto2021preregistration}: hypotheses, analysis rules and
+stop rules were fixed and hashed before sampling, and every registered outcome
+is reported regardless of its direction.
+
+\paragraph{Layout}
+The artifact is organized as \texttt{registrations/} (protocol, pre-analysis
+and extension registrations with hashes), \texttt{results/exp017/} (per-cell
+sufficient statistics, candidate metadata and bank hashes),
+\texttt{analysis/} (the metric-semantics audit, the simultaneous-band output
+and configuration, the exact-count adjudication), \texttt{paper/} (source,
+generators, generated tables and figure data, tests, lint),
+\texttt{theory/} (decision-change note and verification tests),
+\texttt{control/} (the positive-control release), \texttt{extension/} (code,
+registrations, per-item vote counts, prototype banks, registered analysis
+outputs and the reconstruction package), \texttt{followup/} (registrations,
+stage approvals, per-item vote counts with their custody manifests, and the
+registered analysis outputs), and \texttt{review/} (the review
+ledger: for every check, its reviewer, the reviewed version, its scope, its
+date, and whether it was AI-assisted; the anonymous version names reviewers by
+role). Files that could identify the authors
+(project trackers, logs, hostnames) are excluded.
+
+\paragraph{Study names}
+The artifact's README maps each study named in the paper (the audit, the
+positive control, Extensions A and B, the fresh-noise diagnostic, and
+Follow-ups A to C) to its files.
+
+\paragraph{Reproduction without a GPU}
+The generators rebuild every table, macro and figure from the released
+analysis outputs and record the hash of each source. The audit's aggregates
+and bands are recomputed from its per-example sufficient statistics, the
+positive control's from its confirmation outputs, and the extension's from its
+vote counts; independent recomputation of the fresh-noise diagnostic needs the
+separately archived per-draw features. None of these steps downloads a model,
+opens a sealed split, or draws a new scientific sample. A GPU is needed only
+to regenerate the features and votes themselves; the pinned environment,
+seeds, and hashes for that step are recorded, and regenerated prototype banks
+can be checked against the released hashes. Regenerating the audit's
+per-example tables needs CPU PyTorch to read the saved statistics; every other
+step needs only NumPy and SciPy. The follow-up's outputs are recomputed from
+its vote counts. The released bundles carry no version-control history, so
+their hashes identify the released bytes but do not by themselves attest when
+or by whom those bytes were produced. Each registered cell was sampled under
+its registration, and no run was repeated or extended after outcomes were
+inspected; the recoveries and the recomputation described in
+Appendix~\ref{app:deviations} preceded any inspection of outcomes.

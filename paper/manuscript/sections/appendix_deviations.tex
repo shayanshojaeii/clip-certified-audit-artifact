@@ -1,0 +1,71 @@
+% Execution deviations and verification status (D-145): moved here from Sections V and VII to free body space
+% for the follow-up; the moved text is unchanged. Every number is a macro from generated/macros.tex.
+
+\section{Execution Deviations and Verification Status}
+\label{app:deviations}
+
+\subsection{Audit and positive control}
+
+According to the archived review records, a second author within the team
+reconstructed the audit's result chain before the post-hoc analyses: all
+\ExpBanks{} banks from the development tensors and all \ExpRows{} outcomes from
+the saved counts, with data-role separation and the absence of test access
+checked. The standard-metric reconstruction, the simultaneous bands and the
+per-example counts come from released scripts, and AI-assisted reviews within
+the team reproduced the band output byte for byte. Other authors replayed the
+positive control from its raw files, as did an AI-assisted replay. The review
+ledger released with the artifact records, for every
+check, its reviewer (by role in the anonymous version), version, scope, date
+and AI assistance, and whether the reviewer confirmed the record in writing.
+
+\subsection{Registered extension}
+
+The extension's registrations have digests \ExtRegHashA{} (Extension A),
+\ExtRegHashB{} (Extension B) and \ExtRegHashN{} (fresh-noise diagnostic). Its
+queue completed all \ExtCellsMerged{} cells (terminal receipt
+\ExtAReceiptStatus{}, \ExtResultFiles{} result files, manifest
+\ExtResultManifest{}), and every cell merged and verified against its
+registration. The values of Section~\ref{sec:extension} are primary-verified: a deterministic
+reconstruction from the raw shards, released with the artifact, reproduces every
+registered output to machine precision, and replays within the team, by other
+authors and AI-assisted, repeated it. Execution deviated from the
+registration text in three disclosed ways:
+the preparation stage (development features, directions and controls) left one
+reduced-precision convolution mode enabled, while certification ran at full
+precision; the registered bootstrap names one pseudo-random
+generator while the analysis code uses NumPy's default generator; and the
+extension bound model checkpoints by name and pretrained tag rather than by file
+hash, so the cached checkpoint files were hashed after the run (they equal the
+preflight copies) but the shards do not cryptographically attest the bytes they
+loaded. The queue was interrupted twice, by a server reboot and by a worker
+crash, and resumed each time under a documented recovery without any protocol
+change.
+
+\subsection{Prospective follow-up}
+
+The follow-up of Section~\ref{sec:followup} ran on GPUs of a single class under
+the pinned environment of its data preflight, checked before every job. One GPU
+ran far below its normal clock and was stopped; its one started job was
+recomputed from its first item and its other jobs ran on GPUs of the same
+class, so no reported certificate comes from it, and jobs not yet started on
+slower GPUs were moved to idle ones.
+Every noise draw derives from its item's registered seed, so neither change
+altered a draw, a registered quantity, an approval or an item. The registered
+analysis ran once, after a recorded approval that binds the run custody
+manifests; its results are primary-verified and were replayed within the team
+from the released vote counts.
+
+The registered bootstrap compares floating-point replicates with each test
+boundary (zero or $\pm\FUSESOI$ points), so when an estimate lies exactly on a
+boundary, rounding can put tied replicates on either side. An AI-assisted
+recomputation within the team with exact integer numerators found this in nine
+raw tail probabilities outside the primary family; no direction or magnitude
+class and no printed value changes. The registered outputs stay as released;
+the exact recomputation is released with the artifact.
+
+The registrations put the observed paired discordance next to every interval.
+The registered analysis did not compute it for the derived intervals of
+Table~\ref{tab:followup-registered} (a supervised control against two-sided
+centering, and the text/image interaction), so they are reported without it;
+this is a reporting deviation, and for the four-arm interaction no single
+paired discordance is defined.

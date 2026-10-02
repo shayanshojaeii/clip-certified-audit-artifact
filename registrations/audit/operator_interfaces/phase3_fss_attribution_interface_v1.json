@@ -1,0 +1,15 @@
+{
+  "schema_version": "phase3.fss_attribution.v1",
+  "status": "IMPLEMENTATION_ONLY_NO_SCIENTIFIC_SAMPLING",
+  "engine": "fss_diagnostic",
+  "algebraic_radius_decomposition": "sigma*(ndtri(S_after)-ndtri(S_before))-sigma*(ndtri((1+tau_after)/2)-ndtri((1+tau_before)/2))",
+  "decompose": "raw_algebraic_radius_only",
+  "reported_radius": "max(raw_radius,0)_saved_separately",
+  "text_side_stability_policy": "require_exact_cache_anchor_samples_bound_and_confidence_identity",
+  "image_or_two_sided_policy": "require_freshly_recomputed_image_stability_evidence",
+  "geometry_policy": "recompute_all_competitors_and_complete_critical_set_after_every_finite_step",
+  "switch_policy": "record_clean_label_and_critical_set_switches",
+  "first_order_policy": "store_prediction_separately_from_exact_finite_outcome",
+  "cohen_policy": "excluded_from_fss_attribution_record_and_recertified_independently",
+  "numeric_tolerance": 1e-10
+}

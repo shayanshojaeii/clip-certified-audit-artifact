@@ -1,0 +1,25 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We audited whether shared corrections of CLIP's prototype geometry improve the
+certified correctness of a frozen zero-shot classifier under randomized
+smoothing. A per-draw identity shows that a renormalized common text-side
+translation can change a hard-label vote only through the difference between
+prototype renormalization factors, which makes the projected-gap translation
+exactly inert under hard-label smoothing. The preregistered audit did not
+establish an improvement under its joint rule; its one post-hoc exception,
+two-sided centering, persisted under fresh noise on the audit's items. A
+follow-up registered before its sampling delimits that exception: on fresh
+items every primary shared contrast lies within the $\pm\FUSESOI$-point margin
+under the registered item-pooled estimand, while at $\sigma=\FUSigmaHigh$ the
+gain recurs, descriptively, on sealed EuroSAT for the audit's backbones and
+reverses on Imagenette and for the LAION-2B-trained model. Supervised
+class-specific controls raise certified accuracy, with clean-accuracy changes
+of their own; a label-fitted shared vector does not. The evidence marks a
+transportability boundary rather than an impossibility: shared corrections can
+move certified correctness in particular settings, but not as a consistent
+gain across datasets and checkpoints. A certificate supports trust only when an
+evaluation also reports whether the stabilized prediction is correct and how
+the conclusion varies across data and models
+(Section~\ref{sec:lessons}).\label{body:end}%
+% body:end marks the last line of the page-limited body (scripts/check_satml2027_submission.py).

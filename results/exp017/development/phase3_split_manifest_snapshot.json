@@ -1,0 +1,76 @@
+{
+  "assignments_path": "artifacts/day14/phase3_splits_v1/assignments.csv",
+  "assignments_sha256": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38",
+  "config_path": "configs/phase3_calibration_protocol_v1.json",
+  "config_sha256": "384cfa76acef43a161ca208a384322f5b7f93b6f1891dda420b94f76f0fccc4a",
+  "exclusion_manifest_path": "artifacts/day14/phase3_splits_v1/exclusion_manifest.json",
+  "exclusion_manifest_sha256": "f14dec8b902f518ae37df73e12e07fe9700e021a68f9ae8582faa8c9cb208c85",
+  "fold_count": 3,
+  "independent_review_status": "PENDING",
+  "independent_reviewer": null,
+  "manifest_payload_sha256": "df022583217bffde453f53e629537478ca2b845b4998c8a2c34451ffd6f0a7d5",
+  "model_outcomes_loaded": false,
+  "pixels_loaded": false,
+  "sampling_authorized": false,
+  "schema_version": "phase3.split_manifest.v1",
+  "scientific_sampling_performed": false,
+  "selection_inputs": [
+    {
+      "dataset_id": "cifar100",
+      "model_outcomes_loaded": false,
+      "path": "results/EXP-20260827-003/split_assignments.csv",
+      "pixels_loaded": false,
+      "sha256": "b9d39cca989fd9e3c2a4c8d111749e8d5d1445c1d57252f66dccec6c991aa270"
+    },
+    {
+      "dataset_id": "eurosat",
+      "model_outcomes_loaded": false,
+      "path": "results/EXP-20260827-005/split_assignments.csv",
+      "pixels_loaded": false,
+      "sha256": "32ecfc6c36c71160c5a3a2d576aec6684bc48c17e1e06ebf0eeab0135b1d01d2"
+    }
+  ],
+  "selection_used_identifiers_and_prior_roles_only": true,
+  "split_seed": 20260906,
+  "status": "PENDING_INDEPENDENT_REVIEW_SAMPLING_LOCKED",
+  "summaries": [
+    {
+      "class_count": 100,
+      "dataset_id": "cifar100",
+      "development_count": 1500,
+      "development_per_class": 5,
+      "excluded_count": 2020,
+      "final_test": {
+        "count": 10000,
+        "intervention_development_access": false,
+        "prior_access_disclosure": "ordinary clean pipeline sanity was run before Phase 3; no intervention or certificate parameter was selected from it",
+        "source": "official_cifar100_test_split"
+      },
+      "fold_count": 3,
+      "reserved_count": 44980,
+      "sealed_test_count": 0,
+      "sealed_test_per_class": 0,
+      "validation_count": 1500,
+      "validation_per_class": 5
+    },
+    {
+      "class_count": 10,
+      "dataset_id": "eurosat",
+      "development_count": 150,
+      "development_per_class": 5,
+      "excluded_count": 1000,
+      "final_test": {
+        "count": 1000,
+        "intervention_development_access": false,
+        "prior_access_disclosure": "none; selected by identifier hash without reading pixels or outcomes",
+        "source": "deterministic_balanced_previously_unaccessed_holdout"
+      },
+      "fold_count": 3,
+      "reserved_count": 24700,
+      "sealed_test_count": 1000,
+      "sealed_test_per_class": 100,
+      "validation_count": 150,
+      "validation_per_class": 5
+    }
+  ]
+}

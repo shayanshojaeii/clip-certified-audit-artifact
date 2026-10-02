@@ -1,0 +1,1677 @@
+{
+  "access": {
+    "analysis": "outcomes are read only after the analysis-stage approval, which binds the run custody manifest",
+    "list_construction": "item ids and labels of every role were read to draw the lists on 2026-09-26 (CIFAR-100 official test labels, EuroSAT final_test_sealed ids and labels from the Phase-3 assignments, the Imagenette folder listing); no image was decoded",
+    "preparation": "only the development and registered control roles are loaded; evaluation, official-test and sealed items are refused by satml2027ext/items_ext.py; the payload records sealed_evaluation_access=false",
+    "sampling": "evaluation pixels of the sealed or official-test datasets cifar100_test, eurosat_sealed are decoded by the worker only, once; no later selection may use them",
+    "sealed_access_definition": "decoding a sealed or official-test image, or computing any model output on it; reading list labels and hashing file bytes (the data preflight) are custody, not access",
+    "sealed_evaluation_access": true
+  },
+  "bank_construction": {
+    "control_training": {
+      "adamw_weight_decay": 0.0001,
+      "batch_size": 1024,
+      "classification_temperature": 0.05,
+      "clean_loss_weight": 0.5,
+      "epochs": 80,
+      "features": "clean features and 16 noisy draws per control_train item encoded at the cell's sigma with the control stream",
+      "fit": "satml2027/day1/d1_03b_train_controls.py::fit (the EXP-019 function, imported unchanged)",
+      "learning_rate": 0.005,
+      "minibatch_seed": 20260921007,
+      "noise_base_seed": 20260921005,
+      "objective": "noisy + clean cross-entropy of the unit bank at temperature 0.05 (EXP-019 recipe); shared tangent translation and rank-8 tangent adapter",
+      "optimizer_seed": 20260921006,
+      "rank": 8,
+      "reproducibility": "deterministic algorithms are requested (warn-only) and any nondeterministic-operation warning is recorded in the payload provenance; a re-run is compared descriptively (max |delta| reported) and no tolerance is claimed; the tensors sealed in the approved bank manifest are the ones scored",
+      "role": "control_train",
+      "stream_role": "control_bank_training_noise",
+      "train_draws_per_item": 16
+    },
+    "direction_construction": {
+      "builder": "satml2027/day1/d1_02_build_development.py::project_directions (EXP-016 interfaces, imported unchanged)",
+      "development_draws_per_item": 64,
+      "exclusion_manifest_path": "artifacts/day14/phase3_splits_v1/exclusion_manifest.json",
+      "exclusion_manifest_sha256": "f14dec8b902f518ae37df73e12e07fe9700e021a68f9ae8582faa8c9cb208c85",
+      "noise_base_seed": 20260921004,
+      "noisy_margin_temperature": 0.05,
+      "role": "development",
+      "split_manifest_path": "artifacts/day14/phase3_splits_v1/manifest.json",
+      "split_manifest_sha256": "3aaf7d9d1a707e532b08f6cf4b5cd92a23b08f55dfeb670d674d92853091ecfe",
+      "stream_role": "development_direction_estimation",
+      "tie_tolerance": 1e-10
+    },
+    "executable": "satml2027ext/prepare_banks_ext.py",
+    "image_mean": "satml2027ext/banks_ext.py::portable_column_mean of the unit clean development features",
+    "image_mean_algorithm": "satml2027ext/banks_ext.py::portable_column_mean: column sums in a fixed cascade order (blocks of 16 rows, 4 accumulator levels, the order of torch's CPU cascade sum), one IEEE-754 addition per element per step in the feature dtype, then one correctly rounded division by the row count; every operation is fixed, so the bits do not depend on the platform; on the 12 EXP-016 development feature tensors it equals torch 2.11 CPU mean(dim=0) and the calibration image-mean hash recorded by EXP-017 bit for bit",
+    "noisy_class_mean": "normalize(mean of the unit noisy control_train draws of each class) from the control cache",
+    "outputs": "results/satml2027ext/banks/<cell_id>__banks.pt (+ .json); results/satml2027ext/preparation/<cell_id>__control_cache.pt and __preparation.json",
+    "prompt_control": {
+      "class_names": "from the registered prompt configuration of the cell's dataset",
+      "clean_loss_weight": 0.5,
+      "context_tokens": 4,
+      "hook_verification_atol": 0.0001,
+      "init_std": 0.02,
+      "learner": "satml2027ext/prompt_bank.py::learn_context_prompts with open_clip_prompt_hooks (verified against model.encode_text before use)",
+      "learning_rate": 0.002,
+      "naming": "PromptSmooth-inspired few-shot context-prompt control; not a reproduction of PromptSmooth",
+      "optimizer": "adam_full_batch",
+      "placeholder": "X",
+      "reproducibility": "deterministic algorithms are requested (warn-only) and any nondeterministic-operation warning is recorded in the payload provenance; a re-run is compared descriptively (max |delta| reported) and no tolerance is claimed; the tensors sealed in the approved bank manifest are the ones scored",
+      "role": "control_train",
+      "seed": 20260921009,
+      "shots_per_class": 20,
+      "shots_rule": "the registered per-class budget is passed to the learner, which refuses supervision with more items in any class (satml2027ext/prepare_banks_ext.py::registered_shots)",
+      "steps": 300,
+      "supervision": "the same clean features, noisy draws and labels as the other supervised controls",
+      "temperature": 0.05,
+      "template": "{context} a photo of a {name}."
+    },
+    "source_mode": "encode_registered_roles",
+    "text_prototypes": "satml2027/common/models.py::build_text_prototypes over the registered prompt configuration (mean of unit prompt features, renormalized)"
+  },
+  "candidates": {
+    "builder": "satml2027ext/banks_ext.py::build_registered_banks from satml2027ext/candidates_ext.py::candidate_specs (this block is generated from the same module)",
+    "candidate_ids": [
+      "no_correction",
+      "global_mean_centering__coefficient_0.25",
+      "global_mean_centering__coefficient_0.5",
+      "global_mean_centering__coefficient_1",
+      "chowers_exact_projected_gap__coefficient_0.25",
+      "chowers_exact_projected_gap__coefficient_0.5",
+      "chowers_exact_projected_gap__coefficient_1",
+      "gr_clip_style_two_sided__coefficient_0.25",
+      "gr_clip_style_two_sided__coefficient_0.5",
+      "gr_clip_style_two_sided__coefficient_1",
+      "text_only_centering__coefficient_0.25",
+      "text_only_centering__coefficient_0.5",
+      "text_only_centering__coefficient_1",
+      "image_only_centering__coefficient_0.25",
+      "image_only_centering__coefficient_0.5",
+      "image_only_centering__coefficient_1",
+      "clean_boundary_active__step_0.0025",
+      "clean_boundary_active__step_0.005",
+      "clean_boundary_active__step_0.01",
+      "clean_boundary_active__step_0.02",
+      "clean_boundary_active__step_0.04",
+      "clean_boundary_active__step_0.08",
+      "clean_boundary_active__step_0.16",
+      "clean_boundary_active__step_0.32",
+      "cohen_aligned_noisy_margin__step_0.0025",
+      "cohen_aligned_noisy_margin__step_0.005",
+      "cohen_aligned_noisy_margin__step_0.01",
+      "cohen_aligned_noisy_margin__step_0.02",
+      "cohen_aligned_noisy_margin__step_0.04",
+      "cohen_aligned_noisy_margin__step_0.08",
+      "cohen_aligned_noisy_margin__step_0.16",
+      "cohen_aligned_noisy_margin__step_0.32",
+      "control__learned_shared_translation_tangent",
+      "control__lowrank_tangent_r8",
+      "control__noisy_class_mean",
+      "control__fewshot_prompt_bank"
+    ],
+    "candidates": [
+      {
+        "candidate_id": "no_correction",
+        "family": "no_correction",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "identity",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "global_mean_centering__coefficient_0.25",
+        "family": "global_mean_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.25 (mean_w(t) - mu_I)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "global_mean_centering__coefficient_0.5",
+        "family": "global_mean_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.5 (mean_w(t) - mu_I)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "global_mean_centering__coefficient_1",
+        "family": "global_mean_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 1 (mean_w(t) - mu_I)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "chowers_exact_projected_gap__coefficient_0.25",
+        "family": "chowers_exact_projected_gap",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.25 (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "chowers_exact_projected_gap__coefficient_0.5",
+        "family": "chowers_exact_projected_gap",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.5 (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "chowers_exact_projected_gap__coefficient_1",
+        "family": "chowers_exact_projected_gap",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 1 (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "gr_clip_style_two_sided__coefficient_0.25",
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k - 0.25 mean(t)); z' = normalize(z - 0.25 mu_I)",
+        "image_transform": {
+          "coefficient": 0.25,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "gr_clip_style_two_sided__coefficient_0.5",
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k - 0.5 mean(t)); z' = normalize(z - 0.5 mu_I)",
+        "image_transform": {
+          "coefficient": 0.5,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k - 1 mean(t)); z' = normalize(z - 1 mu_I)",
+        "image_transform": {
+          "coefficient": 1.0,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": true,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "text_only_centering__coefficient_0.25",
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.25 mean(t)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "text_only_centering__coefficient_0.5",
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.5 mean(t)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "text_only_centering__coefficient_1",
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 1 mean(t)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "image_only_centering__coefficient_0.25",
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = normalize(z - 0.25 mu_I)",
+        "image_transform": {
+          "coefficient": 0.25,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "image_only_centering__coefficient_0.5",
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = normalize(z - 0.5 mu_I)",
+        "image_transform": {
+          "coefficient": 0.5,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "image_only_centering__coefficient_1",
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = normalize(z - 1 mu_I)",
+        "image_transform": {
+          "coefficient": 1.0,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.0025",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.0025 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.0025
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.005",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.005 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.005
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.01",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.01 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.01
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.02",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.02 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.02
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.04",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.04 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.04
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.08",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.08 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.08
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.16",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.16 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.16
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.32",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.32 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.32
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.0025",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.0025 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.0025
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.005",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.005 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.005
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.01",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.01 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.01
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.02",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.02 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.02
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.04",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.04 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.04
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.08",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.08 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.08
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.16 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.16
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.32",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.32 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.32
+      },
+      {
+        "candidate_id": "control__learned_shared_translation_tangent",
+        "family": "registered_control",
+        "flip_theorem": "exploratory: containment counted when every a_k = 1 - <v, t_k> > 0; reported outside Q3/Q4, never part of a registered verdict",
+        "form": "t'_k = normalize(t_k + v - <v, t_k> t_k); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "control__lowrank_tangent_r8",
+        "family": "registered_control",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k + (L R)_k - <(L R)_k, t_k> t_k), L in R^{K x 8}, R in R^{8 x d}; z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "control__noisy_class_mean",
+        "family": "registered_control",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(mean over the unit noisy control-role draws of class k); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "control__fewshot_prompt_bank",
+        "family": "registered_control",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(TextEncoder([ctx_1 .. ctx_4] + 'a photo of a {class_k}.')); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      }
+    ],
+    "control_prefix": "control__",
+    "count_rule": "1 identity + 3 global mean-centering + 3 projected gap + 3 two-sided + 3 text-only + 3 image-only + 8 clean steps + 8 noisy steps + 4 controls = 36",
+    "decomposition": {
+      "image_only": [
+        "image_only_centering__coefficient_0.25",
+        "image_only_centering__coefficient_0.5",
+        "image_only_centering__coefficient_1"
+      ],
+      "text_only": [
+        "text_only_centering__coefficient_0.25",
+        "text_only_centering__coefficient_0.5",
+        "text_only_centering__coefficient_1"
+      ],
+      "two_sided": [
+        "gr_clip_style_two_sided__coefficient_0.25",
+        "gr_clip_style_two_sided__coefficient_0.5",
+        "gr_clip_style_two_sided__coefficient_1"
+      ]
+    },
+    "decomposition_note": "text_only_centering and gr_clip_style_two_sided share the prototype tensor at each coefficient; two_sided = text_only prototypes + image_only transform, so the triple is an exact decomposition of the operator (effects need not be additive; the interaction is reported)",
+    "expected_bank_count": 36,
+    "exploratory_containment_candidates": [
+      "control__learned_shared_translation_tangent"
+    ],
+    "exploratory_containment_rule": "exploratory: containment counted when every a_k = 1 - <v, t_k> > 0; reported outside Q3/Q4, never part of a registered verdict",
+    "families": [
+      {
+        "family": "no_correction",
+        "form": "t'_k = t_k; z' = z",
+        "legacy_exp017": true,
+        "operator_class": "identity"
+      },
+      {
+        "family": "global_mean_centering",
+        "form": "t'_k = normalize(t_k - {c} (mean_w(t) - mu_I)); z' = z",
+        "legacy_exp017_values": [
+          0.25,
+          0.5,
+          1.0
+        ],
+        "note": "historical EXP-017 text mean-centering: moves the prototypes toward the image mean; NOT the text half of the two-sided operator",
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "shared_vector": "-{c} (mean_w(t) - mu_I)",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "family": "chowers_exact_projected_gap",
+        "form": "t'_k = normalize(t_k + {c} (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "legacy_exp017_values": [
+          0.25,
+          0.5,
+          1.0
+        ],
+        "note": "exact decision-invariance control (Q4): the shared vector is orthogonal to every t_j - t_k, so all normalizers are equal",
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "shared_vector": "{c} (I - V V^T)(mu_I - mean_w(t))",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "form": "t'_k = normalize(t_k - {c} mean(t)); z' = normalize(z - {c} mu_I)",
+        "legacy_exp017_values": [
+          1.0
+        ],
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "shared_vector": "-{c} mean(t)",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "form": "t'_k = normalize(t_k - {c} mean(t)); z' = z",
+        "legacy_exp017_values": [],
+        "note": "the text half of gr_clip_style_two_sided at the same coefficient (identical prototype tensor, identity image transform); new in V2",
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "shared_vector": "-{c} mean(t)",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "form": "t'_k = t_k; z' = normalize(z - {c} mu_I)",
+        "legacy_exp017_values": [],
+        "note": "the image half of gr_clip_style_two_sided at the same coefficient; acts as a class-dependent score shift -{c}<mu_I, t_k> before renormalization",
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "shared_vector": "0",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "family": "clean_boundary_active",
+        "form": "t'_k = normalize(t_k + {c} u_clean); z' = z",
+        "legacy_exp017_values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "shared_vector": "{c} u_clean",
+        "values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04,
+          0.08,
+          0.16,
+          0.32
+        ]
+      },
+      {
+        "family": "cohen_aligned_noisy_margin",
+        "form": "t'_k = normalize(t_k + {c} u_noisy); z' = z",
+        "legacy_exp017_values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "shared_vector": "{c} u_noisy",
+        "values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04,
+          0.08,
+          0.16,
+          0.32
+        ]
+      },
+      {
+        "controls": [
+          {
+            "control_id": "learned_shared_translation_tangent",
+            "form": "t'_k = normalize(t_k + v - <v, t_k> t_k); z' = z",
+            "training": "one shared vector v fitted by noisy+clean cross-entropy on the registered control role (bank_construction.control_training)"
+          },
+          {
+            "control_id": "lowrank_tangent_r8",
+            "form": "t'_k = normalize(t_k + (L R)_k - <(L R)_k, t_k> t_k), L in R^{K x 8}, R in R^{8 x d}; z' = z",
+            "training": "rank-8 tangent adapter fitted by noisy+clean cross-entropy on the registered control role (EXP-019 recipe)"
+          },
+          {
+            "control_id": "noisy_class_mean",
+            "form": "t'_k = normalize(mean over the unit noisy control-role draws of class k); z' = z",
+            "training": "optimization-free"
+          },
+          {
+            "context_tokens": 4,
+            "control_id": "fewshot_prompt_bank",
+            "form": "t'_k = normalize(TextEncoder([ctx_1 .. ctx_4] + 'a photo of a {class_k}.')); z' = z",
+            "training": "PromptSmooth-inspired: four shared context vectors fitted by noisy+clean cross-entropy through the frozen text encoder on the registered control role; not a reproduction of PromptSmooth"
+          }
+        ],
+        "family": "registered_control",
+        "operator_class": "supervised_control"
+      }
+    ],
+    "flip_theorem_candidates": [
+      "global_mean_centering__coefficient_0.25",
+      "global_mean_centering__coefficient_0.5",
+      "global_mean_centering__coefficient_1",
+      "chowers_exact_projected_gap__coefficient_0.25",
+      "chowers_exact_projected_gap__coefficient_0.5",
+      "chowers_exact_projected_gap__coefficient_1",
+      "text_only_centering__coefficient_0.25",
+      "text_only_centering__coefficient_0.5",
+      "text_only_centering__coefficient_1",
+      "clean_boundary_active__step_0.0025",
+      "clean_boundary_active__step_0.005",
+      "clean_boundary_active__step_0.01",
+      "clean_boundary_active__step_0.02",
+      "clean_boundary_active__step_0.04",
+      "clean_boundary_active__step_0.08",
+      "clean_boundary_active__step_0.16",
+      "clean_boundary_active__step_0.32",
+      "cohen_aligned_noisy_margin__step_0.0025",
+      "cohen_aligned_noisy_margin__step_0.005",
+      "cohen_aligned_noisy_margin__step_0.01",
+      "cohen_aligned_noisy_margin__step_0.02",
+      "cohen_aligned_noisy_margin__step_0.04",
+      "cohen_aligned_noisy_margin__step_0.08",
+      "cohen_aligned_noisy_margin__step_0.16",
+      "cohen_aligned_noisy_margin__step_0.32"
+    ],
+    "flip_theorem_requirement": "every flip-theorem bank must record its exact operator with every a_k = 1 (a shared translation); the bank validator refuses a payload otherwise, and the analysis reports Q3/Q4 as not evaluable if any cell lacks the counters",
+    "frozen_after_hash": true,
+    "identity_candidate_id": "no_correction",
+    "notation": {
+      "T": "source prototype bank [K, d], unit rows",
+      "V": "orthonormal basis of the row space of T - 1 mean_w(t)^T (SVD, frozen EXP-017 threshold)",
+      "mean(t)": "T.mean(dim=0)",
+      "mean_w(t)": "(1/K) 1^T T (frozen EXP-017 weighted text mean; equals mean(t) up to float bits)",
+      "mu_I": "mean of the unit clean development image features of the cell",
+      "normalize": "row-wise division by the Euclidean norm",
+      "u_clean": "unit EXP-016 clean boundary-active development direction",
+      "u_noisy": "unit EXP-016 Cohen-aligned noisy-margin development direction"
+    },
+    "projected_gap_candidates": [
+      "chowers_exact_projected_gap__coefficient_0.25",
+      "chowers_exact_projected_gap__coefficient_0.5",
+      "chowers_exact_projected_gap__coefficient_1"
+    ],
+    "schema_version": "satml2027ext.candidates.v2"
+  },
+  "cells": [
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.12",
+      "class_count": 100,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 2000,
+      "control_train_items_sha256": "1c27d6b2cd4960bc13431a582447fdc125331c99adc9e0d5cbb3ea4cba13cce3",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "cifar100_test",
+      "development_item_count": 1000,
+      "development_items_sha256": "948c24ac5578c7cf4e21e93086c9b28dd30b69fd09636ee6840677c68864cefa",
+      "evaluation_items_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+      "evaluation_source": "cifar100_official_test",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 2000,
+      "control_train_items_sha256": "1c27d6b2cd4960bc13431a582447fdc125331c99adc9e0d5cbb3ea4cba13cce3",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "cifar100_test",
+      "development_item_count": 1000,
+      "development_items_sha256": "948c24ac5578c7cf4e21e93086c9b28dd30b69fd09636ee6840677c68864cefa",
+      "evaluation_items_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+      "evaluation_source": "cifar100_official_test",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.12",
+      "class_count": 10,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "156431885dd7198fed8e115053cd44e527e4cee3137df967ca76a60ab344b5e5",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "eurosat_sealed",
+      "development_item_count": 300,
+      "development_items_sha256": "6acfc1f40ae060f48b0e20c6789d36488de09b8f46aaa77aa83ca7988f257429",
+      "evaluation_items_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+      "evaluation_source": "eurosat_sealed",
+      "item_count": 1000,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "156431885dd7198fed8e115053cd44e527e4cee3137df967ca76a60ab344b5e5",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "eurosat_sealed",
+      "development_item_count": 300,
+      "development_items_sha256": "6acfc1f40ae060f48b0e20c6789d36488de09b8f46aaa77aa83ca7988f257429",
+      "evaluation_items_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+      "evaluation_source": "eurosat_sealed",
+      "item_count": 1000,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__imagenette__sigma0.12",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "20608ecce2f34ec7e4b453491739e609990a750bd180488282d2da26a0017e48",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "imagenette",
+      "development_item_count": 300,
+      "development_items_sha256": "55a3d85b4d8dd2675ac226e0060ec8af9ec0cc2f4135385056d788a5a41f2dcd",
+      "evaluation_items_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+      "evaluation_source": "imagenette_val",
+      "evaluation_split": "val",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__imagenette__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "20608ecce2f34ec7e4b453491739e609990a750bd180488282d2da26a0017e48",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "imagenette",
+      "development_item_count": 300,
+      "development_items_sha256": "55a3d85b4d8dd2675ac226e0060ec8af9ec0cc2f4135385056d788a5a41f2dcd",
+      "evaluation_items_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+      "evaluation_source": "imagenette_val",
+      "evaluation_split": "val",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.12",
+      "class_count": 100,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 2000,
+      "control_train_items_sha256": "1c27d6b2cd4960bc13431a582447fdc125331c99adc9e0d5cbb3ea4cba13cce3",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "cifar100_test",
+      "development_item_count": 1000,
+      "development_items_sha256": "948c24ac5578c7cf4e21e93086c9b28dd30b69fd09636ee6840677c68864cefa",
+      "evaluation_items_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+      "evaluation_source": "cifar100_official_test",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 2000,
+      "control_train_items_sha256": "1c27d6b2cd4960bc13431a582447fdc125331c99adc9e0d5cbb3ea4cba13cce3",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "cifar100_test",
+      "development_item_count": 1000,
+      "development_items_sha256": "948c24ac5578c7cf4e21e93086c9b28dd30b69fd09636ee6840677c68864cefa",
+      "evaluation_items_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+      "evaluation_source": "cifar100_official_test",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.12",
+      "class_count": 10,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "156431885dd7198fed8e115053cd44e527e4cee3137df967ca76a60ab344b5e5",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "eurosat_sealed",
+      "development_item_count": 300,
+      "development_items_sha256": "6acfc1f40ae060f48b0e20c6789d36488de09b8f46aaa77aa83ca7988f257429",
+      "evaluation_items_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+      "evaluation_source": "eurosat_sealed",
+      "item_count": 1000,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "156431885dd7198fed8e115053cd44e527e4cee3137df967ca76a60ab344b5e5",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "eurosat_sealed",
+      "development_item_count": 300,
+      "development_items_sha256": "6acfc1f40ae060f48b0e20c6789d36488de09b8f46aaa77aa83ca7988f257429",
+      "evaluation_items_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+      "evaluation_source": "eurosat_sealed",
+      "item_count": 1000,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__imagenette__sigma0.12",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "20608ecce2f34ec7e4b453491739e609990a750bd180488282d2da26a0017e48",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "imagenette",
+      "development_item_count": 300,
+      "development_items_sha256": "55a3d85b4d8dd2675ac226e0060ec8af9ec0cc2f4135385056d788a5a41f2dcd",
+      "evaluation_items_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+      "evaluation_source": "imagenette_val",
+      "evaluation_split": "val",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__imagenette__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "20608ecce2f34ec7e4b453491739e609990a750bd180488282d2da26a0017e48",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "imagenette",
+      "development_item_count": 300,
+      "development_items_sha256": "55a3d85b4d8dd2675ac226e0060ec8af9ec0cc2f4135385056d788a5a41f2dcd",
+      "evaluation_items_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+      "evaluation_source": "imagenette_val",
+      "evaluation_split": "val",
+      "item_count": 3000,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openclip-vit-b32-laion2b__cifar100_test__sigma0.12",
+      "class_count": 100,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 2000,
+      "control_train_items_sha256": "1c27d6b2cd4960bc13431a582447fdc125331c99adc9e0d5cbb3ea4cba13cce3",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "cifar100_test",
+      "development_item_count": 1000,
+      "development_items_sha256": "948c24ac5578c7cf4e21e93086c9b28dd30b69fd09636ee6840677c68864cefa",
+      "evaluation_items_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+      "evaluation_source": "cifar100_official_test",
+      "item_count": 3000,
+      "model_id": "openclip-vit-b32-laion2b",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openclip-vit-b32-laion2b__cifar100_test__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 2000,
+      "control_train_items_sha256": "1c27d6b2cd4960bc13431a582447fdc125331c99adc9e0d5cbb3ea4cba13cce3",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "cifar100_test",
+      "development_item_count": 1000,
+      "development_items_sha256": "948c24ac5578c7cf4e21e93086c9b28dd30b69fd09636ee6840677c68864cefa",
+      "evaluation_items_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+      "evaluation_source": "cifar100_official_test",
+      "item_count": 3000,
+      "model_id": "openclip-vit-b32-laion2b",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openclip-vit-b32-laion2b__eurosat_sealed__sigma0.12",
+      "class_count": 10,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "156431885dd7198fed8e115053cd44e527e4cee3137df967ca76a60ab344b5e5",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "eurosat_sealed",
+      "development_item_count": 300,
+      "development_items_sha256": "6acfc1f40ae060f48b0e20c6789d36488de09b8f46aaa77aa83ca7988f257429",
+      "evaluation_items_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+      "evaluation_source": "eurosat_sealed",
+      "item_count": 1000,
+      "model_id": "openclip-vit-b32-laion2b",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openclip-vit-b32-laion2b__eurosat_sealed__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": true,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "156431885dd7198fed8e115053cd44e527e4cee3137df967ca76a60ab344b5e5",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "eurosat_sealed",
+      "development_item_count": 300,
+      "development_items_sha256": "6acfc1f40ae060f48b0e20c6789d36488de09b8f46aaa77aa83ca7988f257429",
+      "evaluation_items_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+      "evaluation_source": "eurosat_sealed",
+      "item_count": 1000,
+      "model_id": "openclip-vit-b32-laion2b",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openclip-vit-b32-laion2b__imagenette__sigma0.12",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "20608ecce2f34ec7e4b453491739e609990a750bd180488282d2da26a0017e48",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "imagenette",
+      "development_item_count": 300,
+      "development_items_sha256": "55a3d85b4d8dd2675ac226e0060ec8af9ec0cc2f4135385056d788a5a41f2dcd",
+      "evaluation_items_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+      "evaluation_source": "imagenette_val",
+      "evaluation_split": "val",
+      "item_count": 3000,
+      "model_id": "openclip-vit-b32-laion2b",
+      "scope_tier": "core",
+      "sigma": 0.12,
+      "store_identity_margins": false
+    },
+    {
+      "cell_id": "openclip-vit-b32-laion2b__imagenette__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "control_train_item_count": 200,
+      "control_train_items_sha256": "20608ecce2f34ec7e4b453491739e609990a750bd180488282d2da26a0017e48",
+      "data_role": "fresh_never_touched_items",
+      "dataset_id": "imagenette",
+      "development_item_count": 300,
+      "development_items_sha256": "55a3d85b4d8dd2675ac226e0060ec8af9ec0cc2f4135385056d788a5a41f2dcd",
+      "evaluation_items_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+      "evaluation_source": "imagenette_val",
+      "evaluation_split": "val",
+      "item_count": 3000,
+      "model_id": "openclip-vit-b32-laion2b",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": false
+    }
+  ],
+  "certification": {
+    "alpha_form": "one-sided Clopper-Pearson lower bound per example on the selected class (CERTIFY); abstain if it is at most 0.5",
+    "alpha_per_example": 0.001,
+    "blocks_per_forward": 4,
+    "budget_checkpoints": [],
+    "confirmation_draws": 4096,
+    "determinism": "torch.use_deterministic_algorithms(True, warn_only=True) and CUBLAS_WORKSPACE_CONFIG=:4096:8 in the preparation stage and the worker (satml2027ext/run_shard_ext.py::configure_precision); bit identity is expected only within one GPU class and software stack",
+    "flip_counters": {
+      "applicability": "registered: every flip-theorem bank (candidates.flip_theorem_candidates), which the bank validator requires to record its exact operator t'_k = (t_k + v)/n_k (every a_k = 1) with an identity image transform, so containment and the loose bound both apply; Q3/Q4 are not evaluable if any cell lacks them. Exploratory: the learned shared tangent control (candidates.exploratory_containment_candidates, a_k = 1 - <v, t_k>) when every a_k > 0, reported outside Q3/Q4",
+      "count_contract": "satml2027ext/contract_ext.py, applied by the run custody stage and by the analysis merge: integer nonnegative counts with exact totals; prefixes that sum to their checkpoints, never decrease and never exceed the full counts; useful + harmful <= changed <= N, violations <= changed, loose budget <= N; Boolean flags, equal across the shards of a cell, loose only with containment, zero counters where a bound does not apply, none for the identity; the registered applicability per operator class",
+      "counters": [
+        "changed draws (candidate argmax differs from the identity argmax)",
+        "containment violations: a changed draw j -> k with a_j (s_j - s_k) > |n_j - n_k| + |a_j - a_k| + tolerance (the approved N3C P1 form of the decision-change proposition)",
+        "loose-bound violations: a changed draw whose identity top-1 margin exceeds 2 min(1, ||v||) + tolerance (unit-scale translations)",
+        "loose flippable budget: draws whose identity top-1 margin is at most 2 min(1, ||v||) + tolerance",
+        "useful changes (identity wrong, candidate right) and harmful changes (identity right, candidate wrong)"
+      ],
+      "storage": "per candidate and item, int32, in every shard",
+      "stream": "confirmation",
+      "tolerance": 1e-05
+    },
+    "forward_batch_draws": 256,
+    "forward_batch_rule": "every item's draws are encoded in forward batches of blocks_per_forward x noise_block_draws; the worker refuses any other value and the run custody manifest checks every sidecar",
+    "k_min_at_r_equals_sigma": 3518,
+    "margin_storage": null,
+    "noise_block_draws": 64,
+    "primary_radius_rule": "r = sigma (k_min identical at every sigma)",
+    "radius_coordinates": "model-input coordinates: Gaussian noise added to the 224 x 224 tensor after the model's deterministic resize and centre crop, unclipped",
+    "reported_radii": [
+      0.0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "seeds": {
+      "confirmation_base_seed": 20260921002,
+      "control_minibatch_seed": 20260921007,
+      "control_noise_base_seed": 20260921005,
+      "control_optimizer_seed": 20260921006,
+      "development_noise_base_seed": 20260921004,
+      "prompt_learner_seed": 20260921009,
+      "selection_base_seed": 20260921001
+    },
+    "selection_draws": 128,
+    "streams": {
+      "confirmation": "cohen_class_confirmation",
+      "control_train": "control_bank_training_noise",
+      "development": "development_direction_estimation",
+      "independence": "selection and confirmation streams independent; all banks scored on identical draws",
+      "seed_derivation": "satml2027/common/seeds.py::derive_item_seed(base, model_id, dataset_id, sigma, item_id, stream): a function of the cell's model, dataset and sigma, the stream and the item id and of nothing else (not of the shard split or the run order), so draws are shard-invariant, and a 021C item's confirmation stream (same base seed, model, dataset, sigma and item) begins with its 021B stream",
+      "selection": "cohen_class_selection"
+    },
+    "tf32": "both torch TF32 switches off and cuDNN deterministic in the preparation stage and the worker"
+  },
+  "compute_estimate_4090_hours": 105,
+  "consumed_once": [
+    "cifar100 official test split",
+    "eurosat final_test_sealed"
+  ],
+  "data_role": "fresh never-touched evaluation items (CIFAR-100 official test 3,000; EuroSAT sealed holdout 1,000; Imagenette2-320 validation 3,000); development and control-train from the Phase-3 reserve minus Phase-4 and EXP-019 items, or from the Imagenette training split",
+  "data_roots": {
+    "cifar100": {
+      "archive": "cifar-100-python.tar.gz",
+      "archive_md5": "eb9058c3a382ffc7106e4002c42a8d85",
+      "archive_sha256": "85cd44d02ba6437773c5bbd22e183051d648de2e7d6b014e1ef29b855ba677a7",
+      "members_md5": {
+        "cifar-100-python/meta": "7973b15100ade9c7d40fb424638fde48",
+        "cifar-100-python/test": "f0ef6b0ae62326f3e7ffdfab6717acfc",
+        "cifar-100-python/train": "16019d7e3df5f24257cddd939b257f8d"
+      },
+      "source": "https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz"
+    },
+    "eurosat": {
+      "archive": "EuroSAT.zip",
+      "archive_sha256": "8ebea626349354c5328b142b96d0430e647051f26efc2dc974c843f25ecf70bd",
+      "folder": "eurosat/2750"
+    },
+    "imagenette": {
+      "archive": "imagenette2-320.tgz",
+      "archive_sha256": "569b4497c98db6dd29f335d1f109cf315fe127053cedf69010d047f0188e158c",
+      "bytes": 341663724,
+      "official_counts": {
+        "train": 9469,
+        "val": 3925
+      },
+      "resolution_note": "320-pixel shorter side; the model preprocessing resizes the shorter side to 224 (bicubic) and centre-crops 224 x 224, so the noise lives in a downsampled model-input space, not an upsampled one as for CIFAR-100 and EuroSAT (V1 called this 'native 224 resolution', which was imprecise)",
+      "source": "https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-320.tgz"
+    },
+    "item_lists": {
+      "created_at": "2026-09-26T00:00:00+00:00",
+      "generator": "satml2027ext/draw_items_ext.py (with --imagenette-archive)"
+    },
+    "preflight_inputs": "regenerating the lists needs, on the host, the Phase-3 and Phase-4 assignment files and the EXP-019 item lists (satml2027ext/draw_items_ext.py defaults); a missing input is a failed preflight check",
+    "rule": "the sampling host runs satml2027ext/preflight_data_ext.py before the preparation stage; it must reproduce every item list byte for byte, tie every registered EuroSAT and Imagenette file to its archive member by SHA-256, and record every file hash; the bank manifest records the preflight the preparation used, the sampling approval binds that same file (the worker refuses a manifest that names another), a stage-1 approval that names a preflight binds the preparation to it, and the preparation stage and the worker check each file they load against the record"
+  },
+  "experiment_id": "EXP-20260921-021B",
+  "hardware": {
+    "assignment_rule": "satml2027ext/plan_ext.py balances estimated seconds across the six GPUs (longest jobs first) after splitting cells into registered shards; device model, driver and library versions are recorded in every shard sidecar; all shards of a cell run on one GPU class",
+    "assumed": "six RTX 5090 (32 GB) on one rented host reachable by SSH with one key; the university RTX 4090 is not part of this plan"
+  },
+  "inference": {
+    "adjudication_families": "pooled_over_datasets_per_sigma",
+    "clean_accuracy_reporting_gate": "macro drop <= 1 point and per-cell drop <= max(2 points, 3 images), exact integer arithmetic; flags, never hides",
+    "control_family": {
+      "comparator": "gr_clip_style_two_sided__coefficient_1",
+      "contrasts": [
+        "control__learned_shared_translation_tangent",
+        "control__lowrank_tangent_r8",
+        "control__noisy_class_mean",
+        "control__fewshot_prompt_bank"
+      ],
+      "correction": "Holm over the four controls within each family (direction test); the difference to the comparator is descriptive",
+      "reference": "no_correction"
+    },
+    "direction": {
+      "classification": [
+        "positive",
+        "negative",
+        "unresolved"
+      ],
+      "test": "two-sided percentile-bootstrap p-value 2 min(P*(d <= 0), P*(d >= 0))"
+    },
+    "families": {
+      "definition": [
+        "each dataset x sigma",
+        "pooled over datasets at each sigma"
+      ],
+      "power_under_scope_descent": "a family with a not-run cell reports its registered power label as 'registered' and an 'effective' label stating that the registered power statement no longer applies",
+      "rule": "multiplicity is controlled within each family; Q6 is adjudicated on the pooled families; dataset-specific families are secondary; every family carries its registered power label (family_power), and the analysis prints it beside each family and each Q6 row; 021A's Q1 is a single registered contrast outside these families (predictions, Q1)"
+    },
+    "family_power": {
+      "cifar100_test__sigma0.12": {
+        "label": "powered (about 0.80 for 2 points at 10% discordance)",
+        "unique_images": 3000
+      },
+      "cifar100_test__sigma0.25": {
+        "label": "powered (about 0.80 for 2 points at 10% discordance)",
+        "unique_images": 3000
+      },
+      "eurosat_sealed__sigma0.12": {
+        "label": "underpowered (power about 0.25 for 2 points)",
+        "unique_images": 1000
+      },
+      "eurosat_sealed__sigma0.25": {
+        "label": "underpowered (power about 0.25 for 2 points)",
+        "unique_images": 1000
+      },
+      "imagenette__sigma0.12": {
+        "label": "powered (about 0.80 for 2 points at 10% discordance)",
+        "unique_images": 3000
+      },
+      "imagenette__sigma0.25": {
+        "label": "powered (about 0.80 for 2 points at 10% discordance)",
+        "unique_images": 3000
+      },
+      "pooled__sigma0.12": {
+        "label": "well powered (about 0.997 for 2 points)",
+        "unique_images": 7000
+      },
+      "pooled__sigma0.25": {
+        "label": "well powered (about 0.997 for 2 points)",
+        "unique_images": 7000
+      }
+    },
+    "intervals": {
+      "holm": "Holm adjusts decisions only; no Holm confidence interval is reported",
+      "simultaneous": "single-step max-t band over all non-identity contrasts",
+      "unadjusted": "percentile 95% (90% as the description of the equivalence test); labelled unadjusted"
+    },
+    "no_selection_among_secondary_outcomes": true,
+    "practical_magnitude": {
+      "classification": [
+        "gain_at_least_sesoi",
+        "loss_at_least_sesoi",
+        "practically_equivalent",
+        "inconclusive"
+      ],
+      "fixed_before_sampling": true,
+      "precedence": "gain, then loss, then equivalence, else inconclusive",
+      "reporting": "direction and magnitude are reported side by side; a precise small positive effect is 'positive' and 'practically_equivalent'",
+      "sesoi_points": 2.0,
+      "tests": {
+        "gain_at_least_sesoi": "H0: delta <= +SESOI; p = P*(d <= +SESOI)",
+        "loss_at_least_sesoi": "H0: delta >= -SESOI; p = P*(d >= -SESOI)",
+        "practically_equivalent": "percentile-bootstrap two one-sided tests in interval-inclusion form; p = max(P*(d <= -SESOI), P*(d >= +SESOI))"
+      }
+    },
+    "primary_estimand": "item-pooled paired difference in standard certified accuracy at r = sigma, candidate minus no_correction, in points",
+    "primary_family": {
+      "alpha_two_sided": 0.05,
+      "contrasts": [
+        "gr_clip_style_two_sided__coefficient_1",
+        "text_only_centering__coefficient_1",
+        "image_only_centering__coefficient_1",
+        "clean_boundary_active__step_0.16",
+        "cohen_aligned_noisy_margin__step_0.16"
+      ],
+      "correction": "Holm within each family, applied separately to the direction, equivalence, gain and loss tests",
+      "note": "shared operators only; the supervised controls are in control_family",
+      "reference": "no_correction"
+    },
+    "secondary_family": {
+      "alpha": 0.05,
+      "method": "Romano-Wolf step-down max-t over every non-identity contrast; adjusted p of rank j = running maximum of P*(max over ranks >= k of |z| >= |t_(k)|)",
+      "size": 35
+    },
+    "secondary_outcomes": [
+      "anchored certified accuracy",
+      "abstention",
+      "certified-wrong rate and its top-class share",
+      "raw/smoothed agreement",
+      "clean accuracy (exact counts)",
+      "equal-cell macros",
+      "standard CA at the other radii"
+    ],
+    "uncertainty": {
+      "generator": "numpy PCG64DXSM",
+      "method": "class-stratified shared-item paired bootstrap with Rao-Wu rescaling",
+      "replicates": 100000,
+      "resampling_unit": "the unique evaluation image; its bootstrap multiplicity is drawn once per replicate within its dataset-class stratum and shared across every backbone and sigma cell in which the image appears and across every candidate and radius",
+      "seed": 2026092101,
+      "strata": {
+        "definition": [
+          "dataset",
+          "class"
+        ],
+        "stratum_key": "(dataset_id, label)"
+      }
+    }
+  },
+  "method_selection": false,
+  "models": {
+    "openai-clip-vit-b32-quickgelu": {
+      "bytes": 605143284,
+      "file": "open_clip_model.safetensors",
+      "hf_repository": "timm/vit_base_patch32_clip_224.openai",
+      "open_clip_name": "ViT-B-32-quickgelu",
+      "pretrained": "openai",
+      "sha256": "e6d1bd7789aa45192b3bf90570a789b478bae1b74ebcce7eddd908e83a2b7c31",
+      "snapshot": "a6f597a3"
+    },
+    "openai-clip-vit-l14-quickgelu": {
+      "bytes": 1710517724,
+      "file": "open_clip_model.safetensors",
+      "hf_repository": "timm/vit_large_patch14_clip_224.openai",
+      "open_clip_name": "ViT-L-14-quickgelu",
+      "pretrained": "openai",
+      "sha256": "9ce2e8a8ebfff3793d7d375ad6d3c35cb9aebf3de7ace0fc7308accab7cd207e",
+      "snapshot": "18d05354"
+    },
+    "openclip-vit-b32-laion2b": {
+      "bytes": 605143316,
+      "bytes_source": "Hugging Face LFS metadata of the repository (2026-09-26): the file's LFS oid equals the registered SHA-256",
+      "file": "open_clip_model.safetensors",
+      "hf_repository": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+      "open_clip_name": "ViT-B-32",
+      "pretrained": "laion2b_s34b_b79k",
+      "sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6",
+      "snapshot": "1a25a446"
+    }
+  },
+  "position_count_per_backbone": 14000,
+  "power": {
+    "inferential_unit": "the unique evaluation image (each appears in three backbone cells per sigma; counted once)",
+    "items_needed_for_5_contrast_family": {
+      "0.05": 1502,
+      "0.10": 2993,
+      "0.20": 5925
+    },
+    "method": "exact conditional McNemar, two-sided, Bonferroni-sized planning at 0.05/5, 80% power, 2-point paired difference",
+    "observed_discordance_rule": "the observed paired discordance is reported next to every interval",
+    "per_dataset_sigma_at_discordance_0.10": {
+      "cifar100_test": {
+        "minimum_detectable_points": 2.0,
+        "power_for_2_points": 0.8,
+        "unique_images": 3000
+      },
+      "eurosat_sealed": {
+        "label": "underpowered",
+        "minimum_detectable_points": 3.47,
+        "power_for_2_points": 0.25,
+        "unique_images": 1000
+      },
+      "imagenette": {
+        "minimum_detectable_points": 2.0,
+        "power_for_2_points": 0.8,
+        "unique_images": 3000
+      }
+    },
+    "pooled_over_datasets_per_sigma_at_discordance_0.10": {
+      "minimum_detectable_points": 1.3,
+      "power_for_2_points": 0.997,
+      "unique_images": 7000
+    },
+    "sensitivity_pooled": {
+      "0.05": {
+        "minimum_detectable_points": 0.92
+      },
+      "0.20": {
+        "minimum_detectable_points": 1.84,
+        "power_for_2_points": 0.87
+      }
+    },
+    "statement": "CIFAR-100 and Imagenette (3,000 unique images each) approximately meet the 2,993-image target of the five-contrast family at 10% discordance (power about 0.80); EuroSAT (1,000) does not (power about 0.25) and is reported as underpowered; the pooled family per sigma (7,000) is well powered (about 0.997). V1 said '3,000 meet 3,096', which was false for the six-contrast family it registered."
+  },
+  "predictions": [
+    {
+      "contrasts": {
+        "image_only": [
+          "image_only_centering__coefficient_0.25",
+          "image_only_centering__coefficient_0.5",
+          "image_only_centering__coefficient_1"
+        ],
+        "text_only": [
+          "text_only_centering__coefficient_0.25",
+          "text_only_centering__coefficient_0.5",
+          "text_only_centering__coefficient_1"
+        ],
+        "two_sided": [
+          "gr_clip_style_two_sided__coefficient_0.25",
+          "gr_clip_style_two_sided__coefficient_0.5",
+          "gr_clip_style_two_sided__coefficient_1"
+        ]
+      },
+      "id": "Q2",
+      "outcome_template": "at c = X the two-sided operator changed standard CA by Y points; its text half by T and its image half by I (interaction Z).",
+      "question": "how much of the two-sided operator's effect is carried by its text half and by its image half (fresh items)",
+      "rule": "per pooled family and coefficient: the three effects and the interaction (two-sided minus text-only minus image-only) with an unadjusted interval; no additivity is assumed",
+      "type": "decomposition, reported whatever the signs"
+    },
+    {
+      "contrasts": [
+        "clean_boundary_active__step_0.0025",
+        "clean_boundary_active__step_0.005",
+        "clean_boundary_active__step_0.01",
+        "clean_boundary_active__step_0.02",
+        "clean_boundary_active__step_0.04",
+        "clean_boundary_active__step_0.08",
+        "clean_boundary_active__step_0.16",
+        "clean_boundary_active__step_0.32",
+        "cohen_aligned_noisy_margin__step_0.0025",
+        "cohen_aligned_noisy_margin__step_0.005",
+        "cohen_aligned_noisy_margin__step_0.01",
+        "cohen_aligned_noisy_margin__step_0.02",
+        "cohen_aligned_noisy_margin__step_0.04",
+        "cohen_aligned_noisy_margin__step_0.08",
+        "cohen_aligned_noisy_margin__step_0.16",
+        "cohen_aligned_noisy_margin__step_0.32"
+      ],
+      "id": "Q3",
+      "not_a_rule": "V1 compared the item-level fraction of changed certified outcomes with the draw-level fraction of flippable draws; those quantities have different units and no theorem orders them, so the comparison is not computed",
+      "question": "do text-side steps act only on draws the decision-change proposition allows, and how does the changed-draw fraction grow with the step",
+      "rule": "conforms iff, summed over every cell, every step bank has zero containment violations and zero loose-bound violations (worker counters, tolerance 1e-5); the changed-draw fraction and the loose flippable budget are reported per step whatever their shape",
+      "type": "per-draw conformance + step-response curve"
+    },
+    {
+      "contrasts": [
+        "chowers_exact_projected_gap__coefficient_0.25",
+        "chowers_exact_projected_gap__coefficient_0.5",
+        "chowers_exact_projected_gap__coefficient_1"
+      ],
+      "id": "Q4",
+      "question": "is the projected-gap bank decision-invariant under fresh noise, draw by draw",
+      "rule": "conforms iff every projected-gap bank has zero containment violations; the changed projected-gap draws are reported with their tie budget (each had an identity winner-pair margin of at most the recorded max |n_j - n_k| plus the tolerance); the count bounds the margin and does not identify a cause",
+      "type": "per-draw conformance"
+    },
+    {
+      "contrasts": [
+        "control__learned_shared_translation_tangent",
+        "control__lowrank_tangent_r8",
+        "control__noisy_class_mean",
+        "control__fewshot_prompt_bank"
+      ],
+      "id": "Q5",
+      "question": "do the supervised class-specific and few-shot prompt controls improve standard CA beyond the identity, and by how much relative to the two-sided operator",
+      "rule": "per pooled family: Holm over the four controls (direction test); control minus gr_clip_style_two_sided__coefficient_1 reported with an unadjusted interval (descriptive)",
+      "type": "positive control"
+    },
+    {
+      "contrasts": [
+        "gr_clip_style_two_sided__coefficient_1",
+        "text_only_centering__coefficient_1",
+        "image_only_centering__coefficient_1",
+        "clean_boundary_active__step_0.16",
+        "cohen_aligned_noisy_margin__step_0.16"
+      ],
+      "direction_sentences": {
+        "negative": "the operator decreased standard certified accuracy at r = sigma on fresh items (Holm-adjusted two-sided direction test).",
+        "positive": "the operator increased standard certified accuracy at r = sigma on fresh items (Holm-adjusted two-sided direction test).",
+        "unresolved": "the direction of the effect was not resolved at the family-wise 5% level."
+      },
+      "id": "Q6",
+      "magnitude_sentences": {
+        "gain_at_least_sesoi": "the increase is at least the 2-point smallest effect of interest (Holm-adjusted one-sided test against +2 points).",
+        "inconclusive": "the data neither establish an effect of at least 2 points nor exclude one.",
+        "loss_at_least_sesoi": "the decrease is at least 2 points (Holm-adjusted one-sided test against -2 points).",
+        "practically_equivalent": "the effect lies within +-2 points: practically equivalent to no correction at the registered smallest effect of interest (percentile-bootstrap two one-sided tests, Holm-adjusted)."
+      },
+      "question": "on fresh items at sigma 0.12 and 0.25, does any shared operator change standard CA, and is any change at least the 2-point smallest effect of interest",
+      "rule": "per family and contrast: direction class and magnitude class from their separate Holm procedures; the pooled family at each sigma adjudicates, dataset families are secondary",
+      "type": "falsifiable, two orthogonal adjudications per contrast"
+    },
+    {
+      "id": "Q7",
+      "question": "does the negative result persist where the smoothed identity classifier is not collapsed",
+      "rule": "identity smoothed accuracy, top-class share, abstention and standard CA per cell reported beside Q6",
+      "type": "descriptive"
+    },
+    {
+      "id": "Q8",
+      "question": "are radii comparable to the literature",
+      "rule": "identity standard CA on Imagenette at r in {0.25, 0.5}, sigma 0.25, per backbone, reported beside published CLIP numbers; no claim",
+      "type": "orientation only"
+    }
+  ],
+  "primary_outcome": "Q6: per pooled family (each sigma) and contrast, the direction and practical-magnitude classes of the item-pooled paired change in standard certified accuracy at r = sigma vs no_correction",
+  "priority_if_short": [
+    "021B",
+    "021A",
+    "021C"
+  ],
+  "prompt_configs": {
+    "cifar100_test": {
+      "path": "configs/prompts/cifar100_openai_readme.json",
+      "sha256": "907720051425650ef032094a4dcc46149d6297575dbbabb6fe734a0b4b9a06d6"
+    },
+    "eurosat_sealed": {
+      "path": "configs/prompts/eurosat_openai_ensemble_v1.json",
+      "sha256": "223d96686dbc3e21ad57dcb8cee033a008b2d64273fda9ae8993ed43db1e0ddc"
+    },
+    "imagenette": {
+      "path": "configs/satml2027ext/prompts/imagenette_openai_v1.json",
+      "sha256": "692ed68b0dcfc322f607a9f4de27c2de7812870f436402a2d3e2d5b62043af8e"
+    }
+  },
+  "provenance": {
+    "amendment": "research/EXP021_V4_AMENDMENT_2026-09-26.md",
+    "amendment_sha256": "6251c1ad1c203c8fec307c404c9707b169d34c090fbae9398c74f90a320302e3",
+    "exclusion_manifest_sha256": "f14dec8b902f518ae37df73e12e07fe9700e021a68f9ae8582faa8c9cb208c85",
+    "item_manifest": "results/satml2027ext/items/item_manifest_ext.json",
+    "item_manifest_sha256": "96b06ac80a21371f2b7dbec1d2548b90490353ca635f142ce5c57985198beec7",
+    "phase3_assignments_sha256": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38",
+    "plan": "research/EXP021_POWERED_FOLLOWUP_PLAN_2026-09-25.md",
+    "plan_sha256": "bd989757be7f91059a1e1bf6fa4b5a4d77e5d92ab840cb96a727c18b417b691e",
+    "previous_amendments": [
+      {
+        "path": "research/EXP021_V3_AMENDMENT_2026-09-26.md",
+        "sha256": "4fced5fd5a2488ef74d1e15cfa1fa430e39d28c1ecdea5120e1310e9fa718f3e"
+      },
+      {
+        "path": "research/EXP021_V2_AMENDMENT_2026-09-26.md",
+        "sha256": "00d2187388f20eb86787db6f5abb3dd35eef5076d7bb8d0522a3231356b6596d"
+      }
+    ],
+    "previous_reviews": [
+      {
+        "path": "research/independent_review/exp021_V2_internal_adversarial_rereview_2026-09-26.md",
+        "sha256": "0cde706615d392b3873b93bf730f1e273acb1966ff57807527b530965fe3d40e"
+      }
+    ],
+    "reviews": [
+      {
+        "path": "research/independent_review/reviewer_bundle_V3_critical_audit_2026-09-26.pdf",
+        "sha256": "97c0cdf869cb10edbbeec039602d98ee01d2c5240c6fb48c5a4a4a36effd5607"
+      },
+      {
+        "path": "research/independent_review/reviewer_bundle_V3_critical_audit_evidence_2026-09-26.zip",
+        "sha256": "73e286eed6a695b34963967c6158b5dfcdbb6849b344c67abeae13056132c883"
+      },
+      {
+        "path": "research/independent_review/reviewer_bundle_V3_text_review_2026-09-26.md",
+        "sha256": "ef1b89811b6633d143cf495ba02147e16221c01303d9ab505f7b88f6036001eb"
+      }
+    ],
+    "split_manifest_sha256": "3aaf7d9d1a707e532b08f6cf4b5cd92a23b08f55dfeb670d674d92853091ecfe",
+    "synthetic_inputs": false
+  },
+  "registered_at": "2026-09-26T20:18:00+00:00",
+  "registration_sha256": "9a1a5c6e1a46fd0c5c0c731b32bfc2f5090e546aad7af2f4f3cc5a71e04cca94",
+  "registration_version": "V4",
+  "retired_scope": {
+    "models": [
+      "openai-clip-vit-b16-quickgelu",
+      "openai-clip-rn50-quickgelu"
+    ],
+    "reason": "covered by EXP-019A/B (five backbones, sigma 0.12/0.25/0.5, fresh items; D-128); low value per GPU-hour",
+    "retired_on": "2026-09-26",
+    "sigma": 0.5
+  },
+  "schema_version": "satml2027ext.registration.v4",
+  "scope_ladder": {
+    "definitions": {
+      "core": "021A + 021B (three backbones, sigma 0.12 and 0.25) + 021C",
+      "minimal": "021A + 021B at sigma 0.25 only, three backbones"
+    },
+    "levels": [
+      "core",
+      "minimal"
+    ],
+    "retired_level": {
+      "level": "full",
+      "models": [
+        "openai-clip-vit-b16-quickgelu",
+        "openai-clip-rn50-quickgelu"
+      ],
+      "note": "removed before registration; no cell of this level was ever sampled; adding it back would be a new registration",
+      "reason": "covered by EXP-019A/B (five backbones, sigma 0.12/0.25/0.5, fresh items; D-128); low value per GPU-hour",
+      "retired_on": "2026-09-26",
+      "sigma": 0.5
+    },
+    "rule": "descend only before the affected cells run, with a timestamped reason recorded in research/DECISION_LOG.md; the descended cells are declared not run in the run custody manifest"
+  },
+  "sealed_evaluation_access": true,
+  "sharding": {
+    "max_items_per_shard": 1000,
+    "rule": "a cell may be split into contiguous shards of at most 1,000 items of its registered order (satml2027ext/run_shard_ext.py::shard_slice); item seeds do not depend on the split (certification.streams.seed_derivation), so the realized draws do not either; every shard of a cell runs on one GPU class with the registered forward batch; the run custody manifest requires the shards to tile the registered order, with the registered labels and dataset indices, before any analysis"
+  },
+  "sigmas": [
+    0.12,
+    0.25
+  ],
+  "stages": {
+    "approval_file": "research/EXP021_APPROVAL.json",
+    "approval_schema": "satml2027ext.approval.v3 (satml2027ext/guard_ext.py)",
+    "data_preflight": "a custody step that may run before the stage-1 approval: satml2027ext/preflight_data_ext.py reads labels and file bytes, decodes no image and computes no model output (a local smoke preflight ran on 2026-09-26 and is disclosed in research/DECISION_LOG.md)",
+    "planning": "satml2027ext/plan_ext.py reads registrations only and is not gated (it touches no data or outcome)",
+    "rule": "every flag must be present and boolean; a missing flag, an unbound registration, any difference between the approved and current dependency files, or a source_commit that does not hold those files is a refusal",
+    "source_commit": "every approval names the git commit that holds exactly the approved dependency closure (source_commit); every stage recomputes the git blob id of each approved file on disk and compares it with that commit (guard_ext.verify_source_commit), so the host runs from a git checkout containing the commit; uncommitted or differing files are a refusal",
+    "stage_1_preparation": "authorized after the independent pre-sampling review of this package; binds the three registration hashes and the complete dependency closure (and the host preflight's hash if it exists when the approval is written); runs satml2027ext/prepare_banks_ext.py and satml2027ext/bank_manifest_ext.py --data-preflight",
+    "stage_2_sampling": "authorized after the reviewer inspects EXP021_DATA_PREFLIGHT.json and EXP021_BANK_MANIFEST.json; the approval adds both SHA-256 values; the worker refuses a bank manifest that names another preflight; runs satml2027ext/run_shard_ext.py",
+    "stage_3_analysis": "authorized after the reviewer inspects the run custody manifests (satml2027ext/custody_ext.py, which lists any not-run cell); the 021C analysis also needs the approved 021B custody manifest for the registered prefix join; runs satml2027ext/analyze_ext.py"
+  },
+  "status": "preregistered_pending_independent_approval",
+  "stop_rules": [
+    "nothing is authorized until the approval file authorizes the stage; the guard enforces it",
+    "no evaluation item is loaded before the sampling stage; the preparation stage refuses evaluation, official-test and sealed items",
+    "every registered cell that finishes is reported regardless of sign; a started cell is completed; a cell that never started is declared in the run custody manifest (custody_ext.py --not-run, which refuses any result file for it) and reported as not run",
+    "no candidate, control, recipe, step, sigma, dataset, item list or checkpoint changes after the registration hash is recorded; a change is a new registration",
+    "the sealed EuroSAT holdout and the CIFAR-100 test split are consumed once; no later selection may use them",
+    "partial outcomes are not inspected; operational metadata only, as for EXP-019",
+    "a per-draw containment or loose-bound violation is reported as a failed prediction and investigated; it never stops a run or removes a cell",
+    "if any 021B result contradicts the EXP-017 narrative, the paper presents the boundary condition, not a uniform negative",
+    "EXP-021 results enter no manuscript before custody verification and independent reconstruction"
+  ],
+  "supersedes": {
+    "earlier": [
+      {
+        "findings_mapped_in": "research/EXP021_V3_AMENDMENT_2026-09-26.md",
+        "registration_sha256": "e12d0a8971b6fabdc261db7657956675540ec16147f8d7afee015bec3be9fb9c",
+        "review": "research/independent_review/exp021_V2_internal_adversarial_rereview_2026-09-26.md",
+        "status": "superseded on 2026-09-26 before any external verdict: an internal adversarial re-review (a separate agent instance, not the team member's independent review) found one blocker (021A Q1), two major and six minor defects and five notes; never approved; never sampled",
+        "version": "V2"
+      },
+      {
+        "registration_sha256": "a258319205c586aeb3379245c37405df9e35d657cfa01b2bfba992060cc361fb",
+        "reviews": "research/independent_review/ (2026-09-26 text review and 'Critical Audit' PDF); findings mapped in research/EXP021_V2_AMENDMENT_2026-09-26.md",
+        "status": "failed two independent pre-sampling reviews on 2026-09-26; never approved; never sampled",
+        "version": "V1"
+      }
+    ],
+    "findings_mapped_in": "research/EXP021_V4_AMENDMENT_2026-09-26.md",
+    "registration_sha256": "419b7fed404208de94a60a8c531473c50c387c37449c78c21d69924afc9efcc7",
+    "reviews": [
+      "research/independent_review/reviewer_bundle_V3_critical_audit_2026-09-26.pdf",
+      "research/independent_review/reviewer_bundle_V3_critical_audit_evidence_2026-09-26.zip",
+      "research/independent_review/reviewer_bundle_V3_text_review_2026-09-26.md"
+    ],
+    "status": "superseded on 2026-09-26: two reviews of reviewer bundle V3 (a self-described AI-assisted critical audit and a text review) held the stage-1 approval; they found that 021A reconstructed rather than loaded the legacy banks, seven implementation gaps (source mode, non-finite values, count contract, budget join, variance bound, planning portability, projected-gap labels) and that the source was not committed; never approved; never sampled",
+    "version": "V3"
+  },
+  "title": "powered fresh-item study: three datasets, three backbones, sigma 0.12 and 0.25"
+}

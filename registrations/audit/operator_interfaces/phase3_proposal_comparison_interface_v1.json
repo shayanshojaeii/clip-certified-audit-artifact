@@ -1,0 +1,27 @@
+{
+  "schema_version": "phase3.proposal_gradient_comparison.v1",
+  "status": "IMPLEMENTATION_ONLY_NO_SCIENTIFIC_SAMPLING",
+  "required_candidates": [
+    "boundary_active_uniform_sample_candidate_v1",
+    "cohen_aligned_noisy_margin_candidate_v1"
+  ],
+  "required_provenance_relation": "identical_calibration_development_manifest_and_samples",
+  "required_target_relation": "same_shared_unique_raw_clean_target_selector_and_exact_labels",
+  "required_prototype_identity": "same_original_input_tensor_hash_including_original_dtype_and_shape",
+  "reported_quantities": [
+    "cosine_similarity",
+    "angle_degrees",
+    "alignment_category",
+    "clean_objective_responses_along_both_directions",
+    "noisy_objective_derivatives_along_both_directions",
+    "common_first_order_ascent",
+    "degeneracy"
+  ],
+  "alignment_tolerance": 1e-10,
+  "ascent_tolerance": 1e-12,
+  "selected_objective": null,
+  "disposition": "retain_both_for_preregistered_calibration_protocol_no_objective_selected",
+  "held_out_outcomes_used": false,
+  "interpretation": "proposal_gradient_diagnostic_not_certificate_or_outcome_selection",
+  "scientific_sampling_authorized": false
+}

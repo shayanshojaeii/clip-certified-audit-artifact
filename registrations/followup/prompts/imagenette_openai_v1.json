@@ -1,0 +1,33 @@
+{
+  "prompt_id": "imagenette-openai-seven-template-subset-v1",
+  "dataset": "Imagenette2-320",
+  "dataset_id": "imagenette",
+  "templates": [
+    "a photo of a {class_name}",
+    "a bad photo of a {class_name}",
+    "a photo of many {class_name}",
+    "a photo of the large {class_name}",
+    "a photo of the small {class_name}",
+    "a bright photo of a {class_name}",
+    "a close-up photo of a {class_name}"
+  ],
+  "template_set": "openai_imagenet_seven_template_subset",
+  "class_name_by_wnid": {
+    "n01440764": "tench",
+    "n02102040": "English springer",
+    "n02979186": "cassette player",
+    "n03000684": "chain saw",
+    "n03028079": "church",
+    "n03394916": "French horn",
+    "n03417042": "garbage truck",
+    "n03425413": "gas pump",
+    "n03445777": "golf ball",
+    "n03888257": "parachute"
+  },
+  "class_order": "canonical Imagenette wnid order (n01440764, n02102040, n02979186, n03000684, n03028079, n03394916, n03417042, n03425413, n03445777, n03888257), which equals sorted wnid order",
+  "humanize_underscores": false,
+  "aggregation": "normalize_each_prompt_then_mean_then_normalize",
+  "source": "OpenAI CLIP Prompt_Engineering_for_ImageNet notebook, seven-template subset of the ImageNet ensemble",
+  "source_url": "https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb",
+  "notes": "The full 80-template OpenAI ImageNet ensemble was NOT used because its exact text could not be verified against the CLIP repository offline (no download is permitted at this stage); this file registers the seven-template subset listed above, written without trailing periods as specified in the EXP-021 implementation brief. Class display names are the fastai Imagenette README names. If the owner wants the 80-template ensemble, replace this file BEFORE the registrations are hashed; the registration binds this file's SHA-256."
+}

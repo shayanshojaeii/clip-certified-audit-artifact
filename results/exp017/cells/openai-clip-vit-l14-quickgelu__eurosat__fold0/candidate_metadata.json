@@ -1,0 +1,547 @@
+{
+  "chowers_exact_projected_gap__coefficient_0.25": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "chowers_exact_projected_gap__coefficient_0.25",
+    "construction_manifest": {
+      "cohen_policy": {
+        "action": "rerun_independent_class_selection_and_confirmation",
+        "engine": "cohen_primary",
+        "interpretation": "primary certificate for the changed hard-label base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": true
+      },
+      "family": "prior_exact_projected_gap",
+      "fss_policy": {
+        "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+        "engine": "fss_diagnostic",
+        "interpretation": "text-side prior-work mechanism baseline",
+        "may_reuse_image_only_fss_cache": true,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "chowers_exact_projected_gap_v1",
+      "max_abs_difference": 0.12800933420658112,
+      "output_prototype_hash": "9d0774d49ab17aed7476d832a86860e29e7bf97e3b3a3d4b12a7ece5024c6cb4",
+      "policy_hash": "9508eb71fd404d250f48344555adc64db5be20c7e9d11ac4342d0e2495f4428b",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.prototype_intervention.v1",
+      "side": "text",
+      "values_changed": true
+    },
+    "family": "chowers_exact_projected_gap",
+    "image_transform": "identity",
+    "objective_id": null,
+    "output_prototype_sha256": "9d0774d49ab17aed7476d832a86860e29e7bf97e3b3a3d4b12a7ece5024c6cb4",
+    "prototype_bank_frobenius_displacement": 0.7922053277099438,
+    "role": "eligible_tunable_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.25
+  },
+  "chowers_exact_projected_gap__coefficient_0.5": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "chowers_exact_projected_gap__coefficient_0.5",
+    "construction_manifest": {
+      "cohen_policy": {
+        "action": "rerun_independent_class_selection_and_confirmation",
+        "engine": "cohen_primary",
+        "interpretation": "primary certificate for the changed hard-label base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": true
+      },
+      "family": "prior_exact_projected_gap",
+      "fss_policy": {
+        "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+        "engine": "fss_diagnostic",
+        "interpretation": "text-side prior-work mechanism baseline",
+        "may_reuse_image_only_fss_cache": true,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "chowers_exact_projected_gap_v1",
+      "max_abs_difference": 0.26597079634666443,
+      "output_prototype_hash": "25f374cc00e9de04e5b3f1f425496ee2b1aac8dba579d17706fb30171612c0a3",
+      "policy_hash": "3c20b88438f12d80b651984efb6948fda6ab50d2fd2f7a87422c93f38825034d",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.prototype_intervention.v1",
+      "side": "text",
+      "values_changed": true
+    },
+    "family": "chowers_exact_projected_gap",
+    "image_transform": "identity",
+    "objective_id": null,
+    "output_prototype_sha256": "25f374cc00e9de04e5b3f1f425496ee2b1aac8dba579d17706fb30171612c0a3",
+    "prototype_bank_frobenius_displacement": 1.7128206438085722,
+    "role": "eligible_tunable_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.5
+  },
+  "chowers_exact_projected_gap__coefficient_1": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "chowers_exact_projected_gap__coefficient_1",
+    "construction_manifest": {
+      "cohen_policy": {
+        "action": "rerun_independent_class_selection_and_confirmation",
+        "engine": "cohen_primary",
+        "interpretation": "primary certificate for the changed hard-label base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": true
+      },
+      "family": "prior_exact_projected_gap",
+      "fss_policy": {
+        "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+        "engine": "fss_diagnostic",
+        "interpretation": "text-side prior-work mechanism baseline",
+        "may_reuse_image_only_fss_cache": true,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "chowers_exact_projected_gap_v1",
+      "max_abs_difference": 0.4456593990325928,
+      "output_prototype_hash": "f93538ca11cb7489c67c1e284348ab27996bafdc6634a4da700d6f898e576fd1",
+      "policy_hash": "b35e69da2d07005959b5ffb1b90a39968bbb2e37b994e291d05677ed88117208",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.prototype_intervention.v1",
+      "side": "text",
+      "values_changed": true
+    },
+    "family": "chowers_exact_projected_gap",
+    "image_transform": "identity",
+    "objective_id": null,
+    "output_prototype_sha256": "f93538ca11cb7489c67c1e284348ab27996bafdc6634a4da700d6f898e576fd1",
+    "prototype_bank_frobenius_displacement": 3.31152448753419,
+    "role": "eligible_tunable_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 1.0
+  },
+  "clean_boundary_active__step_0.0025": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "clean_boundary_active__step_0.0025",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "50ae06dd322571d8135cba55dd3fa898199acfd7f4f370a01001a1aa2e288877",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.0025
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "clean_boundary_active",
+    "output_prototype_sha256": "3ce893d3060c406c59f674c9ca7083c634c955ef63c2301671df4773f639e985",
+    "prototype_bank_frobenius_displacement": 0.0077749330882476665,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.0025
+  },
+  "clean_boundary_active__step_0.005": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "clean_boundary_active__step_0.005",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "50ae06dd322571d8135cba55dd3fa898199acfd7f4f370a01001a1aa2e288877",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.005
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "clean_boundary_active",
+    "output_prototype_sha256": "83904ffcbb39909a0ee9f0411e90a9b4bdd0073c7476cf19a3e68d2171d53d74",
+    "prototype_bank_frobenius_displacement": 0.01555300549188301,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.005
+  },
+  "clean_boundary_active__step_0.01": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "clean_boundary_active__step_0.01",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "50ae06dd322571d8135cba55dd3fa898199acfd7f4f370a01001a1aa2e288877",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.01
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "clean_boundary_active",
+    "output_prototype_sha256": "c57ff1949c1ecf221ebf4054d66fbc0412629926c48e460e19c5f7fac32eab18",
+    "prototype_bank_frobenius_displacement": 0.031118160740202065,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.01
+  },
+  "clean_boundary_active__step_0.02": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "clean_boundary_active__step_0.02",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "50ae06dd322571d8135cba55dd3fa898199acfd7f4f370a01001a1aa2e288877",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.02
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "clean_boundary_active",
+    "output_prototype_sha256": "fb91d9d50ba5d26228fdc442cc2a6e8ad949256390120e7cd552a69702b04e41",
+    "prototype_bank_frobenius_displacement": 0.062282000495742874,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.02
+  },
+  "clean_boundary_active__step_0.04": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "clean_boundary_active__step_0.04",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "50ae06dd322571d8135cba55dd3fa898199acfd7f4f370a01001a1aa2e288877",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.04
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "clean_boundary_active",
+    "output_prototype_sha256": "924b51d09af95adcde6d89603b53ff3afdd37409d72db1186b9bd09e19fdca65",
+    "prototype_bank_frobenius_displacement": 0.12472257067667739,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.04
+  },
+  "cohen_aligned_noisy_margin__step_0.0025": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "cohen_aligned_noisy_margin__step_0.0025",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "cb04ca709dc0f3cfbd5a3fb125d14b12e2868756e07ea4bab7e9d6e93e8a8500",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.0025
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "cohen_aligned_noisy_margin",
+    "output_prototype_sha256": "18c32ddd6dd13b8fdb8de20ec155b8a812182da2004f128f1255308f8eea7111",
+    "prototype_bank_frobenius_displacement": 0.007762458248053464,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.0025
+  },
+  "cohen_aligned_noisy_margin__step_0.005": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "cohen_aligned_noisy_margin__step_0.005",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "cb04ca709dc0f3cfbd5a3fb125d14b12e2868756e07ea4bab7e9d6e93e8a8500",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.005
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "cohen_aligned_noisy_margin",
+    "output_prototype_sha256": "37f5fda3511a7082c2558d19dee41ab883693f1e59955fc62c9d39fdd8c8c816",
+    "prototype_bank_frobenius_displacement": 0.015527017184470712,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.005
+  },
+  "cohen_aligned_noisy_margin__step_0.01": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "cohen_aligned_noisy_margin__step_0.01",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "cb04ca709dc0f3cfbd5a3fb125d14b12e2868756e07ea4bab7e9d6e93e8a8500",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.01
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "cohen_aligned_noisy_margin",
+    "output_prototype_sha256": "e9c48ba3667dac1217c2cfddcb9efb28a6570490e4897bfed775e8ab273686ae",
+    "prototype_bank_frobenius_displacement": 0.03106208362318467,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.01
+  },
+  "cohen_aligned_noisy_margin__step_0.02": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "cohen_aligned_noisy_margin__step_0.02",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "cb04ca709dc0f3cfbd5a3fb125d14b12e2868756e07ea4bab7e9d6e93e8a8500",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.02
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "cohen_aligned_noisy_margin",
+    "output_prototype_sha256": "428d1b2c645aa95e61f198a0135aae7b2e41d88aae282d4beaed938e4b540058",
+    "prototype_bank_frobenius_displacement": 0.06215342183027988,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.02
+  },
+  "cohen_aligned_noisy_margin__step_0.04": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "cohen_aligned_noisy_margin__step_0.04",
+    "construction_manifest": {
+      "cohen": "fresh_independent_selection_and_confirmation_required",
+      "direction_sha256": "cb04ca709dc0f3cfbd5a3fb125d14b12e2868756e07ea4bab7e9d6e93e8a8500",
+      "formula": "normalize(t_k + step * unit_development_direction)",
+      "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+      "schema_version": "phase3.proposed_common_translation.v1",
+      "step": 0.04
+    },
+    "family": "proposal",
+    "image_transform": "identity",
+    "objective_id": "cohen_aligned_noisy_margin",
+    "output_prototype_sha256": "f71de46c3fcbd2ac1170e439291adf8ecaa838ac2933289bb04c52893792cb6e",
+    "prototype_bank_frobenius_displacement": 0.12440035708464292,
+    "role": "proposed_method_candidate",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.04
+  },
+  "global_mean_centering__coefficient_0.25": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "global_mean_centering__coefficient_0.25",
+    "construction_manifest": {
+      "cohen_policy": {
+        "action": "rerun_independent_class_selection_and_confirmation",
+        "engine": "cohen_primary",
+        "interpretation": "primary certificate for the changed hard-label base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": true
+      },
+      "family": "global_mean_centering",
+      "fss_policy": {
+        "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+        "engine": "fss_diagnostic",
+        "interpretation": "text-side mechanism diagnostic or negative baseline only",
+        "may_reuse_image_only_fss_cache": true,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "mean_centering_v1",
+      "max_abs_difference": 0.13049151003360748,
+      "output_prototype_hash": "ec38268bce892a8d5e2c6c1a7707a148cea113ef5ea5cb79f337fe79bd80d6be",
+      "policy_hash": "52093b41e932dcc6a3780dddc070d2826f29a244ff479f37d5de017c3d38dc81",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.prototype_intervention.v1",
+      "side": "text",
+      "values_changed": true
+    },
+    "family": "global_mean_centering",
+    "image_transform": "identity",
+    "objective_id": null,
+    "output_prototype_sha256": "ec38268bce892a8d5e2c6c1a7707a148cea113ef5ea5cb79f337fe79bd80d6be",
+    "prototype_bank_frobenius_displacement": 0.7935892379311494,
+    "role": "eligible_tunable_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.25
+  },
+  "global_mean_centering__coefficient_0.5": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "global_mean_centering__coefficient_0.5",
+    "construction_manifest": {
+      "cohen_policy": {
+        "action": "rerun_independent_class_selection_and_confirmation",
+        "engine": "cohen_primary",
+        "interpretation": "primary certificate for the changed hard-label base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": true
+      },
+      "family": "global_mean_centering",
+      "fss_policy": {
+        "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+        "engine": "fss_diagnostic",
+        "interpretation": "text-side mechanism diagnostic or negative baseline only",
+        "may_reuse_image_only_fss_cache": true,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "mean_centering_v1",
+      "max_abs_difference": 0.2756599485874176,
+      "output_prototype_hash": "b7dcc85415fd82f1bbbbf6065d15aa912f0e1160f2cb07a958d8d3ab9f3adcd3",
+      "policy_hash": "96fd52e6a175b5339a6d39b4f38e0154224a51f19df36c3815aff8fd6e785cd9",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.prototype_intervention.v1",
+      "side": "text",
+      "values_changed": true
+    },
+    "family": "global_mean_centering",
+    "image_transform": "identity",
+    "objective_id": null,
+    "output_prototype_sha256": "b7dcc85415fd82f1bbbbf6065d15aa912f0e1160f2cb07a958d8d3ab9f3adcd3",
+    "prototype_bank_frobenius_displacement": 1.7327058407014941,
+    "role": "eligible_tunable_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 0.5
+  },
+  "global_mean_centering__coefficient_1": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "global_mean_centering__coefficient_1",
+    "construction_manifest": {
+      "cohen_policy": {
+        "action": "rerun_independent_class_selection_and_confirmation",
+        "engine": "cohen_primary",
+        "interpretation": "primary certificate for the changed hard-label base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": true
+      },
+      "family": "global_mean_centering",
+      "fss_policy": {
+        "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+        "engine": "fss_diagnostic",
+        "interpretation": "text-side mechanism diagnostic or negative baseline only",
+        "may_reuse_image_only_fss_cache": true,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "mean_centering_v1",
+      "max_abs_difference": 0.4729383885860443,
+      "output_prototype_hash": "8771e8840cce9d1fb148986b3da9b93816436eb12737860fe85f5eff5093028a",
+      "policy_hash": "95a7162766125ac45525280fd005a91adaab119ee25202a81c9c7b8a754a5998",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.prototype_intervention.v1",
+      "side": "text",
+      "values_changed": true
+    },
+    "family": "global_mean_centering",
+    "image_transform": "identity",
+    "objective_id": null,
+    "output_prototype_sha256": "8771e8840cce9d1fb148986b3da9b93816436eb12737860fe85f5eff5093028a",
+    "prototype_bank_frobenius_displacement": 3.3817428562800056,
+    "role": "eligible_tunable_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 1.0
+  },
+  "gr_clip_style_two_sided__coefficient_1": {
+    "calibration_image_mean_sha256": "e36f01a8309563b25a47db6fcc065c8889c5934fd10496be9f70c3db8c0b5565",
+    "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+    "construction_manifest": {
+      "calibration_image_mean_hash": "e36f01a8309563b25a47db6fcc065c8889c5934fd10496be9f70c3db8c0b5565",
+      "calibration_text_mean_hash": "1828e3c90974ce3632f6ce6c0a7d9ce05aee479637f8f2b4b913ac78cf3e0330",
+      "cohen_policy": {
+        "action": "rerun_independent_class_selection_and_confirmation",
+        "engine": "cohen_primary",
+        "interpretation": "primary certificate for the changed two-sided base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": true
+      },
+      "family": "modality_wise_zero_centering",
+      "fss_policy": {
+        "action": "recompute_image_score_samples_bounds_and_all_geometry",
+        "engine": "fss_diagnostic",
+        "interpretation": "two-sided source-inspired mechanism baseline",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "image_feature_dtype": "torch.float32",
+      "image_feature_shape": [
+        50,
+        768
+      ],
+      "input_image_feature_hash": "4e52fdbb58bdf7a2ca8af8a4d0fdfce119a7faf04baa105dd5c0340c43a1d7e6",
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "gr_clip_style_v1",
+      "max_abs_image_feature_difference": 0.5275156497955322,
+      "max_abs_prototype_difference": 0.47163689136505127,
+      "output_image_feature_hash": "710886420331aac9fc8cda4b9b904ce59b64ed77d247b0a722a6b9b4bedd5bbf",
+      "output_prototype_hash": "48238bb4918de0002b37971dce15cbaf8a3e7a997805c617e2ed3998e983b5fb",
+      "policy_hash": "2ab93ac6fb81648baf107a783a09a73c325fb3ab5d7c2f681b1db5205543f104",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.two_sided_intervention.v1",
+      "side": "image_and_text"
+    },
+    "family": "gr_clip_style_two_sided",
+    "image_transform": "gr_clip_style_center_and_renormalize",
+    "objective_id": null,
+    "output_prototype_sha256": "48238bb4918de0002b37971dce15cbaf8a3e7a997805c617e2ed3998e983b5fb",
+    "prototype_bank_frobenius_displacement": 3.365488999129092,
+    "role": "eligible_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": 1.0
+  },
+  "no_correction": {
+    "calibration_image_mean_sha256": null,
+    "candidate_id": "no_correction",
+    "construction_manifest": {
+      "cohen_policy": {
+        "action": "certify_baseline_or_reuse_only_with_exact_full_input_hash_match",
+        "engine": "cohen_primary",
+        "interpretation": "primary empirical certificate for the unchanged base classifier",
+        "may_reuse_image_only_fss_cache": false,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "family": "identity_control",
+      "fss_policy": {
+        "action": "recompute_geometry_and_assert_identity",
+        "engine": "fss_diagnostic",
+        "interpretation": "mechanism diagnostic or negative baseline only",
+        "may_reuse_image_only_fss_cache": true,
+        "requires_fresh_class_selection_and_confirmation": false
+      },
+      "input_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "intervention_id": "no_correction_v1",
+      "max_abs_difference": 0.0,
+      "output_prototype_hash": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+      "policy_hash": "2046022934e7bdae484222dc457c147a99a24079974fe25a00e7e744a172e651",
+      "prototype_dtype": "torch.float32",
+      "prototype_shape": [
+        10,
+        768
+      ],
+      "schema_version": "phase3.prototype_intervention.v1",
+      "side": "text",
+      "values_changed": false
+    },
+    "family": "no_correction",
+    "image_transform": "identity",
+    "objective_id": null,
+    "output_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "prototype_bank_frobenius_displacement": 0.0,
+    "role": "eligible_comparator",
+    "source_prototype_sha256": "7db9f2d90afafe8f53b67d43e2369511ff9eb2457fb27268a1d686bcbc32846f",
+    "step_or_coefficient": null
+  }
+}

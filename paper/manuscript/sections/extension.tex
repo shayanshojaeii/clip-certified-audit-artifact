@@ -1,0 +1,112 @@
+\section{Registered Extension: Five Backbones, Three Datasets, Three Noise Levels}
+\label{sec:extension}
+
+After the audit, we registered a separate extension with hashed
+configurations (Table~\ref{tab:extension}, Appendix~\ref{app:tables}) before
+sampling any of its evaluation outcomes, to probe the scope of the earlier
+findings; every registered cell completed and is reported regardless of sign.
+It re-estimates the same
+\ExpCandidates{} banks on a fresh development split, adds four prospectively
+trained supervised controls with \FarlaShots{} labels per class (a learned
+shared translation in two forms, a noisy class-mean bank, and a
+rank-8 class-specific tangent adapter), and evaluates all \ExtBanks{} banks on
+fresh items in two registered experiments: Extension A, the two audit backbones at $\sigma\in\{0.12,0.5\}$ on CIFAR-100,
+EuroSAT and CIFAR-10 (\ExtPrimaryCellsA{} primary cells plus two CIFAR-10
+bridge cells at $\sigma=0.25$), and Extension B, OpenAI ViT-B/16, OpenAI RN50 and an
+OpenCLIP ViT-B/32 trained on LAION-2B~\cite{schuhmann2022laion5b,cherti2023openclip} at
+$\sigma\in\{0.25,0.5\}$ (\ExtCellsB{} cells), with \ExtItemsCifar{} items per
+CIFAR cell and \ExtItemsEurosat{} per EuroSAT cell and the same
+\ExtUniqueItems{} unique items reused across cells. The registered primary
+outcome per experiment is the equal-cell macro change in standard certified
+accuracy at $r=\sigma$ against no correction, with one shared-item
+class-stratified simultaneous band over the 21 contrasts.
+
+\paragraph{Regime}
+Table~\ref{tab:ext-regime} (Appendix~\ref{app:tables}) reports the uncorrected
+model in every cell. At
+$\sigma=0.12$ the CIFAR cells are far from collapsed: smoothed accuracy ranges
+from \ExtSmoothedTwelveCifarLo\% to \ExtSmoothedTwelveCifarHi\% and standard
+certified accuracy at $r=\sigma$ from \ExtStdCATwelveCifarLo\% to
+\ExtStdCATwelveCifarHi\%, while the EuroSAT cells remain difficult
+(\ExtSmoothedTwelveEurosatLo\% to \ExtSmoothedTwelveEurosatHi\% smoothed).
+At $\sigma=0.5$ every dataset collapses. The extension therefore contains the
+non-degenerate regime that the immutable audit lacked.
+
+\paragraph{Outcomes}
+Table~\ref{tab:ext-contrasts} (Appendix~\ref{app:tables}) lists every
+registered contrast. In the audit
+backbones (Extension A) the largest increase among the 17 banks of the shared
+grid is $\ExtAMaxGridDelta$ points (\ExtAMaxGridId{}) and the smallest change is
+$\ExtAMinGridDelta$ points (\ExtAMinGridId{}, with clean accuracy
+$\ExtAMinGridCleanDelta$ points); at a common half-width of \ExtACritical{}
+points, \ExtAGridExclZero{} of the 17 grid bands excludes zero
+(\ExtAGridExclZeroIds{}). Two-sided
+centering changes standard certified accuracy by $\ExtAGRDelta$ points
+($[\ExtAGRLower,\ExtAGRUpper]$) and clean accuracy by $\ExtAGRCleanDelta$
+points. In the three further backbones (Extension B) the largest increase in the
+shared grid is $\ExtBMaxGridDelta$ points (\ExtBMaxGridId{}), the smallest
+$\ExtBMinGridDelta$ (\ExtBMinGridId{}), \ExtBGridExclZero{} of 17 grid
+bands exclude zero with half-width \ExtBCritical{} points, and two-sided
+centering changes standard certified accuracy by $\ExtBGRDelta$ points
+($[\ExtBGRLower,\ExtBGRUpper]$). Against the registered
+$\pm\ExtRegionPoints$-point reporting region (prediction X1; the registrations
+number their predictions X1 and X3 to X5), \ExtAInsideRegion{} and
+\ExtBInsideRegion{} of the 17 grid changes lie inside it
+(Table~\ref{tab:ext-contrasts}). In the two CIFAR-10 bridge cells at the
+audit's noise level two-sided centering changes certified accuracy by
+$\ExtBridgeGRDeltaBthirtytwo$ points (ViT-B/32) and
+$\ExtBridgeGRDeltaLfourteen$ points (ViT-L/14).
+
+The supervised controls behave differently. The learned shared translation,
+which like the shared family applies one common vector to every prototype
+(its tangent form rescales each prototype by a factor fixed by that vector;
+Appendix~\ref{app:proofs}) but is fitted with labels, changes certified
+accuracy by $\ExtASharedTangentDelta$ points
+($[\ExtASharedTangentLower,\ExtASharedTangentUpper]$) in Extension A and
+$\ExtBSharedTangentDelta$ points in Extension B, so prediction X3 (the shared
+control stays inside the band), scored as registered on the tangent form, was
+\ExtXthreeSummary{}; the pure form, which reuses its vector, changes it by $\ExtASharedPureDelta$
+($[\ExtASharedPureLower,\ExtASharedPureUpper]$) and $\ExtBSharedPureDelta$
+points ($[\ExtBSharedPureLower,\ExtBSharedPureUpper]$). The
+class-specific rank-8 adapter changes certified accuracy by
+$\ExtALowrankDelta$ points ($[\ExtALowrankLower,\ExtALowrankUpper]$, clean
+$\ExtALowrankCleanDelta$ points) and $\ExtBLowrankDelta$ points
+($[\ExtBLowrankLower,\ExtBLowrankUpper]$), and the noisy class-mean bank,
+which replaces text prototypes by image-side class means, by
+$\ExtANoisyMeanDelta$ points while changing clean accuracy by
+$\ExtANoisyMeanCleanDelta$ points; prediction X4 (at least one per-class
+control leaves the band upward) was \ExtXfourSummary{}, and \ExtXfourFlags{}.
+Prediction X5 (the identity bank's
+top-class share and predicted-class Gini rise with $\sigma$ in every model and
+dataset) was \ExtXfiveSummary{}: in Extension B the share fell between
+$\sigma=0.25$ and $\sigma=0.5$ in several RN50 and ViT-B/16 cells; we report the
+decline without an explanation.
+
+\paragraph{Reading}
+On fresh items, across five backbones and three noise levels, including cells
+where the smoothed classifier is not collapsed, the largest macro increase in
+the 17-bank shared grid was $\ExtAMaxGridDelta$ points (audit backbones) and
+$\ExtBMaxGridDelta$ points (further backbones), and the separately trained
+shared tangent control changed the macro by
+$\ExtASharedTangentDelta$ and $\ExtBSharedTangentDelta$ points, with bands
+containing zero in both experiments. The largest grid decrease in Extension A,
+$\ExtAMinGridDelta$ points, came from the largest text-side translation, which
+also lost clean accuracy; in Extension B that translation changed certified
+accuracy by $\ExtBGMCOneDelta$ points and clean accuracy by
+$\ExtBGMCOneCleanDelta$ points. Class-specific
+capacity fitted with the same supervision moved certified accuracy by
+$\ExtALowrankDelta$ and $\ExtBLowrankDelta$ points. The extension is descriptive:
+its cell sizes of \ExtItemsCifar{} and \ExtItemsEurosat{} items were fixed
+without a registered power calculation, the power of any contrast depends on
+the paired discordance and on the dependence between repeated items, its bands
+are conditional on the realized draws, and no equivalence is claimed.
+Execution deviations and verification status are in
+Appendix~\ref{app:deviations}.
+
+\paragraph{Fresh-noise mechanism diagnostic}
+The four-cell diagnostic at $\sigma=0.25$ records per-draw features so that
+the flip condition can be checked directly. Its registered conformance
+prediction (every draw whose label changes under a shared translation
+satisfies the inequality of Proposition~\ref{prop:flip}) recorded
+\NthreeCPone{} exceptions; the descriptive flip-budget partition and the
+useful/harmful taxonomy are in Table~\ref{tab:n3c} (Appendix~\ref{app:tables}).

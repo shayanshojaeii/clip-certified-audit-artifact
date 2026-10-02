@@ -1,0 +1,36 @@
+{
+  "schema_version": "phase3.two_sided_intervention_config.v1",
+  "status": "IMPLEMENTATION_ONLY_NOT_APPROVED_FOR_SAMPLING",
+  "intervention_id": "gr_clip_style_v1",
+  "source": {
+    "paper": "Closing the Modality Gap for Mixed Modality Search",
+    "identifier": "arXiv:2507.19054",
+    "archived_pdf_sha256": "FC8E43E163284531069D8C3931470218868DF7EB69AAFE701381B67C06639E04"
+  },
+  "adaptation": {
+    "image": "normalize(unit_image_embedding_minus_calibration_image_mean)",
+    "text": "normalize(unit_class_prototype_minus_calibration_text_mean)",
+    "claim": "source_inspired_normalized_zero_shot_adaptation",
+    "not_claimed": "exact_reproduction_of_mixed_modality_retrieval_algorithm"
+  },
+  "required_provenance": [
+    "calibration_split_manifest_hash",
+    "excluded_gate2_candidate_manifest_hash",
+    "prompt_manifest_hash",
+    "image_mean_tensor_hash",
+    "text_mean_tensor_hash",
+    "input_prototype_bank_hash"
+  ],
+  "engine_contract": {
+    "fss": "fresh_image_score_samples_bounds_and_all_geometry_required",
+    "cohen": "fresh_independent_class_selection_and_confirmation_required"
+  },
+  "numerics": {
+    "normalization_tolerance": 0.00002,
+    "minimum_raw_norm": 1e-12
+  },
+  "sampling": {
+    "authorized": false,
+    "reason": "Calibration means and exclusion-aware split require independent review"
+  }
+}

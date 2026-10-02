@@ -1,0 +1,172 @@
+{
+  "cells": {
+    "openai-clip-rn50-quickgelu__cifar100__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-rn50-quickgelu__cifar100__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-rn50-quickgelu__cifar10__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-rn50-quickgelu__cifar10__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-rn50-quickgelu__eurosat__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 150,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-rn50-quickgelu__eurosat__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 150,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b16-quickgelu__cifar100__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b16-quickgelu__cifar100__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b16-quickgelu__cifar10__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b16-quickgelu__cifar10__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b16-quickgelu__eurosat__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 150,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b16-quickgelu__eurosat__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 150,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openclip-vit-b32-laion2b__cifar100__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openclip-vit-b32-laion2b__cifar100__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openclip-vit-b32-laion2b__cifar10__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openclip-vit-b32-laion2b__cifar10__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 500,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openclip-vit-b32-laion2b__eurosat__sigma0.25": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 150,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "selection_draws": 128,
+      "shard_count": 1
+    },
+    "openclip-vit-b32-laion2b__eurosat__sigma0.5": {
+      "bank_count": 22,
+      "confirmation_draws": 4096,
+      "item_count": 150,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "selection_draws": 128,
+      "shard_count": 1
+    }
+  },
+  "complete": true,
+  "experiment_id": "EXP-20260920-019B",
+  "final_test_access": false,
+  "missing": [],
+  "registration_sha256": "3fcdbade664a3ded421e724060ddf810fe8fbc47f37b1c6d582515dbe9a96c20",
+  "schema_version": "satml2027.merge_report.v1"
+}

@@ -1,0 +1,85 @@
+% IEEE SaTML 2027 research paper. Unmodified IEEEtran conference class, default 10pt.
+% Every result number is a macro generated from immutable artifacts:
+% see MACROS_CONTRACT.md and scripts/generate_satml2027_paper_assets.py.
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage[hidelinks]{hyperref}
+% Anonymity: no build date (its time-zone offset hints at a location), no trailer ID, no pdfTeX banner (V11 review).
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=-1
+\hypersetup{pdftitle={Auditing Shared Modality-Gap Corrections for Certified Correctness in Frozen CLIP},pdfauthor={Anonymous},pdfsubject={},pdfkeywords={},pdfcreator={LaTeX},pdfproducer={pdfTeX}}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
+\newcommand{\Normalize}{\operatorname{Normalize}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\CA}{\mathrm{CA}}
+\newcommand{\aCA}{\mathrm{CA}_{\mathrm{anch}}}
+
+\input{generated/macros}
+
+\begin{document}
+
+\title{Auditing Shared Modality-Gap Corrections for Certified Correctness in Frozen CLIP}
+
+\author{\IEEEauthorblockN{Anonymous Authors}
+\IEEEauthorblockA{Anonymous submission to IEEE SaTML 2027, paper 579}}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+randomized smoothing, certified robustness, vision-language models, CLIP, modality gap, preregistration
+\end{IEEEkeywords}
+
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/operators}
+\input{sections/audit_design}
+\input{sections/results}
+\input{sections/positive_control}
+\input{sections/extension}
+\input{sections/followup}
+\input{sections/related_work}
+\input{sections/limitations}
+\input{sections/conclusion}
+
+\input{sections/open_science}
+\input{sections/llm_usage}
+\input{sections/ethics}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references,references_extra}
+
+\appendices
+\raggedbottom % float-heavy appendix pages: no stretched gaps between paragraphs (layout review, 2026-09-28)
+\input{sections/appendix_nonidentification}
+\input{sections/appendix_proofs}
+\input{sections/appendix_tables}
+\clearpage % flush each appendix's floats before the next appendix starts (float-order review, 2026-09-28)
+\twocolumn % reset the column height: a flushed full-width table had left the next page's columns half height (layout)
+\input{sections/appendix_followup}
+\clearpage
+\twocolumn % the same reset before Appendix E: the flushed tables of Appendix D had left its first page half height
+\input{sections/appendix_deviations}
+
+\end{document}

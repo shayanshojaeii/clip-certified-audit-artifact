@@ -1,0 +1,149 @@
+{
+ "method": "The registered analysis (``satml2027ext/analyze_ext.py``) forms each replicate of a family as ``point + 100 * sum_h f_h * (W_h - 1) @ (D_h / n)``: ``D`` holds each image's integer sum of paired outcome differences (bank minus no correction) over its positions, ``n`` the family's positions, ``W_h`` the bootstrap multiplicities of stratum ``h`` and ``f_h = sqrt(m_h / (m_h - 1))`` its Rao-Wu factor. It then counts replicates at the test boundaries 0 and +-SESOI with inclusive comparisons. When an estimate lies exactly on a boundary, the floating-point residue of ``D_h / n`` (about 1e-18) can put exactly tied replicates on either side.",
+ "experiments": {
+  "021A": {
+   "cifar100__sigma0.25": {
+    "n_positions": 3000,
+    "differences": [],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "eurosat__sigma0.25": {
+    "n_positions": 300,
+    "differences": [
+     {
+      "contrast": "global_mean_centering__coefficient_0.5",
+      "field": "tost_p_low",
+      "released": 0.45139,
+      "exact": 0.55109,
+      "delta": 0.09969999999999996
+     },
+     {
+      "contrast": "global_mean_centering__coefficient_0.5",
+      "field": "tost_p_equivalence",
+      "released": 0.45139,
+      "exact": 0.55109,
+      "delta": 0.09969999999999996
+     },
+     {
+      "contrast": "global_mean_centering__coefficient_0.5",
+      "field": "p_loss_at_least_sesoi",
+      "released": 0.55267,
+      "exact": 0.55268,
+      "delta": 9.99999999995449e-06
+     }
+    ],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "pooled__sigma0.25": {
+    "n_positions": 3300,
+    "differences": [
+     {
+      "contrast": "control__learned_shared_translation_tangent",
+      "field": "p_two_sided",
+      "released": 0.97278,
+      "exact": 1.0,
+      "delta": 0.027220000000000022
+     }
+    ],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   }
+  },
+  "021B": {
+   "cifar100_test__sigma0.12": {
+    "n_positions": 9000,
+    "differences": [],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "cifar100_test__sigma0.25": {
+    "n_positions": 9000,
+    "differences": [
+     {
+      "contrast": "cohen_aligned_noisy_margin__step_0.04",
+      "field": "p_two_sided",
+      "released": 0.94704,
+      "exact": 1.0,
+      "delta": 0.05296000000000001
+     }
+    ],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "eurosat_sealed__sigma0.12": {
+    "n_positions": 3000,
+    "differences": [
+     {
+      "contrast": "image_only_centering__coefficient_0.5",
+      "field": "p_loss_at_least_sesoi",
+      "released": 0.48466,
+      "exact": 0.51791,
+      "delta": 0.03325
+     }
+    ],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "eurosat_sealed__sigma0.25": {
+    "n_positions": 3000,
+    "differences": [],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "imagenette__sigma0.12": {
+    "n_positions": 9000,
+    "differences": [
+     {
+      "contrast": "clean_boundary_active__step_0.02",
+      "field": "p_two_sided",
+      "released": 0.91614,
+      "exact": 1.0,
+      "delta": 0.08386000000000005
+     },
+     {
+      "contrast": "image_only_centering__coefficient_0.25",
+      "field": "p_two_sided",
+      "released": 0.97246,
+      "exact": 1.0,
+      "delta": 0.02754000000000001
+     }
+    ],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "imagenette__sigma0.25": {
+    "n_positions": 9000,
+    "differences": [
+     {
+      "contrast": "cohen_aligned_noisy_margin__step_0.02",
+      "field": "p_two_sided",
+      "released": 0.95892,
+      "exact": 1.0,
+      "delta": 0.041080000000000005
+     }
+    ],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "pooled__sigma0.12": {
+    "n_positions": 21000,
+    "differences": [],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   },
+   "pooled__sigma0.25": {
+    "n_positions": 21000,
+    "differences": [],
+    "class_changes": [],
+    "decimal_comparisons": 0
+   }
+  }
+ },
+ "summary": {
+  "raw_fields_compared": 2310,
+  "raw_fields_differing": 9,
+  "class_changes": 0
+ }
+}

@@ -1,0 +1,955 @@
+{
+  "candidate_count": 18,
+  "candidates": [
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.16300583882380412,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "no_correction",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen_policy": {
+          "action": "certify_baseline_or_reuse_only_with_exact_full_input_hash_match",
+          "engine": "cohen_primary",
+          "interpretation": "primary empirical certificate for the unchanged base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "family": "identity_control",
+        "fss_policy": {
+          "action": "recompute_geometry_and_assert_identity",
+          "engine": "fss_diagnostic",
+          "interpretation": "mechanism diagnostic or negative baseline only",
+          "may_reuse_image_only_fss_cache": true,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "no_correction_v1",
+        "max_abs_difference": 0.0,
+        "output_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "policy_hash": "2046022934e7bdae484222dc457c147a99a24079974fe25a00e7e744a172e651",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.prototype_intervention.v1",
+        "side": "text",
+        "values_changed": false
+      },
+      "example_count": 500,
+      "family": "no_correction",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 0.0,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.754,
+      "role": "eligible_comparator",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": null
+    },
+    {
+      "abstention_rate": 0.248,
+      "average_certified_radius": 0.16939253261652917,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "global_mean_centering__coefficient_0.25",
+      "certified_accuracy": {
+        "0": 0.338,
+        "0.1": 0.316,
+        "0.25": 0.25,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen_policy": {
+          "action": "rerun_independent_class_selection_and_confirmation",
+          "engine": "cohen_primary",
+          "interpretation": "primary certificate for the changed hard-label base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": true
+        },
+        "family": "global_mean_centering",
+        "fss_policy": {
+          "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+          "engine": "fss_diagnostic",
+          "interpretation": "text-side mechanism diagnostic or negative baseline only",
+          "may_reuse_image_only_fss_cache": true,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "mean_centering_v1",
+        "max_abs_difference": 0.14069554209709167,
+        "output_prototype_hash": "9bc859fad2490dc893257f7a88d60659b473bf57ae73f81d6a1b4337ea0e6f00",
+        "policy_hash": "a3aec8a5c8a50f4cfab53685d9a4c55ed1f45feeafed6c176a02f22ec2090eb8",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.prototype_intervention.v1",
+        "side": "text",
+        "values_changed": true
+      },
+      "example_count": 500,
+      "family": "global_mean_centering",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.38,
+      "output_prototype_sha256": "9bc859fad2490dc893257f7a88d60659b473bf57ae73f81d6a1b4337ea0e6f00",
+      "predicted_label_certified_stability": {
+        "0": 0.38,
+        "0.1": 0.346,
+        "0.25": 0.274,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 2.6004992277413845,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.77,
+      "role": "eligible_tunable_comparator",
+      "selected_raw_agreement_rate": 0.412,
+      "smoothed_accuracy": 0.39,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.25
+    },
+    {
+      "abstention_rate": 0.274,
+      "average_certified_radius": 0.1665472632197371,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "global_mean_centering__coefficient_0.5",
+      "certified_accuracy": {
+        "0": 0.324,
+        "0.1": 0.29,
+        "0.25": 0.238,
+        "0.5": 0.156
+      },
+      "construction_manifest": {
+        "cohen_policy": {
+          "action": "rerun_independent_class_selection_and_confirmation",
+          "engine": "cohen_primary",
+          "interpretation": "primary certificate for the changed hard-label base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": true
+        },
+        "family": "global_mean_centering",
+        "fss_policy": {
+          "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+          "engine": "fss_diagnostic",
+          "interpretation": "text-side mechanism diagnostic or negative baseline only",
+          "may_reuse_image_only_fss_cache": true,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "mean_centering_v1",
+        "max_abs_difference": 0.2936815619468689,
+        "output_prototype_hash": "731f2a6fe733166a02a23feb7583e6f8b5119e64c4c79f31b023ad522e29b81f",
+        "policy_hash": "9b92562cf656d019a42eca7e07b3b07af1203116acfb5c5eedc7e85512be119c",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.prototype_intervention.v1",
+        "side": "text",
+        "values_changed": true
+      },
+      "example_count": 500,
+      "family": "global_mean_centering",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.382,
+      "output_prototype_sha256": "731f2a6fe733166a02a23feb7583e6f8b5119e64c4c79f31b023ad522e29b81f",
+      "predicted_label_certified_stability": {
+        "0": 0.382,
+        "0.1": 0.334,
+        "0.25": 0.272,
+        "0.5": 0.172
+      },
+      "prototype_bank_frobenius_displacement": 5.6039261316824796,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.73,
+      "role": "eligible_tunable_comparator",
+      "selected_raw_agreement_rate": 0.42,
+      "smoothed_accuracy": 0.366,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.5
+    },
+    {
+      "abstention_rate": 0.242,
+      "average_certified_radius": 0.17124780498998973,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "global_mean_centering__coefficient_1",
+      "certified_accuracy": {
+        "0": 0.278,
+        "0.1": 0.256,
+        "0.25": 0.212,
+        "0.5": 0.142
+      },
+      "construction_manifest": {
+        "cohen_policy": {
+          "action": "rerun_independent_class_selection_and_confirmation",
+          "engine": "cohen_primary",
+          "interpretation": "primary certificate for the changed hard-label base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": true
+        },
+        "family": "global_mean_centering",
+        "fss_policy": {
+          "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+          "engine": "fss_diagnostic",
+          "interpretation": "text-side mechanism diagnostic or negative baseline only",
+          "may_reuse_image_only_fss_cache": true,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "mean_centering_v1",
+        "max_abs_difference": 0.47575515508651733,
+        "output_prototype_hash": "957c9beeb8c2b1bf73122f1fb8f23d460528ecbed9707b35f198693a16452f86",
+        "policy_hash": "555fb4a7022ca29f1a0e7365e892639107a8bac0ae65a50e49f917613cd64758",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.prototype_intervention.v1",
+        "side": "text",
+        "values_changed": true
+      },
+      "example_count": 500,
+      "family": "global_mean_centering",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.38,
+      "output_prototype_sha256": "957c9beeb8c2b1bf73122f1fb8f23d460528ecbed9707b35f198693a16452f86",
+      "predicted_label_certified_stability": {
+        "0": 0.38,
+        "0.1": 0.352,
+        "0.25": 0.272,
+        "0.5": 0.178
+      },
+      "prototype_bank_frobenius_displacement": 10.679306934578445,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.618,
+      "role": "eligible_tunable_comparator",
+      "selected_raw_agreement_rate": 0.418,
+      "smoothed_accuracy": 0.324,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 1.0
+    },
+    {
+      "abstention_rate": 0.242,
+      "average_certified_radius": 0.16825477045737078,
+      "calibration_image_mean_sha256": "1acfc44cac1feabf1fd3675c7ee81670db5cce292d9e5500cfa6743db19d318d",
+      "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+      "certified_accuracy": {
+        "0": 0.346,
+        "0.1": 0.298,
+        "0.25": 0.252,
+        "0.5": 0.168
+      },
+      "construction_manifest": {
+        "calibration_image_mean_hash": "1acfc44cac1feabf1fd3675c7ee81670db5cce292d9e5500cfa6743db19d318d",
+        "calibration_text_mean_hash": "2574c58e3f0f4d20c6c6c8513f67a4054faaa0a626fa9a76bff544f3df2ae10c",
+        "cohen_policy": {
+          "action": "rerun_independent_class_selection_and_confirmation",
+          "engine": "cohen_primary",
+          "interpretation": "primary certificate for the changed two-sided base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": true
+        },
+        "family": "modality_wise_zero_centering",
+        "fss_policy": {
+          "action": "recompute_image_score_samples_bounds_and_all_geometry",
+          "engine": "fss_diagnostic",
+          "interpretation": "two-sided source-inspired mechanism baseline",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "image_feature_dtype": "torch.float32",
+        "image_feature_shape": [
+          500,
+          768
+        ],
+        "input_image_feature_hash": "9af8edf117a00560a15ea11499d95f7cbf2ed1c9b7ad82853e6806fa5fb44c78",
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "gr_clip_style_v1",
+        "max_abs_image_feature_difference": 0.5636991858482361,
+        "max_abs_prototype_difference": 0.5861467719078064,
+        "output_image_feature_hash": "1daed3560760cd1c660ef488e9b3e378c31beab6e4f55b72e05f82c00d8ea42e",
+        "output_prototype_hash": "60aaec0b37b938362e156348c531aef4319ec616c7257f01b4203c737e25b903",
+        "policy_hash": "d1cee26f115e93bc607b496e8326573d7680131fb966d43ae2e95dc59199dfac",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.two_sided_intervention.v1",
+        "side": "image_and_text"
+      },
+      "example_count": 500,
+      "family": "gr_clip_style_two_sided",
+      "image_transform": "gr_clip_style_center_and_renormalize",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.396,
+      "output_prototype_sha256": "60aaec0b37b938362e156348c531aef4319ec616c7257f01b4203c737e25b903",
+      "predicted_label_certified_stability": {
+        "0": 0.396,
+        "0.1": 0.338,
+        "0.25": 0.278,
+        "0.5": 0.182
+      },
+      "prototype_bank_frobenius_displacement": 9.680888299205574,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.79,
+      "role": "eligible_comparator",
+      "selected_raw_agreement_rate": 0.43,
+      "smoothed_accuracy": 0.386,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 1.0
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.16300583882380412,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "chowers_exact_projected_gap__coefficient_0.25",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen_policy": {
+          "action": "rerun_independent_class_selection_and_confirmation",
+          "engine": "cohen_primary",
+          "interpretation": "primary certificate for the changed hard-label base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": true
+        },
+        "family": "prior_exact_projected_gap",
+        "fss_policy": {
+          "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+          "engine": "fss_diagnostic",
+          "interpretation": "text-side prior-work mechanism baseline",
+          "may_reuse_image_only_fss_cache": true,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "chowers_exact_projected_gap_v1",
+        "max_abs_difference": 0.1259557604789734,
+        "output_prototype_hash": "3c950015c0b2b3c4bbcd9d41ae651ffd93880dbde2ae96ba08ff94e6be3acc7b",
+        "policy_hash": "9da43877eead05df0acc6f7b220f62b3339a20f8d4815302792be0c67a0966d6",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.prototype_intervention.v1",
+        "side": "text",
+        "values_changed": true
+      },
+      "example_count": 500,
+      "family": "chowers_exact_projected_gap",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "3c950015c0b2b3c4bbcd9d41ae651ffd93880dbde2ae96ba08ff94e6be3acc7b",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 2.4077147229117473,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.754,
+      "role": "eligible_tunable_comparator",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.25
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.16300583882380412,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "chowers_exact_projected_gap__coefficient_0.5",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen_policy": {
+          "action": "rerun_independent_class_selection_and_confirmation",
+          "engine": "cohen_primary",
+          "interpretation": "primary certificate for the changed hard-label base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": true
+        },
+        "family": "prior_exact_projected_gap",
+        "fss_policy": {
+          "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+          "engine": "fss_diagnostic",
+          "interpretation": "text-side prior-work mechanism baseline",
+          "may_reuse_image_only_fss_cache": true,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "chowers_exact_projected_gap_v1",
+        "max_abs_difference": 0.2459264099597931,
+        "output_prototype_hash": "72fcbf58d630e313bb82a0e5bb5131c1682497a6b39008a6438b43574714b7e7",
+        "policy_hash": "497d6bf48181d7b8b341b71d1830c63fb6aa5fd2162666aa3717424c724abeb6",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.prototype_intervention.v1",
+        "side": "text",
+        "values_changed": true
+      },
+      "example_count": 500,
+      "family": "chowers_exact_projected_gap",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "72fcbf58d630e313bb82a0e5bb5131c1682497a6b39008a6438b43574714b7e7",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 4.915076475417958,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.754,
+      "role": "eligible_tunable_comparator",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.5
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.1630062964121227,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "chowers_exact_projected_gap__coefficient_1",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen_policy": {
+          "action": "rerun_independent_class_selection_and_confirmation",
+          "engine": "cohen_primary",
+          "interpretation": "primary certificate for the changed hard-label base classifier",
+          "may_reuse_image_only_fss_cache": false,
+          "requires_fresh_class_selection_and_confirmation": true
+        },
+        "family": "prior_exact_projected_gap",
+        "fss_policy": {
+          "action": "reuse_exact_image_only_score_cache_and_recompute_all_geometry",
+          "engine": "fss_diagnostic",
+          "interpretation": "text-side prior-work mechanism baseline",
+          "may_reuse_image_only_fss_cache": true,
+          "requires_fresh_class_selection_and_confirmation": false
+        },
+        "input_prototype_hash": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+        "intervention_id": "chowers_exact_projected_gap_v1",
+        "max_abs_difference": 0.40422722697257996,
+        "output_prototype_hash": "25ea022ef4865ad592bbc39020360f5a38df7b0cb25b8536c62dbd19970d0873",
+        "policy_hash": "5a32bd0d8ce2c6dc24f7e21fe83e3ed596ba30e14e9097da8075c8014c5706f7",
+        "prototype_dtype": "torch.float32",
+        "prototype_shape": [
+          100,
+          768
+        ],
+        "schema_version": "phase3.prototype_intervention.v1",
+        "side": "text",
+        "values_changed": true
+      },
+      "example_count": 500,
+      "family": "chowers_exact_projected_gap",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": null,
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "25ea022ef4865ad592bbc39020360f5a38df7b0cb25b8536c62dbd19970d0873",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 9.019902387905761,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.754,
+      "role": "eligible_tunable_comparator",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 1.0
+    },
+    {
+      "abstention_rate": 0.26,
+      "average_certified_radius": 0.1630786151110021,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "clean_boundary_active__step_0.0025",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "f9c50b89f8f7143747aba7cfd48a42917dc7d32533fdab4683e1c7f4a5ba04a5",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.0025
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "clean_boundary_active",
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "308c69ef99f1519cc4f04b1099e801c10de1da64aeba7f15ed54e3705fc5fdb8",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 0.024174822543079774,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.394,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.0025
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.16303183660824538,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "clean_boundary_active__step_0.005",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.304,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "f9c50b89f8f7143747aba7cfd48a42917dc7d32533fdab4683e1c7f4a5ba04a5",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.005
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "clean_boundary_active",
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "507f06e055391e9cbb444d87b05dd489cfe05471a7a2d8959ec143a6ddb7dcfa",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.33,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 0.04837717271368699,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.394,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.005
+    },
+    {
+      "abstention_rate": 0.26,
+      "average_certified_radius": 0.16354507684442052,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "clean_boundary_active__step_0.01",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.304,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "f9c50b89f8f7143747aba7cfd48a42917dc7d32533fdab4683e1c7f4a5ba04a5",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.01
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "clean_boundary_active",
+      "operational_eligibility_rate": 0.374,
+      "output_prototype_sha256": "cd1119e5ac3ddfda2bb934aded6b1c17a4f23e99151bf95211cf6b5ad8d69b72",
+      "predicted_label_certified_stability": {
+        "0": 0.374,
+        "0.1": 0.332,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 0.09686348255939786,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.01
+    },
+    {
+      "abstention_rate": 0.266,
+      "average_certified_radius": 0.16355390098896777,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "clean_boundary_active__step_0.02",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.304,
+        "0.25": 0.24,
+        "0.5": 0.162
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "f9c50b89f8f7143747aba7cfd48a42917dc7d32533fdab4683e1c7f4a5ba04a5",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.02
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "clean_boundary_active",
+      "operational_eligibility_rate": 0.374,
+      "output_prototype_sha256": "3fe19e783d2720d90431926de4977207c80d2aeb4826914e05a42a5d5f1ba530",
+      "predicted_label_certified_stability": {
+        "0": 0.374,
+        "0.1": 0.332,
+        "0.25": 0.258,
+        "0.5": 0.17
+      },
+      "prototype_bank_frobenius_displacement": 0.1941552147984021,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.76,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.398,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.02
+    },
+    {
+      "abstention_rate": 0.268,
+      "average_certified_radius": 0.16624984142670143,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "clean_boundary_active__step_0.04",
+      "certified_accuracy": {
+        "0": 0.338,
+        "0.1": 0.312,
+        "0.25": 0.244,
+        "0.5": 0.166
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "f9c50b89f8f7143747aba7cfd48a42917dc7d32533fdab4683e1c7f4a5ba04a5",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.04
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "clean_boundary_active",
+      "operational_eligibility_rate": 0.376,
+      "output_prototype_sha256": "085e19d7e08f2b54b629e05b9732ddc1c4d4aed6a56966e0d4c200b384bdfcef",
+      "predicted_label_certified_stability": {
+        "0": 0.376,
+        "0.1": 0.34,
+        "0.25": 0.262,
+        "0.5": 0.172
+      },
+      "prototype_bank_frobenius_displacement": 0.3899550380509509,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.766,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.398,
+      "smoothed_accuracy": 0.398,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.04
+    },
+    {
+      "abstention_rate": 0.26,
+      "average_certified_radius": 0.16304389232818545,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "cohen_aligned_noisy_margin__step_0.0025",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.164
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "2b1da94376ed97d5f2e3d7d73a5729d331aaaddcb339627e81421846c4ce8faf",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.0025
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "cohen_aligned_noisy_margin",
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "7c72f19e8f2d6c8ad61a95adb88347b34cc7e03aca525b3e306a9d14489abd32",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.172
+      },
+      "prototype_bank_frobenius_displacement": 0.015685307644131074,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.0025
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.1630657402882134,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "cohen_aligned_noisy_margin__step_0.005",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.164
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "2b1da94376ed97d5f2e3d7d73a5729d331aaaddcb339627e81421846c4ce8faf",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.005
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "cohen_aligned_noisy_margin",
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "1a70449182a81003d3cba2658959311a85ac316c4e8cb0860f906ad6cf1c54fa",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.172
+      },
+      "prototype_bank_frobenius_displacement": 0.03143155029698601,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.005
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.16308095088565192,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "cohen_aligned_noisy_margin__step_0.01",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.302,
+        "0.25": 0.24,
+        "0.5": 0.164
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "2b1da94376ed97d5f2e3d7d73a5729d331aaaddcb339627e81421846c4ce8faf",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.01
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "cohen_aligned_noisy_margin",
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "e5b44c22b49b6e205eeb469e5a8a337b452d76994bcf3342bf5b68e2ddde4b81",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.328,
+        "0.25": 0.258,
+        "0.5": 0.172
+      },
+      "prototype_bank_frobenius_displacement": 0.06310810713114594,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.396,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.01
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.1631095264396056,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "cohen_aligned_noisy_margin__step_0.02",
+      "certified_accuracy": {
+        "0": 0.334,
+        "0.1": 0.304,
+        "0.25": 0.24,
+        "0.5": 0.164
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "2b1da94376ed97d5f2e3d7d73a5729d331aaaddcb339627e81421846c4ce8faf",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.02
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "cohen_aligned_noisy_margin",
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "755c1946c4dc534a142c1a82c212cfa8394788569b1a1657b454550b40f0785b",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.33,
+        "0.25": 0.258,
+        "0.5": 0.172
+      },
+      "prototype_bank_frobenius_displacement": 0.12720541963550613,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.4,
+      "smoothed_accuracy": 0.4,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.02
+    },
+    {
+      "abstention_rate": 0.262,
+      "average_certified_radius": 0.1637567064991053,
+      "calibration_image_mean_sha256": null,
+      "candidate_id": "cohen_aligned_noisy_margin__step_0.04",
+      "certified_accuracy": {
+        "0": 0.332,
+        "0.1": 0.304,
+        "0.25": 0.24,
+        "0.5": 0.166
+      },
+      "construction_manifest": {
+        "cohen": "fresh_independent_selection_and_confirmation_required",
+        "direction_sha256": "2b1da94376ed97d5f2e3d7d73a5729d331aaaddcb339627e81421846c4ce8faf",
+        "formula": "normalize(t_k + step * unit_development_direction)",
+        "fss": "reuse_raw_image_score_cache_and_recompute_geometry",
+        "schema_version": "phase3.proposed_common_translation.v1",
+        "step": 0.04
+      },
+      "example_count": 500,
+      "family": "proposal",
+      "image_transform": "identity",
+      "median_certified_radius": 0.0,
+      "metric_denominator": "all_examples_in_the_model_dataset_fold_cell",
+      "objective_id": "cohen_aligned_noisy_margin",
+      "operational_eligibility_rate": 0.372,
+      "output_prototype_sha256": "e8613e21c1a23f4bc9805f5e6adb3f319bf8164763ca3c32e2559eece68434d8",
+      "predicted_label_certified_stability": {
+        "0": 0.372,
+        "0.1": 0.334,
+        "0.25": 0.258,
+        "0.5": 0.174
+      },
+      "prototype_bank_frobenius_displacement": 0.258436620581699,
+      "radius_for_abstention_or_anchor_mismatch": 0.0,
+      "raw_clean_accuracy": 0.756,
+      "role": "proposed_method_candidate",
+      "selected_raw_agreement_rate": 0.398,
+      "smoothed_accuracy": 0.396,
+      "source_prototype_sha256": "36804c3869208dcb8d0eaaf3a57700273c9e2067183314c2f446e9bc17d875aa",
+      "step_or_coefficient": 0.04
+    }
+  ],
+  "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__fold2",
+  "confirmation_stream_role": "phase3_validation_cohen_class_confirmation",
+  "dataset_id": "cifar100",
+  "elapsed_seconds": 12081.852638483047,
+  "final_test_accessed": false,
+  "fold": 2,
+  "item_count": 500,
+  "model_id": "openai-clip-vit-l14-quickgelu",
+  "selection_stream_role": "phase3_validation_cohen_class_selection"
+}

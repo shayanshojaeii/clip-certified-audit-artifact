@@ -1,0 +1,328 @@
+{
+  "bridge_cells": "the two CIFAR-10 sigma=0.25 cells are a separately reported secondary bridge and are excluded from the primary 12-cell macro",
+  "candidates": {
+    "control_training": {
+      "adamw_weight_decay": 0.0001,
+      "batch_size": 1024,
+      "classification_temperature": 0.05,
+      "clean_loss_weight": 0.5,
+      "epochs": 80,
+      "learning_rate": 0.005,
+      "minibatch_seed": 20260920007,
+      "noise_base_seed": 20260920005,
+      "optimizer_seed": 20260920006,
+      "rank": 8,
+      "train_draws_per_item": 16
+    },
+    "controls": [
+      {
+        "control_id": "learned_shared_translation_tangent",
+        "form": "normalize(t_k + v - <v,t_k> t_k)",
+        "training": "preregistered supervised noisy+clean cross-entropy control on the control_train split re-encoded at this sigma"
+      },
+      {
+        "control_id": "learned_shared_translation_pure",
+        "form": "normalize(t_k + v)",
+        "training": "same v as the tangent form"
+      },
+      {
+        "control_id": "noisy_class_mean",
+        "form": "normalize(mean of unit-norm noisy training draws per class)",
+        "training": "optimization-free supervised noisy class-mean control"
+      },
+      {
+        "control_id": "lowrank_tangent_r8",
+        "form": "normalize(t_k + tangent(LR)_k), rank 8",
+        "training": "preregistered rank-8 tangent noisy+clean cross-entropy control; not labeled as the historical Phase-4 recipe"
+      }
+    ],
+    "direction_construction": {
+      "builder": "exact_phase3_interfaces",
+      "development_draws_per_item": 64,
+      "exclusion_manifest_sha256": "f14dec8b902f518ae37df73e12e07fe9700e021a68f9ae8582faa8c9cb208c85",
+      "noise_base_seed": 20260920004,
+      "noisy_margin_temperature": 0.05,
+      "prompt_configs": {
+        "cifar10": {
+          "identity": "registered built-in CIFAR-10 OpenAI ensemble",
+          "path": null
+        },
+        "cifar100": {
+          "path": "configs/prompts/cifar100_openai_readme.json",
+          "sha256": "907720051425650ef032094a4dcc46149d6297575dbbabb6fe734a0b4b9a06d6"
+        },
+        "eurosat": {
+          "path": "configs/prompts/eurosat_openai_ensemble_v1.json",
+          "sha256": "223d96686dbc3e21ad57dcb8cee033a008b2d64273fda9ae8993ed43db1e0ddc"
+        }
+      },
+      "split_manifest_sha256": "3aaf7d9d1a707e532b08f6cf4b5cd92a23b08f55dfeb670d674d92853091ecfe",
+      "tie_tolerance": 1e-10
+    },
+    "frozen_grid": {
+      "bank_count": 18,
+      "builder": "common/banks.py::build_eighteen_candidate_banks (port of the EXP-017 rule)",
+      "common_unit_direction_step_grid": [
+        0.0025,
+        0.005,
+        0.01,
+        0.02,
+        0.04
+      ],
+      "gap_coefficient_grid": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "portable_reproduction_atol": 2e-06,
+      "verification": "d1_03_build_banks.py --verify-against-exp017 requires identical candidate IDs and max absolute tensor error <= 2e-6; exact hashes are reported separately because torch SVD/reduction kernels may differ at final float32 bits"
+    }
+  },
+  "cells": [
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+      "class_count": 100,
+      "control_train_items_sha256": "541cadc413afe1f4a279609f259e3c43b395907ca646631149be93ac63b1c1c0",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "cifar100",
+      "development_items_sha256": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "evaluation_items_sha256": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.12
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+      "class_count": 100,
+      "control_train_items_sha256": "541cadc413afe1f4a279609f259e3c43b395907ca646631149be93ac63b1c1c0",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "cifar100",
+      "development_items_sha256": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "evaluation_items_sha256": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.5
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+      "class_count": 10,
+      "control_train_items_sha256": "e17cb6c17b5dd3866536e50df754b12c1e985d310a1a814d65cf33e7208a4048",
+      "data_role": "extension_new_dataset_train_split",
+      "dataset_id": "cifar10",
+      "development_items_sha256": "c7cf246938c5bbe5482a95d2047e235cbe92608ca5e8b41e3a6f713293fb5ad4",
+      "evaluation_items_sha256": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.12
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.25",
+      "class_count": 10,
+      "control_train_items_sha256": "e17cb6c17b5dd3866536e50df754b12c1e985d310a1a814d65cf33e7208a4048",
+      "data_role": "extension_new_dataset_train_split",
+      "dataset_id": "cifar10",
+      "development_items_sha256": "c7cf246938c5bbe5482a95d2047e235cbe92608ca5e8b41e3a6f713293fb5ad4",
+      "evaluation_items_sha256": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.25
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+      "class_count": 10,
+      "control_train_items_sha256": "e17cb6c17b5dd3866536e50df754b12c1e985d310a1a814d65cf33e7208a4048",
+      "data_role": "extension_new_dataset_train_split",
+      "dataset_id": "cifar10",
+      "development_items_sha256": "c7cf246938c5bbe5482a95d2047e235cbe92608ca5e8b41e3a6f713293fb5ad4",
+      "evaluation_items_sha256": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.5
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+      "class_count": 10,
+      "control_train_items_sha256": "e328e4379ea7c28ab4d22d00fa3257f417f5d9c4b33eb816548e7519624cd0c3",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "eurosat",
+      "development_items_sha256": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "evaluation_items_sha256": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "item_count": 150,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.12
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+      "class_count": 10,
+      "control_train_items_sha256": "e328e4379ea7c28ab4d22d00fa3257f417f5d9c4b33eb816548e7519624cd0c3",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "eurosat",
+      "development_items_sha256": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "evaluation_items_sha256": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "item_count": 150,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.5
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+      "class_count": 100,
+      "control_train_items_sha256": "541cadc413afe1f4a279609f259e3c43b395907ca646631149be93ac63b1c1c0",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "cifar100",
+      "development_items_sha256": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "evaluation_items_sha256": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.12
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+      "class_count": 100,
+      "control_train_items_sha256": "541cadc413afe1f4a279609f259e3c43b395907ca646631149be93ac63b1c1c0",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "cifar100",
+      "development_items_sha256": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "evaluation_items_sha256": "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.5
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+      "class_count": 10,
+      "control_train_items_sha256": "e17cb6c17b5dd3866536e50df754b12c1e985d310a1a814d65cf33e7208a4048",
+      "data_role": "extension_new_dataset_train_split",
+      "dataset_id": "cifar10",
+      "development_items_sha256": "c7cf246938c5bbe5482a95d2047e235cbe92608ca5e8b41e3a6f713293fb5ad4",
+      "evaluation_items_sha256": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.12
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.25",
+      "class_count": 10,
+      "control_train_items_sha256": "e17cb6c17b5dd3866536e50df754b12c1e985d310a1a814d65cf33e7208a4048",
+      "data_role": "extension_new_dataset_train_split",
+      "dataset_id": "cifar10",
+      "development_items_sha256": "c7cf246938c5bbe5482a95d2047e235cbe92608ca5e8b41e3a6f713293fb5ad4",
+      "evaluation_items_sha256": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.25
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+      "class_count": 10,
+      "control_train_items_sha256": "e17cb6c17b5dd3866536e50df754b12c1e985d310a1a814d65cf33e7208a4048",
+      "data_role": "extension_new_dataset_train_split",
+      "dataset_id": "cifar10",
+      "development_items_sha256": "c7cf246938c5bbe5482a95d2047e235cbe92608ca5e8b41e3a6f713293fb5ad4",
+      "evaluation_items_sha256": "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c",
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.5
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+      "class_count": 10,
+      "control_train_items_sha256": "e328e4379ea7c28ab4d22d00fa3257f417f5d9c4b33eb816548e7519624cd0c3",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "eurosat",
+      "development_items_sha256": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "evaluation_items_sha256": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "item_count": 150,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.12
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+      "class_count": 10,
+      "control_train_items_sha256": "e328e4379ea7c28ab4d22d00fa3257f417f5d9c4b33eb816548e7519624cd0c3",
+      "data_role": "extension_reserved_accessed",
+      "dataset_id": "eurosat",
+      "development_items_sha256": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "evaluation_items_sha256": "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa",
+      "item_count": 150,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.5
+    }
+  ],
+  "certification": {
+    "alpha_per_example": 0.001,
+    "confirmation_base_seed": 20260920002,
+    "confirmation_draws": 4096,
+    "confirmation_stream_role": "cohen_class_confirmation",
+    "encoder_precision": "float32 (TF32 disabled); a registered precision-equivalence check is reported",
+    "k_min_at_r_equals_sigma": 3518,
+    "noise_block_draws": 64,
+    "primary_radius_rule": "r = sigma (so k_min is identical at every sigma)",
+    "reported_radii": [
+      0.0,
+      0.12,
+      0.25,
+      0.5
+    ],
+    "selection_base_seed": 20260920001,
+    "selection_draws": 128,
+    "selection_stream_role": "cohen_class_selection"
+  },
+  "data_role": "per-cell; CIFAR-100/EuroSAT use extension reserve, CIFAR-10 is a newly registered train-split extension dataset",
+  "experiment_id": "EXP-20260920-019A",
+  "final_test_access": false,
+  "item_manifest_sha256": "2a366db63931f9a903ace946800c0092ada96cc2d33f95f93a1b94048a725c8d",
+  "method_selection": false,
+  "predictions": [
+    {
+      "id": "X1",
+      "statement": "report every frozen-grid candidate's macro standard-CA change at r=sigma relative to no correction against the prospective practical-effect region, without an equivalence claim",
+      "type": "falsifiable"
+    },
+    {
+      "id": "X3",
+      "statement": "the learned shared-translation control stays inside the same band",
+      "type": "falsifiable"
+    },
+    {
+      "id": "X4",
+      "statement": "the per-class control banks leave the band",
+      "type": "falsifiable positive control"
+    },
+    {
+      "id": "X5",
+      "statement": "top-class share and predicted-class Gini of the zero-shot bank increase with sigma",
+      "type": "falsifiable"
+    }
+  ],
+  "primary_outcome": "paired macro standard certified accuracy at r = sigma versus no_correction over the balanced 12 extension cells (2 models x 3 datasets x sigma in {0.12,0.5}), equal weight per cell; shared-item class-stratified simultaneous max-absolute-deviation 95% band (100000 replicates, seed 2026091605)",
+  "prospective_practical_effect_region": {
+    "absolute_ca": 0.005,
+    "interpretation": "reporting region only; not an equivalence margin or TOST"
+  },
+  "registered_at": "2026-09-22T19:49:46+00:00",
+  "registration_sha256": "9802bf3e5f97ac99aa725a1607e2cbe395886bfd16587c9b7d9db0545c94b1e2",
+  "schema_version": "satml2027.registration.v1",
+  "scope": "full",
+  "secondary_outcomes": [
+    "standard CA at 0.12/0.25/0.5",
+    "certified-wrong rate",
+    "abstention",
+    "top-class share",
+    "predicted-class Gini",
+    "normalized prediction entropy",
+    "smoothed accuracy",
+    "clean accuracy"
+  ],
+  "sigmas": [
+    0.12,
+    0.25,
+    0.5
+  ],
+  "status": "preregistered_extension",
+  "stop_rules": [
+    "no candidate or control is added, removed or retuned after this file is hashed",
+    "the scope ladder may only be descended (full -> no_sigma_012 -> core) and any descent is recorded with its reason and timestamp before the affected cells are run",
+    "cells that do not finish are reported as not run; their absence is never used to select what is reported"
+  ],
+  "title": "sigma extension on the EXP-017 backbones"
+}

@@ -1,0 +1,112 @@
+% Follow-up (EXP-021) questions reported in the appendix for space (D-145): Q5, Q7 and Q8 of EXP-021B.
+% Outcome-neutral text written before the analysis ran; every number is a macro from the registered analysis output.
+
+\section{Follow-Up: Design, Controls, Regime and Radii}
+\label{app:followup}
+
+Table~\ref{tab:followup-design} summarizes the three registrations,
+Table~\ref{tab:followup} gives both estimands and the adjusted classes of the
+pooled primary family, Table~\ref{tab:followup-datasets} gives the secondary
+dataset-specific families, Table~\ref{tab:followup-registered} gives the
+supervised controls and the text/image decomposition at every coefficient, and
+Table~\ref{tab:followup-steps} gives the step response of the proposal
+objectives. The observed paired discordance stands next to every interval of
+Tables~\ref{tab:followup} and~\ref{tab:followup-datasets} (for
+Table~\ref{tab:followup-registered} see Appendix~\ref{app:deviations}); $-0.00$
+marks a negative value that rounds to zero.
+
+\input{sections/figure_followup_curves}
+\input{generated/table_followup_design}
+\input{generated/table_followup}
+\input{generated/table_followup_datasets}
+\input{generated/table_followup_registered}
+\input{generated/table_followup_steps}
+
+\paragraph{Supervised controls (Q5)}
+In the pooled Follow-up B families the supervised controls change standard
+certified accuracy at $r=\sigma$ by $\FUQFiveLowLowrankPoint$ points at
+$\sigma=\FUSigmaLow$ and $\FUQFiveHighLowrankPoint$ at $\sigma=\FUSigmaHigh$
+for the rank-8 tangent adapter (Holm-adjusted direction \FUQFiveLowLowrankDir{}
+and \FUQFiveHighLowrankDir), $\FUQFiveLowSharedPoint$ and
+$\FUQFiveHighSharedPoint$ for the learned shared translation
+(\FUQFiveLowSharedDir, \FUQFiveHighSharedDir), $\FUQFiveLowFewshotPoint$ and
+$\FUQFiveHighFewshotPoint$ for the few-shot prompt bank
+(\FUQFiveLowFewshotDir, \FUQFiveHighFewshotDir), and
+$\FUQFiveLowNoisyMeanPoint$ and $\FUQFiveHighNoisyMeanPoint$ for the noisy
+class-mean bank (\FUQFiveLowNoisyMeanDir, \FUQFiveHighNoisyMeanDir). On the
+audit's items (Follow-up A) they change it by $\FUQFiveALowrankPoint$ (rank-8
+adapter, \FUQFiveALowrankDir), $\FUQFiveASharedPoint$ (learned shared
+translation, \FUQFiveASharedDir), $\FUQFiveAFewshotPoint$ (few-shot prompt
+bank, \FUQFiveAFewshotDir) and $\FUQFiveANoisyMeanPoint$ points (noisy class
+means, \FUQFiveANoisyMeanDir). Over the Follow-up B cells their macro clean
+accuracy changes by $\FUQFiveLowrankClean$, $\FUQFiveSharedClean$,
+$\FUQFiveFewshotClean$ and $\FUQFiveNoisyMeanClean$ points in the same order,
+and the registered clean rule flags the noisy class-mean bank in
+\FUQFiveNoisyMeanCleanFlagged{} of the \FUCellsB{} cells and the learned shared
+translation in \FUQFiveSharedCleanFlagged{}; as for the positive control
+(Section~\ref{sec:control}), the certified gains of the controls that change
+prototypes class by class are not isolated from ordinary changes in clean
+accuracy. The few-shot prompt bank fits four shared context vectors through the frozen text
+encoder; it is inspired by PromptSmooth~\cite{hussein2024promptsmooth} and is
+not a reproduction of it.
+
+\paragraph{Regime of the uncorrected model (Q7)}
+Across the Follow-up B cells the uncorrected model's smoothed accuracy ranges
+from \FUQSevenLowSmoothedLo\% to \FUQSevenLowSmoothedHi\% at
+$\sigma=\FUSigmaLow$ and from \FUQSevenHighSmoothedLo\% to
+\FUQSevenHighSmoothedHi\% at $\sigma=\FUSigmaHigh$, and its standard certified
+accuracy at $r=\sigma$ from \FUQSevenLowStdCALo\% to \FUQSevenLowStdCAHi\% and
+from \FUQSevenHighStdCALo\% to \FUQSevenHighStdCAHi\%.
+Figure~\ref{fig:followup-outcomes} shows how its decisions split at
+$r=\sigma$, including certificates for a wrong class. The per-cell values, with
+the top-class share and the abstention rate, are in the registered analysis
+output.
+
+\input{sections/figure_followup_outcomes}
+
+\paragraph{Orientation against published radii (Q8)}
+On Imagenette at $\sigma=\FUSigmaHigh$ the uncorrected model's standard
+certified accuracy is \FUQEightOBthirtytwoQuarter\%, \FUQEightOLfourteenQuarter\% and
+\FUQEightLBthirtytwoQuarter\% at $r=0.25$ and
+\FUQEightOBthirtytwoHalf\%, \FUQEightOLfourteenHalf\% and
+\FUQEightLBthirtytwoHalf\% at $r=0.5$ (OpenAI ViT-B/32, OpenAI ViT-L/14 and
+OpenCLIP ViT-B/32 trained on LAION-2B). Nirala et al.\ report certified
+accuracy curves for zero-shot CLIP on ImageNet, including ViT-B/32 backbones
+from OpenAI and OpenCLIP~\cite{nirala2024ovc}. They certify after CLIP's
+channel standardization, whose standard deviations lie between
+\FUClipStdLo{} and \FUClipStdHi{}, so the same pixel perturbation has an
+$\ell_2$ norm \FUClipScaleLo{} to \FUClipScaleHi{} times larger in their
+coordinates than in ours (Section~\ref{sec:background}); their class set and
+sampling budget also differ. The registration makes no comparative claim, and
+neither do we.
+
+% The samples figure sits in the free space below the last paragraph (owner's layout request).
+\input{sections/figure_noise_strip}
+
+% Inference of EXP-021B, from its registration (configs/satml2027ext/exp-20260921-021b.json, inference) and
+% satml2027ext/analyze_ext.py (rao_wu_factor, rao_wu_bootstrap); reviews of V11 (D-160). It follows the samples
+% figure so that the figure keeps its place under the Q8 paragraph.
+\paragraph{Inference procedure}
+The primary estimand is the item-pooled paired difference in standard
+certified accuracy at $r=\sigma$, bank minus no correction, in points.
+Uncertainty comes from a class-stratified, shared-item paired bootstrap with
+\FUReplicates{} replicates and a registered seed. The resampling unit is the
+unique evaluation image: in each replicate its multiplicity is drawn once
+within its (dataset, class) stratum and shared by every backbone and noise
+level in which the image appears and by every bank and radius, so the
+dependence between backbones evaluated on the same image is kept. Each
+replicate $\Delta_b$ adds to the point estimate the resampled deviation
+rescaled by $\sqrt{m/(m-1)}$ for a stratum of $m$ images (Rao--Wu). With
+$\Pr^*$ the share of replicates and the margin $\delta=\FUSESOI$ points, the
+direction test uses $p=2\min\{\Pr^*(\Delta_b\le0),\Pr^*(\Delta_b\ge0)\}$; the
+magnitude tests use $p=\Pr^*(\Delta_b\le\delta)$ for a gain of at least
+$\delta$, $p=\Pr^*(\Delta_b\ge-\delta)$ for a loss of at least $\delta$, and
+the two one-sided tests $p=\max\{\Pr^*(\Delta_b\le-\delta),\Pr^*(\Delta_b\ge\delta)\}$
+for the class practically equivalent; a contrast is a gain, else a loss, else
+practically equivalent, else inconclusive. Holm's procedure acts within each
+family (the pooled family at each $\sigma$, which decides Q6, and each dataset
+at each $\sigma$), separately for each of the four tests; it adjusts decisions
+only, so the reported 95\% percentile intervals are unadjusted. The four
+supervised controls form their own family against no correction, and a
+Romano--Wolf step-down max-$t$ procedure covers every non-identity contrast as
+a secondary family.

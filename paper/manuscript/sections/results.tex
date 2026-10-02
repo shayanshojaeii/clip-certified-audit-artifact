@@ -1,0 +1,152 @@
+\section{Audit Results}
+\label{sec:results}
+
+\input{sections/figure_family}
+
+\subsection{The preregistered gate failed}
+\label{sec:gate}
+
+Figure~\ref{fig:family} and Table~\ref{tab:family} (Appendix~\ref{app:tables})
+report every registered bank at the primary radius under both metrics with its
+post-hoc simultaneous band. The saved selection was
+the clean boundary-active bank at step 0.0025, with anchored certified accuracy
+\SavedAnchCA\% against \NoCorrAnchCA\% for no correction, and standard
+certified accuracy \SavedStdCA\% against \NoCorrStdCA\%. No mean-centering
+coefficient passed the clean gate, so the protocol's fallback comparator was
+the projected-gap bank at coefficient 0.5, which is identical to no correction
+in every decision in exact arithmetic (Corollary~\ref{cor:chowers}); the saved proposal exceeded it
+by one position in anchored certified accuracy, the protocol's selection metric,
+while its standard certified accuracy was lower. The efficacy rule also required strictly positive margins
+against mean-centering on every model and dataset marginal; computed for the
+exact-count proposal against each of the three mean-centering coefficients,
+all \ForcedComparisonFailures{} of these forced contrasts failed on at least one
+marginal, one only by a single position. The negative decision is therefore a failure
+to establish efficacy under the frozen joint rule. It is not evidence that the
+effect is zero.
+
+\paragraph{Exact-count adjudication}
+The implementation compared percentage differences in floating point, so a
+one-image drop in a \ExpEurosatItemsPerCell-image cell was represented as
+$\FloatGateArtifact$ rather than $2.0$ and was rejected. Recomputing the written
+rule with integer counts makes \FloatGateRejectedCandidates{} further banks
+eligible and changes the selected proposal to step 0.04 (standard
+\ExactStdCA\%, anchored \ExactAnchCA\%). The gate decision does not change under
+either reading; the saved selection is preserved and both readings are reported.
+
+\subsection{The proposal banks were near-identity operators}
+\label{sec:nearidentity}
+
+Proposition~\ref{prop:flip} gives a necessary condition for vote changes, which
+the follow-up finds loose (Section~\ref{sec:followup}); the proposals were also
+small. The saved proposal
+moved the prototype bank by a macro Frobenius displacement of \DispSaved{},
+against \DispGMCOne{} for text mean-centering at coefficient one and \DispGR{}
+for two-sided centering; the largest step reaches \DispExact{}. On the saved
+draws, the six proposal banks with steps up to 0.01 change the standard
+certified outcome at $r=0.25$ of at most \ChangedPositionsSmallSteps{} of the
+\ExpPositions{} positions, the boundary-active step-0.04 bank changes
+\ChangedPositionsExactStep{}, and the two-sided operator changes
+\ChangedPositionsGR{}. The three projected-gap banks give the same certified
+outcomes and reported aggregates as the uncorrected model, as
+Corollary~\ref{cor:chowers} predicts in exact arithmetic; a few saved
+confirmation counts differ slightly, consistent with floating-point numerical
+ties (on fresh draws the follow-up bounds every such change by a registered
+tie budget, Q4 in Section~\ref{sec:followup}), and their largest absolute contrast is
+\ChowersMaxAbsDelta{} points. The registered family thus contained \ExpDistinctClassifiers{} distinct
+classifiers, of which the text-only proposals changed very few saved certified
+outcomes and the largest text-only translations damaged clean accuracy.
+
+The common band, a single-step resampling band in the sense of Westfall and
+Young~\cite{westfall1993resampling}, has a half-width of \BandHalfWidth{}
+points set by the noisiest contrasts (the large-displacement comparators at
+small radii), many times the paired standard error of the proposal contrasts;
+it is uninformative about the proposals, and the counts above describe them.
+
+\subsection{One shared operator did move certified correctness}
+\label{sec:grclip}
+
+In this post-hoc complete-family analysis, whose bands are simultaneous and
+conditional on the saved draws, the GR-CLIP-style two-sided centering is, at the
+primary radius, the only bank whose simultaneous interval excludes zero under
+either metric: $\GRStdDelta$ points of standard certified accuracy at
+$r=0.25$ with band $[\GRStdLower,\GRStdUpper]$, and $\GRAnchDelta$ points
+anchored with band $[\GRAnchLower,\GRAnchUpper]$. Across the whole family,
+\BandExclZero{} contrasts exclude zero: \BandExclZeroGR{} of the eight
+contrasts of this operator, all positive, and \BandExclZeroOther{} negative
+standard-metric contrasts of text mean-centering at $r=0$
+(Section~\ref{sec:semantics}). It is therefore the only bank with a positive
+interval that excludes zero. Its macro clean accuracy rose to \GRClean\% from \NoCorrClean\%, and
+clean accuracy improved in \GRCellsImproved{} of \ExpCells{} cells. It was
+ineligible because one cell (\GRWorstCell) lost \GRWorstCellDrop{} points, that
+is \GRWorstCellImages{} of \ExpEurosatItemsPerCell{} images.
+
+Three qualifications bound the size of this effect without removing it. The
+gain is $\GRStdDeltaCifar$ points on the six CIFAR-100 cells, where
+\GRStdCifarCellsNegative{} of six cells move down, and $\GRStdDeltaEurosat$
+points on the six \ExpEurosatItemsPerCell-image EuroSAT cells; the band that
+excludes zero is carried by the EuroSAT cells (Appendix~\ref{app:tables}).
+Second, every bootstrap stratum contains five items, and resampling five items
+with replacement understates the variance by a factor of $4/5$; inflating the
+band accordingly gives $[\GRStdLowerSens,\GRStdUpperSens]$, which still
+excludes zero. Third, the preregistered estimand weights the \ExpCells{} cells
+equally, so the EuroSAT cells carry half the estimand (Kish design effect
+\KishDesignEffect{}, effective sample size \EffectiveN{}); the item-pooled gain
+is $\GRStdDeltaPooled$ points. The operator is also the only one in the audit's registered family that
+transforms the image feature, which is exactly the case that
+Proposition~\ref{prop:flip} does not bound. We do not conclude that two-sided
+centering is effective in general: within the audit, the registered clean gate
+rather than the certificate excluded it, and the follow-up finds it in its
+original setting, while on fresh items it lies within the $\pm\FUSESOI$-point
+margin under the pooled estimand and changes sign across datasets and
+checkpoints (Section~\ref{sec:followup}).
+
+\subsection{Stability is not correctness}
+\label{sec:semantics}
+
+For every candidate, at $r=0.25$ anchored certified accuracy lies \StdAnchGapMin{} to
+\StdAnchGapMax{} points below standard certified accuracy, because the anchored
+metric additionally discards positions whose stable class is correct but
+differs from the raw clean prediction: for the uncorrected model,
+\CertifiedCorrectAnchorMismatch{} of the \PartCertifiedCorrect{}
+certified-correct positions at $r=0.25$ are such anchor mismatches. The two
+metrics can also disagree. Text mean-centering at
+coefficient one has a standard contrast of $\GMCStdDeltaRZero$ points at $r=0$
+with band $[\GMCStdLowerRZero,\GMCStdUpperRZero]$, which excludes zero, while
+its anchored contrast at the same radius is $\GMCAnchDeltaRZero$ points with
+band $[\GMCAnchLowerRZero,\GMCAnchUpperRZero]$; it raises raw/smoothed
+agreement to \GMCAgreement\% from \NoCorrAgreement\% while lowering clean
+accuracy to \GMCClean\%. An evaluation that reports only one of the two metrics
+can therefore reach a different conclusion about the same operator.
+
+\input{generated/table_partition}
+
+Table~\ref{tab:partition} partitions the \ExpPositions{} positions of the
+uncorrected model at $r=0.25$ (item-pooled). Abstentions account for
+\PartAbstain{} positions; \PartWrongClass{} nonabstaining positions select a
+class other than the label, and \PartCertifiedWrong{} of them carry a
+certificate at this radius; \PartCorrectBelowRadius{} select the correct class
+but do not reach the radius; and \PartCertifiedCorrect{} are certified correct.
+Under the anchored metric, \PartAnchorMismatch{} nonabstaining positions are
+anchor mismatches and \PartAnchoredCorrect{} remain anchored and certified
+correct. Wrong smoothed classes are the dominant loss, and the certified-wrong
+rate, \CertifiedWrongRate\% of all positions, exceeds the certified-correct
+rate. Within a cell, the single most frequent class among certified-wrong
+positions accounts for \CWTopClassShareLo\% to \CWTopClassShareHi\% of them.
+Across cells, raw clean accuracy ranges from \RangeCleanLo\% to
+\RangeCleanHi\%, smoothed accuracy from \RangeSmoothedLo\% to
+\RangeSmoothedHi\%, raw/smoothed agreement from \RangeAgreementLo\% to
+\RangeAgreementHi\%, the share of positions with zero radius under the anchored
+metric from \RangeZeroRadiusLo\% to \RangeZeroRadiusHi\%, and the largest
+single smoothed-class share from \RangeTopClassLo\% to \RangeTopClassHi\%.
+These are descriptions of where certificates are lost in this regime,
+consistent with the high-noise degradation reported by~\cite{nirala2024ovc};
+the controlled experiments that would identify a cause were never run, and we
+make no causal claim.
+
+\paragraph{Finite confirmation budget}
+Every estimate here concerns the finite-budget procedure. With
+\ExpConfDraws{} confirmation draws, fewer than the $10^5$ of Cohen et
+al.~\cite{cohen2019smoothing}, the exact bound censors radii: at $r=0.25$,
+\CensoredNoCorrRQuarter{} uncorrected positions and \CensoredSavedRQuarter{}
+for the saved proposal. Pairing does not equalize this censoring; Q9 measures
+a larger confirmation budget directly (Section~\ref{sec:followup}).

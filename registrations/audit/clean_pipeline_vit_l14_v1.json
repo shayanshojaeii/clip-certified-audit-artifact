@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "experiment_id": "DAY9-MODEL-VIT-L14-V1",
+  "seed": 20260830,
+  "model": {
+    "backend": "open_clip",
+    "architecture": "ViT-L-14-quickgelu",
+    "pretrained": ".cache/models/vit_large_patch14_clip_224.openai/open_clip_model.safetensors",
+    "device": "cuda",
+    "expected_package_version": "3.3.0",
+    "checkpoint_sha256": "9ce2e8a8ebfff3793d7d375ad6d3c35cb9aebf3de7ace0fc7308accab7cd207e"
+  },
+  "preprocessing": {
+    "input_domain": [0.0, 1.0],
+    "resize_mode": "shortest_edge",
+    "resize_size": 224,
+    "crop_mode": "center",
+    "crop_size": 224,
+    "interpolation": "bicubic",
+    "antialias": true,
+    "convert_rgb": true,
+    "mean": [0.48145466, 0.4578275, 0.40821073],
+    "std": [0.26862954, 0.26130258, 0.27577711]
+  },
+  "determinism": {
+    "torch_deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "allow_tf32": false
+  }
+}

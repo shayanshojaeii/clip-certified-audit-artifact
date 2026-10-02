@@ -1,0 +1,72 @@
+\section{What a Shared Prototype Operator Can Do to a Noisy Vote}
+\label{sec:operators}
+
+\input{sections/figure_pipeline}
+
+\subsection{The registered operator family}
+\label{sec:family}
+
+All operators are fixed per cell from development data only and then frozen;
+Figure~\ref{fig:pipeline} shows where each acts. With $\Normalize(v)=v/\lVert
+v\rVert$, a coefficient $c\in\{0.25,0.5,1\}$ or a step
+$\eta\in\{0.0025,0.005,0.01,0.02,0.04\}$, they are:
+\begin{itemize}
+\item \emph{Text mean-centering}: $t'_k=\Normalize\big(t_k-c\,(\mu_T-\mu_I)\big)$.
+\item \emph{Projected-gap translation} (Chowers et al.~\cite{chowers2026bug}):
+$t'_k=\Normalize(t_k+c\,p)$, where $p=(I-VV^{\top})(\mu_I-\mu_T)$ is the
+component of $\mu_I-\mu_T$ orthogonal to all differences $t_i-t_j$
+($V$ an orthonormal basis of their span).
+\item \emph{GR-CLIP-style two-sided centering}: $t'_k=\Normalize(t_k-c\,\mu_T)$
+together with $z'=\Normalize(z-c\,\mu_I)$ for every clean or noisy image
+feature; the audit used $c=1$, and the follow-up also evaluates its text half
+(prototypes only) and its image half ($z$ only).
+\item \emph{Clean boundary-active translation}: $t'_k=\Normalize(t_k+\eta u)$
+with a unit direction $u$ that increases the normalized clean margin of the
+development items' own raw predictions.
+\item \emph{Noisy-margin translation}: the same form with a unit direction fitted
+to increase a soft noisy-margin objective over Gaussian draws of the development
+items at the audit noise level.
+\end{itemize}
+Together with the identity this gives the \ExpCandidates{} registered banks per
+cell. Ground-truth labels are never used to build a direction; the two proposal
+directions target each item's own raw clean prediction.
+
+\subsection{Per-draw identity and a decision-change condition}
+\label{sec:flip}
+
+Every text-side operator above has the form $t'_k=(t_k+w)/n_k$ with one common
+translation $w$ and per-prototype renormalization factors
+$n_k=\lVert t_k+w\rVert$. We derived
+them after the audit outcome was known, so they explain the audit in hindsight
+rather than predicting it; a weaker form of Proposition~\ref{prop:flip} was
+registered as a conformance prediction for the extension of
+Section~\ref{sec:extension} before its sampling.
+
+\input{sections/theory_decision_change}
+
+Two consequences matter for reading the results. A step of $\eta=0.0025$ can
+flip a noisy draw only if its original top-1 margin is at most
+$\lvert n_j-n_k\rvert\le2\eta$. The bound defines which draws are eligible;
+how many are eligible depends on the empirical margin distribution, and on the
+saved draws the registered steps changed very few certified outcomes
+(Section~\ref{sec:nearidentity}). The projected-gap
+translation leaves every hard label unchanged for every coefficient, so under
+hard-label smoothing it is an exact negative control rather than a competing
+method; this is a property of the projection Chowers et al.\ designed to
+preserve nearest neighbors, made explicit for the smoothed classifier. Within
+the audit's registered family, only the two-sided operator, which also shifts
+the image feature, escapes the bound.
+
+\subsection{Why a clean global-gap summary cannot settle the question}
+\label{sec:nonident}
+
+One might hope to predict a certificate from the clean geometry alone. It cannot
+be done in general. Appendix~\ref{app:nonident} gives an explicit smooth
+normalized encoder and two binary prototype banks that share the encoder, the
+clean feature of the certified input, the complete global-gap vector under any
+common image-reference distribution, the clean margin and the prototype
+correlation, yet have population Cohen radii that differ by an arbitrary factor.
+The two banks are mirror images of one another, and the only asymmetry is how
+the encoder's response direction meets each decision boundary; the listed clean
+summaries do not contain that response. This is a scoping remark, not a theorem about
+CLIP: it motivates measuring noisy votes rather than clean gaps.

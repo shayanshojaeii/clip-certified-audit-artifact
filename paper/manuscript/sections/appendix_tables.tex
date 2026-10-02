@@ -1,0 +1,95 @@
+\section{Additional Tables and Protocol Details}
+\label{app:tables}
+
+\subsection{The complete audit family at the primary radius}
+
+% Moved from Section V to make room for the study map in the body (reviews of V11, D-160).
+\input{generated/table_family_r025}
+
+Table~\ref{tab:family} lists every registered bank of the audit at $r=0.25$:
+clean accuracy, both certified-accuracy metrics, the standard-metric contrast
+with its complete-family simultaneous band (Figure~\ref{fig:family} shows both
+metrics), and eligibility under the saved floating-point and the exact-count
+readings of the clean gate (Section~\ref{sec:gate}).
+
+\subsection{Per-cell behavior of the two-sided operator}
+
+\input{generated/table_grclip_cells}
+
+Table~\ref{tab:grclip-cells} lists clean accuracy and both certified-accuracy
+metrics at $r=0.25$ for the uncorrected model and for the GR-CLIP-style
+two-sided centering in every cell. The clean-gate rejection is driven by a
+single EuroSAT cell; the standard-metric gain is $\GRStdDeltaCifar$ points on
+the CIFAR-100 cells and $\GRStdDeltaEurosat$ points on the EuroSAT cells, which
+is why the item-pooled gain ($\GRStdDeltaPooled$ points) is smaller than the
+equal-cell gain ($\GRStdDelta$ points).
+
+\subsection{Registered extension design, regime and contrasts}
+
+Tables~\ref{tab:extension}, \ref{tab:ext-regime} and~\ref{tab:ext-contrasts}
+give the extension's registered design, the uncorrected model in every cell,
+and every registered contrast with its band (Section~\ref{sec:extension}).
+
+\input{generated/table_extension}
+\input{generated/table_ext_regime}
+\input{generated/table_ext_contrasts}
+
+\subsection{Fresh-noise diagnostic: flip budget and taxonomy}
+
+\input{generated/table_n3c}
+
+Table~\ref{tab:n3c} reports, per cell and bank, the registered flip-budget
+partition (items already at the confirmation threshold, items for which the
+threshold is unattainable on the recorded draws, and undetermined items) and the
+per-draw taxonomy of label changes against ground truth (useful
+wrong-to-correct, harmful correct-to-wrong, wrong-to-wrong, unchanged), with
+\NthreeCPone{} recorded exceptions to the decision-change inequality
+(prediction P1). The taxonomy is descriptive; it identifies no cause. The
+diagnostic's other registered predictions are as follows: P2 (the projected-gap banks) recorded an orthogonality
+residual of at most $\NthreeCPtwoResidual$ and a normalizer mismatch of at most
+$\NthreeCPtwoMismatch$, and all \NthreeCPtwoFlips{} of their float-level flips
+satisfied the inequality (\NthreeCPtwoExceptions{} exceptions); P4a (Gaussian
+calibration of the noisy margin) returned \emph{\NthreeCPfourAVerdict}, with a
+mean absolute calibration error of at most \NthreeCPfourAMax{}; P5 (a class's
+noisy vote share rises with its alignment to the mean noisy feature) returned
+\emph{\NthreeCPfiveVerdict}, with Spearman correlations from $\NthreeCPfiveRhoLo$
+to $\NthreeCPfiveRhoHi$ across the four cells; P6 (descriptive margin anatomy)
+gives the items already at threshold in Table~\ref{tab:n3c}, with the per-draw
+margin quantiles in the released outputs; and P8 (the extension's controls were
+frozen and hash-bound before the fresh noise) is procedural and has no
+numerical outcome.
+
+\subsection{Exact-count clean-gate rule}
+
+The registered rule declares a candidate eligible when its macro clean-accuracy
+drop over the \ExpCells{} cells is at most one point and no cell drops by more
+than two points, with drops measured against the same-cell uncorrected model.
+For a cell with $n$ items and correct counts $c_{\mathrm{ref}}$ and
+$c_{\mathrm{cand}}$, the drop in points is $100(c_{\mathrm{ref}}-c_{\mathrm{cand}})/n$,
+an exact rational number. The implementation evaluated $100(a_{\mathrm{ref}}-a_{\mathrm{cand}})\le2$
+with floating-point accuracies, which represents a one-image drop in a
+\ExpEurosatItemsPerCell-image cell as \FloatGateArtifact{}. The released
+adjudication script recomputes the rule with exact rational arithmetic, reports
+both readings, and leaves every saved file unchanged.
+
+\subsection{Compute and environment}
+
+The immutable audit ran on one consumer GPU (an RTX 4090) under a pinned
+runtime recorded in the artifact (Python 3.12, PyTorch 2.11 with CUDA 13,
+OpenCLIP 3.3.0) and took \ExpElapsedHours{} GPU-hours for its \ExpConfVotes{}
+confirmation votes. Encoders ran in float32 with reduced-precision matrix modes
+disabled. The positive-control pilot trained its adapters and certified its
+items on a rented GPU; its confirmation stage used the same budget per item.
+The complete-family analysis (\BandReplicates{} replicates), the reconstruction
+scripts and every table in this paper run on a CPU from the released
+statistics and recorded outputs without model or dataset downloads. No experiment was
+retuned or repeated in response to an inspected outcome: the same-item
+re-certification of Section~\ref{sec:followup} was registered as such before its
+sampling, and one partially completed follow-up job was discarded after a
+hardware fault and recomputed from its first item (Appendix~\ref{app:deviations}); the extension of Section~\ref{sec:extension} was
+registered before any of its conditions were sampled, and its plan, from
+measured throughput, was 23 GPU-hours on the audit's GPU. The follow-up's sampling ran for
+\FUMainHours{} hours on seven RTX 5090 GPUs of one rented host, after an eighth
+developed a hardware fault, and for \FUExtraHours{} hours on one RTX 5090 of a
+second host (Appendix~\ref{app:deviations}); its registered analysis runs on a
+CPU.

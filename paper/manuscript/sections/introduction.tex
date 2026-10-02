@@ -1,0 +1,111 @@
+\section{Introduction}
+\label{sec:intro}
+
+Randomized smoothing turns any base classifier into a smoothed classifier with a
+certified $\ell_2$ radius around each input~\cite{cohen2019smoothing}. For a
+frozen zero-shot vision-language model such as CLIP~\cite{radford2021clip}, the
+base classifier compares an image feature with a bank of text prototypes, one
+per class, and the certificate protects whatever class the smoothed classifier
+selects under Gaussian noise. Throughout, \emph{frozen} means that the
+pretrained image and text encoders are never updated; the operators we study
+change only the prototype bank (and, for two-sided centering, the image
+feature). The certificate therefore says that the selected
+class is \emph{stable}; it does not say that the selected class is
+\emph{correct}. Certified accuracy is the fraction of inputs whose stable class
+is also the true class. Certification of CLIP degrades quickly as the noise
+grows~\cite{nirala2024ovc}, and in the regime we study many certificates
+protect a wrong answer.
+
+A natural hope is that the image-text \emph{modality gap}~\cite{liang2022mind},
+the systematic offset between image and text embeddings, is responsible for part
+of this loss, and that a cheap post-hoc correction of the prototype geometry
+could recover certified correctness. The hope has concrete support: Chowers et
+al.\ prove that translating one modality toward the other improves a
+nearest-neighbor stability measure under additive embedding
+noise~\cite{chowers2026bug}, and mean-centering and modality-wise recentering are
+already used to improve clean accuracy~\cite{li2025closing} or empirical
+robustness~\cite{dong2025stabilizing,zhu2025cola}. Such corrections need no
+training and no labels (some use unlabeled images) and apply to a
+deployed model in one line; if one of them moved a certificate, it would be a
+cheap deployment-time upgrade of certified trust in a zero-shot classifier. We therefore ask a trustworthiness question about deployed
+zero-shot classifiers: can a \emph{shared} correction, one common operator
+applied to every prototype, raise the fraction of inputs whose hard-label Cohen
+certificate protects the correct class? Table~\ref{tab:glance} summarizes the
+answer.
+
+\input{sections/table_glance}
+
+This paper audits that question rather than proposing a method. A
+preregistered audit of \ExpCandidates{} banks (the identity and 17 shared
+operators) is the discovery stage; a follow-up registered on fresh items
+carries the main evidence. The contributions are (i) \emph{mechanism}: when a
+renormalized common text-side translation can change a hard-label vote, and
+why the projected-gap translation cannot; (ii) \emph{transportability}: no
+shared correction gives a consistent gain, and the one post-hoc exception
+persists under fresh noise on the audit's items but changes sign across fresh
+datasets and checkpoints, while supervised class-specific controls move
+certified accuracy; and (iii) \emph{evaluation semantics}: standard certified
+accuracy, clean-anchored stability, abstention and certified-wrong
+concentration answer different questions. Every registered outcome is reported
+regardless of sign; Figure~\ref{fig:flow} shows which studies were registered
+and what builds on what.
+
+\input{sections/figure_study_flow}
+
+\paragraph{Findings}
+\emph{Main result.} In the follow-up, registered before its sampling with
+\FUImagesB{} fresh images per noise level, the registered magnitude test
+places every primary shared contrast within the $\pm\FUSESOI$-point margin of
+no correction at both noise levels under the registered item-pooled mixture of
+three datasets, and no interval reaches a gain above $\FUQSixMaxUpper$ points.
+This is not confined to collapsed cells: on CIFAR-100 at
+$\sigma=\FUSigmaLow$, where the smoothed classifier is not collapsed, two-sided
+centering changes certified accuracy by $\FUGRCifarLowPoint$ points. Supervised
+class-specific controls, diagnostics rather than matched comparators, gain
+$\FUQFiveClassLo$ to $\FUQFiveClassHi$ points (Section~\ref{sec:followup}). In
+the descriptive registered extension (five backbones, three datasets, three
+noise levels) the largest macro increase among the 17 shared banks was
+$\ExtBMaxGridDelta$ points.
+
+\emph{The one exception is setting-dependent.} In the preregistered audit the
+registered family did not establish an improvement under the joint efficacy
+and clean-accuracy rule. Post hoc, a
+GR-CLIP-style two-sided centering, the only operator that also recenters the
+image feature, raised standard certified accuracy at radius 0.25 by
+$\GRStdDelta$ points (simultaneous 95\% band $[\GRStdLower,\GRStdUpper]$,
+conditional on the saved draws); it was excluded because one
+\ExpEurosatItemsPerCell-image cell lost \GRWorstCellImages{} images. The
+follow-up reproduces this gain under fresh noise on the audit's items; on
+fresh items it is not uniform: at $\sigma=\FUSigmaHigh$ it recurs,
+descriptively, on sealed EuroSAT for the audit's OpenAI backbones and reverses
+on Imagenette and for the LAION-2B-trained OpenCLIP ViT-B/32.
+
+\emph{Mechanism.} For a common text-side translation followed by
+per-prototype renormalization, Proposition~\ref{prop:identity} shows that
+relative scores can change only through class-dependent renormalization, and
+Proposition~\ref{prop:flip} gives a necessary condition for a noisy vote to
+change. For the projected-gap translation of Chowers et
+al.~\cite{chowers2026bug} all renormalization factors are equal, so
+Corollary~\ref{cor:chowers} gives exact decision invariance under hard-label
+smoothing. We derived it after the
+audit; a weaker form, registered before the extension's sampling, held on fresh
+noise with \NthreeCPone{} exceptions.
+
+\emph{Stability is not correctness.} Standard and anchored certified accuracy
+differ by \StdAnchGapMin{} to \StdAnchGapMax{} points across candidates at radius 0.25, and
+under the uncorrected model \CertifiedWrongRate\% of the audit's positions carry
+a certificate for a wrong class at radius 0.25, more than are certified
+correct.
+
+\paragraph{Scope}
+The audit covers OpenAI CLIP ViT-B/32 and ViT-L/14, CIFAR-100 and
+EuroSAT, three folds, Gaussian noise with $\sigma=\ExpSigma$ in the
+$224\times224$ model-input space, and shared prototype corrections under a
+frozen clean-accuracy eligibility gate. This regime is hard: the
+uncorrected smoothed classifier is often collapsed, with smoothed accuracy
+between \RangeSmoothedLo\% and \RangeSmoothedHi\% across cells. The extension and
+the follow-up add a regime where it is not (CIFAR-100 at $\sigma=\FUSigmaLow$;
+Imagenette is near ceiling); EuroSAT remains difficult at every noise level. The audit is not
+an equivalence study, it identifies no causal mechanism, and it says nothing
+about class-specific, prompt-learned, noise-adapted or image-side methods beyond
+the positive control.

@@ -1,0 +1,39 @@
+{
+  "schema_version": "satml2027.reboot_recovery_authorization.v1",
+  "status": "OWNER_AUTHORIZED_OPERATIONAL_RECOVERY",
+  "authorized_at_date": "2026-09-24",
+  "authorization_basis": "The project owner explicitly instructed the agent to do what is necessary to continue after the verified university-server reboot.",
+  "scope": "One exact resume of the already approved EXP-019A/B/N3C queue from the authenticated 260-of-500 first-shard checkpoint.",
+  "resume_existing_registered_run_authorized": true,
+  "new_scientific_design_authorized": false,
+  "protocol_change_authorized": false,
+  "outcome_inspection_authorized": false,
+  "exp018_authorized": false,
+  "historical_final_test_authorized": false,
+  "unregistered_replication_authorized": false,
+  "approved_v4_commit": "7c26704eb3899893dd385ae3feeace97b078c41a",
+  "recovery_guard_sha256": "c9eea69e1980a76dfef7c72b9dea97f9b6d9f79e1fe4e2b2de1413e5f36741d9",
+  "original_operational_guard_sha256": "4c424953eb8829256aafdf54325a9d4602db86fd5bdc57bf327c6103ff622bae",
+  "plan_sha256": "eba3c57889b0d75c3b18feb35866ca98380582bdafaead3657e5d0a5e361514f",
+  "launcher_sha256": "bfddf353d38b4de040554306943c51cbec9bac083430a79cf24c042f6ec2464b",
+  "partial_checkpoint": {
+    "experiment_id": "EXP-20260920-019A",
+    "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+    "items_done": 260,
+    "items_total": 500,
+    "shard_sha256": "a63edc08b83ba5226955e7bdb4c84e23f21d189e724256576146adf098e85076",
+    "metadata_sha256": "340f5009d7ad4f5b7893e831ff8540250e857470b3bb615d06a19160923acd1d"
+  },
+  "verified_reboot": {
+    "boot_id": "861eede5-dfe8-4c8f-ba1c-ba440c06d7ca",
+    "boot_time_local": "2026-09-24 09:22:57"
+  },
+  "required_conditions": [
+    "The exact approved runtime, plan, launcher, registrations, preparation receipt, and preparation manifest must match.",
+    "The partial checkpoint must contain exactly the two authenticated files and exactly 260 completed positions.",
+    "The attempt-2 guard and worker must be absent and no attempt-2 terminal receipt may exist.",
+    "EXP-019B and N3C result directories must remain absent before recovery.",
+    "A durable exclusive one-time consumption record must be created before the unchanged launcher is invoked.",
+    "No partial scientific prediction, vote, certificate, or metric may be inspected."
+  ]
+}

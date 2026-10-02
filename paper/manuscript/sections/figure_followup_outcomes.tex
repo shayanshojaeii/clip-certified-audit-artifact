@@ -1,0 +1,48 @@
+% How the uncorrected model's decisions split at r = sigma on the EXP-021B items (D-148). Data:
+% generated/fig_followup_outcomes.dat, from the registered cells table (analysis/exp021/021b/cells_ext.csv), cross-checked
+% against the report's Q7 rows by scripts/generate_satml2027_paper_assets.py; a framed placeholder until then.
+\begin{figure}[t]
+\centering
+\input{generated/fig_followup_outcomes_axis}
+\ifnum\FUOutcomesReady=1
+\begin{tikzpicture}
+\begin{axis}[
+  xbar stacked,
+  bar width=7pt,
+  width=0.72\columnwidth,
+  height=0.6\columnwidth,
+  xmin=0, xmax=100,
+  y dir=reverse,
+  ymin=0.4, ymax=6.6,
+  fuoutcomesaxis,
+  xlabel={share of items at $r=\sigma$ (\%)},
+  yticklabel style={font=\tiny},
+  xticklabel style={font=\tiny},
+  xlabel style={font=\scriptsize},
+  legend style={font=\tiny, at={(0.5,1.02)}, anchor=south, draw=none, legend columns=2,
+                /tikz/every even column/.append style={column sep=6pt}},
+  legend cell align=left,
+  area legend,
+]
+% colorblind-safe pair (blue / orange) instead of green / red (V11 review)
+\addplot[fill={rgb,255:red,0;green,114;blue,178}, draw=none] table[x=correct, y=y] {generated/fig_followup_outcomes.dat};
+\addlegendentry{certified, correct}
+\addplot[fill={rgb,255:red,230;green,159;blue,0}, draw=none] table[x=wrong, y=y] {generated/fig_followup_outcomes.dat};
+\addlegendentry{certified, wrong class}
+\addplot[fill=gray!45, draw=none] table[x=below, y=y] {generated/fig_followup_outcomes.dat};
+\addlegendentry{certified only below $r=\sigma$}
+\addplot[fill=white, draw=gray!60] table[x=abstain, y=y] {generated/fig_followup_outcomes.dat};
+\addlegendentry{abstained}
+\end{axis}
+\end{tikzpicture}
+\else
+\framebox[0.95\columnwidth]{\parbox[c][0.35\columnwidth][c]{0.85\columnwidth}{\centering\scriptsize
+  Placeholder: drawn from the registered Follow-up B cells table (the uncorrected model's certified-correct,
+  certified-wrong, below-radius and abstention shares at $r=\sigma$).}}
+\fi
+\caption{How the uncorrected model's smoothed decisions split at $r=\sigma$ on
+the fresh Follow-up B items, per dataset and noise level, pooled over backbones
+(from the registered cells table, Q7): certified and correct, certified for a
+wrong class, certified only at a smaller radius, or abstained.}
+\label{fig:followup-outcomes}
+\end{figure}

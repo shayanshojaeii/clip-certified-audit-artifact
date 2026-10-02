@@ -1,0 +1,36 @@
+{
+  "research/exp021_approvals/EXP021_APPROVAL__20260927T183133Z__353afa16d5c4.json": {
+    "original_sha256": "353afa16d5c4d75ffa2034129096002fbff67a87e0f92bd12cf3c165453a4e25",
+    "redacted_sha256": "a71b83fd078802970e91db7e6735f0c5cc53c8d8f92108c849ccc84654be1b79",
+    "redacted": [
+      "/approved_by: approver name replaced by a role",
+      "/notes: approver name replaced by a role (1x)",
+      "/verdicts/preparation/approved_by: approver name replaced by a role",
+      "/verdicts/preparation/basis: approver name replaced by a role (1x)"
+    ]
+  },
+  "research/exp021_approvals/EXP021_APPROVAL__20260928T112615Z__553985bad3e1.json": {
+    "original_sha256": "553985bad3e1881b32063af4375d5ab7d563707872e2871f75600288c7780123",
+    "redacted_sha256": "92fdd548af68a981a766585a1fb99b7233d63f9e77733baa8136b24242c11443",
+    "redacted": [
+      "/approved_by: approver name replaced by a role",
+      "/notes: cloud provider name removed (1x); cloud instance number removed (1x)",
+      "/verdicts/preparation/approved_by: approver name replaced by a role",
+      "/verdicts/preparation/basis: approver name replaced by a role (1x)",
+      "/verdicts/sampling/approved_by: approver name replaced by a role",
+      "/verdicts/sampling/basis: cloud provider name removed (1x); cloud instance number removed (1x)"
+    ]
+  },
+  "research/EXP021_APPROVAL.json": {
+    "original_sha256": "0ed5e81fff4693b9b59c047c23b959eb39b66b9650669b8d1421fbfeabb11f4e",
+    "redacted_sha256": "6aa114baaf54d7d219eb068204a9a30f1b21a975cf8f5c81bce18c17d1bacd79",
+    "redacted": [
+      "/approved_by: approver name replaced by a role",
+      "/verdicts/analysis/approved_by: approver name replaced by a role",
+      "/verdicts/preparation/approved_by: approver name replaced by a role",
+      "/verdicts/preparation/basis: approver name replaced by a role (1x)",
+      "/verdicts/sampling/approved_by: approver name replaced by a role",
+      "/verdicts/sampling/basis: cloud provider name removed (1x); cloud instance number removed (1x)"
+    ]
+  }
+}

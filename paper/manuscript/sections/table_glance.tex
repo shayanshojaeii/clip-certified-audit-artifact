@@ -1,0 +1,30 @@
+% Results at a glance (front-page review, 2026-09-28; D-154; relabeled after the reviews of V11, D-159). Every value
+% is a generated macro; the rows are the studies of Figure~\ref{fig:flow}. Audit and extension values are equal-cell
+% (their registered estimand); Follow-up B values are item-pooled (its registered estimand); Follow-up A reports its
+% registered equal-cell Q1 estimand. The class-specific column holds supervised diagnostics, not matched comparators.
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Results at a glance: change in standard certified accuracy (points)
+against no correction, at radius 0.25 for the audit and the pilot and at
+$r=\sigma$ otherwise. Class-specific controls are supervised diagnostics, not
+matched comparators: they use labels and change clean accuracy; their
+per-dataset ranges span both noise levels.}
+\label{tab:glance}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.30\columnwidth}>{\raggedright\arraybackslash}p{0.42\columnwidth}>{\raggedright\arraybackslash}p{0.23\columnwidth}@{}}
+\toprule
+Study (status) & Shared corrections & Class-specific (supervised) \\
+\midrule
+Audit, \ExpCells{} cells (preregistered) & gate not met; two-sided centering $\GRStdDelta$ (post hoc, failed the clean rule) & -- \\
+Pilot, audit regime (exploratory) & supervised shared translation $\FarlaSharedDelta$ & $\FarlaVsNoCorrDelta$ \\
+Extensions A / B, five backbones (registered) & largest of 17 banks $\ExtAMaxGridDelta$ / $\ExtBMaxGridDelta$ & $\ExtALowrankDelta$ / $\ExtBLowrankDelta$ \\
+Follow-up A, audit items, fresh noise (registered) & two-sided $\FUQOnePoint$ (saved draws $\FUQOneSaved$) & -- \\
+Follow-up B, fresh items, pooled (registered, primary) & all five primary contrasts within $\pm\FUSESOI$; largest shared estimate $\FUQSixMaxBoth$ & $\FUQFiveClassLo$ to $\FUQFiveClassHi$ \\
+\quad CIFAR-100, not collapsed (secondary) & two-sided $\FUGRCifarLowPoint$ at $\sigma=\FUSigmaLow$ & $\FUQFiveClassCifarLo$ to $\FUQFiveClassCifarHi$ \\
+\quad sealed EuroSAT (secondary) & two-sided $\FUGREurosatHighPoint$ at $\sigma=\FUSigmaHigh$; descriptively OpenAI backbones $\FUGREurosatHighOBthirtytwo$, $\FUGREurosatHighOLfourteen$, LAION-2B-trained $\FUGREurosatHighLBthirtytwo$ & $\FUQFiveClassEurosatLo$ to $\FUQFiveClassEurosatHi$ \\
+\quad Imagenette (secondary) & two-sided $\FUGRImagenetteHighPoint$ at $\sigma=\FUSigmaHigh$ (near ceiling) & $\FUQFiveClassImagenetteLo$ to $\FUQFiveClassImagenetteHi$ \\
+\bottomrule
+\end{tabular}
+\end{table}

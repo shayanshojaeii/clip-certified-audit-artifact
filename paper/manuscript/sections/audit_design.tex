@@ -1,0 +1,64 @@
+\section{Preregistered Audit Design}
+\label{sec:design}
+
+\paragraph{Models, data and roles}
+The audit, registered in a development stage and a validation stage whose
+results were then frozen, uses OpenAI CLIP ViT-B/32 and ViT-L/14 with frozen weights and
+frozen prompts: the single OpenAI CIFAR-100 prompt and a three-template EuroSAT
+ensemble~\cite{radford2021clip,krizhevsky2009cifar,helber2019eurosat}. From the
+CIFAR-100 training split and the EuroSAT image folder we drew three folds, each
+with five development and five validation images per class, giving
+\ExpCifarItemsPerCell{} validation items per CIFAR-100 cell and
+\ExpEurosatItemsPerCell{} per EuroSAT cell, \ExpCells{} cells and
+\ExpPositions{} validation positions in total. Development items served only to
+build operators, and validation items to select and evaluate them. The
+CIFAR-100 test split and a EuroSAT holdout were sealed and were not read by the
+audit, the positive control or the extension, whose CIFAR-10 items also come
+from the training split; the
+registered follow-up of Section~\ref{sec:followup} later spent the sealed
+EuroSAT holdout (\FUItemsEurosatB{} items) and \FUItemsCifarB{} CIFAR-100
+official-test items once, as its registration specifies.
+
+\paragraph{Certification}
+Every candidate bank in every cell was certified on every validation item with
+independent selection and confirmation noise streams derived from separate base
+seeds, so all \ExpCandidates{} banks of a cell see identical draws (a paired
+design), while selection draws are never reused for confirmation. In total the
+audit evaluated \ExpRows{} candidate--item positions with \ExpSelVotes{}
+selection votes and \ExpConfVotes{} confirmation votes. Radii are reported at
+$r\in\{0,0.1,0.25,0.5\}$ with $r=0.25$ preregistered as primary.
+
+\paragraph{Selection and efficacy rule}
+The protocol selected one proposal objective and step by the macro
+\emph{anchored} certified accuracy at $r=0.25$ over the \ExpCells{} cells, with
+frozen tie-breaks, and selected one coefficient per tunable baseline by the same
+metric. A candidate was eligible only if its macro clean-accuracy drop relative
+to the uncorrected model was at most one point and no single cell dropped by
+more than two points. The efficacy gate then required the selected proposal to
+exceed the eligible mean-centering comparator on the macro metric and on every
+model and dataset marginal. If the gate failed, the protocol stopped: the
+preregistered attack and control stage and the sealed test remained
+locked, and the project committed to reporting the negative in full. That
+stage never ran; the sealed test was later allocated, by a registration hashed
+before sampling, to the follow-up
+(Section~\ref{sec:followup}).
+
+\paragraph{Custody}
+Configurations, split assignments, seeds, prompts and every bank were hashed
+before sampling; the reconstruction checks are in
+Appendix~\ref{app:deviations}.
+
+\paragraph{Post-hoc audits of the immutable result}
+Three analyses were specified after the outcome was known and are labeled as
+such. (i) \emph{Metric semantics}: standard certified accuracy
+\eqref{eq:stdca} was reconstructed beside the anchored metric \eqref{eq:anchca}
+for all candidates, cells and radii. (ii) \emph{Complete-family bands}: a paired
+item bootstrap, stratified by dataset, fold and class, resampled the same items
+across both models, all candidates, radii and metrics, and produced one
+unstudentized 95\% simultaneous max-absolute-deviation band over all
+\BandContrasts{} candidate--radius--metric contrasts against the uncorrected
+model (\BandReplicates{} replicates, \BandStrata{} strata, seed fixed before
+execution). The band is a conditional compatibility statement about the saved
+sample; it is not an equivalence test. (iii) \emph{Exact-count adjudication}:
+the clean gate was recomputed with integer counts because the implementation
+compared floating-point percentages.

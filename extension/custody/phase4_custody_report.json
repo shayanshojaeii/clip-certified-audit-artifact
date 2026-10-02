@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-09-21T07:30:55+00:00",
+  "config_snapshot": "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/config_snapshot.json",
+  "failures": [],
+  "final_test_flags": {
+    "analysis/report.json::phase3_final_test_accessed": false,
+    "confirmation/openai-clip-vit-b32-quickgelu__cifar100/metrics.json::phase3_final_test_accessed": false,
+    "confirmation/openai-clip-vit-b32-quickgelu__eurosat/metrics.json::phase3_final_test_accessed": false,
+    "confirmation/openai-clip-vit-l14-quickgelu__cifar100/metrics.json::phase3_final_test_accessed": false,
+    "confirmation/openai-clip-vit-l14-quickgelu__eurosat/metrics.json::phase3_final_test_accessed": false,
+    "splits/manifest.json::phase3_final_test_accessed": false
+  },
+  "ledger_entry_written": true,
+  "phase3_assignments_sha256": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38",
+  "phase3_role_counts": {
+    "cifar100/calibration_development": 1500,
+    "cifar100/calibration_validation": 1500,
+    "cifar100/excluded_explicit": 20,
+    "cifar100/excluded_prior_access": 2000,
+    "cifar100/reserved_not_accessed": 44980,
+    "eurosat/calibration_development": 150,
+    "eurosat/calibration_validation": 150,
+    "eurosat/excluded_prior_access": 1000,
+    "eurosat/final_test_sealed": 1000,
+    "eurosat/reserved_not_accessed": 24700
+  },
+  "phase4_config_canonical_sha256": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+  "phase4_config_raw_file_sha256": "57b79923fd333c01fb128e7dc88f81f9aefce7e6b3aafff4d373d5c5d5511620",
+  "phase4_consumed_per_dataset": {
+    "cifar100": 3500,
+    "eurosat": 350
+  },
+  "phase4_consumed_per_role": {
+    "cifar100/confirmation": 1000,
+    "cifar100/selection": 500,
+    "cifar100/train": 2000,
+    "eurosat/confirmation": 100,
+    "eurosat/selection": 50,
+    "eurosat/train": 200
+  },
+  "phase4_manifest_expects": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38",
+  "phase4_recorded_config_hashes": {
+    "CONFIG_SHA256": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "confirmation/openai-clip-vit-b32-quickgelu__cifar100/metrics.json": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "confirmation/openai-clip-vit-b32-quickgelu__eurosat/metrics.json": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "confirmation/openai-clip-vit-l14-quickgelu__cifar100/metrics.json": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "confirmation/openai-clip-vit-l14-quickgelu__eurosat/metrics.json": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "preflight.json": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "screening_report.json": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "splits/manifest.json": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885"
+  },
+  "reserved_before_phase4": {
+    "cifar100": 44980,
+    "eurosat": 24700
+  },
+  "reserved_remaining": {
+    "cifar100": 41480,
+    "eurosat": 24350
+  },
+  "schema_version": "satml2027.custody_report.v1",
+  "status": "PASS"
+}

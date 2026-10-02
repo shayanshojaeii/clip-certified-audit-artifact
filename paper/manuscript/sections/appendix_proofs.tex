@@ -1,0 +1,142 @@
+% sections/appendix_proofs.tex
+% Full proofs of the statements in sections/theory_decision_change.tex.
+% Companion note with code references and numerical tests: research/DECISION_CHANGE_CONDITION.md.
+\section{Proofs}
+\label{app:proofs}
+
+Throughout, $t_1,\dots,t_K\in\mathbb S^{d-1}$, $w\in\mathbb R^d$,
+$n_k=\lVert t_k+w\rVert>0$, $t'_k=(t_k+w)/n_k$, $z\in\mathbb S^{d-1}$,
+$s_k=\langle z,t_k\rangle$ and $\omega=\langle z,w\rangle$; all norms are
+$\ell_2$ norms.
+
+\begin{proof}[Proof of Proposition~\ref{prop:identity}]
+By linearity, $\langle z,t'_k\rangle=\langle z,t_k+w\rangle/n_k=(s_k+\omega)/n_k$.
+Subtracting the expressions for $j$ and $k$ over the common denominator
+$n_jn_k$ gives \eqref{eq:identity}. For \eqref{eq:normalizer},
+$n_k^2=\lVert t_k\rVert^2+2\langle t_k,w\rangle+\lVert w\rVert^2
+=1+2\langle t_k,w\rangle+\lVert w\rVert^2$, so
+$n_j^2-n_k^2=2\langle t_j-t_k,w\rangle$; dividing by $n_j+n_k>0$ gives
+$n_j-n_k=2\langle t_j-t_k,w\rangle/(n_j+n_k)$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:flip}]
+\emph{Step 1 (rearrangement).} By Proposition~\ref{prop:identity} the
+hypothesis reads $(s_k+\omega)/n_k\ge(s_j+\omega)/n_j$. Multiplying by $n_k>0$ gives
+$s_k+\omega\ge(n_k/n_j)(s_j+\omega)$, and subtracting $s_j+\omega$ from both sides,
+\begin{align*}
+s_k-s_j&\ge\Big(\frac{n_k}{n_j}-1\Big)(s_j+\omega)\\
+&=(n_k-n_j)\,\frac{s_j+\omega}{n_j}=(n_k-n_j)\,\langle z,t'_j\rangle ,
+\end{align*}
+that is, $s_j-s_k\le(n_j-n_k)\langle z,t'_j\rangle$. Multiplying the
+hypothesis by $n_j$ instead of $n_k$ gives the companion bound
+$s_j-s_k\le(n_j-n_k)\langle z,t'_k\rangle$. The lower bound $0\le s_j-s_k$
+is the assumption $s_j\ge s_k$.
+
+\emph{Step 2 (Cauchy--Schwarz).} Since $z$ and $t'_j$ are unit vectors,
+$\lvert\langle z,t'_j\rangle\rvert\le1$, hence
+$(n_j-n_k)\langle z,t'_j\rangle\le\lvert n_j-n_k\rvert$.
+
+\emph{Step 3 (exact form).} By \eqref{eq:normalizer},
+$\lvert n_j-n_k\rvert=2\lvert\langle t_j-t_k,w\rangle\rvert/(n_j+n_k)$.
+
+\emph{Step 4 (reverse triangle inequality).}
+$\lvert n_j-n_k\rvert=\big\lvert\,\lVert t_j+w\rVert-\lVert t_k+w\rVert\,\big\rvert
+\le\lVert t_j-t_k\rVert$.
+
+\emph{Step 5 (Ptolemy's inequality).} We claim
+$\lvert n_j-n_k\rvert\le\lVert w\rVert\,\lVert t_j-t_k\rVert$. This is
+trivial for $w=0$. For $w\ne0$ use the inversion $x\mapsto x^{\ast}=x/\lVert
+x\rVert^2$ of nonzero vectors, which satisfies
+$\lVert x^{\ast}-y^{\ast}\rVert=\lVert x-y\rVert/(\lVert x\rVert\,\lVert
+y\rVert)$ (expand both squared norms). Apply the triangle inequality to the
+images of the three nonzero points $t_j$, $t_k$ and $-w$; since
+$t_j^{\ast}=t_j$ and $t_k^{\ast}=t_k$,
+\begin{align*}
+\frac{\lVert t_j+w\rVert}{\lVert w\rVert}
+&=\lVert t_j^{\ast}-(-w)^{\ast}\rVert\\
+&\le\lVert t_j^{\ast}-t_k^{\ast}\rVert+\lVert t_k^{\ast}-(-w)^{\ast}\rVert\\
+&=\lVert t_j-t_k\rVert+\frac{\lVert t_k+w\rVert}{\lVert w\rVert}.
+\end{align*}
+Multiplying by $\lVert w\rVert$ gives $n_j-n_k\le\lVert w\rVert\lVert
+t_j-t_k\rVert$, and exchanging $j$ and $k$ gives the absolute value. (This is
+Ptolemy's inequality for the four points $t_j$, $t_k$, $-w$, $0$.) The
+Cauchy--Schwarz route
+$2\lvert\langle t_j-t_k,w\rangle\rvert/(n_j+n_k)\le
+2\lVert w\rVert\lVert t_j-t_k\rVert/(n_j+n_k)$ proves the claim only when
+$n_j+n_k\ge2$, which fails for translations such as $w=-\beta t_k$ with
+$\beta$ near one; the inversion argument needs no such condition. The claim
+is sharp: for unit $t_j,t_k$ with $\lVert t_j-t_k\rVert=6/5$ and
+$w=-t_k+\tfrac{7}{20}\,(t_j+t_k)/\lVert t_j+t_k\rVert$ one has
+$n_k=7/20$, $n_j=5/4$, $\lVert w\rVert=3/4$, and both sides equal $9/10$.
+Steps 4 and 5 together give the factor $\min\{1,\lVert w\rVert\}$.
+
+\emph{Step 6 (consequences).} With $\lVert w\rVert=\eta$ and
+$\lVert t_j-t_k\rVert\le2$ the chain gives
+$s_j-s_k\le\eta\lVert t_j-t_k\rVert\le2\eta$. If the top-1 label of $z$
+changes from $j$ to $k$, then $s_j\ge s_i$ and
+$\langle z,t'_k\rangle\ge\langle z,t'_i\rangle$ for all $i$, so the pair
+$(j,k)$ satisfies the hypotheses and the original top-1 margin obeys
+$s_j-\max_{i\ne j}s_i\le s_j-s_k\le\lvert n_j-n_k\rvert
+\le\max_{i,l}\lvert n_i-n_l\rvert$. Finally, if $\langle z,t'_j\rangle>0$ and
+$s_j>s_k$, Step 1 forces $n_j-n_k>0$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:chowers}]
+For the projected-gap translation, $p=(I-VV^{\top})(\mu_I-\mu_T)$ with $V$ an
+orthonormal basis of $\operatorname{span}\{t_k-\mu_T\}$. Since
+$t_i-t_j=(t_i-\mu_T)-(t_j-\mu_T)$ lies in that span,
+$\langle p,t_i-t_j\rangle=0$ for all $i,j$, and every multiple $w=c\,p$
+inherits this. Now
+$\langle t_k,w\rangle=\langle t_k-t_1,w\rangle+\langle t_1,w\rangle
+=\langle t_1,w\rangle$ for every $k$, so
+$n_k^2=1+2\langle t_1,w\rangle+\lVert w\rVert^2$ is the same number $n^2$ for
+every class. By Proposition~\ref{prop:identity},
+$\langle z,t'_k\rangle=(s_k+\omega)/n$ is a strictly increasing affine function of
+$s_k$ whose coefficients do not depend on $k$, so the set of maximizers, and
+in particular the hard label, is unchanged for every $z$. On a fixed set of
+draws the translated bank therefore produces identical hard labels, and the
+vote counts, the selected class, the one-sided confidence bound, the radius,
+and every accuracy computed from them coincide with those of the uncorrected
+bank.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:budget}]
+Let $F$ be the set of draws whose $\argmax$ changes and, for $m\in F$, let
+$j_m$ and $k_m\ne j_m$ be the original and translated winners. Then
+$s_{j_m}\ge s_{k_m}$ and
+$\langle z_m,t'_{k_m}\rangle\ge\langle z_m,t'_{j_m}\rangle$, so
+Proposition~\ref{prop:flip} gives
+$s_{j_m}-s_{k_m}\le\lvert n_{j_m}-n_{k_m}\rvert$: every $m\in F$ is eligible
+and $\lvert F\rvert\le E_F$. A draw that is eligible through the pair $(j,k)$
+has top-1 margin $s_j-\max_{i\ne j}s_i\le s_j-s_k\le\lvert n_j-n_k\rvert
+\le\max_{i,l}\lvert n_i-n_l\rvert$, which gives the stated upper bound on
+$E_F$. Class $i$ loses the votes of the draws in $F$ with $j_m=i$ and gains
+those with $k_m=i$, so
+$v'_i\le v_i+\lvert\{m\in F:k_m=i\}\rvert\le v_i+E_F\le k_0+E_F$, and likewise
+$v'_i\ge v_i-E_F$. If $k_0+E_F<k_{\min}$, then $\max_i v'_i<k_{\min}$.
+\end{proof}
+
+\begin{proof}[Derivation of \eqref{eq:twosided}]
+With $t'_k=(t_k-\mu_T)/n_k$ and $z'=(z-\mu_I)/\lVert z-\mu_I\rVert$ the inner
+product equals $\langle z-\mu_I,t_k-\mu_T\rangle/(\lVert z-\mu_I\rVert\,n_k)$.
+The positive factor $1/\lVert z-\mu_I\rVert$ is common to all $k$ and does not
+affect the $\argmax$, and expanding the numerator gives
+$s_k-\langle z,\mu_T\rangle-\langle\mu_I,t_k\rangle+\langle\mu_I,\mu_T\rangle$.
+The first two terms are exactly the text-only identity of
+Proposition~\ref{prop:identity} with $w=-\mu_T$, and the last term is common to
+all $k$; the third term is a per-class bias that a common text translation
+cannot create, so the argument of Proposition~\ref{prop:flip} does not apply.
+An explicit instance in which the two-sided operator changes a label whose
+original margin exceeds every bound in \eqref{eq:flip} is verified in the
+released tests.
+\end{proof}
+
+\paragraph{Per-class scales}
+The learned shared translation in its tangent form has $t'_k=(a_kt_k+v)/n_k$ with
+$a_k=1-\langle v,t_k\rangle>0$ and $n_k=\lVert a_kt_k+v\rVert$. Repeating
+Step 1 with $a_ks_k$ in place of $s_k$ gives, for a pair whose order changes,
+$a_js_j-a_ks_k\le(n_j-n_k)\langle z,t'_j\rangle\le\lvert n_j-n_k\rvert$, and
+therefore
+$a_j(s_j-s_k)=a_js_j-a_ks_k+(a_k-a_j)s_k\le\lvert n_j-n_k\rvert+\lvert a_j-a_k\rvert$
+because $\lvert s_k\rvert\le1$. This is the per-class-scale form of the
+registered fresh-noise prediction for that control.

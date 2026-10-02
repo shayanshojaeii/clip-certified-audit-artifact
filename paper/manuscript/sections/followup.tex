@@ -1,0 +1,170 @@
+% Prospective follow-up (EXP-021), brought into the paper by D-145. Every number is a macro from
+% generated/macros.tex (design: the three registrations; results: the registered analysis outputs).
+
+\section{Prospective Follow-Up: Fresh Noise, Fresh Items, Larger Budget}
+\label{sec:followup}
+
+After the extension we registered a three-part follow-up
+(Table~\ref{tab:followup-design}) before sampling any
+of its outcomes, to answer the questions the audit left open. Follow-up A
+re-certifies the audit's \FUImagesA{} images with the
+audit's saved bank tensors, fresh certification draws and a fresh pipeline; it
+is a same-item re-certification, not an independent replication. Follow-up B
+uses fresh, never-used items: \FUBackbonesB{} backbones (the two
+audit backbones and an OpenCLIP ViT-B/32 trained on
+LAION-2B~\cite{schuhmann2022laion5b,cherti2023openclip}), CIFAR-100 test
+(\FUItemsCifarB{} items), sealed EuroSAT (\FUItemsEurosatB{}) and Imagenette,
+a ten-class ImageNet subset~\cite{howard2019imagenette} (\FUItemsImagenetteB{}), at
+$\sigma\in\{\FUSigmaLow,\FUSigmaHigh\}$. Its registered planning calculation
+(Table~\ref{tab:followup-design}; not the operating power of the bootstrap)
+gives the pooled family at each $\sigma$ (\FUImagesB{} unique images) a minimum
+detectable effect of \FUPooledMDE{} points and the EuroSAT family alone \FUEurosatMDE{}. Its primary
+estimand is item-pooled, whereas the audit's was equal-cell; both are reported.
+Follow-up C re-certifies \FUItemsC{} items per dataset with \FUBudgetDraws{}
+confirmation draws to test the \FUConfDraws{}-draw budget. Every cell of
+Follow-ups A and B evaluates the same \FUBanks{} banks (Follow-up C, three of them):
+the identity; text mean-centering, the projected-gap translation, two-sided
+centering and its text-only and image-only halves at \FUCoefficients{}
+coefficients each; both proposal objectives at \FUSteps{} steps up
+to \FUStepMax{}; and \FUControls{} supervised controls. Inference uses a
+class-stratified shared-item bootstrap with \FUReplicates{} replicates,
+Holm-adjusted direction tests, and practical-magnitude classes against a
+smallest effect of interest of \FUSESOI{} points, fixed with the planning
+calculation before sampling; the margin is a registered convention, not a
+claim that smaller changes are unimportant.
+
+The registered questions are: whether the post-hoc two-sided gain persists
+under fresh draws (Q1); how much of it the text and image halves carry (Q2);
+whether text-side steps change only draws that Proposition~\ref{prop:flip}
+allows, and whether the projected-gap bank is decision-invariant draw by draw
+(Q3, Q4); what the supervised controls achieve (Q5); whether any shared
+operator changes standard certified accuracy on fresh items, and by at least
+\FUSESOI{} points (Q6, primary); whether the result persists where the
+smoothed classifier is not collapsed (Q7); whether the radii are comparable to
+the literature (Q8); and how many certificates change with the larger budget
+(Q9). Every question is reported below or in Appendix~\ref{app:followup},
+whatever its outcome. The registered analysis ran once, unchanged, after a
+recorded analysis-stage approval; cells not run: \FUNotRunA{} of \FUCellsA{} in
+Follow-up A and \FUNotRunB{} of \FUCellsB{} in Follow-up B
+(Appendix~\ref{app:deviations}).
+
+% Results (D-145). Outcome-neutral text written before the analysis ran: every number, verdict and bank name is a
+% macro from the registered analysis outputs (analysis/exp021/021{a,b,c}); only the Reading paragraph interprets.
+\input{sections/figure_followup_forest}
+
+\paragraph{Audit items under fresh draws (Follow-up A)}
+Under fresh draws, two-sided centering changes the audit items' equal-cell
+macro certified accuracy by $\FUQOnePoint$ points
+($[\FUQOneLower,\FUQOneUpper]$), against $\FUQOneSaved$ points on the saved
+draws; the registered Q1 verdict is \emph{\FUQOneVerdict}: a positive
+direction (\FUQOnePDirection) and no detected shortfall (\FUQOnePShortfall),
+which is not a claim of equality. Item-pooled, the change is
+$\FUQOnePooledPoint$ points ($[\FUQOnePooledLower,\FUQOnePooledUpper]$)
+against $\FUQOnePooledSaved$ (\FUQOnePooledVerdict). In the item-pooled
+decomposition (Q2) the text half alone changes certified accuracy by
+$\FUQTwoAText$ points, the image half by $\FUQTwoAImage$, and their
+interaction is $\FUQTwoAInter$.
+
+\paragraph{Fresh items (Follow-up B, primary)}
+Figure~\ref{fig:followup-forest} shows the registered primary family (Q6):
+two-sided centering at $c=1$, its text half, its image half, and the two
+proposals at step 0.16, each against no correction; Table~\ref{tab:followup}
+(Appendix~\ref{app:followup}) gives both estimands and the adjusted classes.
+Two-sided centering changes standard certified accuracy at $r=\sigma$ by
+$\FUGRLowPoint$ points ($[\FUGRLowLower,\FUGRLowUpper]$) at
+$\sigma=\FUSigmaLow$ and by $\FUGRHighPoint$ ($[\FUGRHighLower,\FUGRHighUpper]$)
+at $\sigma=\FUSigmaHigh$ (equal-cell $\FUGRLowMacroPoint$ and
+$\FUGRHighMacroPoint$); its Holm-adjusted classes are \FUGRClasses{}. At
+$\sigma=\FUSigmaLow$ the Holm-adjusted direction is positive for
+\FUQSixLowPositiveIds{} and negative for \FUQSixLowNegativeIds{}; at
+$\sigma=\FUSigmaHigh$ it is negative for \FUQSixHighNegativeIds{}. Direction
+and magnitude answer different questions: a contrast can be resolved in sign
+and still lie inside the margin. Descriptively, the unadjusted 95\% intervals of
+all ten primary pooled contrasts lie within $\pm\FUQSixMaxAbsBound$ points,
+and none reaches a gain above $\FUQSixMaxUpper$ points. Across the \FUQSixLowN{} primary contrasts the magnitude
+classes are \FUQSixLowGain{} gain, \FUQSixLowLoss{} loss, \FUQSixLowEquiv{}
+practically equivalent and \FUQSixLowIncon{} inconclusive at
+$\sigma=\FUSigmaLow$, and \FUQSixHighGain{}, \FUQSixHighLoss{},
+\FUQSixHighEquiv{} and \FUQSixHighIncon{} at $\sigma=\FUSigmaHigh$. Among all
+unsupervised banks the largest point estimates are $\FUQSixLowMaxPoint$
+(\FUQSixLowMaxId) and $\FUQSixHighMaxPoint$ points (\FUQSixHighMaxId), and the
+smallest $\FUQSixLowMinPoint$ (\FUQSixLowMinId) and $\FUQSixHighMinPoint$
+(\FUQSixHighMinId). The text half alone changes certified accuracy by
+$\FUQTwoLowText$ and $\FUQTwoHighText$ points at the two noise levels, the
+image half by $\FUQTwoLowImage$ and $\FUQTwoHighImage$, and their interaction
+is $\FUQTwoLowInter$ and $\FUQTwoHighInter$ (Q2; every coefficient in
+Table~\ref{tab:followup-registered}). The supervised controls (Q5), the regime
+of the uncorrected model (Q7), the orientation against published radii (Q8)
+and, descriptively, the certified-accuracy curves of four banks fixed in
+advance (Figure~\ref{fig:followup-curves}) are in Appendix~\ref{app:followup}.
+
+\paragraph{Draw-level checks and budget}
+Q3 (text-side steps change only draws that Proposition~\ref{prop:flip}
+allows) \FUQThreeSummary{}. Its coarse form is necessary but loose: on the
+audit's items the coarse flip budget admits \FUQThreeBudgetLo\% of draws at step
+\FUQThreeStepMin{} and \FUQThreeBudgetFour\% at step 0.04, whereas
+\FUQThreeChangedLo\% to \FUQThreeChangedFour\% change, and useful and harmful
+changes nearly cancel (\FUQThreeUsefulFour{} against \FUQThreeHarmfulFour{} for
+the boundary-active proposal at step 0.04; Table~\ref{tab:followup-steps}).
+Q4 (the projected-gap bank is decision-invariant draw by draw)
+\FUQFourSummary{}, with \FUQFourChangedA{} (A) and \FUQFourChangedB{} (B) changed
+draws, all within the
+registered numerical tie budget: no correction's margin between the two
+classes involved was at most $\FUQFourMarginA$ and $\FUQFourMarginB$ (the
+tolerance plus the largest renormalization difference), a bound that does not
+identify the cause of a change. With
+\FUBudgetDraws{} instead of \FUConfDraws{} confirmation draws (Q9, Follow-up C),
+the uncorrected model's certified-correct count at $r=\sigma$ over its
+\FUCellsC{} cells moves from \FUQNineIdFour{} to \FUQNineIdFull{} of
+\FUQNineItems{} (\FUQNineIdGained{} gained, \FUQNineIdLost{} lost); over the
+\FUBanksC{} registered banks \FUQNineAllChanged{} of \FUQNineAllCerts{}
+certificates change, at most \FUQNineMaxChanged{} for \FUQNineMaxId. The two
+registered determinism checks, exact identity with Follow-up B of the
+confirmation prefix and of the full certificate inputs, returned
+\emph{\FUQNinePrefixIdentity} and \emph{\FUQNineInputIdentity}.
+
+% Reading: written after the registered outputs existed (D-152), revised after the review of 2026-09-28 (D-153) to
+% report the dataset and backbone heterogeneity; it interprets Q1, Q6, Q5 and Q7 only.
+\paragraph{Reading}
+Under fresh draws the post-hoc two-sided gain on the audit's items persists
+($\FUQOnePoint$ against $\FUQOneSaved$ points), matching its registered
+prediction, so it is not specific to the saved certification draws; it is
+carried by the image half and, descriptively, by the EuroSAT cells
+($\FUQOneEurosat$ against $\FUQOneCifar$ points on CIFAR-100). On fresh items
+it does not transport as a uniform gain. Under the registered item-pooled
+mixture of the three datasets (weights $3{:}1{:}3$) it lies within the
+registered $\pm\FUSESOI$-point margin at both noise levels and, in an unregistered
+comparison, below the fresh-draw estimates on the audit's items at
+$\sigma=\FUSigmaHigh$ (item-pooled $\FUGRHighPoint$ against
+$\FUQOnePooledPoint$ points, equal-cell $\FUGRHighMacroPoint$ against
+$\FUQOnePoint$); the sign of this small aggregate even depends on the
+weighting. Its dataset and backbone estimates range from positive to negative:
+on sealed EuroSAT at that $\sigma$ its direction is positive
+($\FUGREurosatHighPoint$ points; descriptively $\FUGREurosatHighOBthirtytwo$ and
+$\FUGREurosatHighOLfourteen$ for the two audit backbones but
+$\FUGREurosatHighLBthirtytwo$ for the LAION-2B-trained model), and on Imagenette it
+is negative ($\FUGRImagenetteHighPoint$). All five registered primary contrasts
+are classified as practically equivalent to no correction at both noise
+levels, with small resolved effects of both signs, and no unsupervised bank's
+pooled estimate exceeds $\FUQSixMaxBoth$ points; the only contrast classified
+as a dataset-level gain under its registered within-family procedure,
+$\FUQSixDsMaxPoint$ points for \FUQSixDsMaxId{} on \FUQSixDsMaxData{} at
+$\sigma=\FUQSixDsMaxSigma$, comes with a clean-accuracy change of
+$\FUQSixDsMaxFamilyClean$ points there, and the clean rule flags it. Where the classifier is not collapsed and supervision
+moves the certificate, on CIFAR-100 at $\sigma=\FUSigmaLow$ (smoothed accuracy
+\FUQSevenCifarLowSmoothedLo\% to \FUQSevenCifarLowSmoothedHi\%), two-sided
+centering changes certified accuracy by $\FUGRCifarLowPoint$ points; Imagenette
+is near ceiling (at least \FUQSevenImagenetteStdCALo\% certified correct at
+$r=\sigma$), and even the supervised controls move it by only
+$\FUQFiveClassImagenetteLo$ to $\FUQFiveClassImagenetteHi$ points. The controls
+that change the prototypes class by class gain $\FUQFiveClassLo$ to
+$\FUQFiveClassHi$ points pooled, mostly on EuroSAT and with clean-accuracy
+changes of their own (Appendix~\ref{app:followup}), whereas one label-fitted
+shared vector changes certified accuracy by $\FUQFiveLowSharedPoint$ and
+$\FUQFiveHighSharedPoint$ under the item-pooled estimand but by
+$\FUQFiveSharedEurosatLow$ and $\FUQFiveSharedEurosatHigh$ on EuroSAT. The
+follow-up therefore delimits the audit's post-hoc exception rather than
+overturning it: the gain persists in its original setting but has no stable,
+transportable direction on fresh items, and the pooled result places it
+within the registered margin without implying a zero effect in every dataset
+or checkpoint.

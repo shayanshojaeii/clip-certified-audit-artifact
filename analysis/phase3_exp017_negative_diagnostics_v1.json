@@ -1,0 +1,618 @@
+{
+  "cell_diagnostics": {
+    "openai-clip-vit-b32-quickgelu__cifar100__fold0": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.17,
+        "certified_accuracy_at_0_25": 0.064,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.868,
+        "raw_clean_accuracy": 0.646,
+        "smoothed_accuracy": 0.156,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.394
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.166,
+        "certified_accuracy_at_0_25": 0.064,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.868,
+        "raw_clean_accuracy": 0.65,
+        "smoothed_accuracy": 0.156,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.402
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.174,
+        "certified_accuracy_at_0_25": 0.068,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.848,
+        "raw_clean_accuracy": 0.654,
+        "smoothed_accuracy": 0.156,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.418
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.17,
+        "certified_accuracy_at_0_25": 0.064,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.868,
+        "raw_clean_accuracy": 0.646,
+        "smoothed_accuracy": 0.156,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.394
+      }
+    },
+    "openai-clip-vit-b32-quickgelu__cifar100__fold1": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.216,
+        "certified_accuracy_at_0_25": 0.068,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.816,
+        "raw_clean_accuracy": 0.596,
+        "smoothed_accuracy": 0.18,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.382
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.212,
+        "certified_accuracy_at_0_25": 0.072,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.82,
+        "raw_clean_accuracy": 0.606,
+        "smoothed_accuracy": 0.186,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.392
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.208,
+        "certified_accuracy_at_0_25": 0.076,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.83,
+        "raw_clean_accuracy": 0.636,
+        "smoothed_accuracy": 0.18,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.402
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.214,
+        "certified_accuracy_at_0_25": 0.066,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.818,
+        "raw_clean_accuracy": 0.594,
+        "smoothed_accuracy": 0.182,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.382
+      }
+    },
+    "openai-clip-vit-b32-quickgelu__cifar100__fold2": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.192,
+        "certified_accuracy_at_0_25": 0.074,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.84,
+        "raw_clean_accuracy": 0.634,
+        "smoothed_accuracy": 0.176,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.344
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.194,
+        "certified_accuracy_at_0_25": 0.07,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.842,
+        "raw_clean_accuracy": 0.64,
+        "smoothed_accuracy": 0.188,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.364
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.198,
+        "certified_accuracy_at_0_25": 0.078,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.846,
+        "raw_clean_accuracy": 0.632,
+        "smoothed_accuracy": 0.176,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.364
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.192,
+        "certified_accuracy_at_0_25": 0.074,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.84,
+        "raw_clean_accuracy": 0.634,
+        "smoothed_accuracy": 0.176,
+        "top_smoothed_class": 87,
+        "top_smoothed_class_fraction": 0.344
+      }
+    },
+    "openai-clip-vit-b32-quickgelu__eurosat__fold0": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.14,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.9,
+        "raw_clean_accuracy": 0.5,
+        "smoothed_accuracy": 0.14,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.52
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.12,
+        "certified_accuracy_at_0_25": 0.1,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.88,
+        "raw_clean_accuracy": 0.54,
+        "smoothed_accuracy": 0.12,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.82
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.18,
+        "certified_accuracy_at_0_25": 0.08,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.84,
+        "raw_clean_accuracy": 0.62,
+        "smoothed_accuracy": 0.14,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.6
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.14,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.92,
+        "raw_clean_accuracy": 0.5,
+        "smoothed_accuracy": 0.14,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.48
+      }
+    },
+    "openai-clip-vit-b32-quickgelu__eurosat__fold1": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.22,
+        "certified_accuracy_at_0_25": 0.04,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.82,
+        "raw_clean_accuracy": 0.42,
+        "smoothed_accuracy": 0.2,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.52
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.2,
+        "certified_accuracy_at_0_25": 0.04,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.8,
+        "raw_clean_accuracy": 0.44,
+        "smoothed_accuracy": 0.14,
+        "top_smoothed_class": 3,
+        "top_smoothed_class_fraction": 0.4
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.12,
+        "certified_accuracy_at_0_25": 0.08,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.88,
+        "raw_clean_accuracy": 0.48,
+        "smoothed_accuracy": 0.18,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.76
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.24,
+        "certified_accuracy_at_0_25": 0.04,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.82,
+        "raw_clean_accuracy": 0.42,
+        "smoothed_accuracy": 0.22,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.52
+      }
+    },
+    "openai-clip-vit-b32-quickgelu__eurosat__fold2": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.22,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.78,
+        "raw_clean_accuracy": 0.46,
+        "smoothed_accuracy": 0.1,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.5
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.22,
+        "certified_accuracy_at_0_25": 0.04,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.78,
+        "raw_clean_accuracy": 0.5,
+        "smoothed_accuracy": 0.1,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.5
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.14,
+        "certified_accuracy_at_0_25": 0.06,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.88,
+        "raw_clean_accuracy": 0.58,
+        "smoothed_accuracy": 0.14,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.82
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.24,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.78,
+        "raw_clean_accuracy": 0.46,
+        "smoothed_accuracy": 0.12,
+        "top_smoothed_class": 1,
+        "top_smoothed_class_fraction": 0.48
+      }
+    },
+    "openai-clip-vit-l14-quickgelu__cifar100__fold0": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.404,
+        "certified_accuracy_at_0_25": 0.216,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.65,
+        "raw_clean_accuracy": 0.73,
+        "smoothed_accuracy": 0.43,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.054
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.404,
+        "certified_accuracy_at_0_25": 0.22,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.65,
+        "raw_clean_accuracy": 0.736,
+        "smoothed_accuracy": 0.422,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.052
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.438,
+        "certified_accuracy_at_0_25": 0.26,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.602,
+        "raw_clean_accuracy": 0.796,
+        "smoothed_accuracy": 0.424,
+        "top_smoothed_class": 88,
+        "top_smoothed_class_fraction": 0.052
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.404,
+        "certified_accuracy_at_0_25": 0.216,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.65,
+        "raw_clean_accuracy": 0.73,
+        "smoothed_accuracy": 0.43,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.054
+      }
+    },
+    "openai-clip-vit-l14-quickgelu__cifar100__fold1": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.374,
+        "certified_accuracy_at_0_25": 0.19,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.68,
+        "raw_clean_accuracy": 0.748,
+        "smoothed_accuracy": 0.388,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.06
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.372,
+        "certified_accuracy_at_0_25": 0.192,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.686,
+        "raw_clean_accuracy": 0.76,
+        "smoothed_accuracy": 0.394,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.064
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.404,
+        "certified_accuracy_at_0_25": 0.208,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.66,
+        "raw_clean_accuracy": 0.802,
+        "smoothed_accuracy": 0.388,
+        "top_smoothed_class": 88,
+        "top_smoothed_class_fraction": 0.062
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.374,
+        "certified_accuracy_at_0_25": 0.19,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.678,
+        "raw_clean_accuracy": 0.748,
+        "smoothed_accuracy": 0.388,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.06
+      }
+    },
+    "openai-clip-vit-l14-quickgelu__cifar100__fold2": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.394,
+        "certified_accuracy_at_0_25": 0.24,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.628,
+        "raw_clean_accuracy": 0.756,
+        "smoothed_accuracy": 0.396,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.072
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.398,
+        "certified_accuracy_at_0_25": 0.244,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.624,
+        "raw_clean_accuracy": 0.766,
+        "smoothed_accuracy": 0.398,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.074
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.43,
+        "certified_accuracy_at_0_25": 0.252,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.604,
+        "raw_clean_accuracy": 0.79,
+        "smoothed_accuracy": 0.386,
+        "top_smoothed_class": 88,
+        "top_smoothed_class_fraction": 0.082
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.396,
+        "certified_accuracy_at_0_25": 0.24,
+        "example_count": 500,
+        "operational_zero_radius_rate": 0.628,
+        "raw_clean_accuracy": 0.754,
+        "smoothed_accuracy": 0.396,
+        "top_smoothed_class": 65,
+        "top_smoothed_class_fraction": 0.072
+      }
+    },
+    "openai-clip-vit-l14-quickgelu__eurosat__fold0": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.12,
+        "certified_accuracy_at_0_25": 0.04,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.92,
+        "raw_clean_accuracy": 0.6,
+        "smoothed_accuracy": 0.2,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.74
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.1,
+        "certified_accuracy_at_0_25": 0.04,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.94,
+        "raw_clean_accuracy": 0.58,
+        "smoothed_accuracy": 0.18,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.7
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.2,
+        "certified_accuracy_at_0_25": 0.08,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.84,
+        "raw_clean_accuracy": 0.6,
+        "smoothed_accuracy": 0.22,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.5
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.12,
+        "certified_accuracy_at_0_25": 0.04,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.92,
+        "raw_clean_accuracy": 0.58,
+        "smoothed_accuracy": 0.2,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.74
+      }
+    },
+    "openai-clip-vit-l14-quickgelu__eurosat__fold1": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.12,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.94,
+        "raw_clean_accuracy": 0.66,
+        "smoothed_accuracy": 0.18,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.84
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.08,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.96,
+        "raw_clean_accuracy": 0.64,
+        "smoothed_accuracy": 0.16,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.84
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.14,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.88,
+        "raw_clean_accuracy": 0.62,
+        "smoothed_accuracy": 0.2,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.84
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.12,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.94,
+        "raw_clean_accuracy": 0.66,
+        "smoothed_accuracy": 0.18,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.84
+      }
+    },
+    "openai-clip-vit-l14-quickgelu__eurosat__fold2": {
+      "clean_boundary_active__step_0.0025": {
+        "anchor_agreement_rate": 0.02,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.98,
+        "raw_clean_accuracy": 0.58,
+        "smoothed_accuracy": 0.12,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.82
+      },
+      "clean_boundary_active__step_0.04": {
+        "anchor_agreement_rate": 0.02,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.98,
+        "raw_clean_accuracy": 0.62,
+        "smoothed_accuracy": 0.12,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.8
+      },
+      "gr_clip_style_two_sided__coefficient_1": {
+        "anchor_agreement_rate": 0.24,
+        "certified_accuracy_at_0_25": 0.1,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.78,
+        "raw_clean_accuracy": 0.58,
+        "smoothed_accuracy": 0.2,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.54
+      },
+      "no_correction": {
+        "anchor_agreement_rate": 0.02,
+        "certified_accuracy_at_0_25": 0.02,
+        "example_count": 50,
+        "operational_zero_radius_rate": 0.98,
+        "raw_clean_accuracy": 0.58,
+        "smoothed_accuracy": 0.12,
+        "top_smoothed_class": 0,
+        "top_smoothed_class_fraction": 0.82
+      }
+    }
+  },
+  "experiment_id": "EXP-20260906-017",
+  "final_test_accessed": false,
+  "floating_boundary_adjudication": {
+    "defect": "float evaluation can represent exact 2/100 as 2.0000000000000018 points",
+    "eligible_mean_centering_candidates": [],
+    "exact_count_selected_proposal": "clean_boundary_active__step_0.04",
+    "exact_selected_proposal_metrics": {
+      "macro_average_certified_radius": 0.06713766893578944,
+      "macro_certified_accuracy_at_0_25": 0.09350000000000001,
+      "macro_prototype_bank_frobenius_displacement": 0.2587865207408154,
+      "macro_raw_clean_accuracy": 0.6231666666666666
+    },
+    "pivot_unchanged": true,
+    "saved_selected_proposal": "clean_boundary_active__step_0.0025",
+    "written_rule": "macro drop <= 1.0 points and every cell drop <= 2.0 points"
+  },
+  "forced_exact_proposal_vs_each_mean_centering": {
+    "global_mean_centering__coefficient_0.25": {
+      "dataset_margins": {
+        "cifar100": -0.0033333333333333388,
+        "eurosat": 0.013333333333333334
+      },
+      "g3_4_all_strictly_positive": false,
+      "macro_difference": 0.0049999999999999975,
+      "model_margins": {
+        "openai-clip-vit-b32-quickgelu": 0.010333333333333332,
+        "openai-clip-vit-l14-quickgelu": -0.0003333333333333365
+      }
+    },
+    "global_mean_centering__coefficient_0.5": {
+      "dataset_margins": {
+        "cifar100": 0.0036666666666666653,
+        "eurosat": 0.02
+      },
+      "g3_4_all_strictly_positive": false,
+      "macro_difference": 0.011833333333333333,
+      "model_margins": {
+        "openai-clip-vit-b32-quickgelu": 0.023999999999999997,
+        "openai-clip-vit-l14-quickgelu": -0.00033333333333333365
+      }
+    },
+    "global_mean_centering__coefficient_1": {
+      "dataset_margins": {
+        "cifar100": 0.022000000000000002,
+        "eurosat": -0.02333333333333333
+      },
+      "g3_4_all_strictly_positive": false,
+      "macro_difference": -0.000666666666666664,
+      "model_margins": {
+        "openai-clip-vit-b32-quickgelu": 0.008333333333333333,
+        "openai-clip-vit-l14-quickgelu": -0.009666666666666662
+      }
+    }
+  },
+  "independent_stage_b_conclusion": "SCIENTIFIC_NEGATIVE_VERIFIED_WITH_RECORDED_LIMITATIONS",
+  "interpretation_boundary": {
+    "established": [
+      "the saved global corrections are nearly certificate-neutral in the tested frozen regime",
+      "the tested noise regime has low anchor agreement and frequent operational zero radii",
+      "the frozen positive efficacy path fails under both saved-float and exact-count gate readings"
+    ],
+    "hypotheses_requiring_new_experiments": [
+      "class-specific corrections avoid cancellation",
+      "image instability is the unique or dominant causal bottleneck",
+      "a noise-aware correction improves Cohen certified accuracy",
+      "a different sigma improves the radius-accuracy tradeoff"
+    ]
+  },
+  "macro_descriptive_comparison": {
+    "exact_proposal_certified_accuracy_at_0_25": 0.09350000000000001,
+    "gr_clip_certified_accuracy_at_0_25": 0.1135,
+    "gr_clip_clean_gate_eligible": false,
+    "gr_clip_minus_exact_proposal": 0.01999999999999999,
+    "no_correction_certified_accuracy_at_0_25": 0.08416666666666667,
+    "saved_proposal_certified_accuracy_at_0_25": 0.08433333333333333,
+    "saved_proposal_minus_no_correction": 0.0001666666666666622
+  },
+  "no_sampling_or_result_rewrite": true,
+  "noise_collapse_no_correction_ranges": {
+    "anchor_agreement_rate": [
+      0.02,
+      0.404
+    ],
+    "operational_zero_radius_rate": [
+      0.628,
+      0.98
+    ],
+    "raw_clean_accuracy": [
+      0.42,
+      0.754
+    ],
+    "smoothed_accuracy": [
+      0.12,
+      0.43
+    ],
+    "top_smoothed_class_fraction": [
+      0.054,
+      0.84
+    ]
+  },
+  "saved_flag_annotation": {
+    "authoritative_stage_b_exp018_preparation_permitted": false,
+    "immutable_source_files_rewritten": false,
+    "reason": "production flag checked proposal existence; frozen Stage-B requires G3.1 and G3.4 against an eligible selected mean-centering baseline",
+    "saved_exp018_may_be_prepared": true
+  },
+  "schema_version": "phase3.exp017.negative_diagnostics.v1",
+  "source_artifact_set_sha256": "f828daa709bace206f2ba1dc345cbf5bb23c1fc67217b0bde01c8f4b410028dd",
+  "source_summary_sha256": "5c59c9483f6c65dc0fbb053cc11a3700de8ecfa6fdc32e93782e3b517aed63ee",
+  "status": "PRIMARY_POSTHOC_DIAGNOSTIC_FROM_SAVED_COUNTS"
+}

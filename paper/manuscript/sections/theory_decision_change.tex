@@ -1,0 +1,123 @@
+% sections/theory_decision_change.tex
+% Input from sections/operators.tex inside the subsection labeled sec:flip; no sectioning command here.
+% Environments proposition/corollary/remark and the macros \Normalize, \argmax are defined in main.tex.
+% Full proofs: sections/appendix_proofs.tex (the Proofs appendix, label app:proofs).
+% Derivations, exact code references and the numerical tests behind every statement:
+% research/DECISION_CHANGE_CONDITION.md. No result value is typed in this file.
+
+Throughout, $z\in\mathbb S^{d-1}$ is one image feature (the clean feature or
+one normalized noisy draw), $s_k=\langle z,t_k\rangle$ are its original scores,
+$\omega=\langle z,w\rangle$, and every $n_k$ is positive.
+
+\begin{proposition}[Per-draw identity]
+\label{prop:identity}
+For every $z$, $\langle z,t'_k\rangle=(s_k+\omega)/n_k$. Hence for every pair
+$(j,k)$
+\begin{align}
+\langle z,t'_j\rangle-\langle z,t'_k\rangle
+&=\frac{n_k(s_j+\omega)-n_j(s_k+\omega)}{n_j\,n_k},
+\label{eq:identity}\\
+n_j-n_k&=\frac{2\,\langle t_j-t_k,\,w\rangle}{n_j+n_k}.
+\label{eq:normalizer}
+\end{align}
+\end{proposition}
+\noindent\emph{Sketch.} Expand $\langle z,t_k+w\rangle$, and
+$n_j^2-n_k^2=\lVert t_j+w\rVert^2-\lVert t_k+w\rVert^2=2\langle t_j-t_k,w\rangle$
+because $\lVert t_j\rVert=\lVert t_k\rVert=1$.
+
+\begin{proposition}[Necessary condition for a decision change]
+\label{prop:flip}
+Let $s_j\ge s_k$ and suppose that after the translation
+$\langle z,t'_k\rangle\ge\langle z,t'_j\rangle$. Then
+\begin{align}
+0\le s_j-s_k
+&\le (n_j-n_k)\,\langle z,t'_j\rangle
+\le\lvert n_j-n_k\rvert
+\nonumber\\
+&=\frac{2\,\lvert\langle t_j-t_k,w\rangle\rvert}{n_j+n_k}
+\le\min\{1,\lVert w\rVert\}\,\lVert t_j-t_k\rVert .
+\label{eq:flip}
+\end{align}
+Consequently, for $\lVert w\rVert=\eta$ any pair whose order changes has
+original cosine margin at most $\eta\lVert t_j-t_k\rVert\le 2\eta$, and if
+the top-1 label of $z$ changes from $j$ to $k$, then the original top-1 margin
+of $z$ (winner minus runner-up) is at most
+$\lvert n_j-n_k\rvert\le\max_{i,l}\lvert n_i-n_l\rvert$.
+\end{proposition}
+\noindent\emph{Sketch.} Rearranging the hypothesis with
+\eqref{eq:identity}--\eqref{eq:normalizer} gives the first two inequalities,
+$\lvert\langle z,t'_j\rangle\rvert\le1$ gives the third, and the last one is
+Ptolemy's inequality for the points $t_j$, $t_k$, $-w$, $0$ together with the
+reverse triangle inequality (Appendix~\ref{app:proofs}). The second inequality
+also carries a direction: when $\langle z,t'_j\rangle>0$ and $s_j>s_k$, the original winner
+can lose only to a class whose translated raw norm is strictly smaller,
+$n_k<n_j$.
+
+\begin{corollary}[Projected-gap translation is decision-invariant]
+\label{cor:chowers}
+If $\langle w,t_i-t_j\rangle=0$ for all $i,j$, as for the projected-gap
+translation $w=c\,p$ at every coefficient $c$, then all $n_k$ equal one value
+$n$ and $\langle z,t'_k\rangle=(s_k+\omega)/n$ with $n$ and $\omega$ independent of $k$,
+so the $\argmax$ (including ties) is unchanged for every $z$. In exact
+arithmetic with a fixed tie rule, on any fixed set of noisy draws the operator
+therefore reproduces the uncorrected hard labels,
+vote counts, selected classes, certified radii, and accuracies exactly: it is
+an exact invariance control, not a competing method.\footnote{This is the
+mechanism behind the identical aggregates of the three projected-gap
+coefficients and of the uncorrected bank in the saved audit record; in
+floating-point arithmetic only numerical ties could differ.}
+\end{corollary}
+\noindent\emph{Sketch.} $n_k^2=1+2\langle t_k,w\rangle+\lVert w\rVert^2$ and
+$\langle t_k,w\rangle=\langle t_1,w\rangle$ for every $k$.
+
+\begin{corollary}[Finite flip budget]
+\label{cor:budget}
+Fix $N$ draws $z_1,\dots,z_N$, let $v_i$ be the number of draws whose original
+$\argmax$ is $i$, let $k_0=\max_i v_i$, and let $E_F$ be the number of draws
+whose original winner $j$ has a competitor $k\ne j$ with
+$s_j-s_k\le\lvert n_j-n_k\rvert$; $E_F$ is at most the number of draws whose
+original top-1 margin is at most $\max_{i,l}\lvert n_i-n_l\rvert$. After the
+translation the counts $v'_i$ satisfy $v'_i\le v_i+E_F$ for every $i$, hence
+$\max_i v'_i\le k_0+E_F$. In particular, if $k_0+E_F<k_{\min}$ for a
+confirmation threshold $k_{\min}$, then no class reaches $k_{\min}$ on these
+draws after the translation.
+\end{corollary}
+\noindent\emph{Sketch.} By Proposition~\ref{prop:flip} every flipped draw is
+one of the $E_F$ eligible draws, and a class gains at most one vote per flipped
+draw. Because $E_F$ depends only on the original scores and on the normalizers
+$n_k$ recorded when a bank is built, the corollary can rule out a threshold
+crossing on these draws, without rescoring, whenever $k_0+E_F<k_{\min}$; when
+the inequality fails, it does not show that a crossing occurs. Saved top-1
+margins give a looser upper bound on $E_F$, and the exact pairwise count needs
+the original score differences. The certificate itself is still computed only
+from the hard-label counts by the separate Cohen procedure; the bound is not a
+certificate.
+
+\begin{remark}[Two-sided operators]
+\label{rem:twosided}
+The GR-CLIP-style operator also maps $z\mapsto z'=\Normalize(z-\mu_I)$; we write the
+audit's coefficient $c=1$, and a general $c$ replaces $\mu_I$ and $\mu_T$ by $c\mu_I$ and $c\mu_T$.
+Renormalizing $z$ never changes an $\argmax$, but the shift does. Assume
+$z\neq\mu_I$ and $t_k\neq\mu_T$ for every class $k$, so that both
+normalizations are defined. With $n_k=\lVert t_k-\mu_T\rVert>0$,
+\begin{align}
+\langle z',t'_k\rangle
+&=\frac{\langle z-\mu_I,\,t_k-\mu_T\rangle}{\lVert z-\mu_I\rVert\,n_k}
+\nonumber\\
+&\propto
+\frac{s_k-\langle z,\mu_T\rangle-\langle\mu_I,t_k\rangle+\langle\mu_I,\mu_T\rangle}{n_k},
+\label{eq:twosided}
+\end{align}
+where the proportionality constant is common to all classes. The
+class-dependent term $-\langle\mu_I,t_k\rangle$ is a per-class bias that no
+common text translation produces, so
+Propositions~\ref{prop:identity}--\ref{prop:flip} do not bound this operator:
+it can change the label of a draw whose original margin exceeds every bound in
+\eqref{eq:flip}. This is why, within the audit's registered family, it is the only operator
+that can act where the text-only translations cannot.
+\end{remark}
+
+\begin{remark}[Engine boundary]
+Nothing in this section is a certificate; certified radii are computed
+separately from hard-label counts as in Section~\ref{sec:background}.
+\end{remark}

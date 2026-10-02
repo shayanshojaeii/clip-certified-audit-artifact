@@ -1,0 +1,71 @@
+{
+  "schema_version": "phase3.final_test_statistical_analysis.v1",
+  "protocol_revision": 8,
+  "status": "FROZEN_BEFORE_ANY_FINAL_TEST_ACCESS",
+  "purpose": "population_sampling_uncertainty_for_dataset_level_method_comparisons_not_Monte_Carlo_certificate_validity",
+  "activation_requires": [
+    "gate3_pass",
+    "selected_objective_step_and_primary_comparator_frozen",
+    "four_post_validation_refit_direction_artifacts_hash_locked",
+    "separate_final_test_Cohen_sampling_budget_and_stream_protocol_frozen_and_independently_approved"
+  ],
+  "primary_estimand": {
+    "metric": "certified_accuracy_at_pixel_l2_radius_0.25",
+    "contrast": "selected_proposed_method_minus_single_validation_selected_primary_comparator",
+    "cell_scope": "uniform_macro_average_over_2_models_times_2_datasets",
+    "per_example_indicator": "one_if_raw_clean_prediction_equals_ground_truth_and_nonabstaining_Cohen_radius_is_at_least_0.25_else_zero",
+    "success_rule": "point_difference_positive_and_two_sided_95_percent_paired_bootstrap_interval_lower_endpoint_strictly_above_zero"
+  },
+  "bootstrap": {
+    "type": "paired_class_stratified_nonparametric_percentile_bootstrap",
+    "replicates": 10000,
+    "confidence_level": 0.95,
+    "quantiles": [0.025, 0.975],
+    "base_seed": 20261002,
+    "strata": "dataset_by_ground_truth_class",
+    "pairing": "same_resampled_item_indices_for_all_methods_and_both_models_within_each_dataset",
+    "cell_aggregation": "compute_each_model_dataset_cell_mean_then_uniform_average_the_four_cells",
+    "fixed_test_sets": {
+      "cifar100": "official_10000_image_test_split",
+      "eurosat": "sealed_balanced_1000_image_holdout"
+    },
+    "missing_or_invalid_case_policy": "fail_analysis_no_case_deletion_or_replacement"
+  },
+  "secondary_analyses": {
+    "paired_effects": [
+      "per_cell_certified_accuracy_difference_at_0.25",
+      "certified_accuracy_curve_differences_at_0.1_and_0.5",
+      "mean_and_median_certified_radius_differences",
+      "raw_clean_accuracy_difference",
+      "abstention_rate_difference"
+    ],
+    "binary_sensitivity_test": "two_sided_exact_McNemar_test_per_model_dataset_cell",
+    "multiple_comparison_policy": "Holm_correction_within_each_declared_secondary_result_family",
+    "interpretation": "secondary_unless_explicitly_promoted_before_test_access"
+  },
+  "clean_accuracy_safety": {
+    "reference": "no_correction",
+    "report": "paired_class_stratified_bootstrap_difference_and_interval",
+    "point_estimate_guard": "macro_drop_at_most_1.0_percentage_point_and_each_cell_drop_at_most_2.0_percentage_points",
+    "failure_action": "do_not_claim_improvement_without_systematic_clean_accuracy_loss"
+  },
+  "uncertainty_separation": {
+    "Cohen_Monte_Carlo": "handled_per_example_by_the_separately_frozen_exact_one_sided_Clopper_Pearson_certificate",
+    "test_set_sampling": "handled_by_this_paired_class_stratified_bootstrap",
+    "bootstrap_resamples": "finalized_per_example_outcomes_not_Gaussian_noise_draws",
+    "simultaneous_certificate_claim": "not_made_unless_a_separate_familywise_certificate_policy_is_frozen"
+  },
+  "reporting": {
+    "always_report_regardless_of_significance": true,
+    "required": [
+      "point_difference_in_percentage_points",
+      "95_percent_interval",
+      "bootstrap_seed_and_replicate_count",
+      "per_cell_results",
+      "discordant_pair_counts_for_McNemar",
+      "all_negative_or_inconclusive_results"
+    ],
+    "posthoc_test_or_baseline_selection_prohibited": true
+  },
+  "final_test_access_authorized": false
+}

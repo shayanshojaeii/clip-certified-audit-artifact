@@ -1,0 +1,85 @@
+\section{Background and Definitions}
+\label{sec:background}
+
+\paragraph{Zero-shot prototype classifier}
+Let $\phi$ be a frozen CLIP image encoder that maps a model input
+$x\in\mathbb R^{3\times224\times224}$ to a unit feature $z=\phi(x)\in\mathbb
+S^{d-1}$ (clean inputs lie in $[0,1]^{3\times224\times224}$; noisy inputs are
+not clipped),
+and let $t_1,\dots,t_K\in\mathbb S^{d-1}$ be unit text prototypes obtained by
+encoding one or more prompts per class and renormalizing their mean. The base
+classifier is $f(x)=\argmax_k\,\langle\phi(x),t_k\rangle$. A prototype
+\emph{operator} replaces the bank $\{t_k\}$ by $\{t'_k\}$ and, for two-sided
+operators, also transforms $z$; the base classifier changes accordingly. We
+write $\mu_I$ for the mean image feature over a development split and $\mu_T$
+for the mean of the $K$ prototypes, and call $\mu_T-\mu_I$ the global modality
+gap.
+
+\paragraph{Adversary and noise coordinates}
+The adversary is white-box and perturbs the model-input tensor $x$ in
+$\ell_2$ norm; it does not control the Gaussian noise draws, the prompts, or
+the prototype bank. Noise is added to the $224\times224$ RGB tensor after
+deterministic bicubic resizing and center cropping and before channel
+standardization, and samples are not clipped. All radii in this paper are
+$\ell_2$ distances in that model-input space: a radius of $r=0.25$ over
+$3\times224\times224$ coordinates is a root-mean-square per-coordinate change
+of $\ExpRadiusPerCoordinate$, below one 8-bit intensity level. Because the
+CIFAR and EuroSAT images are upsampled from $32\times32$ and $64\times64$
+pixels, these radii are not native-resolution radii and are not comparable to
+certificates reported on native CIFAR pixels; Figure~\ref{fig:noise}
+(Appendix~\ref{app:followup}) shows one image per dataset at each noise level.
+A conservative native-resolution
+bound through the operator norm of the resize map is possible but we do not
+claim one, because the resize acts on quantized images.
+
+\paragraph{Cohen certification}
+For $\varepsilon\sim\mathcal N(0,\sigma^2 I)$ the smoothed classifier is
+$g(x)=\argmax_c \Pr[f(x+\varepsilon)=c]$~\cite{cohen2019smoothing}. The
+\textsc{Certify} procedure draws $n_0$ noise samples to select a class
+$\hat c$ (the first maximum of the selection counts, so an exact tie goes to
+the lowest class index), then draws $n$ independent samples to count votes
+$k$ for $\hat c$
+and forms the one-sided Clopper--Pearson lower confidence bound $p_L$ at
+confidence level $1-\alpha$~\cite{clopper1934}. It abstains if $p_L\le\tfrac12$ and otherwise
+certifies radius $R=\sigma\,\Phi^{-1}(p_L)$: every $x'$ with
+$\lVert x'-x\rVert_2<R$ satisfies $g(x')=\hat c$ with probability at least
+$1-\alpha$ over the sampling. This paper uses $n_0=\ExpSelDraws$,
+$n=\ExpConfDraws$, $\alpha=\ExpAlpha$, and $\sigma=\ExpSigma$ throughout the
+immutable audit. The confidence statement is pointwise: it holds per input, not
+simultaneously over a dataset.
+
+\paragraph{Outcome definitions}
+Fix a target radius $r$ and a labeled input $(x,y)$ with raw clean prediction
+$y_0=f(x)$. Standard Cohen certified accuracy counts the input when the
+procedure does not abstain, the selected class equals the label, and the radius
+reaches the target:
+\begin{equation}
+\CA(r)=\Pr\big[\text{no abstain},\;\hat c=y,\;R\ge r\big].
+\label{eq:stdca}
+\end{equation}
+The preregistered audit instead governed selection with a stricter operational
+metric that additionally requires the certified class to equal the candidate's
+own raw clean prediction:
+\begin{equation}
+\aCA(r)=\Pr\big[\text{no abstain},\;\hat c=y,\;\hat c=y_0,\;R\ge r\big].
+\label{eq:anchca}
+\end{equation}
+We call \eqref{eq:anchca} anchored certified accuracy. It is a
+predicted-label-preservation outcome, not the standard definition, and the two
+are reported separately everywhere. The audit used the anchored quantity for its
+registered selection rule; standard Cohen certified accuracy is the primary
+scientific estimand in the analyses reported here. In \eqref{eq:stdca}, \eqref{eq:anchca} and
+below, $\Pr[\cdot]$ is a rate over the evaluated inputs. We also report smoothed accuracy
+$\Pr[\hat c=y]$ (the selected class is correct, whether or not the procedure
+abstains), the abstention rate, the raw/smoothed agreement rate
+$\Pr[\hat c=y_0]$, and the certified-wrong rate
+$\Pr[\text{no abstain},\;\hat c\ne y,\;R\ge r]$, the fraction of inputs whose
+certificate protects an incorrect class.
+
+\paragraph{Aggregation}
+A \emph{cell} is one model--dataset--fold combination. Unless stated otherwise,
+a macro value is the unweighted mean over the \ExpCells{} cells, which was the
+preregistered estimand. Because CIFAR-100 cells contain
+\ExpCifarItemsPerCell{} items and EuroSAT cells \ExpEurosatItemsPerCell{}, we
+also report item-pooled values where the weighting matters, and we say which
+weighting a number uses.

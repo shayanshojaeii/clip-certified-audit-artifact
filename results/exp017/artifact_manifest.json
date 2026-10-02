@@ -1,0 +1,274 @@
+{
+  "artifact_count": 53,
+  "artifact_set_sha256": "f828daa709bace206f2ba1dc345cbf5bb23c1fc67217b0bde01c8f4b410028dd",
+  "artifacts": [
+    {
+      "bytes": 26491,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold0/candidate_metadata.json",
+      "sha256": "77be53e8c8548f8803e31f62e9e7e88bcc3df8c5be70c839948d2138de57ea1c"
+    },
+    {
+      "bytes": 3693469,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold0/candidate_prototype_banks.pt",
+      "sha256": "966f5d2f60c147cc4799d889ee1a7cfe4b69eb68492ac1fb76bfeaf236fbeb94"
+    },
+    {
+      "bytes": 40020,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold0/cell_metrics.json",
+      "sha256": "39e2ae61ead11e10c5e9785250175536e65b31df9e51dcc083eee8ca0e139d77"
+    },
+    {
+      "bytes": 7716479,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold0/cohen_sufficient_statistics.pt",
+      "sha256": "6a92e1fa347b69bf86177d8c83f1b56d86fa44cac18973888534ccfdcbe4ed24"
+    },
+    {
+      "bytes": 26492,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold1/candidate_metadata.json",
+      "sha256": "c2d175f925e06cb31d25f9362ed2c226e909dd3ca38bfa3872c97d907f23cebd"
+    },
+    {
+      "bytes": 3693469,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold1/candidate_prototype_banks.pt",
+      "sha256": "162267e398b961b9a662ce92b5d18d7ce1cba019dd24fde77ca52d5677a8201e"
+    },
+    {
+      "bytes": 40005,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold1/cell_metrics.json",
+      "sha256": "590ee42ecaa5425d7ee65781e1f61e7fcb34c11513ef6178ab2cdf65a15aec03"
+    },
+    {
+      "bytes": 7716479,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold1/cohen_sufficient_statistics.pt",
+      "sha256": "b93944f38e875849b3c6bd7f801da17437cef4f6bc01e08fb170f24afde6c741"
+    },
+    {
+      "bytes": 26488,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold2/candidate_metadata.json",
+      "sha256": "628a4094cfe814b4234e2d3c8ad0f70729e00ede88bd5c605bbecd110ab7276a"
+    },
+    {
+      "bytes": 3693469,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold2/candidate_prototype_banks.pt",
+      "sha256": "fa9d60278d5bcddd16645b31ce1f4f169741183b6d3c05f2c56bb57e3fbd55ea"
+    },
+    {
+      "bytes": 39980,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold2/cell_metrics.json",
+      "sha256": "b3e17bea9f2958b388b4073d89a692503b1e2119cd6dc8a74d14fde06613f62c"
+    },
+    {
+      "bytes": 7716479,
+      "path": "cells/openai-clip-vit-b32-quickgelu__cifar100__fold2/cohen_sufficient_statistics.pt",
+      "sha256": "6a3ec93e8c02bba40951201fe4db41ee4de606f64e90dc3d5cad11408eaf566e"
+    },
+    {
+      "bytes": 26490,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold0/candidate_metadata.json",
+      "sha256": "934b786b568a7ccbc537a16a294092adc26c5b46199a50b188f7b5c46d545c36"
+    },
+    {
+      "bytes": 375709,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold0/candidate_prototype_banks.pt",
+      "sha256": "c177085f8b456ee10e7863f42d9039a52357f54f4eddd3ab44ae78dc77be883e"
+    },
+    {
+      "bytes": 39762,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold0/cell_metrics.json",
+      "sha256": "a2aa4ad1a6c249691558d25daf06842418ad7e641b16ba617aa354716fecc3e1"
+    },
+    {
+      "bytes": 159295,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold0/cohen_sufficient_statistics.pt",
+      "sha256": "72209d45477462c72d81581621fc78d45905c0cf04a8f6f2af5de72e9b714be8"
+    },
+    {
+      "bytes": 26487,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold1/candidate_metadata.json",
+      "sha256": "853348eb232f160bb29bc5ed972b3b4ef8cd7761ce844078e85ac5e282238ebc"
+    },
+    {
+      "bytes": 375709,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold1/candidate_prototype_banks.pt",
+      "sha256": "051f319454b720d1dd5ac1b2680febbbe234472635b4b9255a37a518926fe145"
+    },
+    {
+      "bytes": 39774,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold1/cell_metrics.json",
+      "sha256": "9a7b06c84e72e11899d12f923e7d3f70754b1745e84a696d11001db76e3632d8"
+    },
+    {
+      "bytes": 159295,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold1/cohen_sufficient_statistics.pt",
+      "sha256": "3b7041dcf554efa8cf0b0bf1d04939171871c44cb09c14f77fc434a0b35db802"
+    },
+    {
+      "bytes": 26484,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold2/candidate_metadata.json",
+      "sha256": "88b97bd7a7fc6bf005748a70ed6ce415b6a41b5d294fe6b14d05d906ac9524a6"
+    },
+    {
+      "bytes": 375709,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold2/candidate_prototype_banks.pt",
+      "sha256": "69f662fddb6eb0eabc07cc5615ef60d921bbb0d02b5720839f52bc6ce2954af0"
+    },
+    {
+      "bytes": 39748,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold2/cell_metrics.json",
+      "sha256": "b898c8b35dd0c50570670973eb4b59de98f82ffa79415c2e583751bb731cb985"
+    },
+    {
+      "bytes": 159295,
+      "path": "cells/openai-clip-vit-b32-quickgelu__eurosat__fold2/cohen_sufficient_statistics.pt",
+      "sha256": "c777fdc36b84e306d4a35df39394a19f978e928c778626c11ba4a46d0d5e5adf"
+    },
+    {
+      "bytes": 26488,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold0/candidate_metadata.json",
+      "sha256": "9b2662333fbf88f1c8e3de317821ac58b32065cf221b28ecd665487b42930511"
+    },
+    {
+      "bytes": 5536669,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold0/candidate_prototype_banks.pt",
+      "sha256": "0bbba7216a7ff723b4fb61aefbba089ff4df8701a810d18a89327334d739d4a1"
+    },
+    {
+      "bytes": 39979,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold0/cell_metrics.json",
+      "sha256": "8d57882deae77c52b84c8738b4943da21ca2f866b1fe2e9b6e4c8ec68bdb78a5"
+    },
+    {
+      "bytes": 7716479,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold0/cohen_sufficient_statistics.pt",
+      "sha256": "78370b2e707dd1978d5c6af28ada0b6a1f00026997ada5065d68c5040d5d8e8e"
+    },
+    {
+      "bytes": 26493,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold1/candidate_metadata.json",
+      "sha256": "a324832734268c07d077e42c5c0a0e0297d40b8d5fed3dd636e599381b4f8e10"
+    },
+    {
+      "bytes": 5536669,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold1/candidate_prototype_banks.pt",
+      "sha256": "62b0441d4ce1a1d5f5d4cbfb96c285d630792aba4c5aecb91faa4e9a51f4c7e1"
+    },
+    {
+      "bytes": 39967,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold1/cell_metrics.json",
+      "sha256": "fb868ab09877e2111c63b4366e0dc19dd2e638be57e5ffca698493b40a3d6b12"
+    },
+    {
+      "bytes": 7716479,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold1/cohen_sufficient_statistics.pt",
+      "sha256": "b16b30871366d8eb30d671fb2b4637448686d2651b84da57166c35d128e20e3c"
+    },
+    {
+      "bytes": 26491,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold2/candidate_metadata.json",
+      "sha256": "6ca995f22a826c67ece5c6c28467203b7223dbcd6b9bb6c107686c236e44fc08"
+    },
+    {
+      "bytes": 5536669,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold2/candidate_prototype_banks.pt",
+      "sha256": "9808d8ac6a80f57c07d3ff2cf16b32781ac7dde921250aec9c96ead308a4aa38"
+    },
+    {
+      "bytes": 39994,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold2/cell_metrics.json",
+      "sha256": "15db7bc5ff5d1408a18fe412b158759e1ffe7f9959101724e0a533e53f96d6f7"
+    },
+    {
+      "bytes": 7716479,
+      "path": "cells/openai-clip-vit-l14-quickgelu__cifar100__fold2/cohen_sufficient_statistics.pt",
+      "sha256": "fb526b42b45fa8f5c056e6617a17531fe7a2b6b0e8b4de8c71d4dec48ebe4e2e"
+    },
+    {
+      "bytes": 26491,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold0/candidate_metadata.json",
+      "sha256": "cde1229240d257decc94fd5b04654642c9c2588ce3f68a72f8ea3cc1c235b7ef"
+    },
+    {
+      "bytes": 560029,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold0/candidate_prototype_banks.pt",
+      "sha256": "9e98cbfdf462d20af4d6776b2c41617442da67e160a98a6769590941fbe9aa3f"
+    },
+    {
+      "bytes": 39762,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold0/cell_metrics.json",
+      "sha256": "d666b848623abfe6944d278f1552966d29c3585161acfb28ec658ddae8fe061e"
+    },
+    {
+      "bytes": 159295,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold0/cohen_sufficient_statistics.pt",
+      "sha256": "e30909c6244b8e85ccb18ea41a084ef606aad7c93dbaae8ee46b17a3987fcb98"
+    },
+    {
+      "bytes": 26488,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold1/candidate_metadata.json",
+      "sha256": "ddab9ad799590b9b30d1209a178a507887275627817c2a065ced578835661687"
+    },
+    {
+      "bytes": 560029,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold1/candidate_prototype_banks.pt",
+      "sha256": "56327f5cc64e23deffdc3675c2ec41168fb8f8fcac452cc526b29d7019b3134b"
+    },
+    {
+      "bytes": 39746,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold1/cell_metrics.json",
+      "sha256": "cc82c05ed88b5796bc3aa848c5f9dcf204265f2b5d67908dfe62d432d3dc296f"
+    },
+    {
+      "bytes": 159295,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold1/cohen_sufficient_statistics.pt",
+      "sha256": "97ac1ff7f79cc60e6bb4e11375d45f15abbb196bd42a4a635fff7e344af02def"
+    },
+    {
+      "bytes": 26491,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold2/candidate_metadata.json",
+      "sha256": "5e004abf031ff62c0f38f8018593bf1e6d8960589234d076e53b4397b1213b46"
+    },
+    {
+      "bytes": 560029,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold2/candidate_prototype_banks.pt",
+      "sha256": "bb8c693d034582f6ec1738ff7f9a49d252ac6e9cb284fed5b080d0298f34fd7f"
+    },
+    {
+      "bytes": 39807,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold2/cell_metrics.json",
+      "sha256": "7a5b300161a0ad6b3cc216095c53dc49fd233545cb33f9702f830337ab674387"
+    },
+    {
+      "bytes": 159295,
+      "path": "cells/openai-clip-vit-l14-quickgelu__eurosat__fold2/cohen_sufficient_statistics.pt",
+      "sha256": "9bd16331a58fd0801251624d2fe4d5ea6e037d8a413ea8478887b1b268cbb106"
+    },
+    {
+      "bytes": 15581,
+      "path": "phase3_calibration_protocol_snapshot.json",
+      "sha256": "384cfa76acef43a161ca208a384322f5b7f93b6f1891dda420b94f76f0fccc4a"
+    },
+    {
+      "bytes": 12211507,
+      "path": "phase3_split_assignments_snapshot.csv",
+      "sha256": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38"
+    },
+    {
+      "bytes": 819,
+      "path": "progress.json",
+      "sha256": "695f1808707bedea219da74cc8913342912865ff3ab05ec1e4acb274d478981c"
+    },
+    {
+      "bytes": 15979,
+      "path": "selection.json",
+      "sha256": "824e063ba2afe5856b068dca19488b581deee2aa3f82b3e4fdacab1658f3d827"
+    },
+    {
+      "bytes": 1122,
+      "path": "summary.json",
+      "sha256": "5c59c9483f6c65dc0fbb053cc11a3700de8ecfa6fdc32e93782e3b517aed63ee"
+    }
+  ],
+  "experiment_id": "EXP-20260906-017",
+  "final_test_accessed": false,
+  "schema_version": "phase3.exp017_artifact_manifest.v1"
+}

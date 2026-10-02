@@ -1,0 +1,50 @@
+% Study map (D-148): the studies of this paper, their registration status, and what builds on what. No data;
+% counts are generated macros. Arrows are dependencies, not execution order (the post-hoc family-wide analysis ran
+% after the extension was registered; research/DECISION_LOG.md D-092, D-109, D-118).
+% In the body since the reviews of V11 (D-160): reviewers need not read appendices, and this map says which evidence
+% is prospective. No dates (owner's request): "registered before sampling" is the claim; the artifact keeps timestamps.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize,
+  reg/.style={draw=black!75, thick, rounded corners=2pt, align=left, inner sep=3pt, fill=white},
+  post/.style={reg, draw=orange!80!black, dashed, thin},
+  arr/.style={-{Stealth[length=3pt]}, semithick},
+  tag/.style={font=\tiny\bfseries, anchor=south west, inner sep=1pt},
+  lab/.style={font=\tiny, text=black!70, align=left},
+]
+\node[reg, text width=0.88\columnwidth] (audit) at (0,0) {Audit (Section~\ref{sec:results}):
+  \ExpCandidates{} banks in \ExpCells{} cells on saved draws, with a joint efficacy and clean-accuracy
+  gate. The gate was not met: the attack and control stage never ran, and the sealed test
+  stayed locked until Follow-up B.};
+\node[post, text width=0.5\columnwidth, below=4.5mm of audit.south west, anchor=north west] (posthoc)
+  {Analyses of the saved draws after the outcome: metric semantics (Section~\ref{sec:semantics}), the
+  family-wide two-sided centering gain, flagged post hoc (Section~\ref{sec:grclip}), and the
+  decision-change condition (Section~\ref{sec:flip}).};
+\node[post, text width=0.31\columnwidth, below=4.5mm of audit.south east, anchor=north east] (control)
+  {Positive control (Section~\ref{sec:control}): an exploratory supervised class-specific pilot on
+  fresh reserved items.};
+\node[reg, text width=0.88\columnwidth, below=4.5mm of posthoc.south west, anchor=north west] (ext)
+  {Extensions A and B (Section~\ref{sec:extension}): fresh items, five backbones, three datasets, three
+  noise levels, matched supervised controls; descriptive.};
+\node[reg, text width=0.88\columnwidth, below=4.5mm of ext.south west, anchor=north west] (fu)
+  {Follow-ups A--C (Section~\ref{sec:followup}), run in three approved stages.
+  A: the audit's \FUImagesA{} images with fresh draws (Q1--Q5); B: fresh items including the sealed
+  splits, with planned power (Q2--Q8, primary Q6); C: a \FUBudgetDraws{}-draw budget (Q9).};
+\draw[arr] (audit.south -| posthoc.north) -- (posthoc.north);
+\draw[arr] (audit.south -| control.north) -- (control.north);
+\draw[arr] (posthoc.south) -- (posthoc.south |- ext.north) node[lab, midway, right] {a weaker form of the\\[-1pt] condition, registered};
+\draw[arr] (ext.south) -- (fu.north);
+\draw[arr] (posthoc.west) -- ++(-2.5mm,0) |- (fu.west) node[lab, pos=0.25, left] {Q1\\[-1pt]tests\\[-1pt]the\\[-1pt]gain};
+\node[tag] at (audit.north west) {registered before sampling};
+\node[tag, text=orange!80!black] at (posthoc.north west) {after the outcome};
+\node[tag, text=orange!80!black] at (control.north west) {exploratory};
+\node[tag] at (ext.north west) {registered before sampling};
+\node[tag] at (fu.north west) {registered before sampling};
+\end{tikzpicture}
+\caption{The studies and what builds on what. Solid boxes were registered,
+with their analysis, before any outcome was sampled; dashed boxes followed an
+outcome or are exploratory, and are labeled so wherever used. An arrow means
+that the later study builds on the earlier one, not the order of execution.}
+\label{fig:flow}
+\end{figure}

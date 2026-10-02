@@ -1,0 +1,1995 @@
+{
+  "contrasts": {
+    "chowers_exact_projected_gap__coefficient_0.25": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01838888888888887,
+        "point_difference": 0.0,
+        "upper": 0.01838888888888887
+      }
+    },
+    "chowers_exact_projected_gap__coefficient_0.5": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01838888888888887,
+        "point_difference": 0.0,
+        "upper": 0.01838888888888887
+      }
+    },
+    "chowers_exact_projected_gap__coefficient_1": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01838888888888887,
+        "point_difference": 0.0,
+        "upper": 0.01838888888888887
+      }
+    },
+    "clean_boundary_active__step_0.0025": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.017833333333333316,
+        "point_difference": 0.0005555555555555556,
+        "upper": 0.018944444444444427
+      }
+    },
+    "clean_boundary_active__step_0.005": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01766666666666665,
+        "point_difference": 0.0007222222222222222,
+        "upper": 0.019111111111111093
+      }
+    },
+    "clean_boundary_active__step_0.01": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 3
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01766666666666665,
+        "point_difference": 0.0007222222222222222,
+        "upper": 0.019111111111111093
+      }
+    },
+    "clean_boundary_active__step_0.02": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.125,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 3,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5078125,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01716666666666665,
+        "point_difference": 0.0012222222222222224,
+        "upper": 0.019611111111111093
+      }
+    },
+    "clean_boundary_active__step_0.04": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.375,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 6,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.454498291015625,
+          "proposed_only": 10
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.2890625,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 5,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.453125,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01666666666666665,
+        "point_difference": 0.0017222222222222222,
+        "upper": 0.020111111111111094
+      }
+    },
+    "cohen_aligned_noisy_margin__step_0.0025": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.018722222222222206,
+        "point_difference": -0.0003333333333333333,
+        "upper": 0.018055555555555537
+      }
+    },
+    "cohen_aligned_noisy_margin__step_0.005": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01799999999999998,
+        "point_difference": 0.0003888888888888889,
+        "upper": 0.01877777777777776
+      }
+    },
+    "cohen_aligned_noisy_margin__step_0.01": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01727777777777776,
+        "point_difference": 0.0011111111111111111,
+        "upper": 0.019499999999999983
+      }
+    },
+    "cohen_aligned_noisy_margin__step_0.02": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.017333333333333315,
+        "point_difference": 0.0010555555555555557,
+        "upper": 0.019444444444444427
+      }
+    },
+    "cohen_aligned_noisy_margin__step_0.04": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.125,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.453125,
+          "proposed_only": 5
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 3
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.75390625,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.125,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.015222222222222205,
+        "point_difference": 0.003166666666666667,
+        "upper": 0.02155555555555554
+      }
+    },
+    "control__learned_shared_translation_pure": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 75,
+          "holm_adjusted_p_value": 1.3967596609326052e-07,
+          "p_value": 1.1639663841105044e-08,
+          "proposed_only": 20
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 15,
+          "holm_adjusted_p_value": 0.2483367919921875,
+          "p_value": 0.04138946533203125,
+          "proposed_only": 5
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 42,
+          "holm_adjusted_p_value": 3.6245783263666453e-06,
+          "p_value": 3.6245783263666453e-07,
+          "proposed_only": 7
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 6,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 5
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 0.625,
+          "p_value": 0.125,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 85,
+          "holm_adjusted_p_value": 3.9383347065780887e-07,
+          "p_value": 3.5803042787073536e-08,
+          "proposed_only": 27
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 28,
+          "holm_adjusted_p_value": 0.0015610046684741974,
+          "p_value": 0.00019512558355927467,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 21,
+          "holm_adjusted_p_value": 8.58306884765625e-06,
+          "p_value": 9.5367431640625e-07,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 26,
+          "holm_adjusted_p_value": 0.041916843969374895,
+          "p_value": 0.0059881205670535564,
+          "proposed_only": 9
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 5,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 5
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": false,
+      "simultaneous_confidence_interval": {
+        "lower": -0.05099999999999998,
+        "point_difference": -0.03261111111111111,
+        "upper": -0.01422222222222224
+      }
+    },
+    "control__learned_shared_translation_tangent": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 11,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.8388197422027588,
+          "proposed_only": 13
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 11,
+          "holm_adjusted_p_value": 0.047564054279064294,
+          "p_value": 0.00432400493446039,
+          "proposed_only": 30
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 0.2470703125,
+          "p_value": 0.0308837890625,
+          "proposed_only": 14
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.266845703125,
+          "proposed_only": 9
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 13,
+          "holm_adjusted_p_value": 0.0738525390625,
+          "p_value": 0.00738525390625,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 20,
+          "holm_adjusted_p_value": 0.0841977596282959,
+          "p_value": 0.009355306625366211,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 5,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 5
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 14,
+          "holm_adjusted_p_value": 0.006425226034284748,
+          "p_value": 0.0005354355028570623,
+          "proposed_only": 40
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 10,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.8145294189453125,
+          "proposed_only": 8
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 14,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.4048728942871094,
+          "proposed_only": 9
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.018611111111111096,
+        "point_difference": -0.00022222222222222318,
+        "upper": 0.018166666666666647
+      }
+    },
+    "control__lowrank_tangent_r8": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 22,
+          "holm_adjusted_p_value": 9.994065030104827e-06,
+          "p_value": 1.2492581287631034e-06,
+          "proposed_only": 68
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 11,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 10
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 46,
+          "holm_adjusted_p_value": 0.12908808293237242,
+          "p_value": 0.032272020733093106,
+          "proposed_only": 70
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 21,
+          "holm_adjusted_p_value": 0.00011855081851102074,
+          "p_value": 1.6935831215860105e-05,
+          "proposed_only": 60
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 9.137156160268951e-18,
+          "p_value": 7.614296800224126e-19,
+          "proposed_only": 78
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 8,
+          "holm_adjusted_p_value": 0.00015269159189301718,
+          "p_value": 2.5448598648836196e-05,
+          "proposed_only": 36
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 13,
+          "holm_adjusted_p_value": 0.00015269159189301718,
+          "p_value": 3.0115909629119253e-05,
+          "proposed_only": 45
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 14,
+          "holm_adjusted_p_value": 0.178751664054289,
+          "p_value": 0.05958388801809633,
+          "proposed_only": 27
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 29,
+          "holm_adjusted_p_value": 0.6568641253943798,
+          "p_value": 0.3284320626971899,
+          "proposed_only": 38
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 32,
+          "holm_adjusted_p_value": 1.9349246266112055e-06,
+          "p_value": 2.149916251790228e-07,
+          "proposed_only": 89
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 1.095942380006694e-16,
+          "p_value": 9.9631125455154e-18,
+          "proposed_only": 74
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 5,
+          "holm_adjusted_p_value": 1.4051624930289108e-06,
+          "p_value": 1.4051624930289108e-07,
+          "proposed_only": 39
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": false,
+      "simultaneous_confidence_interval": {
+        "lower": 0.13255555555555557,
+        "point_difference": 0.15094444444444444,
+        "upper": 0.1693333333333333
+      }
+    },
+    "control__noisy_class_mean": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 36,
+          "holm_adjusted_p_value": 0.02050436210918334,
+          "p_value": 0.0029291945870261915,
+          "proposed_only": 67
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 13,
+          "holm_adjusted_p_value": 0.5951904165688574,
+          "p_value": 0.37708558747544885,
+          "proposed_only": 19
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 76,
+          "holm_adjusted_p_value": 0.566646999251096,
+          "p_value": 0.141661749812774,
+          "proposed_only": 58
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 27,
+          "holm_adjusted_p_value": 0.09264157212543817,
+          "p_value": 0.015440262020906361,
+          "proposed_only": 49
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 7,
+          "holm_adjusted_p_value": 1.5116091971884016e-11,
+          "p_value": 1.2596743309903347e-12,
+          "proposed_only": 64
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 9,
+          "holm_adjusted_p_value": 0.0085201570764184,
+          "p_value": 0.0010650196345523,
+          "proposed_only": 30
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 46,
+          "holm_adjusted_p_value": 0.566646999251096,
+          "p_value": 0.17564027334487997,
+          "proposed_only": 61
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 25,
+          "holm_adjusted_p_value": 0.5951904165688574,
+          "p_value": 0.2975952082844287,
+          "proposed_only": 34
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 68,
+          "holm_adjusted_p_value": 4.441816277142291e-05,
+          "p_value": 4.9353514190469894e-06,
+          "proposed_only": 24
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 44,
+          "holm_adjusted_p_value": 0.09405374412442026,
+          "p_value": 0.018810748824884052,
+          "proposed_only": 70
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 12,
+          "holm_adjusted_p_value": 7.459722282164658e-06,
+          "p_value": 7.459722282164658e-07,
+          "proposed_only": 51
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 6,
+          "holm_adjusted_p_value": 5.959545887890272e-06,
+          "p_value": 5.417768988991156e-07,
+          "proposed_only": 39
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": false,
+      "simultaneous_confidence_interval": {
+        "lower": 0.0727777777777778,
+        "point_difference": 0.09116666666666667,
+        "upper": 0.10955555555555554
+      }
+    },
+    "global_mean_centering__coefficient_0.25": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 8,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.6476058959960938,
+          "proposed_only": 11
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 1,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 12,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.28104151505976915,
+          "proposed_only": 19
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 0.046875,
+          "p_value": 0.00390625,
+          "proposed_only": 9
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.125,
+          "proposed_only": 0
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 7,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 10,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.09228515625,
+          "proposed_only": 3
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 14,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.4048728942871094,
+          "proposed_only": 9
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.01977777777777776,
+        "point_difference": -0.0013888888888888885,
+        "upper": 0.016999999999999984
+      }
+    },
+    "global_mean_centering__coefficient_0.5": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 28,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.5758493477318467,
+          "proposed_only": 23
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.375,
+          "proposed_only": 1
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 36,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 36
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 9.1552734375e-05,
+          "p_value": 7.62939453125e-06,
+          "proposed_only": 18
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 2
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 13,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.6776394844055176,
+          "proposed_only": 10
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 27,
+          "holm_adjusted_p_value": 0.008213953115046024,
+          "p_value": 0.0008213953115046024,
+          "proposed_only": 7
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 5,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.7744140625,
+          "proposed_only": 7
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 24,
+          "holm_adjusted_p_value": 0.0019799023866653442,
+          "p_value": 0.00017999112606048584,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 27,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.6940040940761316,
+          "proposed_only": 31
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 6,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 7
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 0,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 0
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": false,
+      "simultaneous_confidence_interval": {
+        "lower": -0.023499999999999983,
+        "point_difference": -0.005111111111111111,
+        "upper": 0.01327777777777776
+      }
+    },
+    "global_mean_centering__coefficient_1": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 49,
+          "holm_adjusted_p_value": 0.016383644420501574,
+          "p_value": 0.0018204049356112858,
+          "proposed_only": 22
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 7,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 7
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 61,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.2942337084442914,
+          "proposed_only": 49
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 0.0012111663818359375,
+          "p_value": 0.00012111663818359375,
+          "proposed_only": 20
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 8,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 8
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 13,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.8505540192127228,
+          "proposed_only": 15
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 61,
+          "holm_adjusted_p_value": 1.181141689768167e-06,
+          "p_value": 9.842847414734724e-08,
+          "proposed_only": 15
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 17,
+          "holm_adjusted_p_value": 0.2428276538848877,
+          "p_value": 0.03468966484069824,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 40,
+          "holm_adjusted_p_value": 3.4130840731450007e-06,
+          "p_value": 3.1028037028590916e-07,
+          "proposed_only": 6
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 30,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.620144765081303,
+          "proposed_only": 35
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 16,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.32693958282470703,
+          "proposed_only": 10
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 12,
+          "holm_adjusted_p_value": 0.103515625,
+          "p_value": 0.012939453125,
+          "proposed_only": 2
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": false,
+      "simultaneous_confidence_interval": {
+        "lower": -0.043999999999999984,
+        "point_difference": -0.025611111111111112,
+        "upper": -0.007222222222222241
+      }
+    },
+    "gr_clip_style_two_sided__coefficient_1": {
+      "cell_mcnemar": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 20,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.20263875106454066,
+          "proposed_only": 30
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 4,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 17,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.17417114727072658,
+          "proposed_only": 27
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 19,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.28104151505976915,
+          "proposed_only": 12
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.6875,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 13,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.8505540192127228,
+          "proposed_only": 15
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+          "comparator_only": 19,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 18
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+          "comparator_only": 10,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.1795654296875,
+          "proposed_only": 4
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+          "comparator_only": 15,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.21003961563110352,
+          "proposed_only": 8
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+          "comparator_only": 12,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 0.12144948495551944,
+          "proposed_only": 22
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+          "comparator_only": 16,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 16
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+          "comparator_only": 2,
+          "holm_adjusted_p_value": 1.0,
+          "p_value": 1.0,
+          "proposed_only": 1
+        }
+      ],
+      "point_inside_prospective_practical_effect_region": true,
+      "simultaneous_confidence_interval": {
+        "lower": -0.015222222222222205,
+        "point_difference": 0.003166666666666667,
+        "upper": 0.02155555555555554
+      }
+    }
+  },
+  "experiment_id": "EXP-20260920-019A",
+  "final_test_access": false,
+  "primary_outcome": "standard certified accuracy at r = sigma",
+  "prospective_practical_effect_region": {
+    "interpretation": "descriptive only; not an equivalence margin and not a TOST conclusion",
+    "lower": -0.005,
+    "upper": 0.005
+  },
+  "reference": "no_correction",
+  "registration_sha256": "9802bf3e5f97ac99aa725a1607e2cbe395886bfd16587c9b7d9db0545c94b1e2",
+  "simultaneous_band": {
+    "confidence_level": 0.95,
+    "critical_max_absolute_deviation": 0.01838888888888887,
+    "method": "shared_item_multiplicity_dataset_class_stratified_max_absolute_deviation",
+    "replicates": 100000,
+    "seed": 2026091605
+  }
+}

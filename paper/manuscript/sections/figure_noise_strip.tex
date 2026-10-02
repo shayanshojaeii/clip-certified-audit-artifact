@@ -1,0 +1,23 @@
+% Noise-regime strip (D-148). Tiles written by scripts/make_satml2027_noise_figure.py (224 x 224, unscaled); the images
+% follow the fixed rule stated there, and generated/fig_noise_sources.json records their sources and hashes.
+% Placed right after the last paragraph of Appendix D ([!hb]), in the free space below it; as a top-only float it
+% had been left alone on a page of its own (owner's layout request, 2026-09-28).
+\begin{figure}[!hb]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{0.6}
+\newcommand{\noisetile}[1]{\includegraphics[width=0.16\columnwidth]{generated/fig_noise_#1.png}}
+\begin{tabular}{@{}c@{\hspace{3pt}}cccc@{}}
+ & clean & $\sigma=0.12$ & $\sigma=0.25$ & $\sigma=0.5$\\[1pt]
+\rotatebox{90}{\hspace{3mm}CIFAR-100} & \noisetile{cifar100_0} & \noisetile{cifar100_1} & \noisetile{cifar100_2} & \noisetile{cifar100_3}\\
+\rotatebox{90}{\hspace{4mm}EuroSAT} & \noisetile{eurosat_0} & \noisetile{eurosat_1} & \noisetile{eurosat_2} & \noisetile{eurosat_3}\\
+\rotatebox{90}{\hspace{2mm}Imagenette} & \noisetile{imagenette_0} & \noisetile{imagenette_1} & \noisetile{imagenette_2} & \noisetile{imagenette_3}\\
+\end{tabular}
+\caption{One development image per dataset in the $224\times224$ model-input
+coordinates of Section~\ref{sec:background} (before channel standardization),
+clean and with one fixed Gaussian draw at each $\sigma$. The display clips to
+$[0,1]$; the classifier sees unclipped samples. A fixed rule (the first
+development item of a fixed class), not the outcome, chose the images.}
+\label{fig:noise}
+\end{figure}

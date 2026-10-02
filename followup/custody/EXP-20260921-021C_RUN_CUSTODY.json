@@ -1,0 +1,67 @@
+{
+  "bank_manifest_sha256": "dfe0ef92494c4eb6309690ffa4f7eb510055ee81c4af6be8ff9315ef04aecf8c",
+  "cells": {
+    "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100": {
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "files": {
+        "shard_000_of_001.meta.json": "28165497d4fde315bfc6eb02ba5de15e218a67ce86cd95c67ac08a9da97116cd",
+        "shard_000_of_001.npz": "af1ba826981e7830e546092978b8fd6a7cdb0b33325d037c0988a981d13a6628"
+      },
+      "items": 100,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100": {
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "files": {
+        "shard_000_of_001.meta.json": "4e93daaaa1407f004ed52ede348f108c3187ea7bb0bfa31d360444f135828923",
+        "shard_000_of_001.npz": "ed1a86810b04c73309b7c1a9c792370b1fbbc594c827dd7920af0a15cd19b97f"
+      },
+      "items": 100,
+      "shard_count": 1
+    },
+    "openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100": {
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "files": {
+        "shard_000_of_001.meta.json": "5f5013d5ce7dda2bc05ffe36c05266e46dd28de390a27053470e847ccdd2a880",
+        "shard_000_of_001.npz": "90c900db4bc1af3d6b30da44970b062318b38677e46d401471e98e60d513448d"
+      },
+      "items": 100,
+      "shard_count": 1
+    },
+    "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100": {
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "files": {
+        "shard_000_of_001.meta.json": "941260a246a0ba89e5b1f7c3bd00a77f9bc5d3adcfbf3c37ed8a967b94307d99",
+        "shard_000_of_001.npz": "bd9398fea7521ec85a49804723a8f0e754963f00478954c4bb91c2dd50b6e097"
+      },
+      "items": 100,
+      "shard_count": 1
+    },
+    "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100": {
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "files": {
+        "shard_000_of_001.meta.json": "13b45821359a1bb3708d9cb31e101e3168c0b15b90e98b36a357fd006f2907db",
+        "shard_000_of_001.npz": "9647ae807367b4400233a3932ba5f8098d7661f8f2fd3a265b740a986d605e45"
+      },
+      "items": 100,
+      "shard_count": 1
+    },
+    "openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100": {
+      "device_name": "NVIDIA GeForce RTX 5090",
+      "files": {
+        "shard_000_of_001.meta.json": "ba5d74151f0446140fccf9eca2825d3842d06dccf0cc814c41737cf13b1edf8d",
+        "shard_000_of_001.npz": "bca1e601a83bb1f0ed1178309ab91b679086aa352db8d32ca7c9347876f6ba76"
+      },
+      "items": 100,
+      "shard_count": 1
+    }
+  },
+  "content_sha256": "ce8351795c6285610414ffd5dec48b6fdcff8465ebc87d9a2a224f29cb666a6a",
+  "data_preflight_sha256": "7c9a93a77639b7b9dce90f75b0cbd1787e65daf04291fd28679e44f8fbee9fad",
+  "experiment_id": "EXP-20260921-021C",
+  "file_count": 12,
+  "not_run_cells": [],
+  "registration_sha256": "2359b499c96ca02bfa11cca10bb4d6d4c8bd4abdd4ee1854e73daa0f2958193f",
+  "sampling_approval_sha256": "553985bad3e1881b32063af4375d5ab7d563707872e2871f75600288c7780123",
+  "schema_version": "satml2027ext.run_custody.v2"
+}

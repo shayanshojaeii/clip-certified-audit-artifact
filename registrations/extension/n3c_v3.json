@@ -1,0 +1,198 @@
+{
+  "candidates": {
+    "control_training": {
+      "adamw_weight_decay": 0.0001,
+      "batch_size": 1024,
+      "classification_temperature": 0.05,
+      "clean_loss_weight": 0.5,
+      "epochs": 80,
+      "learning_rate": 0.005,
+      "minibatch_seed": 20260920007,
+      "noise_base_seed": 20260920005,
+      "optimizer_seed": 20260920006,
+      "rank": 8,
+      "train_draws_per_item": 16
+    },
+    "controls": [
+      {
+        "control_id": "learned_shared_translation_tangent",
+        "form": "normalize(t_k + v - <v,t_k> t_k)",
+        "training": "preregistered supervised noisy+clean cross-entropy control on the control_train split re-encoded at this sigma"
+      },
+      {
+        "control_id": "learned_shared_translation_pure",
+        "form": "normalize(t_k + v)",
+        "training": "same v as the tangent form"
+      },
+      {
+        "control_id": "noisy_class_mean",
+        "form": "normalize(mean of unit-norm noisy training draws per class)",
+        "training": "optimization-free supervised noisy class-mean control"
+      },
+      {
+        "control_id": "lowrank_tangent_r8",
+        "form": "normalize(t_k + tangent(LR)_k), rank 8",
+        "training": "preregistered rank-8 tangent noisy+clean cross-entropy control; not labeled as the historical Phase-4 recipe"
+      }
+    ],
+    "direction_construction": {
+      "builder": "exact_phase3_interfaces",
+      "development_draws_per_item": 64,
+      "exclusion_manifest_sha256": "f14dec8b902f518ae37df73e12e07fe9700e021a68f9ae8582faa8c9cb208c85",
+      "noise_base_seed": 20260920004,
+      "noisy_margin_temperature": 0.05,
+      "prompt_configs": {
+        "cifar10": {
+          "identity": "registered built-in CIFAR-10 OpenAI ensemble",
+          "path": null
+        },
+        "cifar100": {
+          "path": "configs/prompts/cifar100_openai_readme.json",
+          "sha256": "907720051425650ef032094a4dcc46149d6297575dbbabb6fe734a0b4b9a06d6"
+        },
+        "eurosat": {
+          "path": "configs/prompts/eurosat_openai_ensemble_v1.json",
+          "sha256": "223d96686dbc3e21ad57dcb8cee033a008b2d64273fda9ae8993ed43db1e0ddc"
+        }
+      },
+      "split_manifest_sha256": "3aaf7d9d1a707e532b08f6cf4b5cd92a23b08f55dfeb670d674d92853091ecfe",
+      "tie_tolerance": 1e-10
+    },
+    "frozen_grid": {
+      "bank_count": 18,
+      "builder": "common/banks.py::build_eighteen_candidate_banks (port of the EXP-017 rule)",
+      "common_unit_direction_step_grid": [
+        0.0025,
+        0.005,
+        0.01,
+        0.02,
+        0.04
+      ],
+      "gap_coefficient_grid": [
+        0.25,
+        0.5,
+        1.0
+      ],
+      "portable_reproduction_atol": 2e-06,
+      "verification": "d1_03_build_banks.py --verify-against-exp017 requires identical candidate IDs and max absolute tensor error <= 2e-6; exact hashes are reported separately because torch SVD/reduction kernels may differ at final float32 bits"
+    }
+  },
+  "cells": [
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__sigma0.25",
+      "class_count": 100,
+      "control_train_items_sha256": "541cadc413afe1f4a279609f259e3c43b395907ca646631149be93ac63b1c1c0",
+      "dataset_id": "cifar100",
+      "development_items_sha256": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "item_count": 1000,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.25
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__sigma0.25",
+      "class_count": 10,
+      "control_train_items_sha256": "e328e4379ea7c28ab4d22d00fa3257f417f5d9c4b33eb816548e7519624cd0c3",
+      "dataset_id": "eurosat",
+      "development_items_sha256": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "item_count": 300,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "sigma": 0.25
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__sigma0.25",
+      "class_count": 100,
+      "control_train_items_sha256": "541cadc413afe1f4a279609f259e3c43b395907ca646631149be93ac63b1c1c0",
+      "dataset_id": "cifar100",
+      "development_items_sha256": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "item_count": 1000,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.25
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__sigma0.25",
+      "class_count": 10,
+      "control_train_items_sha256": "e328e4379ea7c28ab4d22d00fa3257f417f5d9c4b33eb816548e7519624cd0c3",
+      "dataset_id": "eurosat",
+      "development_items_sha256": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "item_count": 300,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "sigma": 0.25
+    }
+  ],
+  "data_role": "development_theory_diagnostic",
+  "experiment_id": "N3C-20260920-V3",
+  "final_test_access": false,
+  "inputs": {
+    "banks": "the exact Phase-3 objective/interfaces re-estimated prospectively on the registered extension-development split with 64 draws per item at sigma=0.25, plus four controls fitted or constructed before fresh N3C sampling",
+    "items": "newly preregistered extension-development items drawn from the remaining Phase-3 reserve, disjoint from extension evaluation and control-training items"
+  },
+  "method_selection": false,
+  "predictions": [
+    {
+      "id": "P1",
+      "rule": "zero exceptions",
+      "statement": "every draw whose argmax changes from j to k satisfies |<z, t_j - t_k>| <= |n_k - n_j| (per-class-scale form for the tangent controls), tie tolerance 1e-6",
+      "type": "conformance"
+    },
+    {
+      "id": "P2",
+      "rule": "no pass/fail threshold",
+      "statement": "orthogonal-complement candidates: report orthogonality residual, normalizer mismatch and P1 conformance of every float-level flip",
+      "type": "frozen measurement"
+    },
+    {
+      "id": "P4a",
+      "rule": "mean absolute calibration error <= 0.05 on both CIFAR-100 cells",
+      "statement": "marginal Gaussian calibration of the fixed clean-anchor versus fixed clean runner-up signed noisy margin, 10 equal-mass bins",
+      "type": "falsifiable"
+    },
+    {
+      "id": "P5",
+      "rule": "rho > 0 in at least 3 of 4 cells",
+      "statement": "attractor geometry: Spearman rho between <t_k, mean noisy feature> and noisy vote share, with a 10000-draw label-permutation reference",
+      "type": "falsifiable"
+    },
+    {
+      "id": "P6",
+      "statement": "descriptive noisy-margin anatomy including per-draw winner-runner-up margin quantiles",
+      "type": "descriptive"
+    },
+    {
+      "id": "P7",
+      "rule": "reported; the phrase 'cannot be certified' is not used",
+      "statement": "flip budget versus the finite-budget threshold: max_j c'_j <= k_0 + E_F; report the partition {k_0 >= k_min}, {k_0 + E_F < k_min}, {undetermined} per candidate, cell and k_0 regime",
+      "type": "structural"
+    },
+    {
+      "id": "P8",
+      "statement": "new preregistered extension shared-translation controls, fitted on the disjoint control-training split, are frozen and hash-bound before fresh N3C noise",
+      "type": "conformance + descriptive"
+    },
+    {
+      "id": "P9",
+      "statement": "for every paired draw and applicable candidate, report unchanged, useful wrong-to-correct, harmful correct-to-wrong, and wrong-to-wrong winner movement against ground truth",
+      "type": "descriptive mechanism taxonomy"
+    }
+  ],
+  "registered_at": "2026-09-22T19:49:46+00:00",
+  "registration_sha256": "96fd42f268d95b48b1cfbffb9afcd28c9dc4cb5c91ce46f17d4b53d75c0f2622",
+  "sampling": {
+    "alpha_per_example": 0.001,
+    "base_seed": 20260920003,
+    "draws_per_item": 512,
+    "k_min_at_512": 456,
+    "noise_block_draws": 64,
+    "p5_permutation_seed": 20260920008,
+    "sigma": 0.25,
+    "store_normalized_features": true,
+    "stream_role": "n3c_fresh_noise_diagnostic"
+  },
+  "schema_version": "satml2027.registration.v1",
+  "status": "preregistered_diagnostic",
+  "stop_rules": [
+    "no certificate is issued",
+    "no candidate is selected",
+    "EXP-017 is not altered"
+  ],
+  "title": "prospectively preregistered fresh-noise diagnostic on newly registered extension-development inputs"
+}

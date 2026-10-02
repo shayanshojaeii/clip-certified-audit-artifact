@@ -1,0 +1,30 @@
+{
+  "candidate_count_per_cell": 18,
+  "cell_count": 12,
+  "cohen_alpha_per_example": 0.001,
+  "cohen_confirmation_samples_per_example": 4096,
+  "cohen_selection_samples_per_example": 128,
+  "cohen_sigma": 0.25,
+  "elapsed_seconds": 51920.85311627388,
+  "exp016_artifact_set_sha256": "c1fe0e52aa04d186b34d033624d61102b5226256495c671190cdc68e0dcfe2f1",
+  "exp018_attack_computed": false,
+  "exp018_may_be_prepared_from_this_result": true,
+  "experiment_id": "EXP-20260906-017",
+  "final_test_accessed": false,
+  "fss_diagnostics_computed": false,
+  "interpretation": "validation_method_selection_not_final_test_evidence",
+  "negative_audit_pivot_triggered": false,
+  "pautov_auxiliary_computed": false,
+  "runtime": {
+    "device": "cuda",
+    "mpmath": "1.3.0",
+    "open_clip": "3.3.0",
+    "pillow": "12.3.0",
+    "python": "3.12.14",
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130"
+  },
+  "selected_primary_comparator_id": "chowers_exact_projected_gap__coefficient_0.5",
+  "selected_proposed_candidate_id": "clean_boundary_active__step_0.0025",
+  "status": "COMPLETE_PRIMARY_PENDING_INDEPENDENT_REVIEW"
+}

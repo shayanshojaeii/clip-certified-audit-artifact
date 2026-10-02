@@ -1,0 +1,58 @@
+% EXP-021B descriptive certified-accuracy-versus-radius curves (D-146). Banks fixed before any outcome existed.
+% Data: generated/fig_followup_curves_{low,high}.dat, written by scripts/generate_satml2027_paper_assets.py from
+% analysis/exp021/021b/descriptive_radius_curves.json (scripts/exp021_radius_curves.py); a placeholder until then.
+\begin{figure}[t]
+\centering
+\input{generated/fig_followup_curves_axis}
+\ifnum\FUCurvesReady=1
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1, horizontal sep=6mm, y descriptions at=edge left},
+  width=0.56\columnwidth,
+  height=0.5\columnwidth,
+  ymin=0, ymax=\FUCurvesYmax,
+  xmin=0,
+  xlabel={certified radius $r$},
+  ylabel={certified accuracy (\%)},
+  xlabel style={font=\scriptsize},
+  ylabel style={font=\scriptsize},
+  title style={font=\scriptsize, yshift=-1mm},
+  ticklabel style={font=\tiny},
+  grid=major,
+  grid style={gray!25},
+  every axis plot/.append style={semithick, no marks},
+  legend style={font=\tiny, draw=none, legend columns=2, at={(0.5,1.14)}, anchor=south,
+                /tikz/every even column/.append style={column sep=6pt}},
+  legend cell align=left,
+]
+\nextgroupplot[title={$\sigma=\FUSigmaLow$}, xmax=\FUCurvesXmaxLow]
+\addplot[black] table[x=r, y=identity] {generated/fig_followup_curves_low.dat};
+\addplot[orange!80!black, densely dashed] table[x=r, y=twosided] {generated/fig_followup_curves_low.dat};
+\addplot[blue!60!black, densely dotted] table[x=r, y=sharedw] {generated/fig_followup_curves_low.dat};
+\addplot[green!45!black, dashdotted] table[x=r, y=lowrank] {generated/fig_followup_curves_low.dat};
+\nextgroupplot[title={$\sigma=\FUSigmaHigh$}, xmax=\FUCurvesXmaxHigh,
+  legend to name=fucurveslegend]
+\addplot[black] table[x=r, y=identity] {generated/fig_followup_curves_high.dat};
+\addlegendentry{no correction}
+\addplot[orange!80!black, densely dashed] table[x=r, y=twosided] {generated/fig_followup_curves_high.dat};
+\addlegendentry{two-sided centering $c=1$}
+\addplot[blue!60!black, densely dotted] table[x=r, y=sharedw] {generated/fig_followup_curves_high.dat};
+\addlegendentry{learned shared translation (sup.)}
+\addplot[green!45!black, dashdotted] table[x=r, y=lowrank] {generated/fig_followup_curves_high.dat};
+\addlegendentry{rank-8 tangent adapter (sup.)}
+\end{groupplot}
+\end{tikzpicture}\\[0.5mm]
+\pgfplotslegendfromname{fucurveslegend}
+\else
+\framebox[0.95\columnwidth]{\parbox[c][0.4\columnwidth][c]{0.85\columnwidth}{\centering\scriptsize
+  Placeholder: descriptive certified-accuracy-versus-radius curves, computed after the registered
+  Follow-up B analysis from the custody-verified vote counts (four banks fixed in advance).}}
+\fi
+\caption{Descriptive, not registered: Follow-up B standard certified accuracy
+against the certified radius, pooled over all cells at each noise level, for
+the uncorrected model, two-sided centering and two supervised controls. The
+curves use the registered certification function on the custody-verified vote
+counts, and at every registered radius they equal the registered analysis
+output. The four banks were fixed before any outcome existed.}
+\label{fig:followup-curves}
+\end{figure}

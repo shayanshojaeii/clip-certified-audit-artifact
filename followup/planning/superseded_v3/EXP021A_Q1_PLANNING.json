@@ -1,0 +1,373 @@
+{
+  "content_sha256": "f8b4c42b76d4566a310a8f116d45f875c3fb131a6df93c14a8eb9e4cb4c0e924",
+  "contrast": "gr_clip_style_two_sided__coefficient_1 minus no_correction; standard certified accuracy at r = sigma = 0.25",
+  "fixed_gain_scenarios_normal_approximation": {
+    "macro": {
+      "gain_equals_reference": {
+        "inconclusive": 0.0,
+        "not_reproduced": 0.015694519074222438,
+        "reproduced": 0.95,
+        "reproduced_smaller": 0.03430548029427494,
+        "reversed": 6.315026677832614e-10
+      },
+      "gain_half_reference": {
+        "inconclusive": 0.0,
+        "not_reproduced": 0.4617025738265042,
+        "reproduced": 0.3404698518039343,
+        "reproduced_smaller": 0.19779797708737334,
+        "reversed": 2.959728218813922e-05
+      },
+      "gain_zero": {
+        "inconclusive": 0.0,
+        "not_reproduced": 0.9499999999999998,
+        "reproduced": 0.0068084105979786536,
+        "reproduced_smaller": 0.01819158940202148,
+        "reversed": 0.02500000000000002
+      },
+      "regions_points": {
+        "negative_below": -1.4140227257965423,
+        "positive_above": 1.4140227257965423,
+        "shortfall_below": 1.7799813870062546
+      }
+    },
+    "pooled": {
+      "gain_equals_reference": {
+        "inconclusive": 0.19594897550102236,
+        "not_reproduced": 0.049997959571104644,
+        "reproduced": 0.7540510244989775,
+        "reproduced_smaller": 0.0,
+        "reversed": 2.0404288954018903e-06
+      },
+      "gain_half_reference": {
+        "inconclusive": 0.3637011304912092,
+        "not_reproduced": 0.37350747566311565,
+        "reproduced": 0.2622789290135903,
+        "reproduced_smaller": 0.0,
+        "reversed": 0.0005124648320848104
+      },
+      "gain_zero": {
+        "inconclusive": 0.13307435001456547,
+        "not_reproduced": 0.8169256499854344,
+        "reproduced": 0.025000000000000133,
+        "reproduced_smaller": 0.0,
+        "reversed": 0.02500000000000002
+      },
+      "regions_points": {
+        "negative_below": -0.762810959780303,
+        "positive_above": 0.762810959780303,
+        "shortfall_below": 0.39013189258316594
+      }
+    }
+  },
+  "fresh_draw_models": {
+    "assumption": "items and banks fixed at EXP-017's; only the Gaussian draws are fresh; candidate and identity drawn independently (an upper bound on the Monte-Carlo variance, because the worker scores both on common draws)",
+    "decision_approximation": "normal regions with the saved item-bootstrap standard error: positive if x > 1.960 se; shortfall if x < reference - 1.645 se",
+    "limitation": "neither model represents the post-hoc selection of the contrast among the 136 EXP-017 contrasts or software differences between the EXP-017 and EXP-021 stacks; those are what Q1 measures",
+    "plug_in": {
+      "expected_points": {
+        "macro": 2.9120562216455737,
+        "pooled": 0.9533108933961411
+      },
+      "items_with_uncertain_outcome": {
+        "candidate": 30,
+        "identity": 28,
+        "rule": "certification probability in (0.001, 0.999)"
+      },
+      "model": "selected-class probability = saved vote share (binomial)",
+      "monte_carlo_sd_upper_bound_points": {
+        "macro": 0.06348519107051487,
+        "pooled": 0.06349659927168141
+      },
+      "simulated_mean_points": {
+        "macro": 2.911555833333334,
+        "pooled": 0.953228787878788
+      },
+      "verdict_probabilities": {
+        "macro": {
+          "inconclusive": 0.0,
+          "not_reproduced": 0.0,
+          "reproduced": 1.0,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        },
+        "pooled": {
+          "inconclusive": 0.0018,
+          "not_reproduced": 0.0,
+          "reproduced": 0.9982,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        }
+      }
+    },
+    "posterior_predictive": {
+      "expected_points": {
+        "macro": 2.905032142245888,
+        "pooled": 0.9479851973571676
+      },
+      "items_with_uncertain_outcome": {
+        "candidate": 48,
+        "identity": 47,
+        "rule": "certification probability in (0.001, 0.999)"
+      },
+      "model": "selected-class probability ~ Beta(k + 1, N - k + 1) posterior of the saved votes (beta-binomial); the primary planning model",
+      "monte_carlo_sd_upper_bound_points": {
+        "macro": 0.08603957583745751,
+        "pooled": 0.07718181699440194
+      },
+      "simulated_mean_points": {
+        "macro": 2.9044483333333324,
+        "pooled": 0.947560606060606
+      },
+      "verdict_probabilities": {
+        "macro": {
+          "inconclusive": 0.0,
+          "not_reproduced": 0.0,
+          "reproduced": 1.0,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        },
+        "pooled": {
+          "inconclusive": 0.0119,
+          "not_reproduced": 0.0,
+          "reproduced": 0.9881,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        }
+      }
+    },
+    "simulation_seeds": [
+      2026092611,
+      2026092612
+    ],
+    "simulations": 20000
+  },
+  "identity_checks": {
+    "cells": {
+      "openai-clip-vit-b32-quickgelu__cifar100__fold0__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold1__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold2__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold0__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold1__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold2__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold0__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold1__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold2__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold0__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold1__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold2__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      }
+    },
+    "certification_parameters_equal": true,
+    "outcomes_recomputed_from_counts_equal_saved": true
+  },
+  "inputs": {
+    "exp017_artifact_manifest": {
+      "path": "results/EXP-20260906-017/artifact_manifest.json",
+      "sha256": "a215504af683f3316f2ca70e5915ad2957ce6d0d4304313007649a636545be0c"
+    },
+    "exp017_sufficient_statistics_sha256": {
+      "openai-clip-vit-b32-quickgelu__cifar100__fold0": "6a92e1fa347b69bf86177d8c83f1b56d86fa44cac18973888534ccfdcbe4ed24",
+      "openai-clip-vit-b32-quickgelu__cifar100__fold1": "b93944f38e875849b3c6bd7f801da17437cef4f6bc01e08fb170f24afde6c741",
+      "openai-clip-vit-b32-quickgelu__cifar100__fold2": "6a3ec93e8c02bba40951201fe4db41ee4de606f64e90dc3d5cad11408eaf566e",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold0": "72209d45477462c72d81581621fc78d45905c0cf04a8f6f2af5de72e9b714be8",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold1": "3b7041dcf554efa8cf0b0bf1d04939171871c44cb09c14f77fc434a0b35db802",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold2": "c777fdc36b84e306d4a35df39394a19f978e928c778626c11ba4a46d0d5e5adf",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold0": "78370b2e707dd1978d5c6af28ada0b6a1f00026997ada5065d68c5040d5d8e8e",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold1": "b16b30871366d8eb30d671fb2b4637448686d2651b84da57166c35d128e20e3c",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold2": "fb526b42b45fa8f5c056e6617a17531fe7a2b6b0e8b4de8c71d4dec48ebe4e2e",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold0": "e30909c6244b8e85ccb18ea41a084ef606aad7c93dbaae8ee46b17a3987fcb98",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold1": "97ac1ff7f79cc60e6bb4e11375d45f15abbb196bd42a4a635fff7e344af02def",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold2": "9bd16331a58fd0801251624d2fe4d5ea6e037d8a413ea8478887b1b268cbb106"
+    },
+    "item_lists_sha256": {
+      "exp021a__cifar100__fold0__evaluation.csv": "02c1ba961a0abc40ed51107b0f28042dfe55bf3cfd6ba5e67c8ddad888a84be4",
+      "exp021a__cifar100__fold1__evaluation.csv": "e1e52010d98eab6c5a55c53d72c652d403db9c466e112d26c478e04edac7aa43",
+      "exp021a__cifar100__fold2__evaluation.csv": "da903624692b3c0718164d4f72f6c6753ac54395bea3ddddb1945c63a61a5c9c",
+      "exp021a__eurosat__fold0__evaluation.csv": "61612f709f97d5e4527d1903e097b2899b70a70487f1947590c4a7dfa26f570f",
+      "exp021a__eurosat__fold1__evaluation.csv": "dd188eb1f928f3c6cbcf30d840e738a217adc9c4bba84c1dabb11dfa26aca5c3",
+      "exp021a__eurosat__fold2__evaluation.csv": "6a7b5a03466ec7f592593303a469bddf0dcc8e4f1afd27b46951bda85c524911"
+    },
+    "k_min_at_r_equals_sigma": 3518
+  },
+  "purpose": "EXP-021A Q1 reference values and planning, derived from the saved EXP-017 draws on the same images",
+  "reading": "Q1's primary estimand is the equal-cell macro (the manuscript's headline).  On the saved draws it lies about 4.1 bootstrap standard errors above zero, so the positive and shortfall regions do not overlap in an inconclusive band: every fresh-draw outcome is classified.  The item-pooled secondary estimand (about 2.6 standard errors) keeps a narrow inconclusive band.  Both fresh-draw models put the Monte-Carlo standard deviation of the macro near 0.09 points against an item-bootstrap standard error of 0.72: fresh draws on the same images are expected to reproduce the saved value, so Q1 mainly measures the Monte-Carlo part of the post-hoc gain and checks the EXP-021 pipeline end to end against EXP-017; the item-level question belongs to 021B (Q6, fresh images).",
+  "reference_points": {
+    "by_cell": {
+      "openai-clip-vit-b32-quickgelu__cifar100__fold0__sigma0.25": {
+        "exact_points": "1/5",
+        "value": 0.2
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold1__sigma0.25": {
+        "exact_points": "3/5",
+        "value": 0.6
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold2__sigma0.25": {
+        "exact_points": "-2/5",
+        "value": -0.4
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold0__sigma0.25": {
+        "exact_points": "8",
+        "value": 8.0
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold1__sigma0.25": {
+        "exact_points": "8",
+        "value": 8.0
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold2__sigma0.25": {
+        "exact_points": "10",
+        "value": 10.0
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold0__sigma0.25": {
+        "exact_points": "14/5",
+        "value": 2.8
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold1__sigma0.25": {
+        "exact_points": "1",
+        "value": 1.0
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold2__sigma0.25": {
+        "exact_points": "-3/5",
+        "value": -0.6
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold0__sigma0.25": {
+        "exact_points": "2",
+        "value": 2.0
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold1__sigma0.25": {
+        "exact_points": "2",
+        "value": 2.0
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold2__sigma0.25": {
+        "exact_points": "2",
+        "value": 2.0
+      }
+    },
+    "by_dataset_item_pooled": {
+      "cifar100": {
+        "exact_points": "3/5",
+        "value": 0.6
+      },
+      "eurosat": {
+        "exact_points": "16/3",
+        "value": 5.333333333333333
+      }
+    },
+    "equal_cell_macro": {
+      "exact_points": "89/30",
+      "value": 2.966666666666667
+    },
+    "item_pooled": {
+      "exact_points": "34/33",
+      "value": 1.0303030303030303
+    },
+    "positions": 3300,
+    "unique_images": 1650
+  },
+  "saved_draws_under_registered_q1_analysis": {
+    "bootstrap": {
+      "method": "Rao-Wu shared-image, strata (dataset_id, class)",
+      "replicates": 100000,
+      "seed": 2026092101,
+      "strata": 110
+    },
+    "macro": {
+      "bootstrap_se_points": 0.7214534230986759,
+      "ci95_unadjusted_lower": 1.5520322700148408,
+      "ci95_unadjusted_upper": 4.381301063318493,
+      "direction": "positive",
+      "one_sided_upper95": 4.1570297565322285,
+      "p_direction": 6e-05,
+      "p_shortfall": 0.50379,
+      "point_points": 2.9666666666666672,
+      "reference_points": 2.966666666666667,
+      "shortfall": false,
+      "verdict": "reproduced",
+      "z": 4.112069569127133
+    },
+    "pooled": {
+      "bootstrap_se_points": 0.38919641676952155,
+      "ci95_unadjusted_lower": 0.27750423829319004,
+      "ci95_unadjusted_upper": 1.8144684386466148,
+      "direction": "positive",
+      "one_sided_upper95": 1.6576353569778988,
+      "p_direction": 0.00828,
+      "p_shortfall": 0.5185,
+      "point_points": 1.030303030303031,
+      "reference_points": 1.0303030303030303,
+      "shortfall": false,
+      "verdict": "reproduced",
+      "z": 2.6472572354466632
+    }
+  },
+  "schema_version": "satml2027ext.q1_planning.v1",
+  "superseded_v2_rule": {
+    "holm5_worst_case_adjusted_p_on_saved_draws": 0.04139999999999999,
+    "pass_probability_if_the_saved_value_were_the_expectation": 0.6406444533779109,
+    "pass_probability_normal_approximation": {
+      "plug_in": 0.21924997580696926,
+      "posterior_predictive": 0.23998138128325208
+    },
+    "reading": "the saved pooled value sits just above the worst-case Holm-5 threshold, so under fresh draws the V2 rule would have been close to a coin flip, and its failure branch asserted non-reproduction and a cause",
+    "rule": "superseded V2 Q1 rule: Holm-adjusted two-sided direction test of the item-pooled value in the five-contrast family; worst case (multiplier 5) needs |z| >= 2.576",
+    "saved_draws_z": 2.6472572354466632
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "created_at": "2026-09-26T00:00:00+00:00",
+  "draw_rule": "within each class ascending sha256('{salt}:{dataset_id}:{item_id}'), salt '{experiment_id}:item_draw:v1'; first per_class taken; evaluation before development before control_train, all disjoint",
+  "exclusions": {
+    "exp019_items_excluded": true,
+    "phase3_explicit_excluded_item_ids": [
+      "cifar100-train-137",
+      "cifar100-train-15273",
+      "cifar100-train-17003",
+      "cifar100-train-18918",
+      "cifar100-train-19411",
+      "cifar100-train-22218",
+      "cifar100-train-29217",
+      "cifar100-train-31047",
+      "cifar100-train-3248",
+      "cifar100-train-32577",
+      "cifar100-train-33677",
+      "cifar100-train-33690",
+      "cifar100-train-36788",
+      "cifar100-train-37828",
+      "cifar100-train-41471",
+      "cifar100-train-42017",
+      "cifar100-train-4211",
+      "cifar100-train-42711",
+      "cifar100-train-43971",
+      "cifar100-train-48498"
+    ],
+    "phase3_roles_never_drawn_from": [
+      "calibration_development",
+      "calibration_validation",
+      "excluded_explicit",
+      "excluded_prior_access",
+      "final_test_sealed"
+    ],
+    "phase4_consumed_excluded": true
+  },
+  "final_test_access": {
+    "cifar100_official_test_labels_read": true,
+    "consumed_once_rule": "the sealed EuroSAT holdout and the CIFAR-100 test split are consumed by EXP-021B; no later experiment may reuse them for selection",
+    "eurosat_final_test_sealed_ids_listed": true,
+    "pixels_loaded": false
+  },
+  "inputs": {
+    "cifar100_official_test": {
+      "layout": "cifar-100-python/test (torchvision CIFAR100 train=False)",
+      "required_test_batch_md5": "f0ef6b0ae62326f3e7ffdfab6717acfc",
+      "verified_by_loader": true
+    },
+    "exp019_items": {
+      "excluded_count": {
+        "cifar100": 3500,
+        "eurosat": 650
+      },
+      "experiment_id": "EXP-20260920-019",
+      "item_manifest_sha256": "2a366db63931f9a903ace946800c0092ada96cc2d33f95f93a1b94048a725c8d",
+      "path": "results/satml2027/items"
+    },
+    "imagenette_archive": {
+      "bytes": 341663724,
+      "file": "imagenette2-320.tgz",
+      "official_counts": {
+        "train": 9469,
+        "val": 3925
+      },
+      "sha256": "569b4497c98db6dd29f335d1f109cf315fe127053cedf69010d047f0188e158c",
+      "url": "https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-320.tgz"
+    },
+    "phase3_assignments": {
+      "path": "artifacts/day14/phase3_splits_v1/assignments.csv",
+      "sha256": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38"
+    },
+    "phase4_assignments": {
+      "consumed_count": 3850,
+      "path": "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/splits/assignments.csv",
+      "sha256": "eb58533a736c75b25dee351ca4ba4e654f7c4e629ee8bbca2494524a4762d8ca"
+    }
+  },
+  "order_rule": "class round-robin over per-class rank: item k is the (k // C)-th ranked item of class (k mod C); EXP-021A lists keep assignments-file row order",
+  "pending": [],
+  "plan": "research/EXP021_POWERED_FOLLOWUP_PLAN_2026-09-25.md Section 2.1",
+  "schema_version": "satml2027ext.item_manifest.v1",
+  "studies": {
+    "EXP-20260921-021A": {
+      "datasets": {
+        "cifar100": {
+          "class_count": 100,
+          "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+          "folds": {
+            "0": {
+              "development": {
+                "count": 500,
+                "csv": "exp021a__cifar100__fold0__development.csv",
+                "csv_sha256": "34b3e6769993eeb7c756b8444d7417430454667faa936379c152a94ae40f5d52",
+                "item_ids_sha256": "f66e08155f3ed660e68fc0c4ae5f066bcd9b9e0e4c8531cf23ec9fe57ce02df4",
+                "per_class": 5,
+                "phase3_role": "calibration_development",
+                "status": "written"
+              },
+              "evaluation": {
+                "count": 500,
+                "csv": "exp021a__cifar100__fold0__evaluation.csv",
+                "csv_sha256": "02c1ba961a0abc40ed51107b0f28042dfe55bf3cfd6ba5e67c8ddad888a84be4",
+                "item_ids_sha256": "a5168dab433db33e77ad9deaed3cee7161efc4928d45d4c763125ed239e349f1",
+                "per_class": 5,
+                "phase3_role": "calibration_validation",
+                "status": "written"
+              }
+            },
+            "1": {
+              "development": {
+                "count": 500,
+                "csv": "exp021a__cifar100__fold1__development.csv",
+                "csv_sha256": "9743c0a77d5356d55e5a102d6b976dd72c5a86029e42e8b43a887ec28ef29b7a",
+                "item_ids_sha256": "eee104c1374af0b81ef501000ce33205cbcfaacdf2fc2be1cda6ba574a49a9a5",
+                "per_class": 5,
+                "phase3_role": "calibration_development",
+                "status": "written"
+              },
+              "evaluation": {
+                "count": 500,
+                "csv": "exp021a__cifar100__fold1__evaluation.csv",
+                "csv_sha256": "e1e52010d98eab6c5a55c53d72c652d403db9c466e112d26c478e04edac7aa43",
+                "item_ids_sha256": "e52ee01370b1ffda093f36e9baedacae434753493ac03614927e33a0e414803c",
+                "per_class": 5,
+                "phase3_role": "calibration_validation",
+                "status": "written"
+              }
+            },
+            "2": {
+              "development": {
+                "count": 500,
+                "csv": "exp021a__cifar100__fold2__development.csv",
+                "csv_sha256": "78ed977643b6cc3811199c3e1e499e93a8addfa9f327f01779d0c2f2a3f47c3e",
+                "item_ids_sha256": "07f5478e48a05fc483c533805ed42ea0eaf351f19cb7580d16337d45262f8063",
+                "per_class": 5,
+                "phase3_role": "calibration_development",
+                "status": "written"
+              },
+              "evaluation": {
+                "count": 500,
+                "csv": "exp021a__cifar100__fold2__evaluation.csv",
+                "csv_sha256": "da903624692b3c0718164d4f72f6c6753ac54395bea3ddddb1945c63a61a5c9c",
+                "item_ids_sha256": "7a2985c178f51ebc692a98a36d0a20bbbf4a509de95ebc7b49f73de8f9d79292",
+                "per_class": 5,
+                "phase3_role": "calibration_validation",
+                "status": "written"
+              }
+            }
+          }
+        },
+        "eurosat": {
+          "class_count": 10,
+          "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+          "folds": {
+            "0": {
+              "development": {
+                "count": 50,
+                "csv": "exp021a__eurosat__fold0__development.csv",
+                "csv_sha256": "06a0485025ac0cbafd14d08e10afc115313161946aabbd7131cd4aa9f3720bbc",
+                "item_ids_sha256": "cbdce000f7b90e72b20fc560135aec9dc21a3865bbab5e46781f98c5f63f7e8d",
+                "per_class": 5,
+                "phase3_role": "calibration_development",
+                "status": "written"
+              },
+              "evaluation": {
+                "count": 50,
+                "csv": "exp021a__eurosat__fold0__evaluation.csv",
+                "csv_sha256": "61612f709f97d5e4527d1903e097b2899b70a70487f1947590c4a7dfa26f570f",
+                "item_ids_sha256": "886deee52e2a5409f30d81d401e76a43fe5a2ec50093972e3ba9de08b97423de",
+                "per_class": 5,
+                "phase3_role": "calibration_validation",
+                "status": "written"
+              }
+            },
+            "1": {
+              "development": {
+                "count": 50,
+                "csv": "exp021a__eurosat__fold1__development.csv",
+                "csv_sha256": "071033e514516db190cd605f6525ead449f57b5a4ee7f140eee83177a2e573c0",
+                "item_ids_sha256": "c0edd6fe8f64d0bb834c851123f3c66830b034d4df29eefbd5aa6d0355c0183c",
+                "per_class": 5,
+                "phase3_role": "calibration_development",
+                "status": "written"
+              },
+              "evaluation": {
+                "count": 50,
+                "csv": "exp021a__eurosat__fold1__evaluation.csv",
+                "csv_sha256": "dd188eb1f928f3c6cbcf30d840e738a217adc9c4bba84c1dabb11dfa26aca5c3",
+                "item_ids_sha256": "ede1722ab7d639d1325893adbf809db94e50a79275dc92358c0b0a66e364e190",
+                "per_class": 5,
+                "phase3_role": "calibration_validation",
+                "status": "written"
+              }
+            },
+            "2": {
+              "development": {
+                "count": 50,
+                "csv": "exp021a__eurosat__fold2__development.csv",
+                "csv_sha256": "54b95394df9dac20e5608a2cf1ddd7a50591c50d5a48684af49e918770236a35",
+                "item_ids_sha256": "d6a367117cc182885bbe9be65e67fd758a084c39ff8e0f5008d8e0c68ccecd25",
+                "per_class": 5,
+                "phase3_role": "calibration_development",
+                "status": "written"
+              },
+              "evaluation": {
+                "count": 50,
+                "csv": "exp021a__eurosat__fold2__evaluation.csv",
+                "csv_sha256": "6a7b5a03466ec7f592593303a469bddf0dcc8e4f1afd27b46951bda85c524911",
+                "item_ids_sha256": "8660052a841eb8e70e2e21b637baa86cbccd59f4d922f1fc18b5131aff63a3fe",
+                "per_class": 5,
+                "phase3_role": "calibration_validation",
+                "status": "written"
+              }
+            }
+          }
+        }
+      },
+      "draw": "none (Phase-3 fold lists in assignments-file order)",
+      "draw_salt": null
+    },
+    "EXP-20260921-021B": {
+      "datasets": {
+        "cifar100_test": {
+          "class_count": 100,
+          "data_role": "fresh_never_touched_items",
+          "evaluation_source": "cifar100_official_test",
+          "splits": {
+            "control_train": {
+              "count": 2000,
+              "csv": "exp021b__cifar100_test__control_train.csv",
+              "csv_sha256": "72e7bd9306a3736ae1fca25cd8a47e503f3159844961fdde98e1a15073fa202b",
+              "item_ids_sha256": "1c27d6b2cd4960bc13431a582447fdc125331c99adc9e0d5cbb3ea4cba13cce3",
+              "per_class": 20,
+              "pool_size": 37980,
+              "source": "cifar100_reserve",
+              "status": "written"
+            },
+            "development": {
+              "count": 1000,
+              "csv": "exp021b__cifar100_test__development.csv",
+              "csv_sha256": "c07fb4f00c8f9dd90c309bc0af515366063c64e257adece4596eda9342362e70",
+              "item_ids_sha256": "948c24ac5578c7cf4e21e93086c9b28dd30b69fd09636ee6840677c68864cefa",
+              "per_class": 10,
+              "pool_size": 37980,
+              "source": "cifar100_reserve",
+              "status": "written"
+            },
+            "evaluation": {
+              "count": 3000,
+              "csv": "exp021b__cifar100_test__evaluation.csv",
+              "csv_sha256": "304eb934cac9e89850d1b4f24346d38b64b6e159abd4c1b08e0f14b223f8f84f",
+              "item_ids_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+              "per_class": 30,
+              "pool_size": 10000,
+              "source": "cifar100_official_test",
+              "status": "written"
+            }
+          }
+        },
+        "eurosat_sealed": {
+          "class_count": 10,
+          "data_role": "fresh_never_touched_items",
+          "evaluation_source": "eurosat_sealed",
+          "splits": {
+            "control_train": {
+              "count": 200,
+              "csv": "exp021b__eurosat_sealed__control_train.csv",
+              "csv_sha256": "4a1801f9b4ca508677633c49c00248fd43ae68e7bf0dafa8e8f01fa139539c47",
+              "item_ids_sha256": "156431885dd7198fed8e115053cd44e527e4cee3137df967ca76a60ab344b5e5",
+              "per_class": 20,
+              "pool_size": 23700,
+              "source": "eurosat_reserve",
+              "status": "written"
+            },
+            "development": {
+              "count": 300,
+              "csv": "exp021b__eurosat_sealed__development.csv",
+              "csv_sha256": "ec45d20a2ea37511ba90ebb05ececf55bbd28841cbd0fe113dd00a2e60c24de3",
+              "item_ids_sha256": "6acfc1f40ae060f48b0e20c6789d36488de09b8f46aaa77aa83ca7988f257429",
+              "per_class": 30,
+              "pool_size": 23700,
+              "source": "eurosat_reserve",
+              "status": "written"
+            },
+            "evaluation": {
+              "count": 1000,
+              "csv": "exp021b__eurosat_sealed__evaluation.csv",
+              "csv_sha256": "ec79713439013dcc687492145f09371803d1477ace5fa5fb3202204767de869e",
+              "item_ids_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+              "per_class": 100,
+              "pool_size": 1000,
+              "source": "eurosat_sealed",
+              "status": "written"
+            }
+          }
+        },
+        "imagenette": {
+          "class_count": 10,
+          "data_role": "fresh_never_touched_items",
+          "evaluation_source": "imagenette_val",
+          "splits": {
+            "control_train": {
+              "count": 200,
+              "csv": "exp021b__imagenette__control_train.csv",
+              "csv_sha256": "b67945d364e4ded95fadc09ab846b1ff25abdd78e82b1600a2ddf3659645a48a",
+              "item_ids_sha256": "20608ecce2f34ec7e4b453491739e609990a750bd180488282d2da26a0017e48",
+              "per_class": 20,
+              "pool_size": 9469,
+              "source": "imagenette_train",
+              "status": "written"
+            },
+            "development": {
+              "count": 300,
+              "csv": "exp021b__imagenette__development.csv",
+              "csv_sha256": "12b19abf76e12eda656642afd9b2b7313f1a13b34828e59e55b53a43a1a56539",
+              "item_ids_sha256": "55a3d85b4d8dd2675ac226e0060ec8af9ec0cc2f4135385056d788a5a41f2dcd",
+              "per_class": 30,
+              "pool_size": 9469,
+              "source": "imagenette_train",
+              "status": "written"
+            },
+            "evaluation": {
+              "count": 3000,
+              "csv": "exp021b__imagenette__evaluation.csv",
+              "csv_sha256": "18c1eb938103c73e596590b9dd6efd7e5e74a181062d8dd30b9395cf9741d2a1",
+              "item_ids_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+              "per_class": 300,
+              "pool_size": 3925,
+              "source": "imagenette_val",
+              "status": "written"
+            }
+          }
+        }
+      },
+      "draw_salt": "EXP-20260921-021B:item_draw:v1"
+    },
+    "EXP-20260921-021C": {
+      "datasets": {
+        "cifar100_test": {
+          "count": 100,
+          "csv": "exp021c__cifar100_test__subset.csv",
+          "csv_sha256": "d37c4fe4b1ddf2e7f94d0c24572c0b0c6bf6ac0c95dcc2a2287255467951d497",
+          "item_ids_sha256": "f5581b41f2f296c650557c1c24c8107764b2144ebdc020f13c00ace958180442",
+          "parent_item_ids_sha256": "e2bd31c12de1e71f25bd944e6196b7d77c4aa1a779776b0a44ad9bbc7f53a334",
+          "per_class": 1,
+          "status": "written"
+        },
+        "eurosat_sealed": {
+          "count": 100,
+          "csv": "exp021c__eurosat_sealed__subset.csv",
+          "csv_sha256": "32e5fed35c5f95b91126370feea0ec2771aaf043dc29b7a99bcd8f9bdc641a41",
+          "item_ids_sha256": "ae03afec185449ca034998eaf137a95d058b3bf18146531a47e01f7ebe7dcc64",
+          "parent_item_ids_sha256": "feda27f047700c879d3ef8c78b072ea01bdbc75c0b9a0985accb30630484178b",
+          "per_class": 10,
+          "status": "written"
+        },
+        "imagenette": {
+          "count": 100,
+          "csv": "exp021c__imagenette__subset.csv",
+          "csv_sha256": "0733ac53619857d9faf0c4f32df160676ec4cff90723881bb4593c7a930339eb",
+          "item_ids_sha256": "241c675ad775c567bf195f0cad1c43f2fb5922f65a73ea9cd43f4ac189eff1c1",
+          "parent_item_ids_sha256": "b2f6d215a4b555f0ab6e8214bea049ec66dc9cad0f64bb453fb173ab660d0ae6",
+          "per_class": 10,
+          "status": "written"
+        }
+      },
+      "rule": "first 100 evaluation items of EXP-20260921-021B per dataset in registered order",
+      "subset_size": 100
+    }
+  },
+  "synthetic_inputs_allowed": false
+}

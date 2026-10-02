@@ -1,0 +1,19 @@
+{
+  "schema_version": "phase3.boundary_active_direction.v1",
+  "status": "IMPLEMENTATION_ONLY_NO_SCIENTIFIC_SAMPLING",
+  "objective": "maximize_first_order_change_in_clean_D_star_under_unit_raw_common_translation",
+  "protected_label_source": "unique_raw_clean_prediction_from_frozen_unmodified_prototype_bank",
+  "shared_target_selector": "interventions.core.select_unique_raw_clean_targets",
+  "clean_prediction_tie_tolerance": 1e-10,
+  "prototype_identity_policy": "hash_original_input_tensor_before_any_computational_dtype_conversion",
+  "unique_competitor_rule": "normalize_exact_common_translation_gradient",
+  "tied_competitor_rule": "maximin_via_minimum_norm_point_in_convex_hull_of_tied_gradients",
+  "tie_tolerance": 1e-10,
+  "solver_duality_gap_tolerance": 1e-12,
+  "zero_direction_tolerance": 1e-12,
+  "inactive_direction_rule": "deterministic_canonical_projection_to_current_critical_gradient_nullspace_else_smallest_singular_vector",
+  "inactive_interpretation": "local_first_order_control_not_global_irrelevance",
+  "finite_step_rule": "translate_all_raw_prototypes_then_renormalize_all_and_recompute_all_competitors",
+  "interpretation": "sample_local_clean_boundary_active_not_cohen_certificate_gradient",
+  "sampling_authorized": false
+}

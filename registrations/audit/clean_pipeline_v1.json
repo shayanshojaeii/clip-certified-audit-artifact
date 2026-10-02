@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "experiment_id": "PILOT-001",
+  "seed": 20260827,
+  "model": {
+    "backend": "open_clip",
+    "architecture": "ViT-B-32-quickgelu",
+    "pretrained": ".cache/models/vit_base_patch32_clip_224.openai/open_clip_model.safetensors",
+    "device": "cuda",
+    "expected_package_version": "3.3.0",
+    "checkpoint_sha256": "e6d1bd7789aa45192b3bf90570a789b478bae1b74ebcce7eddd908e83a2b7c31"
+  },
+  "preprocessing": {
+    "input_domain": [0.0, 1.0],
+    "resize_mode": "shortest_edge",
+    "resize_size": 224,
+    "crop_mode": "center",
+    "crop_size": 224,
+    "interpolation": "bicubic",
+    "antialias": true,
+    "convert_rgb": true,
+    "mean": [0.48145466, 0.4578275, 0.40821073],
+    "std": [0.26862954, 0.26130258, 0.27577711]
+  },
+  "determinism": {
+    "torch_deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "allow_tf32": false
+  }
+}

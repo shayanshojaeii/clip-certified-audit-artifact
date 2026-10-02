@@ -1,0 +1,24 @@
+{
+  "schema_version": "phase3.prototype_intervention_config.v1",
+  "status": "IMPLEMENTATION_ONLY_NOT_APPROVED_FOR_SAMPLING",
+  "intervention": {
+    "intervention_id": "no_correction_v1",
+    "normalization_tolerance": 0.00002
+  },
+  "scientific_contract": {
+    "input": "frozen_unit_text_prototype_bank",
+    "finite_update": "identity_clone",
+    "require_bitwise_value_identity": true,
+    "require_non_aliasing_output": true,
+    "fss_role": "diagnostic_or_negative_baseline",
+    "fss_image_cache": "reuse_only_exact_image_cache_identity",
+    "fss_geometry": "recompute_and_assert_identity",
+    "cohen_role": "primary_empirical_certificate",
+    "cohen_baseline_reuse": "only_exact_full_input_hash_match",
+    "forbidden": "do_not_transfer_fss_tau_or_attribution_to_cohen_radius"
+  },
+  "sampling": {
+    "authorized": false,
+    "reason": "Phase-3 split and scientific configuration require independent review"
+  }
+}

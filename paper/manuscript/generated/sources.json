@@ -1,0 +1,2008 @@
+{
+  "MISSING": [],
+  "artifacts": {
+    "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/analysis/report.json": "dd123e618475ebb498583fb569e26040f45cf051b6d8338224d61af37a2777c4",
+    "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/config_snapshot.json": "57b79923fd333c01fb128e7dc88f81f9aefce7e6b3aafff4d373d5c5d5511620",
+    "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/splits/manifest.json": "cdda5225e1220b207d084a57a23c6771e396c0ba5dda57d3f7223710097d960d",
+    "analysis/exp021/021a/analysis_ext.json": "b2c9afe4393b5fcf816e1eadf7a74c6bbb118272305a2a63432476011b60a26d",
+    "analysis/exp021/021b/analysis_ext.json": "2c4ee634fbf0656178be1650de8c9c360f1c32b874b845af8b3c6c107afde87e",
+    "analysis/exp021/021b/cells_ext.csv": "847ee2378d471ba0096e717d0a10668f26925214c01d8140ba9b9d944fa6d568",
+    "analysis/exp021/021b/descriptive_radius_curves.json": "bd22deb2a150bb3a02a546bd885277f094e36134bafc345fa7f873f08c015c94",
+    "analysis/exp021/021c/analysis_ext.json": "9d55e44aab7f77d74f980601fdad6c09ff11be364633b0067d9cadacec92265d",
+    "analysis/exp021/compute_summary.json": "e88227b87988f3fa2f7ac0a43385ad8e5f2fd0c82a4448681a13862540203f64",
+    "artifacts/gate3/phase3_exp017_negative_diagnostics_v1.json": "dd9ab299f55ff7343cf55e37e9a7f1950d1f4eb34d3dd6b06810ed9f47ef76f1",
+    "artifacts/negative_paper/exp017_scientific_soundness_audit_v1.json": "1e8676e0a999c4bba2130106bdfe786dc082f803573929ce5701be48928349b0",
+    "artifacts/negative_paper/gate_n2_simultaneous_analysis_v1.json": "ea4e48028d08d7b134a5ad6edfcc8670512b3c23c88602f4d2879d6399b6545e",
+    "configs/clean_pipeline_v1.json": "111d31c6143438a7ad4c73c7ba248859dce934b567b26593bf90721b547ee698",
+    "configs/clean_pipeline_vit_l14_v1.json": "742e13e046090d9a125252c53395301bcee8b41b43c7a9c069a6941265a54685",
+    "configs/satml2027/exp-20260920-019a.json": "80f744b12f6a8ebf2d76b10a879373ef13b87c86e4c3960062c97b9c7fef749e",
+    "configs/satml2027/exp-20260920-019a.sha256": "ada28a51848576cb5f0bfbb9e38e2891be70d35fc9e424c8e8024cec824d9100",
+    "configs/satml2027/exp-20260920-019b.json": "a112916a9c3c8c04d4995864100603c9b95fcf5bf57d60dfadb5afb54a32c193",
+    "configs/satml2027/exp-20260920-019b.sha256": "b5b5f41dac82e37d751b509850c7ac2a7f4249054aa5502d8be36d5398b7979c",
+    "configs/satml2027/n3c_v3.json": "78ac71a4bec1a1e104d01ed3c0bd8afe7971f21c83a4244ca939722fceb7e15d",
+    "configs/satml2027/n3c_v3.sha256": "59dc1af20abe0e55a0082c677bc0f37d1430bb346b2de72d3a0bfbed9d201fbf",
+    "configs/satml2027ext/exp-20260921-021a.json": "308350636fb118649db2d49a442708248493f93c4cfb68815d96eba3201ea48e",
+    "configs/satml2027ext/exp-20260921-021a.sha256": "b59c88082eb07dcfe3d7be85e93112527d83bed3dcb830c4c3d2dfaf605fea57",
+    "configs/satml2027ext/exp-20260921-021b.json": "9ce5486890799d16d7fe67a4c98bc720923f38f54720545131815da863b005d8",
+    "configs/satml2027ext/exp-20260921-021b.sha256": "15eeb8a52feaa77e7d1aad3d1b5435c7c2bffbfb67fc2bab33fd709bbacdfcf0",
+    "configs/satml2027ext/exp-20260921-021c.json": "f299413a67b2571ea92400f1bed64ca5729cbef57fbcb20d2805165416e90149",
+    "configs/satml2027ext/exp-20260921-021c.sha256": "0b418fabfc8f2a0e821f8f5463fc8a1fe3c9b853d60079aab0966121229939ae",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold0/cell_metrics.json": "39e2ae61ead11e10c5e9785250175536e65b31df9e51dcc083eee8ca0e139d77",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold0/cohen_sufficient_statistics.pt": "6a92e1fa347b69bf86177d8c83f1b56d86fa44cac18973888534ccfdcbe4ed24",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold1/cell_metrics.json": "590ee42ecaa5425d7ee65781e1f61e7fcb34c11513ef6178ab2cdf65a15aec03",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold1/cohen_sufficient_statistics.pt": "b93944f38e875849b3c6bd7f801da17437cef4f6bc01e08fb170f24afde6c741",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold2/cell_metrics.json": "b3e17bea9f2958b388b4073d89a692503b1e2119cd6dc8a74d14fde06613f62c",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold2/cohen_sufficient_statistics.pt": "6a3ec93e8c02bba40951201fe4db41ee4de606f64e90dc3d5cad11408eaf566e",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold0/cell_metrics.json": "a2aa4ad1a6c249691558d25daf06842418ad7e641b16ba617aa354716fecc3e1",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold0/cohen_sufficient_statistics.pt": "72209d45477462c72d81581621fc78d45905c0cf04a8f6f2af5de72e9b714be8",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold1/cell_metrics.json": "9a7b06c84e72e11899d12f923e7d3f70754b1745e84a696d11001db76e3632d8",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold1/cohen_sufficient_statistics.pt": "3b7041dcf554efa8cf0b0bf1d04939171871c44cb09c14f77fc434a0b35db802",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold2/cell_metrics.json": "b898c8b35dd0c50570670973eb4b59de98f82ffa79415c2e583751bb731cb985",
+    "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold2/cohen_sufficient_statistics.pt": "c777fdc36b84e306d4a35df39394a19f978e928c778626c11ba4a46d0d5e5adf",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold0/cell_metrics.json": "8d57882deae77c52b84c8738b4943da21ca2f866b1fe2e9b6e4c8ec68bdb78a5",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold0/cohen_sufficient_statistics.pt": "78370b2e707dd1978d5c6af28ada0b6a1f00026997ada5065d68c5040d5d8e8e",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold1/cell_metrics.json": "fb868ab09877e2111c63b4366e0dc19dd2e638be57e5ffca698493b40a3d6b12",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold1/cohen_sufficient_statistics.pt": "b16b30871366d8eb30d671fb2b4637448686d2651b84da57166c35d128e20e3c",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold2/cell_metrics.json": "15db7bc5ff5d1408a18fe412b158759e1ffe7f9959101724e0a533e53f96d6f7",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold2/cohen_sufficient_statistics.pt": "fb526b42b45fa8f5c056e6617a17531fe7a2b6b0e8b4de8c71d4dec48ebe4e2e",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold0/cell_metrics.json": "d666b848623abfe6944d278f1552966d29c3585161acfb28ec658ddae8fe061e",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold0/cohen_sufficient_statistics.pt": "e30909c6244b8e85ccb18ea41a084ef606aad7c93dbaae8ee46b17a3987fcb98",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold1/cell_metrics.json": "cc82c05ed88b5796bc3aa848c5f9dcf204265f2b5d67908dfe62d432d3dc296f",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold1/cohen_sufficient_statistics.pt": "97ac1ff7f79cc60e6bb4e11375d45f15abbb196bd42a4a635fff7e344af02def",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold2/cell_metrics.json": "7a5b300161a0ad6b3cc216095c53dc49fd233545cb33f9702f830337ab674387",
+    "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold2/cohen_sufficient_statistics.pt": "9bd16331a58fd0801251624d2fe4d5ea6e037d8a413ea8478887b1b268cbb106",
+    "results/EXP-20260906-017/selection.json": "824e063ba2afe5856b068dca19488b581deee2aa3f82b3e4fdacab1658f3d827",
+    "results/EXP-20260906-017/summary.json": "5c59c9483f6c65dc0fbb053cc11a3700de8ecfa6fdc32e93782e3b517aed63ee",
+    "results/satml2027_downloads/EXP019_N3C_20260925T172040Z/scientific_results/items/item_manifest.json": "d5e76b2797c6436b244ed888713d219e4eaeda3fda3b40c9d0c526bc9187c1f1",
+    "results/satml2027_downloads/EXP019_N3C_20260925T172040Z/server_results_root/scientific_run_attempt4_receipt.txt": "96b6adb7b541e21cd2e791e1107325eb5592bea82c6f6e9d54c0d7090d0ac7ce",
+    "results/satml2027_local/analysis/EXP-20260920-019A/cells.csv": "1708cdcd193c781cbe232d3de32573cb0bbf0ff8aa8fc9d2e72c1b252295028b",
+    "results/satml2027_local/analysis/EXP-20260920-019A/concentration.csv": "5b76e30dff6819a275102c486c67d7f0f0335b47b1090f8c5a9d138a8ae7bc5f",
+    "results/satml2027_local/analysis/EXP-20260920-019A/contrasts.json": "6bc488a215b5724871389e68cd9ac89eec4ddf9a5457f910bc1a09f41bfeb061",
+    "results/satml2027_local/analysis/EXP-20260920-019A/macro.csv": "65118c704af234a7448020c149348b2261e87ed9d96c9203b13dca97bfa2b2a4",
+    "results/satml2027_local/analysis/EXP-20260920-019B/cells.csv": "839528de935406beac04aebf0f2425216c92549477be4798a16e0c7f8b3654a3",
+    "results/satml2027_local/analysis/EXP-20260920-019B/concentration.csv": "83ae9adc711220f8cda9655a5188d45d98d73784bb0c7b65869d2e119736a291",
+    "results/satml2027_local/analysis/EXP-20260920-019B/contrasts.json": "9df4279d50c0664630cf9d2d418f23c312dfdd25ea627d6725e80c394d093644",
+    "results/satml2027_local/analysis/EXP-20260920-019B/macro.csv": "9dc662e5cb2186cd8054b40b05ec10b33934a2e9cde79229b6f5ec5cb041a2f6",
+    "results/satml2027_local/analysis/N3C-20260920-V3/n3c_predictions.json": "0702647cf72548a0ea96761f924e201e2c4f3fea357de8eac0ad658032e0b56b",
+    "results/satml2027_local/merged/EXP-20260920-019A/merge_report.json": "c7aa53405e001b28645c55e2196a995e395ebb60cb1bc22e63274b3f91b93060",
+    "results/satml2027_local/merged/EXP-20260920-019B/merge_report.json": "5c76ba8e9d3616dc5d1d458e8a639d609e15b84d39446afe881c3b5e9c1e3f06",
+    "results/satml2027_local/merged/N3C-20260920-V3/merge_report.json": "2e2a13703a8fbed66b63b98d0234dfc1cb96304de927e8a363de33e64af98e75"
+  },
+  "contract": "paper/satml2027/MACROS_CONTRACT.md",
+  "derivations": {
+    "certified_wrong_top_class": {
+      "cells_with_tied_top_class": [
+        "openai-clip-vit-b32-quickgelu__eurosat__fold0"
+      ],
+      "cells_without_certified_wrong": [],
+      "definition": "per cell, share of no-correction certified-wrong positions at 0.25 whose selected class is the most frequent selected class among them; cells with zero such positions excluded",
+      "per_cell_share": {
+        "openai-clip-vit-b32-quickgelu__cifar100__fold0": 0.6793893129770993,
+        "openai-clip-vit-b32-quickgelu__cifar100__fold1": 0.7463768115942029,
+        "openai-clip-vit-b32-quickgelu__cifar100__fold2": 0.664,
+        "openai-clip-vit-b32-quickgelu__eurosat__fold0": 0.36363636363636365,
+        "openai-clip-vit-b32-quickgelu__eurosat__fold1": 0.5555555555555556,
+        "openai-clip-vit-b32-quickgelu__eurosat__fold2": 0.5263157894736842,
+        "openai-clip-vit-l14-quickgelu__cifar100__fold0": 0.1276595744680851,
+        "openai-clip-vit-l14-quickgelu__cifar100__fold1": 0.15492957746478872,
+        "openai-clip-vit-l14-quickgelu__cifar100__fold2": 0.0967741935483871,
+        "openai-clip-vit-l14-quickgelu__eurosat__fold0": 0.9285714285714286,
+        "openai-clip-vit-l14-quickgelu__eurosat__fold1": 1.0,
+        "openai-clip-vit-l14-quickgelu__eurosat__fold2": 0.90625
+      }
+    },
+    "changed_positions": {
+      "all_candidates": {
+        "chowers_exact_projected_gap__coefficient_0.25": 0,
+        "chowers_exact_projected_gap__coefficient_0.5": 0,
+        "chowers_exact_projected_gap__coefficient_1": 0,
+        "clean_boundary_active__step_0.0025": 1,
+        "clean_boundary_active__step_0.005": 1,
+        "clean_boundary_active__step_0.01": 3,
+        "clean_boundary_active__step_0.02": 11,
+        "clean_boundary_active__step_0.04": 18,
+        "cohen_aligned_noisy_margin__step_0.0025": 0,
+        "cohen_aligned_noisy_margin__step_0.005": 0,
+        "cohen_aligned_noisy_margin__step_0.01": 2,
+        "cohen_aligned_noisy_margin__step_0.02": 6,
+        "cohen_aligned_noisy_margin__step_0.04": 11,
+        "global_mean_centering__coefficient_0.25": 75,
+        "global_mean_centering__coefficient_0.5": 155,
+        "global_mean_centering__coefficient_1": 293,
+        "gr_clip_style_two_sided__coefficient_1": 192,
+        "no_correction": 0
+      },
+      "definition": "number of positions (of all cells) whose standard-CA indicator at radius 0.25 (not abstained, selected == truth, radius >= 0.25) differs from no correction",
+      "exact_step_candidate": "clean_boundary_active__step_0.04",
+      "small_step_candidates": {
+        "clean_boundary_active__step_0.0025": 1,
+        "clean_boundary_active__step_0.005": 1,
+        "clean_boundary_active__step_0.01": 3,
+        "cohen_aligned_noisy_margin__step_0.0025": 0,
+        "cohen_aligned_noisy_margin__step_0.005": 0,
+        "cohen_aligned_noisy_margin__step_0.01": 2
+      }
+    },
+    "clean_gate": {
+      "eligibility": {
+        "chowers_exact_projected_gap__coefficient_0.25": {
+          "exact_count_rule": true,
+          "historical_float_rule": true,
+          "macro_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          },
+          "max_cell_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          }
+        },
+        "chowers_exact_projected_gap__coefficient_0.5": {
+          "exact_count_rule": true,
+          "historical_float_rule": true,
+          "macro_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          },
+          "max_cell_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          }
+        },
+        "chowers_exact_projected_gap__coefficient_1": {
+          "exact_count_rule": true,
+          "historical_float_rule": true,
+          "macro_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          },
+          "max_cell_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          }
+        },
+        "clean_boundary_active__step_0.0025": {
+          "exact_count_rule": true,
+          "historical_float_rule": true,
+          "macro_drop_points": {
+            "float": -0.2,
+            "fraction": "-1/5"
+          },
+          "max_cell_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          }
+        },
+        "clean_boundary_active__step_0.005": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -0.05,
+            "fraction": "-1/20"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "clean_boundary_active__step_0.01": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -0.1,
+            "fraction": "-1/10"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "clean_boundary_active__step_0.02": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -0.75,
+            "fraction": "-3/4"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "clean_boundary_active__step_0.04": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -1.4333333333333333,
+            "fraction": "-43/30"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "cohen_aligned_noisy_margin__step_0.0025": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -0.016666666666666666,
+            "fraction": "-1/60"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "cohen_aligned_noisy_margin__step_0.005": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -0.016666666666666666,
+            "fraction": "-1/60"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "cohen_aligned_noisy_margin__step_0.01": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -0.03333333333333333,
+            "fraction": "-1/30"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "cohen_aligned_noisy_margin__step_0.02": {
+          "exact_count_rule": true,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": 0.5166666666666667,
+            "fraction": "31/60"
+          },
+          "max_cell_drop_points": {
+            "float": 2.0,
+            "fraction": "2/1"
+          }
+        },
+        "cohen_aligned_noisy_margin__step_0.04": {
+          "exact_count_rule": false,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": 1.1333333333333333,
+            "fraction": "17/15"
+          },
+          "max_cell_drop_points": {
+            "float": 8.0,
+            "fraction": "8/1"
+          }
+        },
+        "global_mean_centering__coefficient_0.25": {
+          "exact_count_rule": false,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -1.45,
+            "fraction": "-29/20"
+          },
+          "max_cell_drop_points": {
+            "float": 6.0,
+            "fraction": "6/1"
+          }
+        },
+        "global_mean_centering__coefficient_0.5": {
+          "exact_count_rule": false,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": 1.1,
+            "fraction": "11/10"
+          },
+          "max_cell_drop_points": {
+            "float": 6.0,
+            "fraction": "6/1"
+          }
+        },
+        "global_mean_centering__coefficient_1": {
+          "exact_count_rule": false,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": 13.55,
+            "fraction": "271/20"
+          },
+          "max_cell_drop_points": {
+            "float": 20.0,
+            "fraction": "20/1"
+          }
+        },
+        "gr_clip_style_two_sided__coefficient_1": {
+          "exact_count_rule": false,
+          "historical_float_rule": false,
+          "macro_drop_points": {
+            "float": -4.033333333333333,
+            "fraction": "-121/30"
+          },
+          "max_cell_drop_points": {
+            "float": 4.0,
+            "fraction": "4/1"
+          }
+        },
+        "no_correction": {
+          "exact_count_rule": true,
+          "historical_float_rule": true,
+          "macro_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          },
+          "max_cell_drop_points": {
+            "float": 0.0,
+            "fraction": "0/1"
+          }
+        }
+      },
+      "exact_count_rule": "macro drop <= 1.0 point and every cell drop <= 2.0 points with drops computed as 100*(correct_ref - correct_cand)/n using fractions.Fraction",
+      "float_gate_rejected_candidates": [
+        "clean_boundary_active__step_0.005",
+        "clean_boundary_active__step_0.01",
+        "clean_boundary_active__step_0.02",
+        "clean_boundary_active__step_0.04",
+        "cohen_aligned_noisy_margin__step_0.0025",
+        "cohen_aligned_noisy_margin__step_0.005",
+        "cohen_aligned_noisy_margin__step_0.01",
+        "cohen_aligned_noisy_margin__step_0.02"
+      ],
+      "gr_worst_cell": {
+        "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__fold1",
+        "drop_points": {
+          "float": 4.0,
+          "fraction": "4/1"
+        }
+      },
+      "written_rule": "macro drop <= 1.0 points and every cell drop <= 2.0 points"
+    },
+    "distinct_classifiers": {
+      "definition": "number of candidates with pairwise-distinct per-example decisions (raw prediction, selected smoothed class, abstention) over all 12 cells; candidates sharing every decision are one classifier",
+      "identical_decision_groups": [
+        [
+          "chowers_exact_projected_gap__coefficient_0.25",
+          "chowers_exact_projected_gap__coefficient_0.5",
+          "chowers_exact_projected_gap__coefficient_1",
+          "no_correction"
+        ]
+      ],
+      "max_certificate_radius_gap_within_identical_groups": 0.0008545880779405879
+    },
+    "equal_cell_macro": "unweighted mean over the 12 model-dataset-fold cells, recomputed from per_candidate_cells and checked against candidate_aggregates_equal_cell_weight (tolerance 1e-9)",
+    "exp021_design": {
+      "power": "registered power block of EXP-021A (at discordance 0.10) and EXP-021B (pooled over datasets per sigma and EuroSAT sealed, at discordance 0.10)",
+      "source": "configs/satml2027ext/exp-20260921-021{a,b,c}.json, each checked against its .sha256 sidecar",
+      "unique_images": "sum of item_count over distinct evaluation_items_sha256 values per registration"
+    },
+    "exp021_results": {
+      "pending": [],
+      "sources": {
+        "A": "analysis/exp021/021a/analysis_ext.json",
+        "B": "analysis/exp021/021b/analysis_ext.json",
+        "C": "analysis/exp021/021c/analysis_ext.json"
+      }
+    },
+    "extension": {
+      "bank_total": "frozen_grid.bank_count + number of registered controls",
+      "primary_cells_rule": "cells of EXP-019A minus the CIFAR-10 cells at the EXP-017 sigma, which the registration labels a secondary bridge",
+      "unique_item_sets": {
+        "1a7e4960da2f2cc40bc45084db32dfedbaf22fed29f3ca4313ae78d9a489491a": 500,
+        "6940e5fb0b9a2b00f8a773440c1d9263bae3f0183dab904fe088254834df1eaa": 150,
+        "bef574f49f90865483e7c16558997c58ba0003c1dae59b19a60fbc06dc71db8c": 500
+      },
+      "unique_items": "sum of item_count over distinct evaluation_items_sha256 values across EXP-019A and EXP-019B"
+    },
+    "extension_EXP-20260920-019A": {
+      "clean_delta_definition": "equal-cell mean over the primary cells of (candidate - no_correction) clean accuracy, points",
+      "contrasts_available": true,
+      "control_band_excludes_zero": [
+        "control__learned_shared_translation_pure",
+        "control__noisy_class_mean",
+        "control__lowrank_tangent_r8"
+      ],
+      "control_deltas_points": {
+        "control__learned_shared_translation_pure": -3.2611111111111097,
+        "control__learned_shared_translation_tangent": -0.0222222222222218,
+        "control__lowrank_tangent_r8": 15.094444444444447,
+        "control__noisy_class_mean": 9.116666666666667
+      },
+      "controls": [
+        "control__learned_shared_translation_tangent",
+        "control__learned_shared_translation_pure",
+        "control__noisy_class_mean",
+        "control__lowrank_tangent_r8"
+      ],
+      "delta_definition": "equal-cell mean over the primary cells of (candidate - no_correction) standard CA at r = sigma, points",
+      "grid_band_excludes_zero": [
+        "global_mean_centering__coefficient_1"
+      ],
+      "grid_banks": [
+        "global_mean_centering__coefficient_0.25",
+        "global_mean_centering__coefficient_0.5",
+        "global_mean_centering__coefficient_1",
+        "gr_clip_style_two_sided__coefficient_1",
+        "chowers_exact_projected_gap__coefficient_0.25",
+        "chowers_exact_projected_gap__coefficient_0.5",
+        "chowers_exact_projected_gap__coefficient_1",
+        "clean_boundary_active__step_0.0025",
+        "clean_boundary_active__step_0.005",
+        "clean_boundary_active__step_0.01",
+        "clean_boundary_active__step_0.02",
+        "clean_boundary_active__step_0.04",
+        "cohen_aligned_noisy_margin__step_0.0025",
+        "cohen_aligned_noisy_margin__step_0.005",
+        "cohen_aligned_noisy_margin__step_0.01",
+        "cohen_aligned_noisy_margin__step_0.02",
+        "cohen_aligned_noisy_margin__step_0.04"
+      ],
+      "grid_deltas_exact_points": {
+        "chowers_exact_projected_gap__coefficient_0.25": {
+          "float": 0.0,
+          "fraction": "0/1"
+        },
+        "chowers_exact_projected_gap__coefficient_0.5": {
+          "float": 0.0,
+          "fraction": "0/1"
+        },
+        "chowers_exact_projected_gap__coefficient_1": {
+          "float": 0.0,
+          "fraction": "0/1"
+        },
+        "clean_boundary_active__step_0.0025": {
+          "float": 0.05555555555555555,
+          "fraction": "1/18"
+        },
+        "clean_boundary_active__step_0.005": {
+          "float": 0.07222222222222222,
+          "fraction": "13/180"
+        },
+        "clean_boundary_active__step_0.01": {
+          "float": 0.07222222222222222,
+          "fraction": "13/180"
+        },
+        "clean_boundary_active__step_0.02": {
+          "float": 0.12222222222222222,
+          "fraction": "11/90"
+        },
+        "clean_boundary_active__step_0.04": {
+          "float": 0.17222222222222222,
+          "fraction": "31/180"
+        },
+        "cohen_aligned_noisy_margin__step_0.0025": {
+          "float": -0.03333333333333333,
+          "fraction": "-1/30"
+        },
+        "cohen_aligned_noisy_margin__step_0.005": {
+          "float": 0.03888888888888889,
+          "fraction": "7/180"
+        },
+        "cohen_aligned_noisy_margin__step_0.01": {
+          "float": 0.1111111111111111,
+          "fraction": "1/9"
+        },
+        "cohen_aligned_noisy_margin__step_0.02": {
+          "float": 0.10555555555555556,
+          "fraction": "19/180"
+        },
+        "cohen_aligned_noisy_margin__step_0.04": {
+          "float": 0.31666666666666665,
+          "fraction": "19/60"
+        },
+        "global_mean_centering__coefficient_0.25": {
+          "float": -0.1388888888888889,
+          "fraction": "-5/36"
+        },
+        "global_mean_centering__coefficient_0.5": {
+          "float": -0.5111111111111111,
+          "fraction": "-23/45"
+        },
+        "global_mean_centering__coefficient_1": {
+          "float": -2.561111111111111,
+          "fraction": "-461/180"
+        },
+        "gr_clip_style_two_sided__coefficient_1": {
+          "float": 0.31666666666666665,
+          "fraction": "19/60"
+        }
+      },
+      "grid_deltas_points": {
+        "chowers_exact_projected_gap__coefficient_0.25": 0.0,
+        "chowers_exact_projected_gap__coefficient_0.5": 0.0,
+        "chowers_exact_projected_gap__coefficient_1": 0.0,
+        "clean_boundary_active__step_0.0025": 0.05555555555555556,
+        "clean_boundary_active__step_0.005": 0.07222222222222224,
+        "clean_boundary_active__step_0.01": 0.07222222222222224,
+        "clean_boundary_active__step_0.02": 0.12222222222222229,
+        "clean_boundary_active__step_0.04": 0.17222222222222328,
+        "cohen_aligned_noisy_margin__step_0.0025": -0.03333333333333325,
+        "cohen_aligned_noisy_margin__step_0.005": 0.03888888888888888,
+        "cohen_aligned_noisy_margin__step_0.01": 0.11111111111111106,
+        "cohen_aligned_noisy_margin__step_0.02": 0.10555555555555574,
+        "cohen_aligned_noisy_margin__step_0.04": 0.31666666666666676,
+        "global_mean_centering__coefficient_0.25": -0.13888888888888803,
+        "global_mean_centering__coefficient_0.5": -0.5111111111111107,
+        "global_mean_centering__coefficient_1": -2.5611111111111104,
+        "gr_clip_style_two_sided__coefficient_1": 0.3166666666666677
+      },
+      "largest_grid_delta_candidates": [
+        "cohen_aligned_noisy_margin__step_0.04",
+        "gr_clip_style_two_sided__coefficient_1"
+      ],
+      "primary_cells": [
+        "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+        "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+        "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+        "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+        "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+        "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+        "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+        "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+        "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12",
+        "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+        "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12",
+        "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5"
+      ],
+      "x3_pure_control_interval_contains_zero": false,
+      "x3_rule": "the learned shared-translation (tangent) control interval contains zero",
+      "x4_rule": "addendum A2.3: at least one per-class control (noisy class mean, rank-8 tangent adapter) has a lower band limit above zero",
+      "x5_groups": {
+        "openai-clip-vit-b32-quickgelu/cifar10": {
+          "sigma_to_gini": {
+            "0.12": 0.10399999999999987,
+            "0.25": 0.41759999999999997,
+            "0.5": 0.6851999999999998
+          },
+          "sigma_to_share": {
+            "0.12": 0.152,
+            "0.25": 0.3,
+            "0.5": 0.698
+          },
+          "strictly_increasing": true
+        },
+        "openai-clip-vit-b32-quickgelu/cifar100": {
+          "sigma_to_gini": {
+            "0.12": 0.5162800000000001,
+            "0.5": 0.9354
+          },
+          "sigma_to_share": {
+            "0.12": 0.078,
+            "0.5": 0.564
+          },
+          "strictly_increasing": true
+        },
+        "openai-clip-vit-b32-quickgelu/eurosat": {
+          "sigma_to_gini": {
+            "0.12": 0.7426666666666666,
+            "0.5": 0.8946666666666665
+          },
+          "sigma_to_share": {
+            "0.12": 0.5,
+            "0.5": 0.9733333333333334
+          },
+          "strictly_increasing": true
+        },
+        "openai-clip-vit-l14-quickgelu/cifar10": {
+          "sigma_to_gini": {
+            "0.12": 0.05599999999999983,
+            "0.25": 0.17279999999999984,
+            "0.5": 0.4143999999999999
+          },
+          "sigma_to_share": {
+            "0.12": 0.116,
+            "0.25": 0.162,
+            "0.5": 0.264
+          },
+          "strictly_increasing": true
+        },
+        "openai-clip-vit-l14-quickgelu/cifar100": {
+          "sigma_to_gini": {
+            "0.12": 0.34436,
+            "0.5": 0.79636
+          },
+          "sigma_to_share": {
+            "0.12": 0.05,
+            "0.5": 0.108
+          },
+          "strictly_increasing": true
+        },
+        "openai-clip-vit-l14-quickgelu/eurosat": {
+          "sigma_to_gini": {
+            "0.12": 0.7373333333333332,
+            "0.5": 0.8999999999999999
+          },
+          "sigma_to_share": {
+            "0.12": 0.5933333333333334,
+            "0.5": 1.0
+          },
+          "strictly_increasing": true
+        }
+      },
+      "x5_rule": "addendum A1: identity-bank top-class share and predicted-class Gini both strictly increase with sigma within every model x dataset (bridge cells included); 'supported' or 'not uniformly supported', no inferential statement"
+    },
+    "extension_EXP-20260920-019B": {
+      "clean_delta_definition": "equal-cell mean over the primary cells of (candidate - no_correction) clean accuracy, points",
+      "contrasts_available": true,
+      "control_band_excludes_zero": [
+        "control__noisy_class_mean",
+        "control__lowrank_tangent_r8"
+      ],
+      "control_deltas_points": {
+        "control__learned_shared_translation_pure": -0.08148148148148171,
+        "control__learned_shared_translation_tangent": 0.959259259259259,
+        "control__lowrank_tangent_r8": 13.674074074074074,
+        "control__noisy_class_mean": 7.34074074074074
+      },
+      "controls": [
+        "control__learned_shared_translation_tangent",
+        "control__learned_shared_translation_pure",
+        "control__noisy_class_mean",
+        "control__lowrank_tangent_r8"
+      ],
+      "delta_definition": "equal-cell mean over the primary cells of (candidate - no_correction) standard CA at r = sigma, points",
+      "grid_band_excludes_zero": [],
+      "grid_banks": [
+        "global_mean_centering__coefficient_0.25",
+        "global_mean_centering__coefficient_0.5",
+        "global_mean_centering__coefficient_1",
+        "gr_clip_style_two_sided__coefficient_1",
+        "chowers_exact_projected_gap__coefficient_0.25",
+        "chowers_exact_projected_gap__coefficient_0.5",
+        "chowers_exact_projected_gap__coefficient_1",
+        "clean_boundary_active__step_0.0025",
+        "clean_boundary_active__step_0.005",
+        "clean_boundary_active__step_0.01",
+        "clean_boundary_active__step_0.02",
+        "clean_boundary_active__step_0.04",
+        "cohen_aligned_noisy_margin__step_0.0025",
+        "cohen_aligned_noisy_margin__step_0.005",
+        "cohen_aligned_noisy_margin__step_0.01",
+        "cohen_aligned_noisy_margin__step_0.02",
+        "cohen_aligned_noisy_margin__step_0.04"
+      ],
+      "grid_deltas_exact_points": {
+        "chowers_exact_projected_gap__coefficient_0.25": {
+          "float": 0.0,
+          "fraction": "0/1"
+        },
+        "chowers_exact_projected_gap__coefficient_0.5": {
+          "float": 0.0,
+          "fraction": "0/1"
+        },
+        "chowers_exact_projected_gap__coefficient_1": {
+          "float": 0.0,
+          "fraction": "0/1"
+        },
+        "clean_boundary_active__step_0.0025": {
+          "float": -0.022222222222222223,
+          "fraction": "-1/45"
+        },
+        "clean_boundary_active__step_0.005": {
+          "float": -0.018518518518518517,
+          "fraction": "-1/54"
+        },
+        "clean_boundary_active__step_0.01": {
+          "float": -0.014814814814814815,
+          "fraction": "-2/135"
+        },
+        "clean_boundary_active__step_0.02": {
+          "float": -0.14814814814814814,
+          "fraction": "-4/27"
+        },
+        "clean_boundary_active__step_0.04": {
+          "float": -0.12962962962962962,
+          "fraction": "-7/54"
+        },
+        "cohen_aligned_noisy_margin__step_0.0025": {
+          "float": 0.037037037037037035,
+          "fraction": "1/27"
+        },
+        "cohen_aligned_noisy_margin__step_0.005": {
+          "float": 0.025925925925925925,
+          "fraction": "7/270"
+        },
+        "cohen_aligned_noisy_margin__step_0.01": {
+          "float": -0.007407407407407408,
+          "fraction": "-1/135"
+        },
+        "cohen_aligned_noisy_margin__step_0.02": {
+          "float": 0.05185185185185185,
+          "fraction": "7/135"
+        },
+        "cohen_aligned_noisy_margin__step_0.04": {
+          "float": 0.011111111111111112,
+          "fraction": "1/90"
+        },
+        "global_mean_centering__coefficient_0.25": {
+          "float": 0.25555555555555554,
+          "fraction": "23/90"
+        },
+        "global_mean_centering__coefficient_0.5": {
+          "float": 0.7518518518518519,
+          "fraction": "203/270"
+        },
+        "global_mean_centering__coefficient_1": {
+          "float": 0.6074074074074074,
+          "fraction": "82/135"
+        },
+        "gr_clip_style_two_sided__coefficient_1": {
+          "float": 0.4185185185185185,
+          "fraction": "113/270"
+        }
+      },
+      "grid_deltas_points": {
+        "chowers_exact_projected_gap__coefficient_0.25": 0.0,
+        "chowers_exact_projected_gap__coefficient_0.5": 0.0,
+        "chowers_exact_projected_gap__coefficient_1": 0.0,
+        "clean_boundary_active__step_0.0025": -0.02222222222222224,
+        "clean_boundary_active__step_0.005": -0.0185185185185186,
+        "clean_boundary_active__step_0.01": -0.014814814814814939,
+        "clean_boundary_active__step_0.02": -0.14814814814814825,
+        "clean_boundary_active__step_0.04": -0.12962962962962965,
+        "cohen_aligned_noisy_margin__step_0.0025": 0.03703703703703704,
+        "cohen_aligned_noisy_margin__step_0.005": 0.025925925925925884,
+        "cohen_aligned_noisy_margin__step_0.01": -0.007407407407407517,
+        "cohen_aligned_noisy_margin__step_0.02": 0.05185185185185169,
+        "cohen_aligned_noisy_margin__step_0.04": 0.011111111111111044,
+        "global_mean_centering__coefficient_0.25": 0.2555555555555553,
+        "global_mean_centering__coefficient_0.5": 0.7518518518518515,
+        "global_mean_centering__coefficient_1": 0.6074074074074074,
+        "gr_clip_style_two_sided__coefficient_1": 0.41851851851851846
+      },
+      "largest_grid_delta_candidates": [
+        "global_mean_centering__coefficient_0.5"
+      ],
+      "primary_cells": [
+        "openai-clip-rn50-quickgelu__cifar100__sigma0.25",
+        "openai-clip-rn50-quickgelu__cifar100__sigma0.5",
+        "openai-clip-rn50-quickgelu__cifar10__sigma0.25",
+        "openai-clip-rn50-quickgelu__cifar10__sigma0.5",
+        "openai-clip-rn50-quickgelu__eurosat__sigma0.25",
+        "openai-clip-rn50-quickgelu__eurosat__sigma0.5",
+        "openai-clip-vit-b16-quickgelu__cifar100__sigma0.25",
+        "openai-clip-vit-b16-quickgelu__cifar100__sigma0.5",
+        "openai-clip-vit-b16-quickgelu__cifar10__sigma0.25",
+        "openai-clip-vit-b16-quickgelu__cifar10__sigma0.5",
+        "openai-clip-vit-b16-quickgelu__eurosat__sigma0.25",
+        "openai-clip-vit-b16-quickgelu__eurosat__sigma0.5",
+        "openclip-vit-b32-laion2b__cifar100__sigma0.25",
+        "openclip-vit-b32-laion2b__cifar100__sigma0.5",
+        "openclip-vit-b32-laion2b__cifar10__sigma0.25",
+        "openclip-vit-b32-laion2b__cifar10__sigma0.5",
+        "openclip-vit-b32-laion2b__eurosat__sigma0.25",
+        "openclip-vit-b32-laion2b__eurosat__sigma0.5"
+      ],
+      "x3_pure_control_interval_contains_zero": true,
+      "x3_rule": "the learned shared-translation (tangent) control interval contains zero",
+      "x4_rule": "addendum A2.3: at least one per-class control (noisy class mean, rank-8 tangent adapter) has a lower band limit above zero",
+      "x5_groups": {
+        "openai-clip-rn50-quickgelu/cifar10": {
+          "sigma_to_gini": {
+            "0.25": 0.7487999999999999,
+            "0.5": 0.7951999999999999
+          },
+          "sigma_to_share": {
+            "0.25": 0.532,
+            "0.5": 0.506
+          },
+          "strictly_increasing": false
+        },
+        "openai-clip-rn50-quickgelu/cifar100": {
+          "sigma_to_gini": {
+            "0.25": 0.94956,
+            "0.5": 0.9763999999999999
+          },
+          "sigma_to_share": {
+            "0.25": 0.618,
+            "0.5": 0.618
+          },
+          "strictly_increasing": false
+        },
+        "openai-clip-rn50-quickgelu/eurosat": {
+          "sigma_to_gini": {
+            "0.25": 0.8119999999999998,
+            "0.5": 0.7853333333333332
+          },
+          "sigma_to_share": {
+            "0.25": 0.6533333333333333,
+            "0.5": 0.5
+          },
+          "strictly_increasing": false
+        },
+        "openai-clip-vit-b16-quickgelu/cifar10": {
+          "sigma_to_gini": {
+            "0.25": 0.41559999999999997,
+            "0.5": 0.6215999999999999
+          },
+          "sigma_to_share": {
+            "0.25": 0.244,
+            "0.5": 0.35
+          },
+          "strictly_increasing": true
+        },
+        "openai-clip-vit-b16-quickgelu/cifar100": {
+          "sigma_to_gini": {
+            "0.25": 0.86544,
+            "0.5": 0.9663599999999999
+          },
+          "sigma_to_share": {
+            "0.25": 0.544,
+            "0.5": 0.644
+          },
+          "strictly_increasing": true
+        },
+        "openai-clip-vit-b16-quickgelu/eurosat": {
+          "sigma_to_gini": {
+            "0.25": 0.8146666666666667,
+            "0.5": 0.7426666666666666
+          },
+          "sigma_to_share": {
+            "0.25": 0.8066666666666666,
+            "0.5": 0.43333333333333335
+          },
+          "strictly_increasing": false
+        },
+        "openclip-vit-b32-laion2b/cifar10": {
+          "sigma_to_gini": {
+            "0.25": 0.5051999999999999,
+            "0.5": 0.7988
+          },
+          "sigma_to_share": {
+            "0.25": 0.298,
+            "0.5": 0.708
+          },
+          "strictly_increasing": true
+        },
+        "openclip-vit-b32-laion2b/cifar100": {
+          "sigma_to_gini": {
+            "0.25": 0.9041999999999999,
+            "0.5": 0.9674
+          },
+          "sigma_to_share": {
+            "0.25": 0.57,
+            "0.5": 0.786
+          },
+          "strictly_increasing": true
+        },
+        "openclip-vit-b32-laion2b/eurosat": {
+          "sigma_to_gini": {
+            "0.25": 0.8026666666666666,
+            "0.5": 0.8746666666666665
+          },
+          "sigma_to_share": {
+            "0.25": 0.7066666666666667,
+            "0.5": 0.9
+          },
+          "strictly_increasing": true
+        }
+      },
+      "x5_rule": "addendum A1: identity-bank top-class share and predicted-class Gini both strictly increase with sigma within every model x dataset (bridge cells included); 'supported' or 'not uniformly supported', no inferential statement"
+    },
+    "extension_custody": {
+      "control_train_labels_per_class": {
+        "cifar10": 20,
+        "cifar100": 20,
+        "eurosat": 20
+      },
+      "merged_cells": {
+        "EXP-20260920-019A": 14,
+        "EXP-20260920-019B": 18,
+        "N3C-20260920-V3": 4
+      },
+      "receipt": {
+        "result_file_count": "76",
+        "result_manifest_sha256": "52bfe582671cf668121f39392d0bd98cc964914c675d40b7468a1fb4001632ee",
+        "status": "PASS"
+      },
+      "unblinding": "D-127 owner-instructed unblinding; registered primary analysis outputs are primary-only"
+    },
+    "extension_regime_ranges": {
+      "cells": {
+        "0.12": {
+          "cifar_cells": [
+            "openai-clip-vit-b32-quickgelu__cifar100__sigma0.12",
+            "openai-clip-vit-b32-quickgelu__cifar10__sigma0.12",
+            "openai-clip-vit-l14-quickgelu__cifar100__sigma0.12",
+            "openai-clip-vit-l14-quickgelu__cifar10__sigma0.12"
+          ],
+          "eurosat_cells": [
+            "openai-clip-vit-b32-quickgelu__eurosat__sigma0.12",
+            "openai-clip-vit-l14-quickgelu__eurosat__sigma0.12"
+          ]
+        },
+        "0.5": {
+          "cifar_cells": [
+            "openai-clip-rn50-quickgelu__cifar100__sigma0.5",
+            "openai-clip-rn50-quickgelu__cifar10__sigma0.5",
+            "openai-clip-vit-b16-quickgelu__cifar100__sigma0.5",
+            "openai-clip-vit-b16-quickgelu__cifar10__sigma0.5",
+            "openai-clip-vit-b32-quickgelu__cifar100__sigma0.5",
+            "openai-clip-vit-b32-quickgelu__cifar10__sigma0.5",
+            "openai-clip-vit-l14-quickgelu__cifar100__sigma0.5",
+            "openai-clip-vit-l14-quickgelu__cifar10__sigma0.5",
+            "openclip-vit-b32-laion2b__cifar100__sigma0.5",
+            "openclip-vit-b32-laion2b__cifar10__sigma0.5"
+          ],
+          "eurosat_cells": [
+            "openai-clip-rn50-quickgelu__eurosat__sigma0.5",
+            "openai-clip-vit-b16-quickgelu__eurosat__sigma0.5",
+            "openai-clip-vit-b32-quickgelu__eurosat__sigma0.5",
+            "openai-clip-vit-l14-quickgelu__eurosat__sigma0.5",
+            "openclip-vit-b32-laion2b__eurosat__sigma0.5"
+          ]
+        }
+      },
+      "definition": "min and max over the identity-bank cells at the given sigma across the available registered experiments"
+    },
+    "failure_partition": {
+      "cross_check": "per-cell counts equal the audit's failure_causes_at_0.25 for no_correction and the GR-CLIP candidate",
+      "definitions": {
+        "abstained": "abstained flag",
+        "anchored_certified_correct_at_target": "certified correct at 0.25 and selected == raw clean prediction",
+        "certified_correct_at_target": "not abstained, selected == truth, certificate radius >= 0.25",
+        "certified_wrong_at_target": "not abstained, selected != truth, certificate radius >= 0.25",
+        "correct_smoothed_class_but_radius_below_target": "not abstained, selected == truth, certificate radius < 0.25",
+        "nonabstaining_anchor_mismatch": "not abstained and selected smoothed class != raw clean prediction",
+        "nonabstaining_wrong_smoothed_class": "not abstained and selected smoothed class != ground truth"
+      },
+      "fields_accessed": [
+        "candidate_ids",
+        "item_ids",
+        "ground_truth",
+        "raw_predictions",
+        "outcomes"
+      ],
+      "mode": "in-process torch",
+      "pooled": {
+        "gr_clip_style_two_sided__coefficient_1": {
+          "abstained": 815,
+          "anchor_correct_but_radius_below_target": 246,
+          "anchor_preserved_but_raw_class_wrong": 112,
+          "anchored_certified_correct_at_target": 492,
+          "certified_correct_at_target": 533,
+          "certified_wrong_at_target": 719,
+          "correct_smoothed_class_but_radius_below_target": 271,
+          "nonabstaining_anchor_mismatch": 1635,
+          "nonabstaining_wrong_smoothed_class": 1681
+        },
+        "no_correction": {
+          "abstained": 821,
+          "anchor_correct_but_radius_below_target": 255,
+          "anchor_preserved_but_raw_class_wrong": 103,
+          "anchored_certified_correct_at_target": 433,
+          "certified_correct_at_target": 499,
+          "certified_wrong_at_target": 706,
+          "correct_smoothed_class_but_radius_below_target": 303,
+          "nonabstaining_anchor_mismatch": 1688,
+          "nonabstaining_wrong_smoothed_class": 1677
+        }
+      },
+      "source_files": {
+        "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold0/cohen_sufficient_statistics.pt": "6a92e1fa347b69bf86177d8c83f1b56d86fa44cac18973888534ccfdcbe4ed24",
+        "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold1/cohen_sufficient_statistics.pt": "b93944f38e875849b3c6bd7f801da17437cef4f6bc01e08fb170f24afde6c741",
+        "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__cifar100__fold2/cohen_sufficient_statistics.pt": "6a3ec93e8c02bba40951201fe4db41ee4de606f64e90dc3d5cad11408eaf566e",
+        "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold0/cohen_sufficient_statistics.pt": "72209d45477462c72d81581621fc78d45905c0cf04a8f6f2af5de72e9b714be8",
+        "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold1/cohen_sufficient_statistics.pt": "3b7041dcf554efa8cf0b0bf1d04939171871c44cb09c14f77fc434a0b35db802",
+        "results/EXP-20260906-017/cells/openai-clip-vit-b32-quickgelu__eurosat__fold2/cohen_sufficient_statistics.pt": "c777fdc36b84e306d4a35df39394a19f978e928c778626c11ba4a46d0d5e5adf",
+        "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold0/cohen_sufficient_statistics.pt": "78370b2e707dd1978d5c6af28ada0b6a1f00026997ada5065d68c5040d5d8e8e",
+        "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold1/cohen_sufficient_statistics.pt": "b16b30871366d8eb30d671fb2b4637448686d2651b84da57166c35d128e20e3c",
+        "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__cifar100__fold2/cohen_sufficient_statistics.pt": "fb526b42b45fa8f5c056e6617a17531fe7a2b6b0e8b4de8c71d4dec48ebe4e2e",
+        "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold0/cohen_sufficient_statistics.pt": "e30909c6244b8e85ccb18ea41a084ef606aad7c93dbaae8ee46b17a3987fcb98",
+        "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold1/cohen_sufficient_statistics.pt": "97ac1ff7f79cc60e6bb4e11375d45f15abbb196bd42a4a635fff7e344af02def",
+        "results/EXP-20260906-017/cells/openai-clip-vit-l14-quickgelu__eurosat__fold2/cohen_sufficient_statistics.pt": "9bd16331a58fd0801251624d2fe4d5ea6e037d8a413ea8478887b1b268cbb106"
+      }
+    },
+    "farla": {
+      "confirmation_items_source": "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/analysis/report.json cells[].example_count cross-checked with FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/splits/manifest.json confirmation_count",
+      "decision": "CONTINUE_PAPER_CANDIDATE",
+      "shots_source": "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL/config_snapshot.json datasets[].train_per_class"
+    },
+    "finite_sample_censoring_checks": [
+      {
+        "aggregate": 17,
+        "candidate": "no_correction",
+        "radius": 0.25,
+        "sum_of_cells": 17
+      },
+      {
+        "aggregate": 19,
+        "candidate": "clean_boundary_active__step_0.0025",
+        "radius": 0.25,
+        "sum_of_cells": 19
+      },
+      {
+        "aggregate": 111,
+        "candidate": "no_correction",
+        "radius": 0.0,
+        "sum_of_cells": 111
+      }
+    ],
+    "gate_n2": {
+      "band_excluding_zero": [
+        {
+          "candidate_id": "global_mean_centering__coefficient_0.5",
+          "metric": "standard_cohen_certified_accuracy",
+          "radius": 0.0
+        },
+        {
+          "candidate_id": "global_mean_centering__coefficient_1",
+          "metric": "standard_cohen_certified_accuracy",
+          "radius": 0.0
+        },
+        {
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "metric": "raw_clean_anchored_certified_accuracy",
+          "radius": 0.0
+        },
+        {
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "metric": "standard_cohen_certified_accuracy",
+          "radius": 0.1
+        },
+        {
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "metric": "raw_clean_anchored_certified_accuracy",
+          "radius": 0.1
+        },
+        {
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "metric": "standard_cohen_certified_accuracy",
+          "radius": 0.25
+        },
+        {
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "metric": "raw_clean_anchored_certified_accuracy",
+          "radius": 0.25
+        },
+        {
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "metric": "standard_cohen_certified_accuracy",
+          "radius": 0.5
+        }
+      ],
+      "common_critical_value": 0.01983333333333333,
+      "finite_stratum_sensitivity": "descriptive only: half width = common critical value x sqrt(5/4)"
+    },
+    "gr_by_dataset": {
+      "cells_per_dataset": {
+        "cifar100": 6,
+        "eurosat": 6
+      },
+      "cifar100_cells_with_negative_change": [
+        "openai-clip-vit-b32-quickgelu__cifar100__fold2",
+        "openai-clip-vit-l14-quickgelu__cifar100__fold2"
+      ],
+      "definition": "unweighted mean over the cells of one dataset of (GR-CLIP standard CA - no-correction standard CA) at radius 0.25"
+    },
+    "n3c": {
+      "draws_per_item": [
+        512
+      ],
+      "k_min": 456,
+      "p1": {
+        "applicable_candidates": [
+          "chowers_exact_projected_gap__coefficient_0.25",
+          "chowers_exact_projected_gap__coefficient_0.5",
+          "chowers_exact_projected_gap__coefficient_1",
+          "clean_boundary_active__step_0.0025",
+          "clean_boundary_active__step_0.005",
+          "clean_boundary_active__step_0.01",
+          "clean_boundary_active__step_0.02",
+          "clean_boundary_active__step_0.04",
+          "cohen_aligned_noisy_margin__step_0.0025",
+          "cohen_aligned_noisy_margin__step_0.005",
+          "cohen_aligned_noisy_margin__step_0.01",
+          "cohen_aligned_noisy_margin__step_0.02",
+          "cohen_aligned_noisy_margin__step_0.04",
+          "control__learned_shared_translation_pure",
+          "control__learned_shared_translation_tangent",
+          "global_mean_centering__coefficient_0.25",
+          "global_mean_centering__coefficient_0.5",
+          "global_mean_centering__coefficient_1"
+        ],
+        "exceptions_total": 0,
+        "per_candidate": {
+          "chowers_exact_projected_gap__coefficient_0.25": 0,
+          "chowers_exact_projected_gap__coefficient_0.5": 0,
+          "chowers_exact_projected_gap__coefficient_1": 0,
+          "clean_boundary_active__step_0.0025": 0,
+          "clean_boundary_active__step_0.005": 0,
+          "clean_boundary_active__step_0.01": 0,
+          "clean_boundary_active__step_0.02": 0,
+          "clean_boundary_active__step_0.04": 0,
+          "cohen_aligned_noisy_margin__step_0.0025": 0,
+          "cohen_aligned_noisy_margin__step_0.005": 0,
+          "cohen_aligned_noisy_margin__step_0.01": 0,
+          "cohen_aligned_noisy_margin__step_0.02": 0,
+          "cohen_aligned_noisy_margin__step_0.04": 0,
+          "control__learned_shared_translation_pure": 0,
+          "control__learned_shared_translation_tangent": 0,
+          "global_mean_centering__coefficient_0.25": 0,
+          "global_mean_centering__coefficient_0.5": 0,
+          "global_mean_centering__coefficient_1": 0
+        }
+      },
+      "p4a": {
+        "mean_absolute_calibration_error": {
+          "openai-clip-vit-b32-quickgelu__cifar100__sigma0.25": 0.002820024778186029,
+          "openai-clip-vit-l14-quickgelu__cifar100__sigma0.25": 0.0022706093583845194
+        },
+        "pass": true,
+        "threshold": 0.05
+      },
+      "p5": {
+        "pass": true,
+        "positive": 4,
+        "required": 3,
+        "spearman_rho": {
+          "openai-clip-vit-b32-quickgelu__cifar100__sigma0.25": 0.7407729680059889,
+          "openai-clip-vit-b32-quickgelu__eurosat__sigma0.25": 0.9665698144513026,
+          "openai-clip-vit-l14-quickgelu__cifar100__sigma0.25": 0.6179057905790579,
+          "openai-clip-vit-l14-quickgelu__eurosat__sigma0.25": 0.7333333333333333
+        }
+      },
+      "p7_items_already_at_threshold": 947,
+      "p7_pooled_over_cells": {
+        "chowers_exact_projected_gap__coefficient_0.25": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 947,
+          "threshold_unattainable_on_these_draws": 1653,
+          "undetermined": 0
+        },
+        "chowers_exact_projected_gap__coefficient_0.5": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 947,
+          "threshold_unattainable_on_these_draws": 1653,
+          "undetermined": 0
+        },
+        "chowers_exact_projected_gap__coefficient_1": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 947,
+          "threshold_unattainable_on_these_draws": 1653,
+          "undetermined": 0
+        },
+        "clean_boundary_active__step_0.0025": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 951,
+          "threshold_unattainable_on_these_draws": 1605,
+          "undetermined": 48
+        },
+        "clean_boundary_active__step_0.005": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 952,
+          "threshold_unattainable_on_these_draws": 1534,
+          "undetermined": 119
+        },
+        "clean_boundary_active__step_0.01": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 952,
+          "threshold_unattainable_on_these_draws": 1291,
+          "undetermined": 362
+        },
+        "clean_boundary_active__step_0.02": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 948,
+          "threshold_unattainable_on_these_draws": 881,
+          "undetermined": 772
+        },
+        "clean_boundary_active__step_0.04": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 939,
+          "threshold_unattainable_on_these_draws": 360,
+          "undetermined": 1293
+        },
+        "cohen_aligned_noisy_margin__step_0.0025": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 946,
+          "threshold_unattainable_on_these_draws": 1598,
+          "undetermined": 55
+        },
+        "cohen_aligned_noisy_margin__step_0.005": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 944,
+          "threshold_unattainable_on_these_draws": 1489,
+          "undetermined": 164
+        },
+        "cohen_aligned_noisy_margin__step_0.01": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 935,
+          "threshold_unattainable_on_these_draws": 1333,
+          "undetermined": 320
+        },
+        "cohen_aligned_noisy_margin__step_0.02": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 927,
+          "threshold_unattainable_on_these_draws": 1161,
+          "undetermined": 492
+        },
+        "cohen_aligned_noisy_margin__step_0.04": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 918,
+          "threshold_unattainable_on_these_draws": 856,
+          "undetermined": 797
+        },
+        "control__learned_shared_translation_pure": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 1004,
+          "threshold_unattainable_on_these_draws": 0,
+          "undetermined": 1653
+        },
+        "control__learned_shared_translation_tangent": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 802,
+          "threshold_unattainable_on_these_draws": 0,
+          "undetermined": 1653
+        },
+        "global_mean_centering__coefficient_0.25": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 912,
+          "threshold_unattainable_on_these_draws": 27,
+          "undetermined": 1626
+        },
+        "global_mean_centering__coefficient_0.5": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 854,
+          "threshold_unattainable_on_these_draws": 0,
+          "undetermined": 1653
+        },
+        "global_mean_centering__coefficient_1": {
+          "already_at_threshold": 947,
+          "bound_violations": 0,
+          "realized_at_threshold_after": 1076,
+          "threshold_unattainable_on_these_draws": 0,
+          "undetermined": 1653
+        }
+      },
+      "p9_pooled_over_cells": {
+        "chowers_exact_projected_gap__coefficient_0.25": {
+          "harmful_correct_to_wrong": 0,
+          "total_flips": 9,
+          "unchanged": 1331191,
+          "useful_wrong_to_correct": 3,
+          "wrong_to_wrong": 6
+        },
+        "chowers_exact_projected_gap__coefficient_0.5": {
+          "harmful_correct_to_wrong": 0,
+          "total_flips": 9,
+          "unchanged": 1331191,
+          "useful_wrong_to_correct": 1,
+          "wrong_to_wrong": 8
+        },
+        "chowers_exact_projected_gap__coefficient_1": {
+          "harmful_correct_to_wrong": 1,
+          "total_flips": 17,
+          "unchanged": 1331183,
+          "useful_wrong_to_correct": 3,
+          "wrong_to_wrong": 13
+        },
+        "clean_boundary_active__step_0.0025": {
+          "harmful_correct_to_wrong": 418,
+          "total_flips": 4634,
+          "unchanged": 1326566,
+          "useful_wrong_to_correct": 568,
+          "wrong_to_wrong": 3648
+        },
+        "clean_boundary_active__step_0.005": {
+          "harmful_correct_to_wrong": 871,
+          "total_flips": 9314,
+          "unchanged": 1321886,
+          "useful_wrong_to_correct": 1148,
+          "wrong_to_wrong": 7295
+        },
+        "clean_boundary_active__step_0.01": {
+          "harmful_correct_to_wrong": 1795,
+          "total_flips": 18336,
+          "unchanged": 1312864,
+          "useful_wrong_to_correct": 2212,
+          "wrong_to_wrong": 14329
+        },
+        "clean_boundary_active__step_0.02": {
+          "harmful_correct_to_wrong": 3554,
+          "total_flips": 35499,
+          "unchanged": 1295701,
+          "useful_wrong_to_correct": 4236,
+          "wrong_to_wrong": 27709
+        },
+        "clean_boundary_active__step_0.04": {
+          "harmful_correct_to_wrong": 7173,
+          "total_flips": 67199,
+          "unchanged": 1264001,
+          "useful_wrong_to_correct": 8107,
+          "wrong_to_wrong": 51919
+        },
+        "cohen_aligned_noisy_margin__step_0.0025": {
+          "harmful_correct_to_wrong": 649,
+          "total_flips": 4243,
+          "unchanged": 1326957,
+          "useful_wrong_to_correct": 389,
+          "wrong_to_wrong": 3205
+        },
+        "cohen_aligned_noisy_margin__step_0.005": {
+          "harmful_correct_to_wrong": 1288,
+          "total_flips": 8503,
+          "unchanged": 1322697,
+          "useful_wrong_to_correct": 767,
+          "wrong_to_wrong": 6448
+        },
+        "cohen_aligned_noisy_margin__step_0.01": {
+          "harmful_correct_to_wrong": 2687,
+          "total_flips": 17044,
+          "unchanged": 1314156,
+          "useful_wrong_to_correct": 1469,
+          "wrong_to_wrong": 12888
+        },
+        "cohen_aligned_noisy_margin__step_0.02": {
+          "harmful_correct_to_wrong": 5365,
+          "total_flips": 34322,
+          "unchanged": 1296878,
+          "useful_wrong_to_correct": 2995,
+          "wrong_to_wrong": 25962
+        },
+        "cohen_aligned_noisy_margin__step_0.04": {
+          "harmful_correct_to_wrong": 10803,
+          "total_flips": 69486,
+          "unchanged": 1261714,
+          "useful_wrong_to_correct": 6239,
+          "wrong_to_wrong": 52444
+        },
+        "control__learned_shared_translation_pure": {
+          "harmful_correct_to_wrong": 161816,
+          "total_flips": 855736,
+          "unchanged": 475464,
+          "useful_wrong_to_correct": 42673,
+          "wrong_to_wrong": 651247
+        },
+        "control__learned_shared_translation_tangent": {
+          "harmful_correct_to_wrong": 45501,
+          "total_flips": 299071,
+          "unchanged": 1032129,
+          "useful_wrong_to_correct": 49763,
+          "wrong_to_wrong": 203807
+        },
+        "control__lowrank_tangent_r8": {
+          "harmful_correct_to_wrong": 65713,
+          "total_flips": 915500,
+          "unchanged": 415700,
+          "useful_wrong_to_correct": 300347,
+          "wrong_to_wrong": 549440
+        },
+        "control__noisy_class_mean": {
+          "harmful_correct_to_wrong": 117319,
+          "total_flips": 1033284,
+          "unchanged": 297916,
+          "useful_wrong_to_correct": 300343,
+          "wrong_to_wrong": 615622
+        },
+        "global_mean_centering__coefficient_0.25": {
+          "harmful_correct_to_wrong": 29293,
+          "total_flips": 203550,
+          "unchanged": 1127650,
+          "useful_wrong_to_correct": 20117,
+          "wrong_to_wrong": 154140
+        },
+        "global_mean_centering__coefficient_0.5": {
+          "harmful_correct_to_wrong": 81226,
+          "total_flips": 486219,
+          "unchanged": 844981,
+          "useful_wrong_to_correct": 45474,
+          "wrong_to_wrong": 359519
+        },
+        "global_mean_centering__coefficient_1": {
+          "harmful_correct_to_wrong": 141446,
+          "total_flips": 841926,
+          "unchanged": 489274,
+          "useful_wrong_to_correct": 62522,
+          "wrong_to_wrong": 637958
+        },
+        "gr_clip_style_two_sided__coefficient_1": {
+          "harmful_correct_to_wrong": 64018,
+          "total_flips": 472031,
+          "unchanged": 859169,
+          "useful_wrong_to_correct": 63593,
+          "wrong_to_wrong": 344420
+        }
+      },
+      "positions": 2600
+    },
+    "radius_per_coordinate": {
+      "channels": 3,
+      "constant_sources": [
+        "configs/clean_pipeline_v1.json",
+        "configs/clean_pipeline_vit_l14_v1.json"
+      ],
+      "crop_size": 224,
+      "formula": "target radius / sqrt(channels x crop_size x crop_size), two significant digits, for math mode",
+      "input_dimension": 150528,
+      "target_radius": 0.25,
+      "value": 0.0006443641397205645
+    },
+    "selections": {
+      "exact_count": "clean_boundary_active__step_0.04",
+      "saved": "clean_boundary_active__step_0.0025"
+    },
+    "standard_minus_anchored": {
+      "definition": "equal-cell standard CA minus equal-cell anchored CA at radius 0.25, checked against the audit's standard_minus_anchored",
+      "max": "gr_clip_style_two_sided__coefficient_1",
+      "min": "global_mean_centering__coefficient_1"
+    },
+    "weighting": {
+      "effective_n": {
+        "float": 1090.909090909091,
+        "fraction": "12000/11"
+      },
+      "kish_design_effect": {
+        "float": 3.025,
+        "fraction": "121/40"
+      },
+      "pooled_delta": "sum_c n_c (CA_cand,c - CA_ref,c) / sum_c n_c, in points, from exact per-cell counts",
+      "weights": "w_i = 1/(12 n_c) for every item in cell c"
+    }
+  },
+  "generator": "scripts/generate_satml2027_paper_assets.py",
+  "macros": {
+    "BandContrasts": "136",
+    "BandExclZero": "8",
+    "BandExclZeroGR": "6",
+    "BandExclZeroOther": "2",
+    "BandHalfWidth": "1.98",
+    "BandHalfWidthSens": "2.22",
+    "BandReplicates": "100,000",
+    "BandStrata": "330",
+    "CWCellsWithNone": "0",
+    "CWTopClassShareHi": "100.0",
+    "CWTopClassShareLo": "9.7",
+    "CensoredNoCorrRQuarter": "17",
+    "CensoredNoCorrRZero": "111",
+    "CensoredSavedRQuarter": "19",
+    "CertifiedCorrectAnchorMismatch": "66",
+    "CertifiedWrongRate": "21.39",
+    "ChangedPositionsExactStep": "18",
+    "ChangedPositionsGR": "192",
+    "ChangedPositionsProposalsMax": "18",
+    "ChangedPositionsSmallSteps": "3",
+    "ChowersMaxAbsDelta": "0.00",
+    "DispExact": "0.259",
+    "DispGMCOne": "7.011",
+    "DispGR": "6.680",
+    "DispSaved": "0.016",
+    "EffectiveN": "1,090.9",
+    "ExactAnchCA": "9.35",
+    "ExactClean": "62.32",
+    "ExactStdCA": "12.05",
+    "ExactStdDelta": "+0.58",
+    "ExactStdDeltaPooled": "+0.24",
+    "ExactStdLower": "-1.40",
+    "ExactStdUpper": "+2.57",
+    "ExpAlpha": "0.001",
+    "ExpBanks": "216",
+    "ExpCandidates": "18",
+    "ExpCells": "12",
+    "ExpCifarItemsPerCell": "500",
+    "ExpConfDraws": "4,096",
+    "ExpConfVotes": "243,302,400",
+    "ExpDistinctClassifiers": "15",
+    "ExpElapsedHours": "14.4",
+    "ExpEurosatItemsPerCell": "50",
+    "ExpOperatorBanks": "17",
+    "ExpPositions": "3,300",
+    "ExpRadiusPerCoordinate": "6.4\\times 10^{-4}",
+    "ExpRows": "59,400",
+    "ExpSelDraws": "128",
+    "ExpSelVotes": "7,603,200",
+    "ExpSigma": "0.25",
+    "ExtAControlsExclZero": "3",
+    "ExtACritical": "1.84",
+    "ExtAGMCOneCleanDelta": "-12.31",
+    "ExtAGMCOneDelta": "-2.56",
+    "ExtAGRCleanDelta": "+4.66",
+    "ExtAGRDelta": "+0.32",
+    "ExtAGRLower": "-1.52",
+    "ExtAGRUpper": "+2.16",
+    "ExtAGridExclZero": "1",
+    "ExtAGridExclZeroIds": "mean-centering (text) c=1",
+    "ExtAInsideRegion": "15",
+    "ExtALowrankCleanDelta": "+10.22",
+    "ExtALowrankDelta": "+15.09",
+    "ExtALowrankLower": "+13.26",
+    "ExtALowrankUpper": "+16.93",
+    "ExtAMaxGridDelta": "+0.32",
+    "ExtAMaxGridId": "noisy-margin step 0.04 and two-sided centering c=1",
+    "ExtAMinGridCleanDelta": "-12.31",
+    "ExtAMinGridDelta": "-2.56",
+    "ExtAMinGridId": "mean-centering (text) c=1",
+    "ExtANoisyMeanCleanDelta": "-39.44",
+    "ExtANoisyMeanDelta": "+9.12",
+    "ExtAReceiptStatus": "PASS",
+    "ExtASharedPureDelta": "-3.26",
+    "ExtASharedPureLower": "-5.10",
+    "ExtASharedPureUpper": "-1.42",
+    "ExtASharedTangentDelta": "-0.02",
+    "ExtASharedTangentLower": "-1.86",
+    "ExtASharedTangentUpper": "+1.82",
+    "ExtAXfive": "supported",
+    "ExtAXfour": "confirmed",
+    "ExtAXfourPositiveControls": "two",
+    "ExtAXthree": "confirmed",
+    "ExtBControlsExclZero": "2",
+    "ExtBCritical": "1.56",
+    "ExtBGMCOneCleanDelta": "-7.67",
+    "ExtBGMCOneDelta": "+0.61",
+    "ExtBGRCleanDelta": "+3.76",
+    "ExtBGRDelta": "+0.42",
+    "ExtBGRLower": "-1.14",
+    "ExtBGRUpper": "+1.98",
+    "ExtBGridExclZero": "0",
+    "ExtBGridExclZeroIds": "none",
+    "ExtBInsideRegion": "15",
+    "ExtBLowrankCleanDelta": "+12.88",
+    "ExtBLowrankDelta": "+13.67",
+    "ExtBLowrankLower": "+12.11",
+    "ExtBLowrankUpper": "+15.24",
+    "ExtBMaxGridDelta": "+0.75",
+    "ExtBMaxGridId": "mean-centering (text) c=0.5",
+    "ExtBMinGridCleanDelta": "+0.13",
+    "ExtBMinGridDelta": "-0.15",
+    "ExtBMinGridId": "boundary-active step 0.02",
+    "ExtBNoisyMeanCleanDelta": "-42.29",
+    "ExtBNoisyMeanDelta": "+7.34",
+    "ExtBSharedPureDelta": "-0.08",
+    "ExtBSharedPureLower": "-1.64",
+    "ExtBSharedPureUpper": "+1.48",
+    "ExtBSharedTangentDelta": "+0.96",
+    "ExtBSharedTangentLower": "-0.60",
+    "ExtBSharedTangentUpper": "+2.52",
+    "ExtBXfive": "not uniformly supported",
+    "ExtBXfour": "confirmed",
+    "ExtBXfourPositiveControls": "two",
+    "ExtBXthree": "confirmed",
+    "ExtBanks": "22",
+    "ExtBridgeGRDeltaBthirtytwo": "+2.40",
+    "ExtBridgeGRDeltaLfourteen": "-0.80",
+    "ExtCellsA": "14",
+    "ExtCellsB": "18",
+    "ExtCellsMerged": "36",
+    "ExtCellsN": "4",
+    "ExtControlLabelsPerClass": "20",
+    "ExtItemsCifar": "500",
+    "ExtItemsEurosat": "150",
+    "ExtPrimaryCellsA": "12",
+    "ExtRegHashA": "9802bf3e5f97",
+    "ExtRegHashB": "3fcdbade664a",
+    "ExtRegHashN": "96fd42f268d9",
+    "ExtRegionPoints": "0.5",
+    "ExtResultFiles": "76",
+    "ExtResultManifest": "52bfe582671c",
+    "ExtSmoothedFiftyCifarHi": "41.20",
+    "ExtSmoothedFiftyCifarLo": "1.00",
+    "ExtSmoothedFiftyEurosatHi": "16.00",
+    "ExtSmoothedFiftyEurosatLo": "9.33",
+    "ExtSmoothedTwelveCifarHi": "90.00",
+    "ExtSmoothedTwelveCifarLo": "40.00",
+    "ExtSmoothedTwelveEurosatHi": "26.67",
+    "ExtSmoothedTwelveEurosatLo": "9.33",
+    "ExtStdCAFiftyCifarHi": "16.40",
+    "ExtStdCAFiftyCifarLo": "1.00",
+    "ExtStdCATwelveCifarHi": "81.80",
+    "ExtStdCATwelveCifarLo": "26.00",
+    "ExtUniqueItems": "1,150",
+    "ExtXfiveSummary": "supported in Extension A but not uniformly supported in Extension B",
+    "ExtXfourFlags": "both per-class controls do so in both experiments",
+    "ExtXfourSummary": "confirmed in both Extension A and Extension B",
+    "ExtXthreeSummary": "confirmed in both Extension A and Extension B",
+    "FUBackbonesA": "2",
+    "FUBackbonesB": "3",
+    "FUBanks": "36",
+    "FUBanksC": "3",
+    "FUBudgetDraws": "100,000",
+    "FUCellsA": "12",
+    "FUCellsB": "18",
+    "FUCellsC": "6",
+    "FUClipScaleHi": "3.8",
+    "FUClipScaleLo": "3.6",
+    "FUClipStdHi": "0.28",
+    "FUClipStdLo": "0.26",
+    "FUCoefficients": "3",
+    "FUConfDraws": "4,096",
+    "FUControls": "4",
+    "FUEurosatMDE": "3.47",
+    "FUExtraHours": "15.3",
+    "FUGRCifarHighMag": "practically equivalent",
+    "FUGRCifarHighPoint": "+0.23",
+    "FUGRCifarLowMag": "practically equivalent",
+    "FUGRCifarLowPoint": "+0.29",
+    "FUGRClasses": "unresolved in direction and practically equivalent in magnitude at both noise levels",
+    "FUGREurosatHighLBthirtytwo": "-4.10",
+    "FUGREurosatHighMag": "inconclusive",
+    "FUGREurosatHighOBthirtytwo": "+5.50",
+    "FUGREurosatHighOLfourteen": "+4.20",
+    "FUGREurosatHighPoint": "+1.87",
+    "FUGREurosatLowLBthirtytwo": "-2.00",
+    "FUGREurosatLowMag": "practically equivalent",
+    "FUGREurosatLowOBthirtytwo": "+3.20",
+    "FUGREurosatLowOLfourteen": "-2.50",
+    "FUGREurosatLowPoint": "-0.43",
+    "FUGRHighDir": "unresolved",
+    "FUGRHighLower": "-0.65",
+    "FUGRHighMacroLower": "-0.21",
+    "FUGRHighMacroPoint": "+0.14",
+    "FUGRHighMacroUpper": "+0.48",
+    "FUGRHighMag": "practically equivalent",
+    "FUGRHighPoint": "-0.35",
+    "FUGRHighUpper": "-0.05",
+    "FUGRImagenetteHighMag": "inconclusive",
+    "FUGRImagenetteHighPoint": "-1.68",
+    "FUGRImagenetteLowMag": "practically equivalent",
+    "FUGRImagenetteLowPoint": "-0.57",
+    "FUGRLowDir": "unresolved",
+    "FUGRLowLower": "-0.50",
+    "FUGRLowMacroLower": "-0.64",
+    "FUGRLowMacroPoint": "-0.24",
+    "FUGRLowMacroUpper": "+0.16",
+    "FUGRLowMag": "practically equivalent",
+    "FUGRLowPoint": "-0.18",
+    "FUGRLowUpper": "+0.13",
+    "FUImagesA": "1,650",
+    "FUImagesB": "7,000",
+    "FUItemsC": "100",
+    "FUItemsCifarB": "3,000",
+    "FUItemsEurosatB": "1,000",
+    "FUItemsImagenetteB": "3,000",
+    "FUMDEA": "2.7",
+    "FUMainHours": "15.0",
+    "FUNotRunA": "0",
+    "FUNotRunB": "0",
+    "FUPooledMDE": "1.3",
+    "FUPooledPowerTwo": "0.997",
+    "FUPowerTwoA": "0.47",
+    "FUQEightLBthirtytwoHalf": "69.40",
+    "FUQEightLBthirtytwoQuarter": "81.43",
+    "FUQEightOBthirtytwoHalf": "72.37",
+    "FUQEightOBthirtytwoQuarter": "84.30",
+    "FUQEightOLfourteenHalf": "85.03",
+    "FUQEightOLfourteenQuarter": "92.80",
+    "FUQFiveAFewshotDir": "positive",
+    "FUQFiveAFewshotPoint": "+6.88",
+    "FUQFiveALowrankDir": "positive",
+    "FUQFiveALowrankPoint": "+4.61",
+    "FUQFiveANoisyMeanDir": "unresolved",
+    "FUQFiveANoisyMeanPoint": "+1.06",
+    "FUQFiveASharedDir": "unresolved",
+    "FUQFiveASharedPoint": "+0.00",
+    "FUQFiveClassCifarHi": "+7.71",
+    "FUQFiveClassCifarLo": "+4.67",
+    "FUQFiveClassEurosatHi": "+47.87",
+    "FUQFiveClassEurosatLo": "+25.20",
+    "FUQFiveClassHi": "+9.90",
+    "FUQFiveClassImagenetteHi": "+3.09",
+    "FUQFiveClassImagenetteLo": "-1.58",
+    "FUQFiveClassLo": "+5.68",
+    "FUQFiveFewshotClean": "+11.75",
+    "FUQFiveFewshotCleanFlagged": "0",
+    "FUQFiveHighFewshotDir": "positive",
+    "FUQFiveHighFewshotPoint": "+8.03",
+    "FUQFiveHighLowrankDir": "positive",
+    "FUQFiveHighLowrankPoint": "+8.97",
+    "FUQFiveHighNoisyMeanDir": "positive",
+    "FUQFiveHighNoisyMeanPoint": "+5.68",
+    "FUQFiveHighSharedDir": "unresolved",
+    "FUQFiveHighSharedPoint": "-0.03",
+    "FUQFiveLowFewshotDir": "positive",
+    "FUQFiveLowFewshotPoint": "+9.35",
+    "FUQFiveLowLowrankDir": "positive",
+    "FUQFiveLowLowrankPoint": "+9.90",
+    "FUQFiveLowNoisyMeanDir": "positive",
+    "FUQFiveLowNoisyMeanPoint": "+6.08",
+    "FUQFiveLowSharedDir": "unresolved",
+    "FUQFiveLowSharedPoint": "-0.06",
+    "FUQFiveLowrankClean": "+12.26",
+    "FUQFiveLowrankCleanFlagged": "0",
+    "FUQFiveNoisyMeanClean": "-20.74",
+    "FUQFiveNoisyMeanCleanFlagged": "13",
+    "FUQFiveSharedClean": "+0.61",
+    "FUQFiveSharedCleanFlagged": "3",
+    "FUQFiveSharedEurosatHigh": "+2.53",
+    "FUQFiveSharedEurosatLow": "+3.13",
+    "FUQFourA": "conforms",
+    "FUQFourB": "conforms",
+    "FUQFourChangedA": "235",
+    "FUQFourChangedB": "1,150",
+    "FUQFourMarginA": "1.03\\times10^{-5}",
+    "FUQFourMarginB": "1.03\\times10^{-5}",
+    "FUQFourSummary": "conforms in both Follow-ups",
+    "FUQNineAllCerts": "1,800",
+    "FUQNineAllChanged": "5",
+    "FUQNineIdFour": "208",
+    "FUQNineIdFull": "211",
+    "FUQNineIdGained": "3",
+    "FUQNineIdLost": "0",
+    "FUQNineIdentity": "yes",
+    "FUQNineInputIdentity": "yes",
+    "FUQNineItems": "600",
+    "FUQNineMaxChanged": "3",
+    "FUQNineMaxId": "no correction",
+    "FUQNinePrefixIdentity": "yes",
+    "FUQOneCifar": "+0.53",
+    "FUQOneDiff": "-0.03",
+    "FUQOneEurosat": "+5.33",
+    "FUQOneLower": "+1.52",
+    "FUQOnePDirection": "$p<0.001$",
+    "FUQOnePShortfall": "$p=0.484$",
+    "FUQOnePoint": "+2.93",
+    "FUQOnePooledLower": "+0.22",
+    "FUQOnePooledPoint": "+0.97",
+    "FUQOnePooledSaved": "+1.03",
+    "FUQOnePooledUpper": "+1.75",
+    "FUQOnePooledVerdict": "reproduced",
+    "FUQOnePredicted": "reproduced",
+    "FUQOneSaved": "+2.97",
+    "FUQOneUpper": "+4.35",
+    "FUQOneVerdict": "reproduced",
+    "FUQSevenCifarLowSmoothedHi": "62.57",
+    "FUQSevenCifarLowSmoothedLo": "30.80",
+    "FUQSevenHighSmoothedHi": "96.70",
+    "FUQSevenHighSmoothedLo": "11.10",
+    "FUQSevenHighStdCAHi": "92.80",
+    "FUQSevenHighStdCALo": "5.20",
+    "FUQSevenImagenetteSmoothedHi": "99.37",
+    "FUQSevenImagenetteSmoothedLo": "91.90",
+    "FUQSevenImagenetteStdCALo": "81.43",
+    "FUQSevenLowSmoothedHi": "99.37",
+    "FUQSevenLowSmoothedLo": "10.40",
+    "FUQSevenLowStdCAHi": "98.77",
+    "FUQSevenLowStdCALo": "5.50",
+    "FUQSevenWrongOverCorrect": "9",
+    "FUQSixDsMaxCleanDrop": "3.70",
+    "FUQSixDsMaxCleanFlag": "flags",
+    "FUQSixDsMaxData": "the sealed EuroSAT holdout",
+    "FUQSixDsMaxFamilyClean": "-10.47",
+    "FUQSixDsMaxId": "the noisy-margin proposal at step 0.16",
+    "FUQSixDsMaxMag": "gain of at least the SESOI",
+    "FUQSixDsMaxPoint": "+3.73",
+    "FUQSixDsMaxSigma": "0.12",
+    "FUQSixDsMinCleanDrop": "0.81",
+    "FUQSixDsMinCleanFlag": "flags",
+    "FUQSixDsMinData": "Imagenette",
+    "FUQSixDsMinId": "the boundary-active proposal at step 0.16",
+    "FUQSixDsMinMag": "loss of at least the SESOI",
+    "FUQSixDsMinPoint": "-2.67",
+    "FUQSixDsMinSigma": "0.25",
+    "FUQSixHighEquiv": "5",
+    "FUQSixHighGain": "0",
+    "FUQSixHighIncon": "0",
+    "FUQSixHighLoss": "0",
+    "FUQSixHighMaxId": "the image half of two-sided centering at $c=0.5$",
+    "FUQSixHighMaxPoint": "+0.45",
+    "FUQSixHighMinId": "text mean-centering at $c=1$",
+    "FUQSixHighMinPoint": "-6.93",
+    "FUQSixHighN": "5",
+    "FUQSixHighNeg": "2",
+    "FUQSixHighNegativeIds": "the text half of two-sided centering at $c=1$ and the boundary-active proposal at step 0.16",
+    "FUQSixHighPos": "0",
+    "FUQSixHighPositiveIds": "none",
+    "FUQSixHighUnres": "3",
+    "FUQSixLowEquiv": "5",
+    "FUQSixLowGain": "0",
+    "FUQSixLowIncon": "0",
+    "FUQSixLowLoss": "0",
+    "FUQSixLowMaxId": "the noisy-margin proposal at step 0.16",
+    "FUQSixLowMaxPoint": "+0.50",
+    "FUQSixLowMinId": "text mean-centering at $c=1$",
+    "FUQSixLowMinPoint": "-5.60",
+    "FUQSixLowN": "5",
+    "FUQSixLowNeg": "1",
+    "FUQSixLowNegativeIds": "the text half of two-sided centering at $c=1$",
+    "FUQSixLowPos": "1",
+    "FUQSixLowPositiveIds": "the noisy-margin proposal at step 0.16",
+    "FUQSixLowUnres": "3",
+    "FUQSixMaxAbsBound": "1.37",
+    "FUQSixMaxBoth": "+0.50",
+    "FUQSixMaxUpper": "+0.68",
+    "FUQThreeA": "conforms",
+    "FUQThreeB": "conforms",
+    "FUQThreeBudgetFour": "99.9",
+    "FUQThreeBudgetLo": "44.8",
+    "FUQThreeChangedFour": "5.50",
+    "FUQThreeChangedLo": "0.21",
+    "FUQThreeExceptionsA": "0",
+    "FUQThreeExceptionsB": "0",
+    "FUQThreeHarmfulFour": "81,651",
+    "FUQThreeStepMin": "0.0025",
+    "FUQThreeSummary": "conforms in both Follow-ups, with no exception",
+    "FUQThreeUsefulFour": "85,677",
+    "FUQTwoAImage": "+1.55",
+    "FUQTwoAInter": "-0.30",
+    "FUQTwoAText": "-0.27",
+    "FUQTwoATwo": "+0.97",
+    "FUQTwoHighImage": "+0.21",
+    "FUQTwoHighInter": "+0.36",
+    "FUQTwoHighInterLower": "+0.09",
+    "FUQTwoHighInterUpper": "+0.64",
+    "FUQTwoHighText": "-0.93",
+    "FUQTwoLowImage": "+0.30",
+    "FUQTwoLowInter": "+0.19",
+    "FUQTwoLowInterLower": "-0.11",
+    "FUQTwoLowInterUpper": "+0.49",
+    "FUQTwoLowText": "-0.68",
+    "FURegHashA": "d1fbe0a89484",
+    "FURegHashB": "9a1a5c6e1a46",
+    "FURegHashC": "2359b499c96c",
+    "FURegisteredDate": "2026-09-26",
+    "FUReplicates": "100,000",
+    "FUSESOI": "2",
+    "FUSigmaHigh": "0.25",
+    "FUSigmaLow": "0.12",
+    "FUStepMax": "0.32",
+    "FUSteps": "8",
+    "FarlaCifarConfirmItems": "1,000",
+    "FarlaEurosatConfirmItems": "100",
+    "FarlaFullCW": "10.43",
+    "FarlaFullClean": "68.58",
+    "FarlaFullStdCA": "35.05",
+    "FarlaIdentityCW": "34.18",
+    "FarlaIdentityClean": "60.88",
+    "FarlaIdentityStdCA": "11.60",
+    "FarlaLowrankCEClean": "72.50",
+    "FarlaLowrankCEStdCA": "27.10",
+    "FarlaPseudoClean": "46.98",
+    "FarlaPseudoCleanDrop": "13.90",
+    "FarlaPseudoStdCA": "27.10",
+    "FarlaPseudoVsNoCorrDelta": "+15.50",
+    "FarlaPseudoVsNoCorrLower": "+13.27",
+    "FarlaPseudoVsNoCorrUpper": "+17.73",
+    "FarlaSharedDelta": "+0.15",
+    "FarlaSharedStdCA": "11.75",
+    "FarlaShots": "20",
+    "FarlaTailCW": "9.05",
+    "FarlaTailClean": "70.80",
+    "FarlaTailStdCA": "36.50",
+    "FarlaVsNoCorrDelta": "+23.45",
+    "FarlaVsNoCorrLower": "+20.25",
+    "FarlaVsNoCorrUpper": "+26.63",
+    "FarlaVsTailDelta": "-1.45",
+    "FarlaVsTailLower": "-4.05",
+    "FarlaVsTailUpper": "+1.13",
+    "FloatGateArtifact": "2.0000000000000018",
+    "FloatGateRejectedCandidates": "8",
+    "ForcedComparisonFailures": "3",
+    "GMCAgreement": "39.27",
+    "GMCAnchCA": "9.42",
+    "GMCAnchDeltaRZero": "-0.78",
+    "GMCAnchLowerRZero": "-2.77",
+    "GMCAnchUpperRZero": "+1.20",
+    "GMCClean": "47.33",
+    "GMCStdCA": "10.77",
+    "GMCStdDelta": "-0.70",
+    "GMCStdDeltaPooled": "-2.64",
+    "GMCStdDeltaRZero": "-3.30",
+    "GMCStdLower": "-2.68",
+    "GMCStdLowerRZero": "-5.28",
+    "GMCStdUpper": "+1.28",
+    "GMCStdUpperRZero": "-1.32",
+    "GRAgreement": "23.93",
+    "GRAnchCA": "11.35",
+    "GRAnchDelta": "+2.93",
+    "GRAnchLower": "+0.95",
+    "GRAnchUpper": "+4.92",
+    "GRCellsImproved": "9",
+    "GRClean": "64.92",
+    "GRStdCA": "14.43",
+    "GRStdCifarCellsNegative": "2",
+    "GRStdDelta": "+2.97",
+    "GRStdDeltaCifar": "+0.60",
+    "GRStdDeltaEurosat": "+5.33",
+    "GRStdDeltaPooled": "+1.03",
+    "GRStdLower": "+0.98",
+    "GRStdLowerSens": "+0.75",
+    "GRStdUpper": "+4.95",
+    "GRStdUpperSens": "+5.18",
+    "GRWorstCell": "ViT-L/14, EuroSAT, fold 1",
+    "GRWorstCellDrop": "4.00",
+    "GRWorstCellImages": "2",
+    "KishDesignEffect": "3.025",
+    "NoCorrAbstain": "18.78",
+    "NoCorrAgreement": "21.92",
+    "NoCorrAnchCA": "8.42",
+    "NoCorrClean": "60.88",
+    "NoCorrSmoothed": "22.57",
+    "NoCorrStdCA": "11.47",
+    "NthreeCPfive": "4 of 4 (pass)",
+    "NthreeCPfivePositive": "4",
+    "NthreeCPfiveRhoHi": "+0.97",
+    "NthreeCPfiveRhoLo": "+0.62",
+    "NthreeCPfiveVerdict": "pass",
+    "NthreeCPfourA": "0.0028 (pass)",
+    "NthreeCPfourAMax": "0.0028",
+    "NthreeCPfourAVerdict": "pass",
+    "NthreeCPnine": "two-sided c=1: 63,593 useful / 64,018 harmful; rank-8 adapter: 300,347 useful / 65,713 harmful",
+    "NthreeCPnineLowrankHarmful": "65,713",
+    "NthreeCPnineLowrankUseful": "300,347",
+    "NthreeCPnineTwoSidedHarmful": "64,018",
+    "NthreeCPnineTwoSidedUseful": "63,593",
+    "NthreeCPone": "0",
+    "NthreeCPseven": "947",
+    "NthreeCPsevenCandidates": "18",
+    "NthreeCPsevenPositions": "2,600",
+    "NthreeCPsevenUnattainableHi": "1,653",
+    "NthreeCPsevenUnattainableLo": "0",
+    "NthreeCPsevenUndeterminedHi": "1,653",
+    "NthreeCPsevenUndeterminedLo": "0",
+    "NthreeCPtwoExceptions": "0",
+    "NthreeCPtwoFlips": "35",
+    "NthreeCPtwoMismatch": "2.20\\times10^{-7}",
+    "NthreeCPtwoResidual": "7.65\\times10^{-8}",
+    "PartAbstain": "821",
+    "PartAnchorMismatch": "1,688",
+    "PartAnchoredCorrect": "433",
+    "PartCertifiedCorrect": "499",
+    "PartCertifiedWrong": "706",
+    "PartCorrectBelowRadius": "303",
+    "PartWrongClass": "1,677",
+    "RangeAgreementHi": "40.4",
+    "RangeAgreementLo": "2.0",
+    "RangeCleanHi": "75.4",
+    "RangeCleanLo": "42.0",
+    "RangeSmoothedHi": "43.0",
+    "RangeSmoothedLo": "12.0",
+    "RangeTopClassHi": "84.0",
+    "RangeTopClassLo": "5.4",
+    "RangeZeroRadiusHi": "98.0",
+    "RangeZeroRadiusLo": "62.8",
+    "SavedAnchCA": "8.43",
+    "SavedClean": "61.08",
+    "SavedStdCA": "11.30",
+    "SavedStdDelta": "-0.17",
+    "SavedStdDeltaPooled": "-0.03",
+    "SavedStdLower": "-2.15",
+    "SavedStdUpper": "+1.82",
+    "SelectedComparator": "chowers\\_exact\\_projected\\_gap\\_\\_coefficient\\_0.5",
+    "StdAnchGapMax": "3.08",
+    "StdAnchGapMin": "1.35"
+  },
+  "schema_version": "satml2027.paper_assets.v1",
+  "tables": [
+    "fig_followup_curves_axis.tex",
+    "fig_followup_curves_high.dat",
+    "fig_followup_curves_low.dat",
+    "fig_followup_forest_axis.tex",
+    "fig_followup_forest_primary.dat",
+    "fig_followup_forest_shared.dat",
+    "fig_followup_forest_supervised.dat",
+    "fig_followup_outcomes.dat",
+    "fig_followup_outcomes_axis.tex",
+    "table_ext_contrasts.tex",
+    "table_ext_regime.tex",
+    "table_extension.tex",
+    "table_family_r025.tex",
+    "table_farla.tex",
+    "table_followup.tex",
+    "table_followup_datasets.tex",
+    "table_followup_design.tex",
+    "table_followup_registered.tex",
+    "table_followup_steps.tex",
+    "table_grclip_cells.tex",
+    "table_n3c.tex",
+    "table_partition.tex"
+  ]
+}

@@ -1,0 +1,44 @@
+% Pipeline schematic (D-146): where the adversary, the noise and each registered operator family act. No data.
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize,
+  box/.style={draw=black!70, rounded corners=2pt, align=center, inner sep=2.4pt, minimum height=11.5mm, fill=white},
+  op/.style={box, fill=orange!12, draw=orange!75!black},
+  sup/.style={box, fill=blue!6, draw=blue!60!black, dashed},
+  cert/.style={box, fill=green!8, draw=green!45!black},
+  arr/.style={-{Stealth[length=3.2pt]}, semithick},
+  note/.style={align=center, font=\tiny, text=black!70},
+  node distance=3.2mm,
+]
+% row 1: the certified path of one input
+\node[box] (in) {model input\\ $x\in[0,1]^{3\times224\times224}$\\ adversary: $x+\delta$, $\lVert\delta\rVert_2<r$};
+\node[box, right=of in] (noise) {Gaussian noise\\ $\varepsilon_i\sim\mathcal N(0,\sigma^2 I)$\\ draws $i=1,\dots,n$};
+\node[box, right=of noise] (enc) {CLIP image\\ encoder\\ feature $z_i$};
+\node[op, right=of enc] (imgop) {image side\\ $z'_i=\Normalize(z_i-c\,\mu_I)$\\ {\tiny (image half)}};
+\node[box, right=of imgop] (vote) {hard-label vote\\ of draw $i$\\ $\argmax_k\langle z'_i,t'_k\rangle$};
+\node[cert, right=of vote] (cert) {counts over $n$ draws\\ Clopper--Pearson $p_L$\\ $R=\sigma\,\Phi^{-1}(p_L)$, or abstain};
+\foreach \a/\b in {in/noise, noise/enc, enc/imgop, imgop/vote, vote/cert} {\draw[arr] (\a) -- (\b);}
+% row 2: prototypes and the operators that replace them
+\coordinate (row2) at ($(in.south)+(0,-7mm)$);
+\node[box, anchor=north] (txt) at (row2 -| enc) {class prompts\\ CLIP text encoder\\ prototypes $t_k$};
+\node[op, anchor=north west, right=of txt.north east, anchor=north west] (textop) {text side, one common $w$ for all classes\\
+  $t'_k=\Normalize(t_k+w)$\\
+  {\tiny mean-centering $w=-c(\mu_T-\mu_I)$; text half $w=-c\,\mu_T$}\\
+  {\tiny projected gap $w=c\,p$; boundary-active and noisy-margin $w=\eta u$}};
+\node[sup, anchor=north west, right=of textop.north east, anchor=north west] (sup) {supervised controls\\ (use labels): rank-8 adapter,\\ class means, few-shot prompts,\\ learned shared $w$};
+\draw[arr] (txt.east |- textop.west) -- (textop.west);
+\draw[arr] (textop.north) -- ++(0,2mm) -| ($(vote.south)+(-2mm,0)$);
+\draw[arr, dashed, blue!60!black] (sup.north) -- ++(0,3.4mm) -| ($(vote.south)+(2mm,0)$);
+\node[note, above=0.8mm of noise] {noise and $\delta$ act before channel standardization};
+\node[note, above=0.8mm of imgop] {two-sided centering = text half + image half};
+\end{tikzpicture}
+\caption{Where each registered operator acts. The adversary's perturbation
+$\delta$ and the Gaussian noise live in the $224\times224$ model-input space.
+Every shared text-side operator translates all prototypes by one common vector $w$
+before renormalization, so by Proposition~\ref{prop:flip} it can change a
+draw's vote only through the renormalization factors; image-side centering
+changes the feature itself. The supervised controls (dashed) use labels; the
+class-specific ones bound what is recoverable outside the shared family.}
+\label{fig:pipeline}
+\end{figure*}

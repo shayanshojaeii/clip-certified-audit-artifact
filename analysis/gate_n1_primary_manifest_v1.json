@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-09-15",
+  "final_test_accessed": false,
+  "new_sampling": false,
+  "purpose": "Primary Gate-N1 metric-semantics audit pending independent review",
+  "schema_version": "negative_paper.gate_n1_manifest.v1",
+  "status": "PRIMARY_PENDING_INDEPENDENT_REVIEW",
+  "files": [
+    {
+      "bytes": 13794,
+      "path": "scripts/audit_negative_paper_scientific_soundness.py",
+      "sha256": "ADF6B9C2675732A316E71D4B7825437382808BD63AFA9A9F4B320457F5D9F064"
+    },
+    {
+      "bytes": 2256,
+      "path": "tests/test_negative_paper_scientific_soundness_audit.py",
+      "sha256": "0146DEF9869AEAE9B5936581FFF9B18938097AC0BD98DF7DD0A7E6C309806573"
+    },
+    {
+      "bytes": 437279,
+      "path": "artifacts/negative_paper/exp017_scientific_soundness_audit_v1.json",
+      "sha256": "1E8676E0A999C4BBA2130106BDFE786DC082F803573929CE5701BE48928349B0"
+    },
+    {
+      "bytes": 5323,
+      "path": "scripts/generate_phase3_negative_results_tex.py",
+      "sha256": "3D641BDC62434A7A3D113608EF17285A29BFC751E6C06261D749F9AB145E13C9"
+    },
+    {
+      "bytes": 1010,
+      "path": "tests/test_generate_phase3_negative_results_tex.py",
+      "sha256": "8F03C44696F11430A8DE33104A3E52358EAD5EA54E786242FF9EED1727E58892"
+    },
+    {
+      "bytes": 3216,
+      "path": "paper/iclr2027-template/iclr2027/sections/generated_exp017_negative_results.tex",
+      "sha256": "4AD3D9C4E6505A7611157F7335192F814E5A406EA95BAF0B48EBE32624FB7FA3"
+    },
+    {
+      "bytes": 19661,
+      "path": "research/NEGATIVE_RESULTS_PAPER_SCIENTIFIC_RED_TEAM.md",
+      "sha256": "74DB480406C95202832ABAE4F587E03C05C83920769EC9B9EA664A0FA9B6F0CB"
+    },
+    {
+      "bytes": 10379,
+      "path": "research/NEGATIVE_RESULTS_PAPER_PLAN.md",
+      "sha256": "B53B828CDAD73AB55005D803FDEDF42AC6DFCB7D14493EB1B5B46A5DCC61ACC4"
+    },
+    {
+      "bytes": 4203,
+      "path": "research/NEGATIVE_PAPER_GATE_N1_REVIEW_GUIDE.md",
+      "sha256": "F239F6F80E28E2811F7707BC01EAFD5DE78B32361A04234346D360E1A6202E3A"
+    }
+  ]
+}

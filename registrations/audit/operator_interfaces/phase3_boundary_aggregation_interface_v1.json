@@ -1,0 +1,16 @@
+{
+  "schema_version": "phase3.aggregated_boundary_direction.v1",
+  "status": "IMPLEMENTATION_ONLY_NO_SCIENTIFIC_SAMPLING",
+  "candidate_id": "boundary_active_uniform_sample_candidate_v1",
+  "allowed_split_role": "calibration_development",
+  "final_test_access": false,
+  "consumed_gate2_candidates": "must_be_listed_in_and_excluded_by_a_hash_bound_manifest",
+  "aggregation_rule": "uniform_mean_of_unit_sample_local_maximin_directions",
+  "sample_order": "canonical_lexicographic_sample_id_order",
+  "implicit_gradient_magnitude_weighting": false,
+  "cancellation_tolerance": 1e-10,
+  "cancellation_action": "return_not_deployable_and_do_not_invent_a_direction",
+  "output_scope": "one_common_text_translation_candidate",
+  "interpretation": "calibration_only_candidate_not_a_certificate",
+  "scientific_sampling_authorized": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "phase3.gap_sweep_interface.v1",
+  "status": "IMPLEMENTATION_ONLY_NOT_APPROVED_FOR_SAMPLING",
+  "coefficient_semantics": {
+    "negative": "intended_raw_gap_increase",
+    "positive": "intended_raw_gap_decrease",
+    "pairing": "for_each_positive_magnitude_use_exact_negative_and_positive_coefficients",
+    "zero": "represented_by_no_correction_not_repeated_in_sweep"
+  },
+  "scientific_magnitude_grid": "MUST_BE_FROZEN_IN_REVIEWED_PHASE3_EXPERIMENT_CONFIG",
+  "required_measurements_after_normalization": [
+    "actual_global_gap_vector_and_norm",
+    "clean_predictions_and_accuracy",
+    "all_fss_geometry_and_switches",
+    "fresh_cohen_selection_and_confirmation"
+  ],
+  "sampling": {
+    "authorized": false,
+    "reason": "No coefficient grid or exclusion-aware calibration split has been independently approved"
+  }
+}

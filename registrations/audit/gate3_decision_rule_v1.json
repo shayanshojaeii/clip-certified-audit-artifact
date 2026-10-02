@@ -1,0 +1,54 @@
+{
+  "schema_version": "phase3.gate3_decision_rule.v1",
+  "status": "FROZEN_BEFORE_EXP017_RESULTS",
+  "data_role": "calibration_validation_only",
+  "expected_models": [
+    "openai-clip-vit-b32-quickgelu",
+    "openai-clip-vit-l14-quickgelu"
+  ],
+  "expected_datasets": [
+    "cifar100",
+    "eurosat"
+  ],
+  "expected_folds": [0, 1, 2],
+  "expected_cell_count": 12,
+  "primary_metric": "certified_accuracy_at_pixel_l2_radius_0.25",
+  "numeric_comparison": "strict_full_precision_no_rounding_no_postoutcome_tolerance",
+  "g3_1": {
+    "criterion": "selected_proposal_macro_primary_metric_strictly_greater_than_selected_global_mean_centering",
+    "ordinary_gap_reduction_baseline": "global_mean_centering"
+  },
+  "g3_2": {
+    "criterion": "selected_proposal_macro_primary_metric_strictly_greater_than_each_control_summary",
+    "required_control_summaries": [
+      "cellwise_boundary_inactive",
+      "sign_reversed",
+      "uniform_mean_over_three_seeded_random_norm_matched_controls"
+    ],
+    "random_seed_count": 3,
+    "random_aggregation": "average_the_three_seed_metrics_within_each_cell_then_uniform_macro_average_over_12_cells"
+  },
+  "g3_3": {
+    "clean_accuracy_drop_reference": "same_cell_no_correction",
+    "macro_drop_percentage_points_max": 1.0,
+    "any_cell_drop_percentage_points_max": 2.0
+  },
+  "g3_4": {
+    "reference": "selected_global_mean_centering",
+    "criterion": "proposal_minus_reference_primary_metric_is_strictly_positive_for_each_of_the_two_model_marginals_and_each_of_the_two_dataset_marginals",
+    "model_marginal": "uniform_average_over_both_datasets_and_all_three_folds",
+    "dataset_marginal": "uniform_average_over_both_models_and_all_three_folds"
+  },
+  "g3_5": {
+    "final_test_accessed_must_equal": false,
+    "selection_and_control_data_role": "calibration_validation",
+    "require_hash_verified_exp016_exp017_exp018_chains": true,
+    "require_independent_result_reconstruction": true
+  },
+  "decision": {
+    "pass_requires_all": ["G3.1", "G3.2", "G3.3", "G3.4", "G3.5"],
+    "failure_action": "theory_and_negative_audit_pivot_no_grid_sigma_prompt_threshold_or_dataset_search",
+    "validation_interpretation": "preregistered_go_no_go_screen_not_unbiased_confirmatory_inference",
+    "final_test_access_authorized": false
+  }
+}

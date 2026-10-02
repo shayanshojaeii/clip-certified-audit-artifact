@@ -1,0 +1,90 @@
+{
+  "authority": {
+    "exp018_authorized": false,
+    "final_test_authorized": false,
+    "gate_n3_paper_integration_authorized": false,
+    "new_sampling_authorized": false,
+    "nr0_authorized": false
+  },
+  "comparison_tolerance": 1e-12,
+  "construction": {
+    "encoder": "f(u)=Normalize(z0+u(e1+kappa*e2))",
+    "global_gap_convention": "prototype_mean_minus_clean_image_feature",
+    "input_dimension": 1,
+    "prototype_dimension": 3,
+    "prototype_system_1": "t_plus=gamma*e3+s*e1; t_minus=gamma*e3-s*e1",
+    "prototype_system_2": "t_plus=gamma*e3+s*e2; t_minus=gamma*e3-s*e2",
+    "smoothing_noise": "u=epsilon~Normal(0,sigma^2)"
+  },
+  "finite_sample_semantics": {
+    "claim": "The proposition concerns population Cohen radii. A finite Monte Carlo certificate replaces the unknown class probability by an exact lower confidence bound and is random and conservative.",
+    "must_not_call_population_radius_a_finite_sample_result": true
+  },
+  "parameter_cases": [
+    {
+      "b": 0.3,
+      "d": 0.8,
+      "gamma": 0.4,
+      "id": "witness_kappa_gt_1",
+      "kappa": 2.0,
+      "sigma": 0.25
+    },
+    {
+      "b": 0.7,
+      "d": 0.2,
+      "gamma": 0.6,
+      "id": "witness_kappa_lt_1",
+      "kappa": 0.5,
+      "sigma": 0.5
+    },
+    {
+      "b": 0.2,
+      "d": 1.1,
+      "gamma": 0.8,
+      "id": "witness_small_q",
+      "kappa": 3.0,
+      "sigma": 0.4
+    }
+  ],
+  "proposition_id": "N3.COHEN.NONIDENTIFICATION.V1",
+  "required_engine_separation": {
+    "cohen_terms": [
+      "hard-label class probability",
+      "Gaussian smoothing",
+      "population radius"
+    ],
+    "forbidden_in_cohen_proposition": [
+      "D^*",
+      "tau^*",
+      "FCSB",
+      "FSS stability/geometry decomposition",
+      "smoothed-embedding Lipschitz radius"
+    ],
+    "fss_role": "separate exact corollary and prior-work diagnostic",
+    "pautov_role": "separate prior-work embedding certificate; not used in this proposition"
+  },
+  "schema_version": "negative_paper.gate_n3_theory.v1",
+  "source_versions": {
+    "chowers": {
+      "local_path": "research/sources/chowers_arxiv_2603.29080v2.pdf",
+      "sha256": "BB0D55BEA806F474BDFFB2149151062B17FA201634951E281AEAF89200BE0276",
+      "version": "arXiv:2603.29080v2"
+    },
+    "cohen": {
+      "local_path": "research/sources/randomized_smoothing/cohen_icml2019.pdf",
+      "sha256": "409715D2AE1CD52D39B0A78ED1227EDBDAA575BE76DD40AB66B9869E97DE4551",
+      "version": "ICML 2019 PMLR v97"
+    },
+    "fss": {
+      "local_path": "research/sources/fss/arxiv_2601.16200v3.pdf",
+      "sha256": "63F8C31E08AB0716AC5CAD947974FF2A7786DBAB181950DC4A77A30AF641EA35",
+      "version": "arXiv:2601.16200v3"
+    },
+    "pautov": {
+      "local_path": "research/sources/smoothed_embeddings/pautov_neurips2022.pdf",
+      "sha256": "C85AEEBC51F4A357E6D9C7429115A520401B3D335409C8BC470EC5C501F54492",
+      "version": "NeurIPS 2022"
+    }
+  },
+  "status": "PENDING_INDEPENDENT_GATE_N3_REVIEW"
+}

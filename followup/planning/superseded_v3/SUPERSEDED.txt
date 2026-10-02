@@ -1,0 +1,1 @@
+This is the V3 Q1 planning file (schema satml2027ext.q1_planning.v1, SHA-256 f261ae07a6c70b0d4b61080feb11dcb20f59a1bf25266932fe9d8962462d8a5a), bound by the superseded V3 021A registration. It is kept unchanged. The V4 planning file (schema v2: sharp variance bound, rounded floats, portability contract) replaces it one level up (research/EXP021_V4_AMENDMENT_2026-09-26.md, D-136).

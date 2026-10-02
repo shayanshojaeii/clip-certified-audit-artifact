@@ -1,0 +1,34 @@
+{
+  "schema_version": "phase3.prototype_intervention_config.v1",
+  "status": "IMPLEMENTATION_ONLY_NOT_APPROVED_FOR_SAMPLING",
+  "intervention": {
+    "intervention_id": "mean_centering_v1",
+    "coefficient": 1.0,
+    "normalization_tolerance": 0.00002,
+    "minimum_raw_norm": 1e-12
+  },
+  "calibration_statistics_contract": {
+    "image_mean": "class_balanced_mean_of_unit_image_embeddings_from_calibration_only",
+    "text_mean": "uniform_mean_of_unit_class_text_prototypes",
+    "global_gap": "mu_text_minus_mu_image",
+    "translation": "prototype_minus_coefficient_times_global_gap",
+    "finite_update": "renormalize_each_translated_prototype",
+    "post_normalization_mean_equality_guaranteed": false,
+    "required_provenance": [
+      "calibration_split_manifest_hash",
+      "excluded_gate2_candidate_manifest_hash",
+      "image_mean_tensor_hash",
+      "class_weight_tensor_hash",
+      "prototype_bank_hash"
+    ]
+  },
+  "engine_contract": {
+    "fss": "reuse_only_exact_image_score_cache_then_recompute_all_geometry",
+    "cohen": "fresh_independent_class_selection_and_confirmation_required",
+    "forbidden": "do_not_transfer_fss_tau_or_attribution_to_cohen_radius"
+  },
+  "sampling": {
+    "authorized": false,
+    "reason": "Phase-3 split and complete scientific configuration require independent review"
+  }
+}

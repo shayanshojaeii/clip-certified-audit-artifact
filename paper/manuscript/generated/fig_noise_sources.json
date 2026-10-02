@@ -1,0 +1,65 @@
+{
+  "generator": "scripts/make_satml2027_noise_figure.py",
+  "open_clip": "3.3.0",
+  "transform": [
+    "Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)",
+    "CenterCrop(size=(224, 224))",
+    "MaybeConvertMode()",
+    "MaybeToTensor()"
+  ],
+  "display_seed": 20260928,
+  "sigmas": [
+    0.0,
+    0.12,
+    0.25,
+    0.5
+  ],
+  "rule": "first EXP-021B development item in registered order of a fixed class per dataset: class 0 for CIFAR-100 and EuroSAT, class 8 (golf ball) for Imagenette because the first class-0 image shows an identifiable person",
+  "images": [
+    {
+      "dataset": "cifar100",
+      "cell_dataset_id": "cifar100_test",
+      "item_id": "cifar100-train-41774",
+      "label": 0,
+      "source_split": "cifar100_reserved_not_accessed",
+      "source": "cifar-100-python.tar.gz:cifar-100-python/train[41774]",
+      "source_sha256": "735e79b04f092ca3d2e6d07f368c0a7d70d48c48d28865950cc24454cf45129b",
+      "tiles": [
+        "fig_noise_cifar100_0.png",
+        "fig_noise_cifar100_1.png",
+        "fig_noise_cifar100_2.png",
+        "fig_noise_cifar100_3.png"
+      ]
+    },
+    {
+      "dataset": "eurosat",
+      "cell_dataset_id": "eurosat_sealed",
+      "item_id": "eurosat/2750/AnnualCrop/AnnualCrop_927.jpg",
+      "label": 0,
+      "source_split": "eurosat_reserved_not_accessed",
+      "source": "eurosat/2750/AnnualCrop/AnnualCrop_927.jpg",
+      "source_sha256": "2d66609e865df931891740e98718ac0d0ff4078e53cecd8b2daa9efad788bc5b",
+      "tiles": [
+        "fig_noise_eurosat_0.png",
+        "fig_noise_eurosat_1.png",
+        "fig_noise_eurosat_2.png",
+        "fig_noise_eurosat_3.png"
+      ]
+    },
+    {
+      "dataset": "imagenette",
+      "cell_dataset_id": "imagenette",
+      "item_id": "imagenette2-320/train/n03445777/n03445777_13366.JPEG",
+      "label": 8,
+      "source_split": "imagenette_train",
+      "source": "imagenette2-320/train/n03445777/n03445777_13366.JPEG",
+      "source_sha256": "fd02c9aaf24ead09422afaa120bda501388d95c2eed49a418d534812f31d576e",
+      "tiles": [
+        "fig_noise_imagenette_0.png",
+        "fig_noise_imagenette_1.png",
+        "fig_noise_imagenette_2.png",
+        "fig_noise_imagenette_3.png"
+      ]
+    }
+  ]
+}

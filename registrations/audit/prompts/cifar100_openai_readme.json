@@ -1,0 +1,9 @@
+{
+  "prompt_id": "cifar100-openai-readme-single-v1",
+  "dataset": "CIFAR100",
+  "templates": ["a photo of a {class_name}"],
+  "humanize_underscores": false,
+  "aggregation": "normalize_each_prompt_then_mean_then_normalize",
+  "reference_top1_range": [0.60, 0.66],
+  "notes": "Matches the single-template structure in the OpenAI CLIP README; torchvision CIFAR-100 class strings are preserved exactly."
+}

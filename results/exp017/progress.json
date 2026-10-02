@@ -1,0 +1,20 @@
+{
+  "active_cell_id": "openai-clip-vit-l14-quickgelu__eurosat__fold2",
+  "active_item_count": 50,
+  "active_item_position": 50,
+  "completed_cell_ids": [
+    "openai-clip-vit-b32-quickgelu__cifar100__fold0",
+    "openai-clip-vit-b32-quickgelu__cifar100__fold1",
+    "openai-clip-vit-b32-quickgelu__cifar100__fold2",
+    "openai-clip-vit-b32-quickgelu__eurosat__fold0",
+    "openai-clip-vit-b32-quickgelu__eurosat__fold1",
+    "openai-clip-vit-b32-quickgelu__eurosat__fold2",
+    "openai-clip-vit-l14-quickgelu__cifar100__fold0",
+    "openai-clip-vit-l14-quickgelu__cifar100__fold1",
+    "openai-clip-vit-l14-quickgelu__cifar100__fold2",
+    "openai-clip-vit-l14-quickgelu__eurosat__fold0",
+    "openai-clip-vit-l14-quickgelu__eurosat__fold1"
+  ],
+  "experiment_id": "EXP-20260906-017",
+  "final_test_accessed": false
+}

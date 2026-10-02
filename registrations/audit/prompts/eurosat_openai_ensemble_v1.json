@@ -1,0 +1,26 @@
+{
+  "prompt_id": "eurosat-openai-three-template-ensemble-v1",
+  "dataset": "EuroSAT",
+  "templates": [
+    "a centered satellite photo of {class_name}.",
+    "a centered satellite photo of a {class_name}.",
+    "a centered satellite photo of the {class_name}."
+  ],
+  "class_name_by_torchvision_folder": {
+    "AnnualCrop": "annual crop land",
+    "Forest": "forest",
+    "HerbaceousVegetation": "brushland or shrubland",
+    "Highway": "highway or road",
+    "Industrial": "industrial buildings or commercial buildings",
+    "Pasture": "pasture land",
+    "PermanentCrop": "permanent crop land",
+    "Residential": "residential buildings or homes or apartments",
+    "River": "river",
+    "SeaLake": "lake or sea"
+  },
+  "humanize_underscores": false,
+  "aggregation": "normalize_each_prompt_then_mean_then_normalize",
+  "source": "OpenAI CLIP data/prompts.md EuroSAT section",
+  "source_url": "https://github.com/openai/CLIP/blob/main/data/prompts.md",
+  "notes": "Prototype order follows torchvision EuroSAT folder order; display names and templates are the OpenAI CLIP EuroSAT definitions."
+}

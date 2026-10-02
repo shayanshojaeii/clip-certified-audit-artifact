@@ -1,0 +1,38 @@
+{
+  "cells": {
+    "openai-clip-vit-b32-quickgelu__cifar100__sigma0.25": {
+      "bank_count": 22,
+      "item_count": 1000,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "shard_count": 1
+    },
+    "openai-clip-vit-b32-quickgelu__eurosat__sigma0.25": {
+      "bank_count": 22,
+      "item_count": 300,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "shard_count": 1
+    },
+    "openai-clip-vit-l14-quickgelu__cifar100__sigma0.25": {
+      "bank_count": 22,
+      "item_count": 1000,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "5d1c4112ff044f364e5811cf3ece728b64f2417941856143f3fcc0596aab3c52",
+      "shard_count": 1
+    },
+    "openai-clip-vit-l14-quickgelu__eurosat__sigma0.25": {
+      "bank_count": 22,
+      "item_count": 300,
+      "item_ids_match_registration": true,
+      "item_ids_sha256_ordered": "a790bd89e4e98c0927a4271abf193f758a9d4ea6eca00d4239adab007ad2be88",
+      "shard_count": 1
+    }
+  },
+  "complete": true,
+  "experiment_id": "N3C-20260920-V3",
+  "final_test_access": false,
+  "missing": [],
+  "registration_sha256": "96fd42f268d95b48b1cfbffb9afcd28c9dc4cb5c91ce46f17d4b53d75c0f2622",
+  "schema_version": "satml2027.merge_report.v1"
+}

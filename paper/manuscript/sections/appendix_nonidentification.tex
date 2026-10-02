@@ -1,0 +1,101 @@
+\section{Clean-Gap Non-Identification Constructions}
+\label{app:nonident}
+
+This appendix records the Cohen construction of Section~\ref{sec:nonident} and
+a companion example for a feature-space certificate. Both are scoping remarks:
+they show that clean summaries cannot determine a certificate, not that any
+correction fails.
+
+\subsection{Binary Cohen construction}
+\label{app:cohen}
+
+\begin{proposition}[Clean-gap non-identification for Cohen smoothing]
+\label{prop:nonident}
+Let $0<\gamma<1$, $s=\sqrt{1-\gamma^2}$, $b,d>0$, and
+$\kappa>0$ with $\kappa\neq1$.  Put
+\[
+ z_0=\frac{(b,b,d)}{\sqrt{2b^2+d^2}},\qquad
+ q=\frac{b}{\sqrt{2b^2+d^2}},
+\]
+and use the shared scalar-input encoder
+\[
+ f(u)=\Normalize\!\left(z_0+u(e_1+\kappa e_2)\right).
+\]
+Consider the two binary unit-prototype banks
+\[
+ t_{1,\pm}=\gamma e_3\pm s e_1,
+ \qquad
+ t_{2,\pm}=\gamma e_3\pm s e_2.
+\]
+Let $P_X$ be any common fixed image-reference distribution for which
+$\mu_I=\mathbb E_{X\sim P_X}[f(X)]$ exists, and define the global gap as the
+prototype mean minus $\mu_I$.  The banks have the same prototype mean and
+hence the same complete global-gap vector.  At $u=0$ they also have the same
+positive clean pairwise margin and within-bank prototype correlation.  Under
+$u=\epsilon\sim\mathcal N(0,\sigma^2)$, however, their population Cohen
+randomized-smoothing radii are $R_1=q$ and $R_2=q/\kappa$.  Thus these shared
+clean summaries do not identify the population Cohen radius.
+\end{proposition}
+
+\begin{proof}
+All prototypes have norm one and both bank means equal $\gamma e_3$.  Because
+the encoder and $P_X$ are common, $\mu_I$ is common, so both global gaps equal
+$\gamma e_3-\mu_I$.  Their clean positive margins at $u=0$ are both $2sq>0$,
+and both prototype correlations equal $\gamma^2-s^2$.  Since normalization has
+a positive common denominator, bank one predicts the positive class exactly
+when $q+u>0$, whereas bank two does so exactly when $q+\kappa u>0$.  Hence
+their positive-class probabilities are $p_1=\Phi(q/\sigma)$ and
+$p_2=\Phi(q/(\kappa\sigma))$.  In the binary case the population Cohen radius
+is $\frac{\sigma}{2}[\Phi^{-1}(p)-\Phi^{-1}(1-p)]=\sigma\Phi^{-1}(p)$, giving
+the stated radii.  The unnormalized encoder vector has constant third
+coordinate $d/\sqrt{2b^2+d^2}>0$, so the normalization is globally defined and
+the encoder is smooth and globally Lipschitz.
+\end{proof}
+
+\paragraph{Reading the construction honestly}
+The reflection that swaps $e_1$ and $e_2$ fixes $z_0$ and maps bank one onto
+bank two, so the clean query and the two banks are reflection-related: the
+prototype geometry and the listed clean summaries at $u=0$ coincide, and the
+global-gap vectors coincide because the two systems share the image mean $\mu_I$
+(one encoder) and both bank means equal $\gamma e_3$; the reflection itself need
+not fix $\mu_I$. This does not make arbitrary clean statistics of the two
+systems equal, because the shared encoder is not reflected. It responds to the
+input along $e_1+\kappa e_2$, and at $u=0$ the derivatives of the two banks'
+pairwise margins differ by $2s(1-\kappa)\neq0$. This local response, relative to
+each decision boundary, is the quantity the listed summaries omit.
+Moreover $R_1=q$ for every $\sigma$: in this one-dimensional setting the
+smoothed classifier equals the base threshold classifier and the radius is the
+distance to the threshold. The proposition therefore says precisely that the
+listed clean feature-space summaries do not contain the encoder's local
+response, which is all the audit needs it to say.
+
+\paragraph{Class-balanced reference set}
+For a finite empirical convention, take $u_+=0$ and $u_-=-L$ with
+$L>\max\{q,q/\kappa\}$, label them positive and negative, and weight the two
+classes uniformly.  Both banks classify both reference inputs correctly and
+share $\mu_I=[f(0)+f(-L)]/2$; hence their class-balanced global-gap vectors are
+identical while the certified query at $u=0$ retains the unequal radii. The
+released tests verify the probabilities, radii, Lipschitz bound and reference
+set numerically, including an encoder-level Monte Carlo check.
+
+\paragraph{Finite-sample distinction}
+The proposition concerns population class probabilities.  A finite-sample
+Cohen certificate replaces the unknown selected-class probability by an exact
+one-sided confidence lower bound and is therefore conservative and random.
+
+\subsection{Feature-space certificate example}
+\label{app:fss}
+
+The feature-space smoothing certificate of~\cite{xia2026feature}, an
+under-review preprint, certifies a prototype prediction from a Gaussian
+robustness score of the image feature and a geometric threshold of the
+prototype bank. A scalar-input step encoder with two prototype banks that are
+rotations of one another holds the complete global gap and the exact
+population robustness score fixed while the geometric threshold, and hence the
+certified lower bound, varies with the rotation angle. In that example the
+smoothed decision itself is the same for every angle, so the true robust
+radius does not change; only the certificate's slack does. We record the
+example as certificate-bound variation and do not use it to make any claim
+about robustness. Neither construction transfers any feature-space threshold
+or decomposition to the Cohen certificate, and the smoothed-embedding
+certificates of~\cite{pautov2022smoothed} are a third, separate engine.

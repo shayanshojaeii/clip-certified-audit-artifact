@@ -1,0 +1,9 @@
+{
+  "generator": "scripts/generate_satml2027_figure_data.py",
+  "radius": 0.25,
+  "common_critical_value_points": 1.9833333333333332,
+  "sources": {
+    "artifacts/negative_paper/exp017_scientific_soundness_audit_v1.json": "1e8676e0a999c4bba2130106bdfe786dc082f803573929ce5701be48928349b0",
+    "artifacts/negative_paper/gate_n2_simultaneous_analysis_v1.json": "ea4e48028d08d7b134a5ad6edfcc8670512b3c23c88602f4d2879d6399b6545e"
+  }
+}

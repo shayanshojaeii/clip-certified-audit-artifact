@@ -1,0 +1,448 @@
+{
+  "approval_sha256": "0ed5e81fff4693b9b59c047c23b959eb39b66b9650669b8d1421fbfeabb11f4e",
+  "experiment_id": "EXP-20260921-021C",
+  "note": "a 100,000-draw Clopper-Pearson bound is still a finite-sample lower confidence bound, not the population probability",
+  "questions": {
+    "Q9": {
+      "certificate_input_identity_everywhere": true,
+      "confirmation_prefix_identity_everywhere": true,
+      "prefix_identity_exact_everywhere": true,
+      "prefix_identity_rule": "two identities are reported separately (V4, audit E4): the confirmation prefix (items, confirmation seeds, first 4,096 confirmation counts) and the full certificate input (labels, selection seeds, selection counts and selected classes, confirmation seeds, raw predictions); a disagreement is reported as a determinism finding (registered), never hidden",
+      "prefix_identity_with_021b": [
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certificate_input_identity": true,
+          "confirmation_prefix_identity": true,
+          "exact": true,
+          "items": 100,
+          "parent_cell_id": "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25",
+          "prefix_equal_to_021b_counts": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "raw_predictions_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "same_confirmation_seeds": true,
+          "same_items": true,
+          "same_labels": true,
+          "same_selection_seeds": true,
+          "selected_classes_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "selection_counts_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          }
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certificate_input_identity": true,
+          "confirmation_prefix_identity": true,
+          "exact": true,
+          "items": 100,
+          "parent_cell_id": "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25",
+          "prefix_equal_to_021b_counts": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "raw_predictions_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "same_confirmation_seeds": true,
+          "same_items": true,
+          "same_labels": true,
+          "same_selection_seeds": true,
+          "selected_classes_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "selection_counts_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          }
+        },
+        {
+          "cell_id": "openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100",
+          "certificate_input_identity": true,
+          "confirmation_prefix_identity": true,
+          "exact": true,
+          "items": 100,
+          "parent_cell_id": "openai-clip-vit-b32-quickgelu__imagenette__sigma0.25",
+          "prefix_equal_to_021b_counts": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "raw_predictions_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "same_confirmation_seeds": true,
+          "same_items": true,
+          "same_labels": true,
+          "same_selection_seeds": true,
+          "selected_classes_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "selection_counts_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          }
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certificate_input_identity": true,
+          "confirmation_prefix_identity": true,
+          "exact": true,
+          "items": 100,
+          "parent_cell_id": "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25",
+          "prefix_equal_to_021b_counts": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "raw_predictions_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "same_confirmation_seeds": true,
+          "same_items": true,
+          "same_labels": true,
+          "same_selection_seeds": true,
+          "selected_classes_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "selection_counts_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          }
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certificate_input_identity": true,
+          "confirmation_prefix_identity": true,
+          "exact": true,
+          "items": 100,
+          "parent_cell_id": "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25",
+          "prefix_equal_to_021b_counts": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "raw_predictions_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "same_confirmation_seeds": true,
+          "same_items": true,
+          "same_labels": true,
+          "same_selection_seeds": true,
+          "selected_classes_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "selection_counts_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          }
+        },
+        {
+          "cell_id": "openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100",
+          "certificate_input_identity": true,
+          "confirmation_prefix_identity": true,
+          "exact": true,
+          "items": 100,
+          "parent_cell_id": "openai-clip-vit-l14-quickgelu__imagenette__sigma0.25",
+          "prefix_equal_to_021b_counts": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "raw_predictions_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "same_confirmation_seeds": true,
+          "same_items": true,
+          "same_labels": true,
+          "same_selection_seeds": true,
+          "selected_classes_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          },
+          "selection_counts_equal_to_021b": {
+            "cohen_aligned_noisy_margin__step_0.16": 100,
+            "gr_clip_style_two_sided__coefficient_1": 100,
+            "no_correction": 100
+          }
+        }
+      ],
+      "rows": [
+        {
+          "abstained_100000": 25,
+          "abstained_4096": 27,
+          "candidate_id": "no_correction",
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certified_correct_100000": 3,
+          "certified_correct_4096": 3,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank no_correction in cell openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 20,
+          "abstained_4096": 21,
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certified_correct_100000": 4,
+          "certified_correct_4096": 4,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank gr_clip_style_two_sided__coefficient_1 in cell openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 21,
+          "abstained_4096": 23,
+          "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+          "cell_id": "openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certified_correct_100000": 5,
+          "certified_correct_4096": 4,
+          "changed": 1,
+          "gained_with_100000": 1,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 1 certificates at r = sigma changed between 4,096 and 100,000 draws for bank cohen_aligned_noisy_margin__step_0.16 in cell openai-clip-vit-b32-quickgelu__cifar100_test__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 16,
+          "abstained_4096": 25,
+          "candidate_id": "no_correction",
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certified_correct_100000": 7,
+          "certified_correct_4096": 7,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank no_correction in cell openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 14,
+          "abstained_4096": 15,
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certified_correct_100000": 11,
+          "certified_correct_4096": 11,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank gr_clip_style_two_sided__coefficient_1 in cell openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 6,
+          "abstained_4096": 7,
+          "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+          "cell_id": "openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certified_correct_100000": 10,
+          "certified_correct_4096": 10,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank cohen_aligned_noisy_margin__step_0.16 in cell openai-clip-vit-b32-quickgelu__eurosat_sealed__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 2,
+          "abstained_4096": 3,
+          "candidate_id": "no_correction",
+          "cell_id": "openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100",
+          "certified_correct_100000": 84,
+          "certified_correct_4096": 82,
+          "changed": 2,
+          "gained_with_100000": 2,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 2 certificates at r = sigma changed between 4,096 and 100,000 draws for bank no_correction in cell openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 6,
+          "abstained_4096": 6,
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "cell_id": "openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100",
+          "certified_correct_100000": 82,
+          "certified_correct_4096": 82,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank gr_clip_style_two_sided__coefficient_1 in cell openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 1,
+          "abstained_4096": 2,
+          "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+          "cell_id": "openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100",
+          "certified_correct_100000": 82,
+          "certified_correct_4096": 82,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank cohen_aligned_noisy_margin__step_0.16 in cell openai-clip-vit-b32-quickgelu__imagenette__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 33,
+          "abstained_4096": 36,
+          "candidate_id": "no_correction",
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certified_correct_100000": 17,
+          "certified_correct_4096": 17,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank no_correction in cell openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 26,
+          "abstained_4096": 28,
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certified_correct_100000": 18,
+          "certified_correct_4096": 17,
+          "changed": 1,
+          "gained_with_100000": 1,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 1 certificates at r = sigma changed between 4,096 and 100,000 draws for bank gr_clip_style_two_sided__coefficient_1 in cell openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 32,
+          "abstained_4096": 35,
+          "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+          "cell_id": "openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100",
+          "certified_correct_100000": 17,
+          "certified_correct_4096": 17,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank cohen_aligned_noisy_margin__step_0.16 in cell openai-clip-vit-l14-quickgelu__cifar100_test__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 5,
+          "abstained_4096": 7,
+          "candidate_id": "no_correction",
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certified_correct_100000": 5,
+          "certified_correct_4096": 4,
+          "changed": 1,
+          "gained_with_100000": 1,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 1 certificates at r = sigma changed between 4,096 and 100,000 draws for bank no_correction in cell openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 6,
+          "abstained_4096": 10,
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certified_correct_100000": 11,
+          "certified_correct_4096": 11,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank gr_clip_style_two_sided__coefficient_1 in cell openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 10,
+          "abstained_4096": 13,
+          "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+          "cell_id": "openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100",
+          "certified_correct_100000": 3,
+          "certified_correct_4096": 3,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank cohen_aligned_noisy_margin__step_0.16 in cell openai-clip-vit-l14-quickgelu__eurosat_sealed__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 1,
+          "abstained_4096": 2,
+          "candidate_id": "no_correction",
+          "cell_id": "openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100",
+          "certified_correct_100000": 95,
+          "certified_correct_4096": 95,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank no_correction in cell openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 1,
+          "abstained_4096": 1,
+          "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+          "cell_id": "openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100",
+          "certified_correct_100000": 94,
+          "certified_correct_4096": 94,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank gr_clip_style_two_sided__coefficient_1 in cell openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100."
+        },
+        {
+          "abstained_100000": 1,
+          "abstained_4096": 1,
+          "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+          "cell_id": "openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100",
+          "certified_correct_100000": 95,
+          "certified_correct_4096": 95,
+          "changed": 0,
+          "gained_with_100000": 0,
+          "items": 100,
+          "lost_with_100000": 0,
+          "sentence": "of 100 items, 0 certificates at r = sigma changed between 4,096 and 100,000 draws for bank cohen_aligned_noisy_margin__step_0.16 in cell openai-clip-vit-l14-quickgelu__imagenette__sigma0.25__subset100."
+        }
+      ],
+      "verdict": "descriptive"
+    }
+  },
+  "registration_sha256": "2359b499c96ca02bfa11cca10bb4d6d4c8bd4abdd4ee1854e73daa0f2958193f",
+  "run_custody_sha256": "34fa6630944b70527e1aeff672554aabb366f15fb9a938b1f53d5fe17d4c0503",
+  "schema_version": "satml2027ext.analysis.v3",
+  "source_sha256": "efae26d717de55969847aeb5241080123b5fcf68249195359034e1b24e4c101b"
+}

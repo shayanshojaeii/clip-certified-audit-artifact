@@ -1,0 +1,436 @@
+{
+  "content_sha256": "b8c0149d5f9e60c69fe7c7b94d48d484e39b8f34fadcef15e6fb129cfe585660",
+  "contrast": "gr_clip_style_two_sided__coefficient_1 minus no_correction; standard certified accuracy at r = sigma = 0.25",
+  "fixed_gain_scenarios_normal_approximation": {
+    "macro": {
+      "gain_equals_reference": {
+        "inconclusive": 0.0,
+        "not_reproduced": 0.01569451907,
+        "reproduced": 0.95,
+        "reproduced_smaller": 0.03430548029,
+        "reversed": 6.315026678e-10
+      },
+      "gain_half_reference": {
+        "inconclusive": 0.0,
+        "not_reproduced": 0.4617025738,
+        "reproduced": 0.3404698518,
+        "reproduced_smaller": 0.1977979771,
+        "reversed": 2.959728219e-05
+      },
+      "gain_zero": {
+        "inconclusive": 0.0,
+        "not_reproduced": 0.95,
+        "reproduced": 0.006808410598,
+        "reproduced_smaller": 0.0181915894,
+        "reversed": 0.025
+      },
+      "regions_points": {
+        "negative_below": -1.414022726,
+        "positive_above": 1.414022726,
+        "shortfall_below": 1.779981387
+      }
+    },
+    "pooled": {
+      "gain_equals_reference": {
+        "inconclusive": 0.1959489755,
+        "not_reproduced": 0.04999795957,
+        "reproduced": 0.7540510245,
+        "reproduced_smaller": 0.0,
+        "reversed": 2.040428895e-06
+      },
+      "gain_half_reference": {
+        "inconclusive": 0.3637011305,
+        "not_reproduced": 0.3735074757,
+        "reproduced": 0.262278929,
+        "reproduced_smaller": 0.0,
+        "reversed": 0.0005124648321
+      },
+      "gain_zero": {
+        "inconclusive": 0.13307435,
+        "not_reproduced": 0.81692565,
+        "reproduced": 0.025,
+        "reproduced_smaller": 0.0,
+        "reversed": 0.025
+      },
+      "regions_points": {
+        "negative_below": -0.7628109598,
+        "positive_above": 0.7628109598,
+        "shortfall_below": 0.3901318926
+      }
+    }
+  },
+  "fresh_draw_models": {
+    "assumption": "items and banks fixed at EXP-017's; only the Gaussian draws are fresh. The worker scores the candidate and the identity on common draws, so their outcomes on one image can be correlated in either direction: the Monte-Carlo SD is bounded by the sharp any-coupling bound; the simulated verdict probabilities assume an independent coupling and are model-based",
+    "decision_approximation": "normal regions with the saved item-bootstrap standard error: positive if x > 1.960 se; shortfall if x < reference - 1.645 se; sharp_bound_normal_verdict_probabilities put X ~ N(expected, sharp SD bound^2) in these regions",
+    "limitation": "neither model represents the post-hoc selection of the contrast among the 136 EXP-017 contrasts or software differences between the EXP-017 and EXP-021 stacks; those are what Q1 measures",
+    "plug_in": {
+      "expected_points": {
+        "macro": 2.912056222,
+        "pooled": 0.9533108934
+      },
+      "items_with_uncertain_outcome": {
+        "candidate": 30,
+        "identity": 28,
+        "rule": "certification probability in (0.001, 0.999)"
+      },
+      "model": "selected-class probability = saved vote share (binomial)",
+      "monte_carlo_sd_points": {
+        "independent_coupling_model": {
+          "macro": 0.06348519107,
+          "pooled": 0.06349659927
+        },
+        "rule": "per item, Var(C - I) <= min(p + q, 2 - p - q) - (p - q)^2 over every joint law with marginals p and q (attained by the extreme coupling); items are drawn independently of each other, so the item bounds add; the independent coupling p(1 - p) + q(1 - q) is a model value, not a bound",
+        "sharp_upper_bound_any_coupling": {
+          "macro": 0.06349242194,
+          "pooled": 0.06352049555
+        }
+      },
+      "sharp_bound_normal_verdict_probabilities": {
+        "macro": {
+          "inconclusive": 0.0,
+          "not_reproduced": 2.226266714e-123,
+          "reproduced": 1.0,
+          "reproduced_smaller": 2.064224558e-71,
+          "reversed": 0.0
+        },
+        "pooled": {
+          "inconclusive": 0.001354198858,
+          "not_reproduced": 3.787657077e-19,
+          "reproduced": 0.9986458011,
+          "reproduced_smaller": 0.0,
+          "reversed": 4.688581352e-161
+        }
+      },
+      "simulated_mean_points": {
+        "macro": 2.911555833,
+        "pooled": 0.9532287879
+      },
+      "verdict_probabilities": {
+        "macro": {
+          "inconclusive": 0.0,
+          "not_reproduced": 0.0,
+          "reproduced": 1.0,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        },
+        "pooled": {
+          "inconclusive": 0.0018,
+          "not_reproduced": 0.0,
+          "reproduced": 0.9982,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        }
+      },
+      "verdict_probabilities_basis": "model-based: simulated with the candidate and identity outcomes coupled independently"
+    },
+    "posterior_predictive": {
+      "expected_points": {
+        "macro": 2.905032142,
+        "pooled": 0.9479851974
+      },
+      "items_with_uncertain_outcome": {
+        "candidate": 48,
+        "identity": 47,
+        "rule": "certification probability in (0.001, 0.999)"
+      },
+      "model": "selected-class probability ~ Beta(k + 1, N - k + 1) posterior of the saved votes (beta-binomial); the primary planning model",
+      "monte_carlo_sd_points": {
+        "independent_coupling_model": {
+          "macro": 0.08603957584,
+          "pooled": 0.07718181699
+        },
+        "rule": "per item, Var(C - I) <= min(p + q, 2 - p - q) - (p - q)^2 over every joint law with marginals p and q (attained by the extreme coupling); items are drawn independently of each other, so the item bounds add; the independent coupling p(1 - p) + q(1 - q) is a model value, not a bound",
+        "sharp_upper_bound_any_coupling": {
+          "macro": 0.08609305328,
+          "pooled": 0.07737870075
+        }
+      },
+      "sharp_bound_normal_verdict_probabilities": {
+        "macro": {
+          "inconclusive": 0.0,
+          "not_reproduced": 1.703308114e-67,
+          "reproduced": 1.0,
+          "reproduced_smaller": 2.513445036e-39,
+          "reversed": 0.0
+        },
+        "pooled": {
+          "inconclusive": 0.008353558623,
+          "not_reproduced": 2.810134327e-13,
+          "reproduced": 0.9916464414,
+          "reproduced_smaller": 0.0,
+          "reversed": 1.28347233e-108
+        }
+      },
+      "simulated_mean_points": {
+        "macro": 2.904448333,
+        "pooled": 0.9475606061
+      },
+      "verdict_probabilities": {
+        "macro": {
+          "inconclusive": 0.0,
+          "not_reproduced": 0.0,
+          "reproduced": 1.0,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        },
+        "pooled": {
+          "inconclusive": 0.0119,
+          "not_reproduced": 0.0,
+          "reproduced": 0.9881,
+          "reproduced_smaller": 0.0,
+          "reversed": 0.0
+        }
+      },
+      "verdict_probabilities_basis": "model-based: simulated with the candidate and identity outcomes coupled independently"
+    },
+    "simulation_seeds": [
+      2026092611,
+      2026092612
+    ],
+    "simulations": 20000
+  },
+  "identity_checks": {
+    "cells": {
+      "openai-clip-vit-b32-quickgelu__cifar100__fold0__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold1__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold2__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold0__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold1__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold2__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold0__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold1__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold2__sigma0.25": {
+        "items": 500,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": false
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold0__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold1__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold2__sigma0.25": {
+        "items": 50,
+        "items_equal": true,
+        "labels_equal": true,
+        "order_equal": true
+      }
+    },
+    "certification_parameters_equal": true,
+    "outcomes_recomputed_from_counts_equal_saved": true
+  },
+  "inputs": {
+    "exp017_artifact_manifest": {
+      "path": "results/EXP-20260906-017/artifact_manifest.json",
+      "sha256": "a215504af683f3316f2ca70e5915ad2957ce6d0d4304313007649a636545be0c"
+    },
+    "exp017_sufficient_statistics_sha256": {
+      "openai-clip-vit-b32-quickgelu__cifar100__fold0": "6a92e1fa347b69bf86177d8c83f1b56d86fa44cac18973888534ccfdcbe4ed24",
+      "openai-clip-vit-b32-quickgelu__cifar100__fold1": "b93944f38e875849b3c6bd7f801da17437cef4f6bc01e08fb170f24afde6c741",
+      "openai-clip-vit-b32-quickgelu__cifar100__fold2": "6a3ec93e8c02bba40951201fe4db41ee4de606f64e90dc3d5cad11408eaf566e",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold0": "72209d45477462c72d81581621fc78d45905c0cf04a8f6f2af5de72e9b714be8",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold1": "3b7041dcf554efa8cf0b0bf1d04939171871c44cb09c14f77fc434a0b35db802",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold2": "c777fdc36b84e306d4a35df39394a19f978e928c778626c11ba4a46d0d5e5adf",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold0": "78370b2e707dd1978d5c6af28ada0b6a1f00026997ada5065d68c5040d5d8e8e",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold1": "b16b30871366d8eb30d671fb2b4637448686d2651b84da57166c35d128e20e3c",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold2": "fb526b42b45fa8f5c056e6617a17531fe7a2b6b0e8b4de8c71d4dec48ebe4e2e",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold0": "e30909c6244b8e85ccb18ea41a084ef606aad7c93dbaae8ee46b17a3987fcb98",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold1": "97ac1ff7f79cc60e6bb4e11375d45f15abbb196bd42a4a635fff7e344af02def",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold2": "9bd16331a58fd0801251624d2fe4d5ea6e037d8a413ea8478887b1b268cbb106"
+    },
+    "item_lists_sha256": {
+      "exp021a__cifar100__fold0__evaluation.csv": "02c1ba961a0abc40ed51107b0f28042dfe55bf3cfd6ba5e67c8ddad888a84be4",
+      "exp021a__cifar100__fold1__evaluation.csv": "e1e52010d98eab6c5a55c53d72c652d403db9c466e112d26c478e04edac7aa43",
+      "exp021a__cifar100__fold2__evaluation.csv": "da903624692b3c0718164d4f72f6c6753ac54395bea3ddddb1945c63a61a5c9c",
+      "exp021a__eurosat__fold0__evaluation.csv": "61612f709f97d5e4527d1903e097b2899b70a70487f1947590c4a7dfa26f570f",
+      "exp021a__eurosat__fold1__evaluation.csv": "dd188eb1f928f3c6cbcf30d840e738a217adc9c4bba84c1dabb11dfa26aca5c3",
+      "exp021a__eurosat__fold2__evaluation.csv": "6a7b5a03466ec7f592593303a469bddf0dcc8e4f1afd27b46951bda85c524911"
+    },
+    "k_min_at_r_equals_sigma": 3518
+  },
+  "portability": {
+    "abs_tol": 1e-09,
+    "float_rounding": "every float rounded to 10 significant digits before serialization; exact values are exact strings",
+    "rel_tol": 1e-08,
+    "tests": {
+      "archived_identity": "the archived file is identified by its SHA-256 (bound by the 021A registration)",
+      "byte_identity": "expected on the reference runtime recorded in research/EXP021_V4_AMENDMENT_2026-09-26.md; reported, not required, elsewhere",
+      "portable_agreement": "required on any runtime: satml2027ext/plan_q1_ext.py::compare_planning of a regeneration against the archived file (exact equality of strings, integers and Booleans; floats within the tolerances below); run it with --check"
+    }
+  },
+  "purpose": "EXP-021A Q1 reference values and planning, derived from the saved EXP-017 draws on the same images",
+  "reading": "Q1's primary estimand is the equal-cell macro (the manuscript's headline).  On the saved draws it lies about 4.1 bootstrap standard errors above zero, so the positive and shortfall regions do not overlap in an inconclusive band: every fresh-draw outcome is classified.  The item-pooled secondary estimand (about 2.6 standard errors) keeps a narrow inconclusive band.  Both fresh-draw models put the Monte-Carlo standard deviation of the macro at most 0.09 points (sharp any-coupling bound) against an item-bootstrap standard error of 0.72: fresh draws on the same images are expected to reproduce the saved value. Q1 checks whether the historical contrast persists when the certification draws and the execution pipeline are refreshed on the same registered images and the same legacy bank tensors; it is not a calibrated decomposition of the variance and does not identify why two runs differ (the verdict regions use the item-bootstrap standard error, a conservative convention, not the fresh-draw repeat distribution). The item-level question belongs to 021B (Q6, fresh images).",
+  "reference_points": {
+    "by_cell": {
+      "openai-clip-vit-b32-quickgelu__cifar100__fold0__sigma0.25": {
+        "exact_points": "1/5",
+        "value": 0.2
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold1__sigma0.25": {
+        "exact_points": "3/5",
+        "value": 0.6
+      },
+      "openai-clip-vit-b32-quickgelu__cifar100__fold2__sigma0.25": {
+        "exact_points": "-2/5",
+        "value": -0.4
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold0__sigma0.25": {
+        "exact_points": "8",
+        "value": 8.0
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold1__sigma0.25": {
+        "exact_points": "8",
+        "value": 8.0
+      },
+      "openai-clip-vit-b32-quickgelu__eurosat__fold2__sigma0.25": {
+        "exact_points": "10",
+        "value": 10.0
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold0__sigma0.25": {
+        "exact_points": "14/5",
+        "value": 2.8
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold1__sigma0.25": {
+        "exact_points": "1",
+        "value": 1.0
+      },
+      "openai-clip-vit-l14-quickgelu__cifar100__fold2__sigma0.25": {
+        "exact_points": "-3/5",
+        "value": -0.6
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold0__sigma0.25": {
+        "exact_points": "2",
+        "value": 2.0
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold1__sigma0.25": {
+        "exact_points": "2",
+        "value": 2.0
+      },
+      "openai-clip-vit-l14-quickgelu__eurosat__fold2__sigma0.25": {
+        "exact_points": "2",
+        "value": 2.0
+      }
+    },
+    "by_dataset_item_pooled": {
+      "cifar100": {
+        "exact_points": "3/5",
+        "value": 0.6
+      },
+      "eurosat": {
+        "exact_points": "16/3",
+        "value": 5.333333333
+      }
+    },
+    "equal_cell_macro": {
+      "exact_points": "89/30",
+      "value": 2.966666667
+    },
+    "item_pooled": {
+      "exact_points": "34/33",
+      "value": 1.03030303
+    },
+    "positions": 3300,
+    "unique_images": 1650
+  },
+  "saved_draws_under_registered_q1_analysis": {
+    "bootstrap": {
+      "method": "Rao-Wu shared-image, strata (dataset_id, class)",
+      "replicates": 100000,
+      "seed": 2026092101,
+      "strata": 110
+    },
+    "macro": {
+      "bootstrap_se_points": 0.7214534231,
+      "ci95_unadjusted_lower": 1.55203227,
+      "ci95_unadjusted_upper": 4.381301063,
+      "direction": "positive",
+      "fresh_minus_saved_points": 4.440892099e-16,
+      "one_sided_upper95": 4.157029757,
+      "p_direction": 6e-05,
+      "p_shortfall": 0.50379,
+      "point_points": 2.966666667,
+      "reference_points": 2.966666667,
+      "shortfall": false,
+      "verdict": "reproduced",
+      "verdict_meaning": "the direction test found a positive gain and the shortfall test did not find the fresh gain below the saved value; not finding a shortfall is not evidence that the two values are equal",
+      "z": 4.112069569
+    },
+    "pooled": {
+      "bootstrap_se_points": 0.3891964168,
+      "ci95_unadjusted_lower": 0.2775042383,
+      "ci95_unadjusted_upper": 1.814468439,
+      "direction": "positive",
+      "fresh_minus_saved_points": 6.661338148e-16,
+      "one_sided_upper95": 1.657635357,
+      "p_direction": 0.00828,
+      "p_shortfall": 0.5185,
+      "point_points": 1.03030303,
+      "reference_points": 1.03030303,
+      "shortfall": false,
+      "verdict": "reproduced",
+      "verdict_meaning": "the direction test found a positive gain and the shortfall test did not find the fresh gain below the saved value; not finding a shortfall is not evidence that the two values are equal",
+      "z": 2.647257235
+    }
+  },
+  "schema_version": "satml2027ext.q1_planning.v2",
+  "superseded_v2_rule": {
+    "holm5_worst_case_adjusted_p_on_saved_draws": 0.0414,
+    "pass_probability_if_the_saved_value_were_the_expectation": 0.6403017477,
+    "pass_probability_normal_approximation": {
+      "plug_in": 0.2193361133,
+      "posterior_predictive": 0.2405404387
+    },
+    "reading": "the saved pooled value sits just above the worst-case Holm-5 threshold, so under fresh draws the V2 rule would have been close to a coin flip, and its failure branch asserted non-reproduction and a cause",
+    "rule": "superseded V2 Q1 rule: Holm-adjusted two-sided direction test of the item-pooled value in the five-contrast family; worst case (multiplier 5) needs |z| >= 2.576",
+    "saved_draws_z": 2.647257235,
+    "sd_used": "the sharp any-coupling Monte-Carlo SD bound (V4)"
+  }
+}

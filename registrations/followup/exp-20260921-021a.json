@@ -1,0 +1,1728 @@
+{
+  "access": {
+    "analysis": "outcomes are read only after the analysis-stage approval, which binds the run custody manifest",
+    "list_construction": "item ids and labels of every role were read to draw the lists on 2026-09-26 (CIFAR-100 official test labels, EuroSAT final_test_sealed ids and labels from the Phase-3 assignments, the Imagenette folder listing); no image was decoded",
+    "preparation": "only the development and registered control roles are loaded; evaluation, official-test and sealed items are refused by satml2027ext/items_ext.py; the payload records sealed_evaluation_access=false",
+    "sampling": "evaluation pixels of the Phase-3 calibration_validation items (already used by EXP-017) are decoded by the worker only",
+    "sealed_access_definition": "decoding a sealed or official-test image, or computing any model output on it; reading list labels and hashing file bytes (the data preflight) are custody, not access",
+    "sealed_evaluation_access": false
+  },
+  "bank_construction": {
+    "control_training": {
+      "adamw_weight_decay": 0.0001,
+      "batch_size": 1024,
+      "classification_temperature": 0.05,
+      "clean_loss_weight": 0.5,
+      "epochs": 80,
+      "features": "the EXP-016 development clean features and the 16 EXP-016 proposal noisy draws per development item of the same fold (saved tensors, hash-verified); labels from the registered development list",
+      "fit": "satml2027/day1/d1_03b_train_controls.py::fit (the EXP-019 function, imported unchanged)",
+      "learning_rate": 0.005,
+      "minibatch_seed": 20260921007,
+      "objective": "noisy + clean cross-entropy of the unit bank at temperature 0.05 (EXP-019 recipe); shared tangent translation and rank-8 tangent adapter",
+      "optimizer_seed": 20260921006,
+      "rank": 8,
+      "reproducibility": "deterministic algorithms are requested (warn-only) and any nondeterministic-operation warning is recorded in the payload provenance; a re-run is compared descriptively (max |delta| reported) and no tolerance is claimed; the tensors sealed in the approved bank manifest are the ones scored",
+      "role": "development",
+      "train_draws_per_item": 16
+    },
+    "direction_construction": "the EXP-016 saved clean boundary-active and noisy-margin directions of the fold",
+    "executable": "satml2027ext/prepare_banks_ext.py",
+    "exp016_sources": {
+      "exp016_artifact_manifest_sha256": "d1b6d45c6e72c5ea55c8319c47501b4d129b815c909b2842ca486c68e49ea49c",
+      "exp017_artifact_manifest_sha256": "a215504af683f3316f2ca70e5915ad2957ce6d0d4304313007649a636545be0c",
+      "files_per_cell": [
+        "text_prototypes.pt",
+        "clean_features.pt",
+        "proposal_noisy_features.pt",
+        "candidate_directions.pt",
+        "cell_summary.json",
+        "ground_truth_evaluation_only.pt",
+        "EXP-017 candidate_prototype_banks.pt",
+        "EXP-017 candidate_metadata.json"
+      ],
+      "legacy_reproduction_atol": 2e-06,
+      "rule": "every file must hash to its entry in the bound artifact manifest. The 18 legacy banks are the saved EXP-017 tensors, loaded and stored bit for bit (V4); the registered formulas applied to the EXP-016 sources must reproduce them within 2e-6 (a conformance check; exact reconstruction depends on the runtime and is reported as a diagnostic). The image mean must have the calibration image-mean hash that EXP-017 recorded. 021A therefore refreshes the certification draws and the execution pipeline on the same images and the same bank tensors"
+    },
+    "image_mean": "satml2027ext/banks_ext.py::portable_column_mean of the EXP-016 saved unit clean development features (in EXP-016 row order); its hash must equal the calibration_image_mean_sha256 of EXP-017's candidate metadata",
+    "image_mean_algorithm": "satml2027ext/banks_ext.py::portable_column_mean: column sums in a fixed cascade order (blocks of 16 rows, 4 accumulator levels, the order of torch's CPU cascade sum), one IEEE-754 addition per element per step in the feature dtype, then one correctly rounded division by the row count; every operation is fixed, so the bits do not depend on the platform; on the 12 EXP-016 development feature tensors it equals torch 2.11 CPU mean(dim=0) and the calibration image-mean hash recorded by EXP-017 bit for bit",
+    "legacy_banks": "the saved EXP-017 tensors of candidate_prototype_banks.pt (18 banks), bit for bit; their operator records (shared vector, row scales, row norms) follow the registered formulas and must reproduce the saved tensors within the portable tolerance",
+    "noisy_class_mean": "normalize(mean of the unit noisy control-role draws of each class) from the same features",
+    "origin_check": "mandatory for every 021A cell and selected by this registration's source_mode (never by the payload): satml2027ext/bank_manifest_ext.py re-derives every stored source tensor from the bound EXP-016 files, requires the stored and sampled legacy banks to equal the bound EXP-017 file bit for bit and the image mean to have EXP-017's recorded hash, and recomputes the formula conformance; it does not copy the preparation's own report",
+    "outputs": "results/satml2027ext/banks/<cell_id>__banks.pt (+ .json); results/satml2027ext/preparation/<cell_id>__control_cache.pt and __preparation.json",
+    "prompt_control": {
+      "class_names": "from the registered prompt configuration of the cell's dataset",
+      "clean_loss_weight": 0.5,
+      "context_tokens": 4,
+      "hook_verification_atol": 0.0001,
+      "init_std": 0.02,
+      "learner": "satml2027ext/prompt_bank.py::learn_context_prompts with open_clip_prompt_hooks (verified against model.encode_text before use)",
+      "learning_rate": 0.002,
+      "naming": "PromptSmooth-inspired few-shot context-prompt control; not a reproduction of PromptSmooth",
+      "optimizer": "adam_full_batch",
+      "placeholder": "X",
+      "reproducibility": "deterministic algorithms are requested (warn-only) and any nondeterministic-operation warning is recorded in the payload provenance; a re-run is compared descriptively (max |delta| reported) and no tolerance is claimed; the tensors sealed in the approved bank manifest are the ones scored",
+      "role": "development",
+      "seed": 20260921009,
+      "shots_per_class": 5,
+      "shots_rule": "the registered per-class budget is passed to the learner, which refuses supervision with more items in any class (satml2027ext/prepare_banks_ext.py::registered_shots)",
+      "steps": 300,
+      "supervision": "the same clean features, noisy draws and labels as the other supervised controls",
+      "temperature": 0.05,
+      "template": "{context} a photo of a {name}."
+    },
+    "source_mode": "exp016_saved_tensors",
+    "text_prototypes": "the EXP-016 saved prompt-ensemble prototypes of the fold"
+  },
+  "candidates": {
+    "builder": "satml2027ext/banks_ext.py::build_registered_banks from satml2027ext/candidates_ext.py::candidate_specs (this block is generated from the same module)",
+    "candidate_ids": [
+      "no_correction",
+      "global_mean_centering__coefficient_0.25",
+      "global_mean_centering__coefficient_0.5",
+      "global_mean_centering__coefficient_1",
+      "chowers_exact_projected_gap__coefficient_0.25",
+      "chowers_exact_projected_gap__coefficient_0.5",
+      "chowers_exact_projected_gap__coefficient_1",
+      "gr_clip_style_two_sided__coefficient_0.25",
+      "gr_clip_style_two_sided__coefficient_0.5",
+      "gr_clip_style_two_sided__coefficient_1",
+      "text_only_centering__coefficient_0.25",
+      "text_only_centering__coefficient_0.5",
+      "text_only_centering__coefficient_1",
+      "image_only_centering__coefficient_0.25",
+      "image_only_centering__coefficient_0.5",
+      "image_only_centering__coefficient_1",
+      "clean_boundary_active__step_0.0025",
+      "clean_boundary_active__step_0.005",
+      "clean_boundary_active__step_0.01",
+      "clean_boundary_active__step_0.02",
+      "clean_boundary_active__step_0.04",
+      "clean_boundary_active__step_0.08",
+      "clean_boundary_active__step_0.16",
+      "clean_boundary_active__step_0.32",
+      "cohen_aligned_noisy_margin__step_0.0025",
+      "cohen_aligned_noisy_margin__step_0.005",
+      "cohen_aligned_noisy_margin__step_0.01",
+      "cohen_aligned_noisy_margin__step_0.02",
+      "cohen_aligned_noisy_margin__step_0.04",
+      "cohen_aligned_noisy_margin__step_0.08",
+      "cohen_aligned_noisy_margin__step_0.16",
+      "cohen_aligned_noisy_margin__step_0.32",
+      "control__learned_shared_translation_tangent",
+      "control__lowrank_tangent_r8",
+      "control__noisy_class_mean",
+      "control__fewshot_prompt_bank"
+    ],
+    "candidates": [
+      {
+        "candidate_id": "no_correction",
+        "family": "no_correction",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "identity",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "global_mean_centering__coefficient_0.25",
+        "family": "global_mean_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.25 (mean_w(t) - mu_I)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "global_mean_centering__coefficient_0.5",
+        "family": "global_mean_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.5 (mean_w(t) - mu_I)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "global_mean_centering__coefficient_1",
+        "family": "global_mean_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 1 (mean_w(t) - mu_I)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "chowers_exact_projected_gap__coefficient_0.25",
+        "family": "chowers_exact_projected_gap",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.25 (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "chowers_exact_projected_gap__coefficient_0.5",
+        "family": "chowers_exact_projected_gap",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.5 (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "chowers_exact_projected_gap__coefficient_1",
+        "family": "chowers_exact_projected_gap",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 1 (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "gr_clip_style_two_sided__coefficient_0.25",
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k - 0.25 mean(t)); z' = normalize(z - 0.25 mu_I)",
+        "image_transform": {
+          "coefficient": 0.25,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "gr_clip_style_two_sided__coefficient_0.5",
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k - 0.5 mean(t)); z' = normalize(z - 0.5 mu_I)",
+        "image_transform": {
+          "coefficient": 0.5,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "gr_clip_style_two_sided__coefficient_1",
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k - 1 mean(t)); z' = normalize(z - 1 mu_I)",
+        "image_transform": {
+          "coefficient": 1.0,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": true,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "text_only_centering__coefficient_0.25",
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.25 mean(t)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "text_only_centering__coefficient_0.5",
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 0.5 mean(t)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "text_only_centering__coefficient_1",
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k - 1 mean(t)); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "image_only_centering__coefficient_0.25",
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = normalize(z - 0.25 mu_I)",
+        "image_transform": {
+          "coefficient": 0.25,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.25
+      },
+      {
+        "candidate_id": "image_only_centering__coefficient_0.5",
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = normalize(z - 0.5 mu_I)",
+        "image_transform": {
+          "coefficient": 0.5,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 0.5
+      },
+      {
+        "candidate_id": "image_only_centering__coefficient_1",
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = t_k; z' = normalize(z - 1 mu_I)",
+        "image_transform": {
+          "coefficient": 1.0,
+          "type": "center_and_renormalize"
+        },
+        "legacy_exp017": false,
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "value": 1.0
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.0025",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.0025 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.0025
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.005",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.005 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.005
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.01",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.01 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.01
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.02",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.02 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.02
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.04",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.04 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.04
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.08",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.08 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.08
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.16",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.16 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.16
+      },
+      {
+        "candidate_id": "clean_boundary_active__step_0.32",
+        "family": "clean_boundary_active",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.32 u_clean); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.32
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.0025",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.0025 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.0025
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.005",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.005 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.005
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.01",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.01 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.01
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.02",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.02 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.02
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.04",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.04 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": true,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.04
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.08",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.08 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.08
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.16",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.16 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.16
+      },
+      {
+        "candidate_id": "cohen_aligned_noisy_margin__step_0.32",
+        "family": "cohen_aligned_noisy_margin",
+        "flip_theorem": "applies",
+        "form": "t'_k = normalize(t_k + 0.32 u_noisy); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "value": 0.32
+      },
+      {
+        "candidate_id": "control__learned_shared_translation_tangent",
+        "family": "registered_control",
+        "flip_theorem": "exploratory: containment counted when every a_k = 1 - <v, t_k> > 0; reported outside Q3/Q4, never part of a registered verdict",
+        "form": "t'_k = normalize(t_k + v - <v, t_k> t_k); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "control__lowrank_tangent_r8",
+        "family": "registered_control",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(t_k + (L R)_k - <(L R)_k, t_k> t_k), L in R^{K x 8}, R in R^{8 x d}; z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "control__noisy_class_mean",
+        "family": "registered_control",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(mean over the unit noisy control-role draws of class k); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      },
+      {
+        "candidate_id": "control__fewshot_prompt_bank",
+        "family": "registered_control",
+        "flip_theorem": "not applicable",
+        "form": "t'_k = normalize(TextEncoder([ctx_1 .. ctx_4] + 'a photo of a {class_k}.')); z' = z",
+        "image_transform": null,
+        "legacy_exp017": false,
+        "operator_class": "supervised_control",
+        "parameter": null,
+        "value": null
+      }
+    ],
+    "control_prefix": "control__",
+    "count_rule": "1 identity + 3 global mean-centering + 3 projected gap + 3 two-sided + 3 text-only + 3 image-only + 8 clean steps + 8 noisy steps + 4 controls = 36",
+    "decomposition": {
+      "image_only": [
+        "image_only_centering__coefficient_0.25",
+        "image_only_centering__coefficient_0.5",
+        "image_only_centering__coefficient_1"
+      ],
+      "text_only": [
+        "text_only_centering__coefficient_0.25",
+        "text_only_centering__coefficient_0.5",
+        "text_only_centering__coefficient_1"
+      ],
+      "two_sided": [
+        "gr_clip_style_two_sided__coefficient_0.25",
+        "gr_clip_style_two_sided__coefficient_0.5",
+        "gr_clip_style_two_sided__coefficient_1"
+      ]
+    },
+    "decomposition_note": "text_only_centering and gr_clip_style_two_sided share the prototype tensor at each coefficient; two_sided = text_only prototypes + image_only transform, so the triple is an exact decomposition of the operator (effects need not be additive; the interaction is reported)",
+    "expected_bank_count": 36,
+    "exploratory_containment_candidates": [
+      "control__learned_shared_translation_tangent"
+    ],
+    "exploratory_containment_rule": "exploratory: containment counted when every a_k = 1 - <v, t_k> > 0; reported outside Q3/Q4, never part of a registered verdict",
+    "families": [
+      {
+        "family": "no_correction",
+        "form": "t'_k = t_k; z' = z",
+        "legacy_exp017": true,
+        "operator_class": "identity"
+      },
+      {
+        "family": "global_mean_centering",
+        "form": "t'_k = normalize(t_k - {c} (mean_w(t) - mu_I)); z' = z",
+        "legacy_exp017_values": [
+          0.25,
+          0.5,
+          1.0
+        ],
+        "note": "historical EXP-017 text mean-centering: moves the prototypes toward the image mean; NOT the text half of the two-sided operator",
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "shared_vector": "-{c} (mean_w(t) - mu_I)",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "family": "chowers_exact_projected_gap",
+        "form": "t'_k = normalize(t_k + {c} (I - V V^T)(mu_I - mean_w(t))); z' = z",
+        "legacy_exp017_values": [
+          0.25,
+          0.5,
+          1.0
+        ],
+        "note": "exact decision-invariance control (Q4): the shared vector is orthogonal to every t_j - t_k, so all normalizers are equal",
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "shared_vector": "{c} (I - V V^T)(mu_I - mean_w(t))",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "decomposition_triple": "two_sided",
+        "family": "gr_clip_style_two_sided",
+        "form": "t'_k = normalize(t_k - {c} mean(t)); z' = normalize(z - {c} mu_I)",
+        "legacy_exp017_values": [
+          1.0
+        ],
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "shared_vector": "-{c} mean(t)",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "decomposition_triple": "text_only",
+        "family": "text_only_centering",
+        "form": "t'_k = normalize(t_k - {c} mean(t)); z' = z",
+        "legacy_exp017_values": [],
+        "note": "the text half of gr_clip_style_two_sided at the same coefficient (identical prototype tensor, identity image transform); new in V2",
+        "operator_class": "text_common_translation",
+        "parameter": "coefficient",
+        "shared_vector": "-{c} mean(t)",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "decomposition_triple": "image_only",
+        "family": "image_only_centering",
+        "form": "t'_k = t_k; z' = normalize(z - {c} mu_I)",
+        "legacy_exp017_values": [],
+        "note": "the image half of gr_clip_style_two_sided at the same coefficient; acts as a class-dependent score shift -{c}<mu_I, t_k> before renormalization",
+        "operator_class": "image_side_centering",
+        "parameter": "coefficient",
+        "shared_vector": "0",
+        "values": [
+          0.25,
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "family": "clean_boundary_active",
+        "form": "t'_k = normalize(t_k + {c} u_clean); z' = z",
+        "legacy_exp017_values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "shared_vector": "{c} u_clean",
+        "values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04,
+          0.08,
+          0.16,
+          0.32
+        ]
+      },
+      {
+        "family": "cohen_aligned_noisy_margin",
+        "form": "t'_k = normalize(t_k + {c} u_noisy); z' = z",
+        "legacy_exp017_values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04
+        ],
+        "operator_class": "text_common_translation",
+        "parameter": "step",
+        "shared_vector": "{c} u_noisy",
+        "values": [
+          0.0025,
+          0.005,
+          0.01,
+          0.02,
+          0.04,
+          0.08,
+          0.16,
+          0.32
+        ]
+      },
+      {
+        "controls": [
+          {
+            "control_id": "learned_shared_translation_tangent",
+            "form": "t'_k = normalize(t_k + v - <v, t_k> t_k); z' = z",
+            "training": "one shared vector v fitted by noisy+clean cross-entropy on the registered control role (bank_construction.control_training)"
+          },
+          {
+            "control_id": "lowrank_tangent_r8",
+            "form": "t'_k = normalize(t_k + (L R)_k - <(L R)_k, t_k> t_k), L in R^{K x 8}, R in R^{8 x d}; z' = z",
+            "training": "rank-8 tangent adapter fitted by noisy+clean cross-entropy on the registered control role (EXP-019 recipe)"
+          },
+          {
+            "control_id": "noisy_class_mean",
+            "form": "t'_k = normalize(mean over the unit noisy control-role draws of class k); z' = z",
+            "training": "optimization-free"
+          },
+          {
+            "context_tokens": 4,
+            "control_id": "fewshot_prompt_bank",
+            "form": "t'_k = normalize(TextEncoder([ctx_1 .. ctx_4] + 'a photo of a {class_k}.')); z' = z",
+            "training": "PromptSmooth-inspired: four shared context vectors fitted by noisy+clean cross-entropy through the frozen text encoder on the registered control role; not a reproduction of PromptSmooth"
+          }
+        ],
+        "family": "registered_control",
+        "operator_class": "supervised_control"
+      }
+    ],
+    "flip_theorem_candidates": [
+      "global_mean_centering__coefficient_0.25",
+      "global_mean_centering__coefficient_0.5",
+      "global_mean_centering__coefficient_1",
+      "chowers_exact_projected_gap__coefficient_0.25",
+      "chowers_exact_projected_gap__coefficient_0.5",
+      "chowers_exact_projected_gap__coefficient_1",
+      "text_only_centering__coefficient_0.25",
+      "text_only_centering__coefficient_0.5",
+      "text_only_centering__coefficient_1",
+      "clean_boundary_active__step_0.0025",
+      "clean_boundary_active__step_0.005",
+      "clean_boundary_active__step_0.01",
+      "clean_boundary_active__step_0.02",
+      "clean_boundary_active__step_0.04",
+      "clean_boundary_active__step_0.08",
+      "clean_boundary_active__step_0.16",
+      "clean_boundary_active__step_0.32",
+      "cohen_aligned_noisy_margin__step_0.0025",
+      "cohen_aligned_noisy_margin__step_0.005",
+      "cohen_aligned_noisy_margin__step_0.01",
+      "cohen_aligned_noisy_margin__step_0.02",
+      "cohen_aligned_noisy_margin__step_0.04",
+      "cohen_aligned_noisy_margin__step_0.08",
+      "cohen_aligned_noisy_margin__step_0.16",
+      "cohen_aligned_noisy_margin__step_0.32"
+    ],
+    "flip_theorem_requirement": "every flip-theorem bank must record its exact operator with every a_k = 1 (a shared translation); the bank validator refuses a payload otherwise, and the analysis reports Q3/Q4 as not evaluable if any cell lacks the counters",
+    "frozen_after_hash": true,
+    "identity_candidate_id": "no_correction",
+    "notation": {
+      "T": "source prototype bank [K, d], unit rows",
+      "V": "orthonormal basis of the row space of T - 1 mean_w(t)^T (SVD, frozen EXP-017 threshold)",
+      "mean(t)": "T.mean(dim=0)",
+      "mean_w(t)": "(1/K) 1^T T (frozen EXP-017 weighted text mean; equals mean(t) up to float bits)",
+      "mu_I": "mean of the unit clean development image features of the cell",
+      "normalize": "row-wise division by the Euclidean norm",
+      "u_clean": "unit EXP-016 clean boundary-active development direction",
+      "u_noisy": "unit EXP-016 Cohen-aligned noisy-margin development direction"
+    },
+    "projected_gap_candidates": [
+      "chowers_exact_projected_gap__coefficient_0.25",
+      "chowers_exact_projected_gap__coefficient_0.5",
+      "chowers_exact_projected_gap__coefficient_1"
+    ],
+    "schema_version": "satml2027ext.candidates.v2"
+  },
+  "cells": [
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__fold0__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "cifar100",
+      "development_item_count": 500,
+      "development_items_sha256": "f66e08155f3ed660e68fc0c4ae5f066bcd9b9e0e4c8531cf23ec9fe57ce02df4",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "a5168dab433db33e77ad9deaed3cee7161efc4928d45d4c763125ed239e349f1",
+      "fold": 0,
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__fold1__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "cifar100",
+      "development_item_count": 500,
+      "development_items_sha256": "eee104c1374af0b81ef501000ce33205cbcfaacdf2fc2be1cda6ba574a49a9a5",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "e52ee01370b1ffda093f36e9baedacae434753493ac03614927e33a0e414803c",
+      "fold": 1,
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__cifar100__fold2__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "cifar100",
+      "development_item_count": 500,
+      "development_items_sha256": "07f5478e48a05fc483c533805ed42ea0eaf351f19cb7580d16337d45262f8063",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "7a2985c178f51ebc692a98a36d0a20bbbf4a509de95ebc7b49f73de8f9d79292",
+      "fold": 2,
+      "item_count": 500,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__fold0__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "eurosat",
+      "development_item_count": 50,
+      "development_items_sha256": "cbdce000f7b90e72b20fc560135aec9dc21a3865bbab5e46781f98c5f63f7e8d",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "886deee52e2a5409f30d81d401e76a43fe5a2ec50093972e3ba9de08b97423de",
+      "fold": 0,
+      "item_count": 50,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__fold1__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "eurosat",
+      "development_item_count": 50,
+      "development_items_sha256": "c0edd6fe8f64d0bb834c851123f3c66830b034d4df29eefbd5aa6d0355c0183c",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "ede1722ab7d639d1325893adbf809db94e50a79275dc92358c0b0a66e364e190",
+      "fold": 1,
+      "item_count": 50,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-b32-quickgelu__eurosat__fold2__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "eurosat",
+      "development_item_count": 50,
+      "development_items_sha256": "d6a367117cc182885bbe9be65e67fd758a084c39ff8e0f5008d8e0c68ccecd25",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "8660052a841eb8e70e2e21b637baa86cbccd59f4d922f1fc18b5131aff63a3fe",
+      "fold": 2,
+      "item_count": 50,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__fold0__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "cifar100",
+      "development_item_count": 500,
+      "development_items_sha256": "f66e08155f3ed660e68fc0c4ae5f066bcd9b9e0e4c8531cf23ec9fe57ce02df4",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "a5168dab433db33e77ad9deaed3cee7161efc4928d45d4c763125ed239e349f1",
+      "fold": 0,
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__fold1__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "cifar100",
+      "development_item_count": 500,
+      "development_items_sha256": "eee104c1374af0b81ef501000ce33205cbcfaacdf2fc2be1cda6ba574a49a9a5",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "e52ee01370b1ffda093f36e9baedacae434753493ac03614927e33a0e414803c",
+      "fold": 1,
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__cifar100__fold2__sigma0.25",
+      "class_count": 100,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "cifar100",
+      "development_item_count": 500,
+      "development_items_sha256": "07f5478e48a05fc483c533805ed42ea0eaf351f19cb7580d16337d45262f8063",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "7a2985c178f51ebc692a98a36d0a20bbbf4a509de95ebc7b49f73de8f9d79292",
+      "fold": 2,
+      "item_count": 500,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__fold0__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "eurosat",
+      "development_item_count": 50,
+      "development_items_sha256": "cbdce000f7b90e72b20fc560135aec9dc21a3865bbab5e46781f98c5f63f7e8d",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "886deee52e2a5409f30d81d401e76a43fe5a2ec50093972e3ba9de08b97423de",
+      "fold": 0,
+      "item_count": 50,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__fold1__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "eurosat",
+      "development_item_count": 50,
+      "development_items_sha256": "c0edd6fe8f64d0bb834c851123f3c66830b034d4df29eefbd5aa6d0355c0183c",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "ede1722ab7d639d1325893adbf809db94e50a79275dc92358c0b0a66e364e190",
+      "fold": 1,
+      "item_count": 50,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    },
+    {
+      "cell_id": "openai-clip-vit-l14-quickgelu__eurosat__fold2__sigma0.25",
+      "class_count": 10,
+      "consumes_sealed_split": false,
+      "data_role": "phase3_calibration_validation_same_items_fresh_noise",
+      "dataset_id": "eurosat",
+      "development_item_count": 50,
+      "development_items_sha256": "d6a367117cc182885bbe9be65e67fd758a084c39ff8e0f5008d8e0c68ccecd25",
+      "development_per_class": 5,
+      "evaluation_items_sha256": "8660052a841eb8e70e2e21b637baa86cbccd59f4d922f1fc18b5131aff63a3fe",
+      "fold": 2,
+      "item_count": 50,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "scope_tier": "minimal",
+      "sigma": 0.25,
+      "store_identity_margins": true
+    }
+  ],
+  "certification": {
+    "alpha_form": "one-sided Clopper-Pearson lower bound per example on the selected class (CERTIFY); abstain if it is at most 0.5",
+    "alpha_per_example": 0.001,
+    "blocks_per_forward": 4,
+    "budget_checkpoints": [],
+    "confirmation_draws": 4096,
+    "determinism": "torch.use_deterministic_algorithms(True, warn_only=True) and CUBLAS_WORKSPACE_CONFIG=:4096:8 in the preparation stage and the worker (satml2027ext/run_shard_ext.py::configure_precision); bit identity is expected only within one GPU class and software stack",
+    "flip_counters": {
+      "applicability": "registered: every flip-theorem bank (candidates.flip_theorem_candidates), which the bank validator requires to record its exact operator t'_k = (t_k + v)/n_k (every a_k = 1) with an identity image transform, so containment and the loose bound both apply; Q3/Q4 are not evaluable if any cell lacks them. Exploratory: the learned shared tangent control (candidates.exploratory_containment_candidates, a_k = 1 - <v, t_k>) when every a_k > 0, reported outside Q3/Q4",
+      "count_contract": "satml2027ext/contract_ext.py, applied by the run custody stage and by the analysis merge: integer nonnegative counts with exact totals; prefixes that sum to their checkpoints, never decrease and never exceed the full counts; useful + harmful <= changed <= N, violations <= changed, loose budget <= N; Boolean flags, equal across the shards of a cell, loose only with containment, zero counters where a bound does not apply, none for the identity; the registered applicability per operator class",
+      "counters": [
+        "changed draws (candidate argmax differs from the identity argmax)",
+        "containment violations: a changed draw j -> k with a_j (s_j - s_k) > |n_j - n_k| + |a_j - a_k| + tolerance (the approved N3C P1 form of the decision-change proposition)",
+        "loose-bound violations: a changed draw whose identity top-1 margin exceeds 2 min(1, ||v||) + tolerance (unit-scale translations)",
+        "loose flippable budget: draws whose identity top-1 margin is at most 2 min(1, ||v||) + tolerance",
+        "useful changes (identity wrong, candidate right) and harmful changes (identity right, candidate wrong)"
+      ],
+      "storage": "per candidate and item, int32, in every shard",
+      "stream": "confirmation",
+      "tolerance": 1e-05
+    },
+    "forward_batch_draws": 256,
+    "forward_batch_rule": "every item's draws are encoded in forward batches of blocks_per_forward x noise_block_draws; the worker refuses any other value and the run custody manifest checks every sidecar",
+    "k_min_at_r_equals_sigma": 3518,
+    "margin_storage": {
+      "bank": "no_correction",
+      "per_draw": [
+        "top1_class_id int16",
+        "top2_class_id int16",
+        "top1_margin float32 (cosine-score gap)"
+      ],
+      "purpose": "descriptive record of the identity-bank margin distribution for Q3",
+      "stream": "confirmation"
+    },
+    "noise_block_draws": 64,
+    "primary_radius_rule": "r = sigma (k_min identical at every sigma)",
+    "radius_coordinates": "model-input coordinates: Gaussian noise added to the 224 x 224 tensor after the model's deterministic resize and centre crop, unclipped",
+    "reported_radii": [
+      0.0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "seeds": {
+      "confirmation_base_seed": 20260921002,
+      "control_minibatch_seed": 20260921007,
+      "control_noise_base_seed": 20260921005,
+      "control_optimizer_seed": 20260921006,
+      "development_noise_base_seed": 20260921004,
+      "prompt_learner_seed": 20260921009,
+      "selection_base_seed": 20260921001
+    },
+    "selection_draws": 128,
+    "streams": {
+      "confirmation": "cohen_class_confirmation",
+      "control_train": "control_bank_training_noise",
+      "development": "development_direction_estimation",
+      "independence": "selection and confirmation streams independent; all banks scored on identical draws",
+      "seed_derivation": "satml2027/common/seeds.py::derive_item_seed(base, model_id, dataset_id, sigma, item_id, stream): a function of the cell's model, dataset and sigma, the stream and the item id and of nothing else (not of the shard split or the run order), so draws are shard-invariant, and a 021C item's confirmation stream (same base seed, model, dataset, sigma and item) begins with its 021B stream",
+      "selection": "cohen_class_selection"
+    },
+    "tf32": "both torch TF32 switches off and cuDNN deterministic in the preparation stage and the worker"
+  },
+  "compute_estimate_4090_hours": 24,
+  "data_role": "Phase-3 calibration_validation items per fold (evaluation; already used by EXP-017) and the calibration_development items of the same fold (the EXP-016 development tensors); fresh evaluation noise; no new items",
+  "data_roots": {
+    "cifar100": {
+      "archive": "cifar-100-python.tar.gz",
+      "archive_md5": "eb9058c3a382ffc7106e4002c42a8d85",
+      "archive_sha256": "85cd44d02ba6437773c5bbd22e183051d648de2e7d6b014e1ef29b855ba677a7",
+      "members_md5": {
+        "cifar-100-python/meta": "7973b15100ade9c7d40fb424638fde48",
+        "cifar-100-python/test": "f0ef6b0ae62326f3e7ffdfab6717acfc",
+        "cifar-100-python/train": "16019d7e3df5f24257cddd939b257f8d"
+      },
+      "source": "https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz"
+    },
+    "eurosat": {
+      "archive": "EuroSAT.zip",
+      "archive_sha256": "8ebea626349354c5328b142b96d0430e647051f26efc2dc974c843f25ecf70bd",
+      "folder": "eurosat/2750"
+    },
+    "imagenette": {
+      "archive": "imagenette2-320.tgz",
+      "archive_sha256": "569b4497c98db6dd29f335d1f109cf315fe127053cedf69010d047f0188e158c",
+      "bytes": 341663724,
+      "official_counts": {
+        "train": 9469,
+        "val": 3925
+      },
+      "resolution_note": "320-pixel shorter side; the model preprocessing resizes the shorter side to 224 (bicubic) and centre-crops 224 x 224, so the noise lives in a downsampled model-input space, not an upsampled one as for CIFAR-100 and EuroSAT (V1 called this 'native 224 resolution', which was imprecise)",
+      "source": "https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-320.tgz"
+    },
+    "item_lists": {
+      "created_at": "2026-09-26T00:00:00+00:00",
+      "generator": "satml2027ext/draw_items_ext.py (with --imagenette-archive)"
+    },
+    "preflight_inputs": "regenerating the lists needs, on the host, the Phase-3 and Phase-4 assignment files and the EXP-019 item lists (satml2027ext/draw_items_ext.py defaults); a missing input is a failed preflight check",
+    "rule": "the sampling host runs satml2027ext/preflight_data_ext.py before the preparation stage; it must reproduce every item list byte for byte, tie every registered EuroSAT and Imagenette file to its archive member by SHA-256, and record every file hash; the bank manifest records the preflight the preparation used, the sampling approval binds that same file (the worker refuses a manifest that names another), a stage-1 approval that names a preflight binds the preparation to it, and the preparation stage and the worker check each file they load against the record"
+  },
+  "experiment_id": "EXP-20260921-021A",
+  "hardware": {
+    "assignment_rule": "satml2027ext/plan_ext.py balances estimated seconds across the six GPUs (longest jobs first) after splitting cells into registered shards; device model, driver and library versions are recorded in every shard sidecar; all shards of a cell run on one GPU class",
+    "assumed": "six RTX 5090 (32 GB) on one rented host reachable by SSH with one key; the university RTX 4090 is not part of this plan"
+  },
+  "inference": {
+    "adjudication_families": "pooled_over_datasets_per_sigma",
+    "clean_accuracy_reporting_gate": "macro drop <= 1 point and per-cell drop <= max(2 points, 3 images), exact integer arithmetic; flags, never hides",
+    "control_family": {
+      "comparator": "gr_clip_style_two_sided__coefficient_1",
+      "contrasts": [
+        "control__learned_shared_translation_tangent",
+        "control__lowrank_tangent_r8",
+        "control__noisy_class_mean",
+        "control__fewshot_prompt_bank"
+      ],
+      "correction": "Holm over the four controls within each family (direction test); the difference to the comparator is descriptive",
+      "reference": "no_correction"
+    },
+    "direction": {
+      "classification": [
+        "positive",
+        "negative",
+        "unresolved"
+      ],
+      "test": "two-sided percentile-bootstrap p-value 2 min(P*(d <= 0), P*(d >= 0))"
+    },
+    "families": {
+      "definition": [
+        "each dataset x sigma",
+        "pooled over datasets at each sigma"
+      ],
+      "power_under_scope_descent": "a family with a not-run cell reports its registered power label as 'registered' and an 'effective' label stating that the registered power statement no longer applies",
+      "rule": "multiplicity is controlled within each family; Q6 is adjudicated on the pooled families; dataset-specific families are secondary; every family carries its registered power label (family_power), and the analysis prints it beside each family and each Q6 row; 021A's Q1 is a single registered contrast outside these families (predictions, Q1)"
+    },
+    "family_power": {
+      "cifar100__sigma0.25": {
+        "basis": "five-contrast family, conservative unique-image exact McNemar at 10% discordance: 2,993 images needed for 80% power",
+        "label": "underpowered for the 2-point smallest effect of interest",
+        "unique_images": 1500
+      },
+      "eurosat__sigma0.25": {
+        "basis": "150 unique images; descriptive only",
+        "label": "underpowered",
+        "unique_images": 150
+      },
+      "pooled__sigma0.25": {
+        "basis": "power block; Q1 is planned separately (power.q1_planning)",
+        "label": "underpowered for the 2-point smallest effect of interest (power about 0.47)",
+        "unique_images": 1650
+      }
+    },
+    "intervals": {
+      "holm": "Holm adjusts decisions only; no Holm confidence interval is reported",
+      "simultaneous": "single-step max-t band over all non-identity contrasts",
+      "unadjusted": "percentile 95% (90% as the description of the equivalence test); labelled unadjusted"
+    },
+    "no_selection_among_secondary_outcomes": true,
+    "practical_magnitude": {
+      "classification": [
+        "gain_at_least_sesoi",
+        "loss_at_least_sesoi",
+        "practically_equivalent",
+        "inconclusive"
+      ],
+      "fixed_before_sampling": true,
+      "precedence": "gain, then loss, then equivalence, else inconclusive",
+      "reporting": "direction and magnitude are reported side by side; a precise small positive effect is 'positive' and 'practically_equivalent'",
+      "sesoi_points": 2.0,
+      "tests": {
+        "gain_at_least_sesoi": "H0: delta <= +SESOI; p = P*(d <= +SESOI)",
+        "loss_at_least_sesoi": "H0: delta >= -SESOI; p = P*(d >= -SESOI)",
+        "practically_equivalent": "percentile-bootstrap two one-sided tests in interval-inclusion form; p = max(P*(d <= -SESOI), P*(d >= +SESOI))"
+      }
+    },
+    "primary_estimand": "item-pooled paired difference in standard certified accuracy at r = sigma, candidate minus no_correction, in points",
+    "primary_family": {
+      "alpha_two_sided": 0.05,
+      "contrasts": [
+        "gr_clip_style_two_sided__coefficient_1",
+        "text_only_centering__coefficient_1",
+        "image_only_centering__coefficient_1",
+        "clean_boundary_active__step_0.16",
+        "cohen_aligned_noisy_margin__step_0.16"
+      ],
+      "correction": "Holm within each family, applied separately to the direction, equivalence, gain and loss tests",
+      "note": "shared operators only; the supervised controls are in control_family",
+      "reference": "no_correction"
+    },
+    "secondary_family": {
+      "alpha": 0.05,
+      "method": "Romano-Wolf step-down max-t over every non-identity contrast; adjusted p of rank j = running maximum of P*(max over ranks >= k of |z| >= |t_(k)|)",
+      "size": 35
+    },
+    "secondary_outcomes": [
+      "anchored certified accuracy",
+      "abstention",
+      "certified-wrong rate and its top-class share",
+      "raw/smoothed agreement",
+      "clean accuracy (exact counts)",
+      "equal-cell macros",
+      "standard CA at the other radii"
+    ],
+    "uncertainty": {
+      "generator": "numpy PCG64DXSM",
+      "method": "class-stratified shared-item paired bootstrap with Rao-Wu rescaling",
+      "replicates": 100000,
+      "resampling_unit": "the unique evaluation image; its bootstrap multiplicity is drawn once per replicate within its dataset-class stratum and shared across every backbone and sigma cell in which the image appears and across every candidate and radius",
+      "seed": 2026092101,
+      "strata": {
+        "definition": [
+          "dataset",
+          "class"
+        ],
+        "stratum_key": "(dataset_id, label)"
+      }
+    }
+  },
+  "method_selection": false,
+  "models": {
+    "openai-clip-vit-b32-quickgelu": {
+      "bytes": 605143284,
+      "file": "open_clip_model.safetensors",
+      "hf_repository": "timm/vit_base_patch32_clip_224.openai",
+      "open_clip_name": "ViT-B-32-quickgelu",
+      "pretrained": "openai",
+      "sha256": "e6d1bd7789aa45192b3bf90570a789b478bae1b74ebcce7eddd908e83a2b7c31",
+      "snapshot": "a6f597a3"
+    },
+    "openai-clip-vit-l14-quickgelu": {
+      "bytes": 1710517724,
+      "file": "open_clip_model.safetensors",
+      "hf_repository": "timm/vit_large_patch14_clip_224.openai",
+      "open_clip_name": "ViT-L-14-quickgelu",
+      "pretrained": "openai",
+      "sha256": "9ce2e8a8ebfff3793d7d375ad6d3c35cb9aebf3de7ace0fc7308accab7cd207e",
+      "snapshot": "18d05354"
+    },
+    "openclip-vit-b32-laion2b": {
+      "bytes": 605143316,
+      "bytes_source": "Hugging Face LFS metadata of the repository (2026-09-26): the file's LFS oid equals the registered SHA-256",
+      "file": "open_clip_model.safetensors",
+      "hf_repository": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+      "open_clip_name": "ViT-B-32",
+      "pretrained": "laion2b_s34b_b79k",
+      "sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6",
+      "snapshot": "1a25a446"
+    }
+  },
+  "position_count": 3300,
+  "power": {
+    "at_discordance_0.10": {
+      "minimum_detectable_points": 2.7,
+      "power_for_2_points": 0.47
+    },
+    "inferential_unit": "the unique evaluation image; the two backbones score the same image, so the conservative count is 1,650 images, not 3,300 positions",
+    "items_needed_for_5_contrast_family": {
+      "0.05": 1502,
+      "0.10": 2993,
+      "0.20": 5925
+    },
+    "method": "exact conditional McNemar, two-sided, Bonferroni-sized planning at 0.05/5, 80% power, 2-point paired difference (scripted as in research/LITERATURE_AND_POWER_RECHECK_2026-09-25.md Appendix A.5)",
+    "observed_discordance_rule": "the observed paired discordance is reported next to every interval",
+    "positions": 3300,
+    "q1_planning": {
+      "content_sha256": "b8c0149d5f9e60c69fe7c7b94d48d484e39b8f34fadcef15e6fb129cfe585660",
+      "expected_fresh_points": {
+        "plug_in": {
+          "macro": 2.912056222,
+          "pooled": 0.9533108934
+        },
+        "posterior_predictive": {
+          "macro": 2.905032142,
+          "pooled": 0.9479851974
+        }
+      },
+      "file": "results/satml2027ext/planning/EXP021A_Q1_PLANNING.json",
+      "fixed_gain_scenarios_normal_approximation": {
+        "macro": {
+          "gain_equals_reference": {
+            "inconclusive": 0.0,
+            "not_reproduced": 0.01569451907,
+            "reproduced": 0.95,
+            "reproduced_smaller": 0.03430548029,
+            "reversed": 6.315026678e-10
+          },
+          "gain_half_reference": {
+            "inconclusive": 0.0,
+            "not_reproduced": 0.4617025738,
+            "reproduced": 0.3404698518,
+            "reproduced_smaller": 0.1977979771,
+            "reversed": 2.959728219e-05
+          },
+          "gain_zero": {
+            "inconclusive": 0.0,
+            "not_reproduced": 0.95,
+            "reproduced": 0.006808410598,
+            "reproduced_smaller": 0.0181915894,
+            "reversed": 0.025
+          },
+          "regions_points": {
+            "negative_below": -1.414022726,
+            "positive_above": 1.414022726,
+            "shortfall_below": 1.779981387
+          }
+        },
+        "pooled": {
+          "gain_equals_reference": {
+            "inconclusive": 0.1959489755,
+            "not_reproduced": 0.04999795957,
+            "reproduced": 0.7540510245,
+            "reproduced_smaller": 0.0,
+            "reversed": 2.040428895e-06
+          },
+          "gain_half_reference": {
+            "inconclusive": 0.3637011305,
+            "not_reproduced": 0.3735074757,
+            "reproduced": 0.262278929,
+            "reproduced_smaller": 0.0,
+            "reversed": 0.0005124648321
+          },
+          "gain_zero": {
+            "inconclusive": 0.13307435,
+            "not_reproduced": 0.81692565,
+            "reproduced": 0.025,
+            "reproduced_smaller": 0.0,
+            "reversed": 0.025
+          },
+          "regions_points": {
+            "negative_below": -0.7628109598,
+            "positive_above": 0.7628109598,
+            "shortfall_below": 0.3901318926
+          }
+        }
+      },
+      "generator": "satml2027ext/plan_q1_ext.py (deterministic; floats rounded to 10 significant digits; a regeneration must agree under plan_q1_ext.compare_planning on any runtime, and is expected to be byte-identical on the reference runtime recorded in the V4 amendment)",
+      "item_bootstrap_se_points": {
+        "macro": 0.7214534231,
+        "pooled": 0.3891964168
+      },
+      "monte_carlo_sd_points": {
+        "plug_in": {
+          "independent_coupling_model": {
+            "macro": 0.06348519107,
+            "pooled": 0.06349659927
+          },
+          "rule": "per item, Var(C - I) <= min(p + q, 2 - p - q) - (p - q)^2 over every joint law with marginals p and q (attained by the extreme coupling); items are drawn independently of each other, so the item bounds add; the independent coupling p(1 - p) + q(1 - q) is a model value, not a bound",
+          "sharp_upper_bound_any_coupling": {
+            "macro": 0.06349242194,
+            "pooled": 0.06352049555
+          }
+        },
+        "posterior_predictive": {
+          "independent_coupling_model": {
+            "macro": 0.08603957584,
+            "pooled": 0.07718181699
+          },
+          "rule": "per item, Var(C - I) <= min(p + q, 2 - p - q) - (p - q)^2 over every joint law with marginals p and q (attained by the extreme coupling); items are drawn independently of each other, so the item bounds add; the independent coupling p(1 - p) + q(1 - q) is a model value, not a bound",
+          "sharp_upper_bound_any_coupling": {
+            "macro": 0.08609305328,
+            "pooled": 0.07737870075
+          }
+        }
+      },
+      "reading": "Q1's primary estimand is the equal-cell macro (the manuscript's headline).  On the saved draws it lies about 4.1 bootstrap standard errors above zero, so the positive and shortfall regions do not overlap in an inconclusive band: every fresh-draw outcome is classified.  The item-pooled secondary estimand (about 2.6 standard errors) keeps a narrow inconclusive band.  Both fresh-draw models put the Monte-Carlo standard deviation of the macro at most 0.09 points (sharp any-coupling bound) against an item-bootstrap standard error of 0.72: fresh draws on the same images are expected to reproduce the saved value. Q1 checks whether the historical contrast persists when the certification draws and the execution pipeline are refreshed on the same registered images and the same legacy bank tensors; it is not a calibrated decomposition of the variance and does not identify why two runs differ (the verdict regions use the item-bootstrap standard error, a conservative convention, not the fresh-draw repeat distribution). The item-level question belongs to 021B (Q6, fresh images).",
+      "saved_draw_z": {
+        "macro": 4.112069569,
+        "pooled": 2.647257235
+      },
+      "saved_draws_classified_as": {
+        "macro": "reproduced",
+        "pooled": "reproduced"
+      },
+      "sha256": "f4339ad7882b81c8be7337cde978b29eaa6124f183c9fbc7deb1d4319f230ae0",
+      "sharp_bound_normal_verdict_probabilities": {
+        "plug_in": {
+          "macro": {
+            "inconclusive": 0.0,
+            "not_reproduced": 2.226266714e-123,
+            "reproduced": 1.0,
+            "reproduced_smaller": 2.064224558e-71,
+            "reversed": 0.0
+          },
+          "pooled": {
+            "inconclusive": 0.001354198858,
+            "not_reproduced": 3.787657077e-19,
+            "reproduced": 0.9986458011,
+            "reproduced_smaller": 0.0,
+            "reversed": 4.688581352e-161
+          }
+        },
+        "posterior_predictive": {
+          "macro": {
+            "inconclusive": 0.0,
+            "not_reproduced": 1.703308114e-67,
+            "reproduced": 1.0,
+            "reproduced_smaller": 2.513445036e-39,
+            "reversed": 0.0
+          },
+          "pooled": {
+            "inconclusive": 0.008353558623,
+            "not_reproduced": 2.810134327e-13,
+            "reproduced": 0.9916464414,
+            "reproduced_smaller": 0.0,
+            "reversed": 1.28347233e-108
+          }
+        }
+      },
+      "verdict_probabilities": {
+        "plug_in": {
+          "macro": {
+            "inconclusive": 0.0,
+            "not_reproduced": 0.0,
+            "reproduced": 1.0,
+            "reproduced_smaller": 0.0,
+            "reversed": 0.0
+          },
+          "pooled": {
+            "inconclusive": 0.0018,
+            "not_reproduced": 0.0,
+            "reproduced": 0.9982,
+            "reproduced_smaller": 0.0,
+            "reversed": 0.0
+          }
+        },
+        "posterior_predictive": {
+          "macro": {
+            "inconclusive": 0.0,
+            "not_reproduced": 0.0,
+            "reproduced": 1.0,
+            "reproduced_smaller": 0.0,
+            "reversed": 0.0
+          },
+          "pooled": {
+            "inconclusive": 0.0119,
+            "not_reproduced": 0.0,
+            "reproduced": 0.9881,
+            "reproduced_smaller": 0.0,
+            "reversed": 0.0
+          }
+        }
+      },
+      "verdict_probabilities_basis": "model-based: simulated with the candidate and identity outcomes coupled independently"
+    },
+    "statement": "021A contains 1,650 unique evaluation images in 3,300 backbone-image positions. Under the conservative unique-image calculation at 10% discordance its five-contrast family is underpowered for a 2-point effect (power about 0.47; minimum detectable effect about 2.7 points); that family is secondary for 021A. Q1 is planned separately (q1_planning): because the images and banks are EXP-017's, only the Monte-Carlo draws are fresh, and the planning file puts their standard deviation for the equal-cell gain near 0.06-0.09 points against an item-bootstrap standard error of about 0.72, so Q1 is expected to classify the outcome decisively; it measures the Monte-Carlo part of the post-hoc gain and checks the EXP-021 pipeline end to end, not item-level replication (021B, Q6). V1's '3,300 positions resolve about 2 points' was wrong; V2's Q1 rule (Holm-5 direction test of the item-pooled value, with a causal 'otherwise' sentence) is replaced.",
+    "unique_images": 1650,
+    "upper_bound_if_backbones_were_independent": {
+      "minimum_detectable_points": 1.9,
+      "power_for_2_points": 0.85
+    }
+  },
+  "predictions": [
+    {
+      "contrast": "gr_clip_style_two_sided__coefficient_1",
+      "id": "Q1",
+      "if_not_reproduced": "custody, the software stack and the pipeline are examined first (021A shares images and banks with EXP-017, so a large difference points to a numerical or pipeline difference before a scientific one); the registered sentence is reported regardless",
+      "prediction_basis": "planning file: under the posterior-predictive fresh-draw model the Monte-Carlo SD of the equal-cell gain is at most 0.09 points (sharp bound over every coupling of the candidate and identity outcomes) against an item-bootstrap SE of 0.72; with that SD the normal approximation gives 'reproduced' with probability 1.00 for the primary and 0.99 for the secondary estimand (simulated under an independent coupling: 1.00 and 0.99)",
+      "primary_estimand": "equal_cell_macro: mean over the 12 cells of the cell-mean paired difference in standard certified accuracy at r = sigma = 0.25 (the manuscript's headline estimand)",
+      "question": "does the historical post-hoc two-sided gain that the saved EXP-017 draws gave on these 1,650 images (equal-cell +2.97, item-pooled +1.03 points) persist when the certification draws and the execution pipeline are refreshed on the same registered images and the same legacy bank tensors",
+      "reference_candidate": "no_correction",
+      "reference_source": {
+        "content_sha256": "b8c0149d5f9e60c69fe7c7b94d48d484e39b8f34fadcef15e6fb129cfe585660",
+        "derivation": "recomputed with common.certify.certify_from_counts from the EXP-017 sufficient statistics bound by bank_construction.exp016_sources.exp017_artifact_manifest_sha256 (the recomputed outcomes equal the saved ones); equal to the Gate-N2 point estimate",
+        "path": "results/satml2027ext/planning/EXP021A_Q1_PLANNING.json",
+        "sha256": "f4339ad7882b81c8be7337cde978b29eaa6124f183c9fbc7deb1d4319f230ae0"
+      },
+      "registered_prediction": "reproduced",
+      "replaces": "V2's rule (Holm-5 direction test of the item-pooled value; 'otherwise' sentence asserting non-reproduction and a cause) failed the internal re-review (blocker B1)",
+      "rule": "the verdict is the primary estimand's; the secondary estimand's class and the dataset-specific values are reported beside it; Q1 is not evaluable if any of the twelve cells is not run; the contrast still appears in the secondary five-contrast family table",
+      "saved_draw_reference_points": {
+        "equal_cell_macro": {
+          "exact": "89/30",
+          "value": 2.966666667
+        },
+        "item_pooled": {
+          "exact": "34/33",
+          "value": 1.03030303
+        }
+      },
+      "scope_sentence": "These are the images on which the contrast was selected post hoc, so no Q1 verdict is an item-level replication; 021B (Q6) tests fresh images. The two banks of the contrast are saved EXP-017 legacy tensors (021A's 18 new banks and trained controls are not part of Q1), so a difference between the fresh and saved values comes from the certification draws or from the execution pipeline (image encoding under the EXP-021 software stack and hardware), which 021A does not separate.",
+      "secondary_estimand": "item_pooled: paired difference over the 3,300 positions",
+      "sentence_fields": "point, interval, saved-draw reference, fresh minus saved, and both p-values (satml2027ext/analyze_ext.py::q1_sentence)",
+      "sentences": {
+        "equal_cell_macro": {
+          "inconclusive": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the equal-cell gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): neither distinguishable from zero nor significantly below the saved-draw value.",
+          "not_reproduced": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the equal-cell gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): not distinguishable from zero, and significantly below the saved-draw value.",
+          "reproduced": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the equal-cell gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): positive, and not significantly below the saved-draw value (not finding a shortfall does not show that the two values are equal).",
+          "reproduced_smaller": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the equal-cell gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): positive, but significantly below the saved-draw value (one-sided test at 5%).",
+          "reversed": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the equal-cell gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): significantly negative."
+        },
+        "item_pooled": {
+          "inconclusive": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the item-pooled gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): neither distinguishable from zero nor significantly below the saved-draw value.",
+          "not_reproduced": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the item-pooled gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): not distinguishable from zero, and significantly below the saved-draw value.",
+          "reproduced": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the item-pooled gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): positive, and not significantly below the saved-draw value (not finding a shortfall does not show that the two values are equal).",
+          "reproduced_smaller": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the item-pooled gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): positive, but significantly below the saved-draw value (one-sided test at 5%).",
+          "reversed": "With fresh certification draws and a fresh execution pipeline on the same 1,650 images and the same legacy bank tensors, the item-pooled gain of the two-sided operator was {point:+.2f} points (unadjusted 95% interval {lower:+.2f} to {upper:+.2f}; saved-draw value {reference:+.2f}, fresh minus saved {difference:+.2f}; direction p = {p_direction:.3f}, shortfall p = {p_shortfall:.3f}): significantly negative."
+        }
+      },
+      "tests": {
+        "alpha": 0.05,
+        "bootstrap": "the registered Rao-Wu shared-image bootstrap of inference.uncertainty (same seed and replicates)",
+        "direction": "two-sided percentile-bootstrap p = 2 min(P*(d <= 0), P*(d >= 0)); positive or negative when p <= 0.05, else unresolved",
+        "family": "pooled__sigma0.25",
+        "implementation": "satml2027ext/analyze_ext.py::q1_classify",
+        "multiplicity": "none: Q1 is one registered contrast outside the Holm families; its two nulls (gain = 0; gain >= reference > 0) are disjoint, so at most one is true and testing each at 5% keeps the family-wise error at 5%",
+        "shortfall": "one-sided percentile-bootstrap p = P*(d >= reference) for H0: the fresh-draw gain is at least its saved-draw value; shortfall when p <= 0.05"
+      },
+      "type": "fresh-draw, fresh-pipeline persistence check on the same images and bank tensors (not an item-level replication)",
+      "verdict_meaning": {
+        "inconclusive": "neither test rejected: the data neither separate the gain from zero nor place it below the saved value",
+        "not_reproduced": "the direction test did not separate the gain from zero and the shortfall test found it below the saved value",
+        "reproduced": "the direction test found a positive gain and the shortfall test did not find the fresh gain below the saved value; not finding a shortfall is not evidence that the two values are equal",
+        "reproduced_smaller": "the direction test found a positive gain and the shortfall test found it below the saved value",
+        "reversed": "the direction test found a negative gain"
+      },
+      "verdict_rules": {
+        "inconclusive": "direction unresolved and no shortfall",
+        "not_reproduced": "direction unresolved and shortfall",
+        "reproduced": "direction positive and no shortfall",
+        "reproduced_smaller": "direction positive and shortfall",
+        "reversed": "direction negative"
+      }
+    },
+    {
+      "contrasts": {
+        "image_only": [
+          "image_only_centering__coefficient_0.25",
+          "image_only_centering__coefficient_0.5",
+          "image_only_centering__coefficient_1"
+        ],
+        "text_only": [
+          "text_only_centering__coefficient_0.25",
+          "text_only_centering__coefficient_0.5",
+          "text_only_centering__coefficient_1"
+        ],
+        "two_sided": [
+          "gr_clip_style_two_sided__coefficient_0.25",
+          "gr_clip_style_two_sided__coefficient_0.5",
+          "gr_clip_style_two_sided__coefficient_1"
+        ]
+      },
+      "id": "Q2",
+      "outcome_template": "at c = X the two-sided operator changed standard CA by Y points; its text half by T and its image half by I (interaction Z).",
+      "question": "how much of the two-sided operator's effect is carried by its text half and by its image half (same items, fresh noise)",
+      "rule": "per pooled family and coefficient: the three effects and the interaction (two-sided minus text-only minus image-only) with an unadjusted interval; no additivity is assumed",
+      "type": "decomposition, reported whatever the signs"
+    },
+    {
+      "contrasts": [
+        "clean_boundary_active__step_0.0025",
+        "clean_boundary_active__step_0.005",
+        "clean_boundary_active__step_0.01",
+        "clean_boundary_active__step_0.02",
+        "clean_boundary_active__step_0.04",
+        "clean_boundary_active__step_0.08",
+        "clean_boundary_active__step_0.16",
+        "clean_boundary_active__step_0.32",
+        "cohen_aligned_noisy_margin__step_0.0025",
+        "cohen_aligned_noisy_margin__step_0.005",
+        "cohen_aligned_noisy_margin__step_0.01",
+        "cohen_aligned_noisy_margin__step_0.02",
+        "cohen_aligned_noisy_margin__step_0.04",
+        "cohen_aligned_noisy_margin__step_0.08",
+        "cohen_aligned_noisy_margin__step_0.16",
+        "cohen_aligned_noisy_margin__step_0.32"
+      ],
+      "id": "Q3",
+      "not_a_rule": "V1 compared the item-level fraction of changed certified outcomes with the draw-level fraction of flippable draws; those quantities have different units and no theorem orders them, so the comparison is not computed",
+      "question": "do text-side steps act only on draws the decision-change proposition allows, and how does the changed-draw fraction grow with the step",
+      "rule": "conforms iff, summed over every cell, every step bank has zero containment violations and zero loose-bound violations (worker counters, tolerance 1e-5); the changed-draw fraction and the loose flippable budget are reported per step whatever their shape",
+      "type": "per-draw conformance + step-response curve"
+    },
+    {
+      "contrasts": [
+        "chowers_exact_projected_gap__coefficient_0.25",
+        "chowers_exact_projected_gap__coefficient_0.5",
+        "chowers_exact_projected_gap__coefficient_1"
+      ],
+      "id": "Q4",
+      "question": "is the projected-gap bank decision-invariant under fresh noise, draw by draw",
+      "rule": "conforms iff every projected-gap bank has zero containment violations; the changed projected-gap draws are reported with their tie budget (each had an identity winner-pair margin of at most the recorded max |n_j - n_k| plus the tolerance); the count bounds the margin and does not identify a cause",
+      "type": "per-draw conformance"
+    },
+    {
+      "contrasts": [
+        "control__learned_shared_translation_tangent",
+        "control__lowrank_tangent_r8",
+        "control__noisy_class_mean",
+        "control__fewshot_prompt_bank"
+      ],
+      "id": "Q5",
+      "question": "do the supervised class-specific and few-shot prompt controls improve standard CA beyond the identity, and by how much relative to the two-sided operator",
+      "rule": "per pooled family: Holm over the four controls (direction test); control minus gr_clip_style_two_sided__coefficient_1 reported with an unadjusted interval (descriptive)",
+      "type": "positive control"
+    }
+  ],
+  "primary_outcome": "Q1: equal-cell macro over the 12 cells of the paired change in standard certified accuracy at r = 0.25 of the two-sided c=1 bank vs no_correction under fresh draws, classified against zero and against its saved-draw EXP-017 value (+89/30 = +2.97 points); the item-pooled value (+34/33 = +1.03 points on the saved draws) is secondary",
+  "priority_if_short": [
+    "021B",
+    "021A",
+    "021C"
+  ],
+  "prompt_configs": {
+    "cifar100": {
+      "path": "configs/prompts/cifar100_openai_readme.json",
+      "sha256": "907720051425650ef032094a4dcc46149d6297575dbbabb6fe734a0b4b9a06d6"
+    },
+    "eurosat": {
+      "path": "configs/prompts/eurosat_openai_ensemble_v1.json",
+      "sha256": "223d96686dbc3e21ad57dcb8cee033a008b2d64273fda9ae8993ed43db1e0ddc"
+    }
+  },
+  "provenance": {
+    "amendment": "research/EXP021_V4_AMENDMENT_2026-09-26.md",
+    "amendment_sha256": "6251c1ad1c203c8fec307c404c9707b169d34c090fbae9398c74f90a320302e3",
+    "exclusion_manifest_sha256": "f14dec8b902f518ae37df73e12e07fe9700e021a68f9ae8582faa8c9cb208c85",
+    "item_manifest": "results/satml2027ext/items/item_manifest_ext.json",
+    "item_manifest_sha256": "96b06ac80a21371f2b7dbec1d2548b90490353ca635f142ce5c57985198beec7",
+    "phase3_assignments_sha256": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38",
+    "plan": "research/EXP021_POWERED_FOLLOWUP_PLAN_2026-09-25.md",
+    "plan_sha256": "bd989757be7f91059a1e1bf6fa4b5a4d77e5d92ab840cb96a727c18b417b691e",
+    "previous_amendments": [
+      {
+        "path": "research/EXP021_V3_AMENDMENT_2026-09-26.md",
+        "sha256": "4fced5fd5a2488ef74d1e15cfa1fa430e39d28c1ecdea5120e1310e9fa718f3e"
+      },
+      {
+        "path": "research/EXP021_V2_AMENDMENT_2026-09-26.md",
+        "sha256": "00d2187388f20eb86787db6f5abb3dd35eef5076d7bb8d0522a3231356b6596d"
+      }
+    ],
+    "previous_reviews": [
+      {
+        "path": "research/independent_review/exp021_V2_internal_adversarial_rereview_2026-09-26.md",
+        "sha256": "0cde706615d392b3873b93bf730f1e273acb1966ff57807527b530965fe3d40e"
+      }
+    ],
+    "reviews": [
+      {
+        "path": "research/independent_review/reviewer_bundle_V3_critical_audit_2026-09-26.pdf",
+        "sha256": "97c0cdf869cb10edbbeec039602d98ee01d2c5240c6fb48c5a4a4a36effd5607"
+      },
+      {
+        "path": "research/independent_review/reviewer_bundle_V3_critical_audit_evidence_2026-09-26.zip",
+        "sha256": "73e286eed6a695b34963967c6158b5dfcdbb6849b344c67abeae13056132c883"
+      },
+      {
+        "path": "research/independent_review/reviewer_bundle_V3_text_review_2026-09-26.md",
+        "sha256": "ef1b89811b6633d143cf495ba02147e16221c01303d9ab505f7b88f6036001eb"
+      }
+    ],
+    "split_manifest_sha256": "3aaf7d9d1a707e532b08f6cf4b5cd92a23b08f55dfeb670d674d92853091ecfe",
+    "synthetic_inputs": false
+  },
+  "registered_at": "2026-09-26T20:18:00+00:00",
+  "registration_sha256": "d1fbe0a89484224625a29ce69d1a114a8dab75a6c776e4b29bb7c87414b9afe7",
+  "registration_version": "V4",
+  "schema_version": "satml2027ext.registration.v4",
+  "scope_ladder": {
+    "definitions": {
+      "core": "021A + 021B (three backbones, sigma 0.12 and 0.25) + 021C",
+      "minimal": "021A + 021B at sigma 0.25 only, three backbones"
+    },
+    "levels": [
+      "core",
+      "minimal"
+    ],
+    "retired_level": {
+      "level": "full",
+      "models": [
+        "openai-clip-vit-b16-quickgelu",
+        "openai-clip-rn50-quickgelu"
+      ],
+      "note": "removed before registration; no cell of this level was ever sampled; adding it back would be a new registration",
+      "reason": "covered by EXP-019A/B (five backbones, sigma 0.12/0.25/0.5, fresh items; D-128); low value per GPU-hour",
+      "retired_on": "2026-09-26",
+      "sigma": 0.5
+    },
+    "rule": "descend only before the affected cells run, with a timestamped reason recorded in research/DECISION_LOG.md; the descended cells are declared not run in the run custody manifest"
+  },
+  "sealed_evaluation_access": false,
+  "sharding": {
+    "max_items_per_shard": 1000,
+    "rule": "a cell may be split into contiguous shards of at most 1,000 items of its registered order (satml2027ext/run_shard_ext.py::shard_slice); item seeds do not depend on the split (certification.streams.seed_derivation), so the realized draws do not either; every shard of a cell runs on one GPU class with the registered forward batch; the run custody manifest requires the shards to tile the registered order, with the registered labels and dataset indices, before any analysis"
+  },
+  "sigmas": [
+    0.25
+  ],
+  "stages": {
+    "approval_file": "research/EXP021_APPROVAL.json",
+    "approval_schema": "satml2027ext.approval.v3 (satml2027ext/guard_ext.py)",
+    "data_preflight": "a custody step that may run before the stage-1 approval: satml2027ext/preflight_data_ext.py reads labels and file bytes, decodes no image and computes no model output (a local smoke preflight ran on 2026-09-26 and is disclosed in research/DECISION_LOG.md)",
+    "planning": "satml2027ext/plan_ext.py reads registrations only and is not gated (it touches no data or outcome)",
+    "rule": "every flag must be present and boolean; a missing flag, an unbound registration, any difference between the approved and current dependency files, or a source_commit that does not hold those files is a refusal",
+    "source_commit": "every approval names the git commit that holds exactly the approved dependency closure (source_commit); every stage recomputes the git blob id of each approved file on disk and compares it with that commit (guard_ext.verify_source_commit), so the host runs from a git checkout containing the commit; uncommitted or differing files are a refusal",
+    "stage_1_preparation": "authorized after the independent pre-sampling review of this package; binds the three registration hashes and the complete dependency closure (and the host preflight's hash if it exists when the approval is written); runs satml2027ext/prepare_banks_ext.py and satml2027ext/bank_manifest_ext.py --data-preflight",
+    "stage_2_sampling": "authorized after the reviewer inspects EXP021_DATA_PREFLIGHT.json and EXP021_BANK_MANIFEST.json; the approval adds both SHA-256 values; the worker refuses a bank manifest that names another preflight; runs satml2027ext/run_shard_ext.py",
+    "stage_3_analysis": "authorized after the reviewer inspects the run custody manifests (satml2027ext/custody_ext.py, which lists any not-run cell); the 021C analysis also needs the approved 021B custody manifest for the registered prefix join; runs satml2027ext/analyze_ext.py"
+  },
+  "status": "preregistered_pending_independent_approval",
+  "stop_rules": [
+    "nothing is authorized until the approval file authorizes the stage; the guard enforces it",
+    "no evaluation item is loaded before the sampling stage; the preparation stage refuses evaluation, official-test and sealed items",
+    "every registered cell that finishes is reported regardless of sign; a started cell is completed; a cell that never started is declared in the run custody manifest (custody_ext.py --not-run, which refuses any result file for it) and reported as not run",
+    "no candidate, control, recipe, step, sigma, dataset, item list or checkpoint changes after the registration hash is recorded; a change is a new registration",
+    "the sealed EuroSAT holdout and the CIFAR-100 test split are consumed once; no later selection may use them",
+    "partial outcomes are not inspected; operational metadata only, as for EXP-019",
+    "a per-draw containment or loose-bound violation is reported as a failed prediction and investigated; it never stops a run or removes a cell",
+    "if any 021B result contradicts the EXP-017 narrative, the paper presents the boundary condition, not a uniform negative",
+    "EXP-021 results enter no manuscript before custody verification and independent reconstruction"
+  ],
+  "supersedes": {
+    "earlier": [
+      {
+        "findings_mapped_in": "research/EXP021_V3_AMENDMENT_2026-09-26.md",
+        "registration_sha256": "e9efc3115195b4e69e71fb9863fcd8c9b4d0df0f337096f68ea05c484091c5c6",
+        "review": "research/independent_review/exp021_V2_internal_adversarial_rereview_2026-09-26.md",
+        "status": "superseded on 2026-09-26 before any external verdict: an internal adversarial re-review (a separate agent instance, not the team member's independent review) found one blocker (021A Q1), two major and six minor defects and five notes; never approved; never sampled",
+        "version": "V2"
+      },
+      {
+        "registration_sha256": "eae3040a1abeb9a76fb81a18150ae01b3e59225c1aa217c52f371befe7fa56a3",
+        "reviews": "research/independent_review/ (2026-09-26 text review and 'Critical Audit' PDF); findings mapped in research/EXP021_V2_AMENDMENT_2026-09-26.md",
+        "status": "failed two independent pre-sampling reviews on 2026-09-26; never approved; never sampled",
+        "version": "V1"
+      },
+      {
+        "registration_sha256": "d3c4a826e8144644db13207171a7a94382d813f8f32e6ff531b14b6499e99a8e",
+        "status": "retired 2026-09-26 (D-130) before approval",
+        "version": "V0"
+      }
+    ],
+    "findings_mapped_in": "research/EXP021_V4_AMENDMENT_2026-09-26.md",
+    "registration_sha256": "f47daa7cce41f82d4ef816e8be37c757ee1acf35f38ccce4cfcf0158b14b2cde",
+    "reviews": [
+      "research/independent_review/reviewer_bundle_V3_critical_audit_2026-09-26.pdf",
+      "research/independent_review/reviewer_bundle_V3_critical_audit_evidence_2026-09-26.zip",
+      "research/independent_review/reviewer_bundle_V3_text_review_2026-09-26.md"
+    ],
+    "status": "superseded on 2026-09-26: two reviews of reviewer bundle V3 (a self-described AI-assisted critical audit and a text review) held the stage-1 approval; they found that 021A reconstructed rather than loaded the legacy banks, seven implementation gaps (source mode, non-finite values, count contract, budget join, variance bound, planning portability, projected-gap labels) and that the source was not committed; never approved; never sampled",
+    "version": "V3"
+  },
+  "title": "same-item re-certification of the 18 saved EXP-017 legacy bank tensors with fresh certification draws and a fresh execution pipeline, 18 new banks, and decomposition of the two-sided operator (not an independent replication)",
+  "unique_image_count": 1650
+}

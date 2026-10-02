@@ -1,0 +1,134 @@
+{
+  "schema_version": "negative_paper.gate_n2_preanalysis.v1",
+  "status": "FROZEN_PENDING_INDEPENDENT_STATISTICS_APPROVAL",
+  "authority": {
+    "analysis_execution_authorized": false,
+    "new_sampling_authorized": false,
+    "exp018_authorized": false,
+    "final_test_authorized": false,
+    "broader_replication_data_access_authorized": false
+  },
+  "source": {
+    "experiment_id": "EXP-20260906-017",
+    "immutable_artifact_set_sha256": "f828daa709bace206f2ba1dc345cbf5bb23c1fc67217b0bde01c8f4b410028dd",
+    "artifact_manifest_path": "results/EXP-20260906-017/artifact_manifest.json",
+    "artifact_manifest_sha256": "a215504af683f3316f2ca70e5915ad2957ce6d0d4304313007649a636545be0c",
+    "gate_n1_audit_path": "artifacts/negative_paper/exp017_scientific_soundness_audit_v1.json",
+    "gate_n1_audit_sha256": "1e8676e0a999c4bba2130106bdfe786dc082f803573929ce5701be48928349b0",
+    "gate_n1_signoff_path": "research/independent_review/negative_paper_gate_n1_signoff_2026-09-15.md",
+    "gate_n1_signoff_sha256": "1d481a6863e19684af3f6a693d676b06666323e52a850c1b562f69c7bb0d7a67",
+    "sufficient_statistics_sha256": {
+      "openai-clip-vit-b32-quickgelu__cifar100__fold0": "6a92e1fa347b69bf86177d8c83f1b56d86fa44cac18973888534ccfdcbe4ed24",
+      "openai-clip-vit-b32-quickgelu__cifar100__fold1": "b93944f38e875849b3c6bd7f801da17437cef4f6bc01e08fb170f24afde6c741",
+      "openai-clip-vit-b32-quickgelu__cifar100__fold2": "6a3ec93e8c02bba40951201fe4db41ee4de606f64e90dc3d5cad11408eaf566e",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold0": "72209d45477462c72d81581621fc78d45905c0cf04a8f6f2af5de72e9b714be8",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold1": "3b7041dcf554efa8cf0b0bf1d04939171871c44cb09c14f77fc434a0b35db802",
+      "openai-clip-vit-b32-quickgelu__eurosat__fold2": "c777fdc36b84e306d4a35df39394a19f978e928c778626c11ba4a46d0d5e5adf",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold0": "78370b2e707dd1978d5c6af28ada0b6a1f00026997ada5065d68c5040d5d8e8e",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold1": "b16b30871366d8eb30d671fb2b4637448686d2651b84da57166c35d128e20e3c",
+      "openai-clip-vit-l14-quickgelu__cifar100__fold2": "fb526b42b45fa8f5c056e6617a17531fe7a2b6b0e8b4de8c71d4dec48ebe4e2e",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold0": "e30909c6244b8e85ccb18ea41a084ef606aad7c93dbaae8ee46b17a3987fcb98",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold1": "97ac1ff7f79cc60e6bb4e11375d45f15abbb196bd42a4a635fff7e344af02def",
+      "openai-clip-vit-l14-quickgelu__eurosat__fold2": "9bd16331a58fd0801251624d2fe4d5ea6e037d8a413ea8478887b1b268cbb106"
+    }
+  },
+  "scope": {
+    "models": 2,
+    "datasets": 2,
+    "folds_per_dataset": 3,
+    "cells": 12,
+    "shared_dataset_fold_groups_across_models": 6,
+    "class_strata": 330,
+    "unique_item_positions_across_dataset_folds": 1650,
+    "candidate_count_including_identity": 18,
+    "contrast_count": 17,
+    "radius_count": 4,
+    "metric_count": 2,
+    "simultaneous_hypothesis_count": 136
+  },
+  "identity_candidate_id": "no_correction",
+  "candidate_ids_in_frozen_order": [
+    "no_correction",
+    "global_mean_centering__coefficient_0.25",
+    "global_mean_centering__coefficient_0.5",
+    "global_mean_centering__coefficient_1",
+    "gr_clip_style_two_sided__coefficient_1",
+    "chowers_exact_projected_gap__coefficient_0.25",
+    "chowers_exact_projected_gap__coefficient_0.5",
+    "chowers_exact_projected_gap__coefficient_1",
+    "clean_boundary_active__step_0.0025",
+    "clean_boundary_active__step_0.005",
+    "clean_boundary_active__step_0.01",
+    "clean_boundary_active__step_0.02",
+    "clean_boundary_active__step_0.04",
+    "cohen_aligned_noisy_margin__step_0.0025",
+    "cohen_aligned_noisy_margin__step_0.005",
+    "cohen_aligned_noisy_margin__step_0.01",
+    "cohen_aligned_noisy_margin__step_0.02",
+    "cohen_aligned_noisy_margin__step_0.04"
+  ],
+  "radii_in_frozen_order": [0.0, 0.1, 0.25, 0.5],
+  "metrics_in_frozen_order": [
+    "standard_cohen_certified_accuracy",
+    "raw_clean_anchored_certified_accuracy"
+  ],
+  "estimand": {
+    "formula": "equal_cell_mean(candidate_item_indicator - no_correction_item_indicator)",
+    "cell_weighting": "each of the 12 model-dataset-fold cells has weight 1/12",
+    "comparison": "every non-identity candidate versus no_correction",
+    "selection": "all 17 contrasts are reported; no winner-only confirmatory contrast",
+    "inference_population": "validation items conditional on the frozen models, datasets, folds, prompts, candidates, sigma, and pointwise certificate procedure"
+  },
+  "bootstrap": {
+    "method": "nonparametric_stratified_paired_item_bootstrap",
+    "replicates": 100000,
+    "rng": "numpy.random.Generator(numpy.random.PCG64DXSM(2026091501))",
+    "seed": 2026091501,
+    "strata": ["dataset", "fold", "ground_truth_class"],
+    "stratum_order": "lexicographic_by_dataset_then_fold_then_integer_class",
+    "item_order_within_stratum": "lexicographic_string_item_id",
+    "draw_order": "for each stratum in frozen order draw one integer array of shape [100000, stratum_size]",
+    "resample_size": "original stratum size",
+    "replacement": true,
+    "shared_multiplicity": "the same item multiplicities are used across both models, every candidate, radius, and metric",
+    "cell_reconstruction": "recompute item means within each cell, then average the 12 cell values equally",
+    "zero_variance_policy": "retain every contrast"
+  },
+  "simultaneous_band": {
+    "family": "all 17 candidates x 4 radii x 2 metrics",
+    "center": "original_sample_point_estimate",
+    "replicate_statistic": "maximum absolute bootstrap deviation across all 136 contrasts",
+    "confidence_level": 0.95,
+    "critical_value": "numpy.quantile(max_deviations, 0.95, method='higher')",
+    "studentized": false,
+    "support_clipping": false,
+    "interval": "point_estimate plus_or_minus common_critical_value",
+    "p_values": false,
+    "unadjusted_intervals": false
+  },
+  "reporting": {
+    "required_fields": [
+      "point_estimate",
+      "simultaneous_lower",
+      "simultaneous_upper",
+      "required_equivalence_margin_descriptive",
+      "common_critical_value",
+      "replicate_count",
+      "seed",
+      "source_hashes"
+    ],
+    "required_equivalence_margin_formula": "max(abs(simultaneous_lower), abs(simultaneous_upper))",
+    "equivalence_claim_authorized": false,
+    "confirmatory_claim_authorized": false,
+    "causal_claim_authorized": false,
+    "per_example_certificate_confidence_is_separate": true,
+    "historical_selection_may_be_rewritten": false,
+    "wide_interval_rule": "report magnitude as inconclusive and preserve the frozen gate-failure conclusion"
+  },
+  "execution_guard": {
+    "required_approval_path": "artifacts/negative_paper/gate_n2_preanalysis_approval_v1.json",
+    "required_approval_status": "INDEPENDENTLY_APPROVED_FOR_GATE_N2_EXECUTION",
+    "approval_must_bind_config_and_analysis_source_hashes": true,
+    "output_must_not_exist_before_approval": "artifacts/negative_paper/gate_n2_simultaneous_analysis_v1.json"
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "schema_version": "farla_result_custody.manifest.v1",
+  "experiment_id": "EXP-20260917-020-FARLA-FULL",
+  "generated_utc": "2026-09-24T20:54:26.724212+00:00",
+  "generator": {
+    "script": "FARLA/artifacts/phase4/FARLA_FULL_RESULT_CUSTODY_V1/build_manifest.py",
+    "script_sha256": "da6bba4f4c2c59c5cb436a0f3999a480a76915773c172393c449ee30fb7c1dbe",
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26100-SP0"
+  },
+  "results_dir": "FARLA/downloaded_results/EXP-20260917-020-FARLA-FULL",
+  "hash_algorithm": "sha256",
+  "file_count": 61,
+  "total_bytes": 848017691,
+  "config": {
+    "recorded_config_sha256": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+    "recorded_from": "CONFIG_SHA256",
+    "digest_definition": "SHA-256 of json.dumps(config, sort_keys=True, separators=(',', ':'), ensure_ascii=True) as used by the FARLA configuration loader",
+    "config_snapshot": {
+      "path": "config_snapshot.json",
+      "exists": true,
+      "bytes": 6952,
+      "file_sha256": "57b79923fd333c01fb128e7dc88f81f9aefce7e6b3aafff4d373d5c5d5511620",
+      "canonical_json_sha256": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+      "experiment_id": "EXP-20260917-020-FARLA-FULL",
+      "canonical_sha256_matches_recorded": true,
+      "file_sha256_matches_recorded": false
+    },
+    "repository_config": {
+      "path": "FARLA/configs/phase4/farla_full_v1.json",
+      "exists": true,
+      "bytes": 6952,
+      "file_sha256": "57b79923fd333c01fb128e7dc88f81f9aefce7e6b3aafff4d373d5c5d5511620",
+      "canonical_json_sha256": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+      "experiment_id": "EXP-20260917-020-FARLA-FULL",
+      "byte_identical_to_snapshot": true,
+      "canonical_sha256_matches_recorded": true
+    }
+  },
+  "files": [
+    {
+      "path": "analysis/aggregate.csv",
+      "bytes": 1193,
+      "sha256": "3200df9a42895f97d1bb7bee12a29c3fd0c729542d716d728c2dccc11c274ffb",
+      "mtime_utc": "2026-09-19T09:30:34.803202+00:00"
+    },
+    {
+      "path": "analysis/report.json",
+      "bytes": 37928,
+      "sha256": "dd123e618475ebb498583fb569e26040f45cf051b6d8338224d61af37a2777c4",
+      "mtime_utc": "2026-09-19T09:30:34.422418+00:00"
+    },
+    {
+      "path": "analysis/report.md",
+      "bytes": 1325,
+      "sha256": "6b6f8ed44131ff5481aa3da411dee91e2a42e5339be929b4d02b0c76a56b594d",
+      "mtime_utc": "2026-09-19T09:30:35.169162+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-b32-quickgelu__cifar100__selection.pt",
+      "bytes": 262896537,
+      "sha256": "b72787e9755c71fb80ddb5bd0503d74fcee5a1f365a3bfd40ae8136aad46e1b8",
+      "mtime_utc": "2026-09-19T09:26:10.857507+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-b32-quickgelu__cifar100__train.pt",
+      "bytes": 35136937,
+      "sha256": "00c38cca194f02d0ce962c20b9a2bd87313250d42f8c37262c366416218acabc",
+      "mtime_utc": "2026-09-19T09:24:06.907574+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-b32-quickgelu__eurosat__selection.pt",
+      "bytes": 26297037,
+      "sha256": "611483d6c71b928b0831dd6e5d82081e44d313597e9c1e38475681789b981918",
+      "mtime_utc": "2026-09-19T09:26:25.839986+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-b32-quickgelu__eurosat__train.pt",
+      "bytes": 3524125,
+      "sha256": "21293ef87a0ab6933a49abe7f78f0bf2babf2332f0000860ea8897a369b60600",
+      "mtime_utc": "2026-09-19T09:26:13.030179+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-l14-quickgelu__cifar100__selection.pt",
+      "bytes": 394326937,
+      "sha256": "7832876ca920cd21a46ab0e4db4ee67dd9bd95725087838a9e93594d11b69511",
+      "mtime_utc": "2026-09-19T09:29:29.380659+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-l14-quickgelu__cifar100__train.pt",
+      "bytes": 52647337,
+      "sha256": "890797c696011403da6c112522f4c3ba8587e937c5ca2466460e7f764fa347e9",
+      "mtime_utc": "2026-09-19T09:26:56.830111+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-l14-quickgelu__eurosat__selection.pt",
+      "bytes": 39440077,
+      "sha256": "0bc9e43258c6e92a6fbd38fbe473541558ea07c8c9050d72e98de9ba66bed052",
+      "mtime_utc": "2026-09-19T09:29:49.904455+00:00"
+    },
+    {
+      "path": "cache/openai-clip-vit-l14-quickgelu__eurosat__train.pt",
+      "bytes": 5275165,
+      "sha256": "b51e0a858bc2c771c3d0631e30437589a7f6fd64742a619ff4bbdc0b1124ff45",
+      "mtime_utc": "2026-09-19T09:29:33.071262+00:00"
+    },
+    {
+      "path": "cache_progress.json",
+      "bytes": 987,
+      "sha256": "6eba0d672f04bbcd8a72b3d4bf89e8b95b6047705739d686ecea5ffcc7f1e821",
+      "mtime_utc": "2026-09-19T09:29:50.272315+00:00"
+    },
+    {
+      "path": "CONFIG_SHA256",
+      "bytes": 65,
+      "sha256": "5b25e946029c6cb961ff556a4829daf6c822199485fa06d41746ab64db821fe5",
+      "mtime_utc": "2026-09-19T09:23:43.128209+00:00"
+    },
+    {
+      "path": "config_snapshot.json",
+      "bytes": 6952,
+      "sha256": "57b79923fd333c01fb128e7dc88f81f9aefce7e6b3aafff4d373d5c5d5511620",
+      "mtime_utc": "2026-09-21T07:31:02.835256+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-b32-quickgelu__cifar100/COMPLETE",
+      "bytes": 9,
+      "sha256": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+      "mtime_utc": "2026-09-19T09:30:21.857872+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-b32-quickgelu__cifar100/metrics.json",
+      "bytes": 12474,
+      "sha256": "f40dfd9cea718d72c16e3095e40576f3bcc4b7779ba414f4e1762f0ea68304a1",
+      "mtime_utc": "2026-09-19T09:30:21.493174+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-b32-quickgelu__cifar100/sufficient_statistics.pt",
+      "bytes": 8532119,
+      "sha256": "31201d154b0af184d901b4851c22d197d5abfa0969c63da9b1e514b373defa83",
+      "mtime_utc": "2026-09-19T09:30:21.125028+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-b32-quickgelu__eurosat/COMPLETE",
+      "bytes": 9,
+      "sha256": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+      "mtime_utc": "2026-09-19T09:30:23.734289+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-b32-quickgelu__eurosat/metrics.json",
+      "bytes": 12342,
+      "sha256": "fc891e9d3191cce1cdcfd9dade85e7ac34801e2330e9b003d0a2074e0d8aa81f",
+      "mtime_utc": "2026-09-19T09:30:23.363519+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-b32-quickgelu__eurosat/sufficient_statistics.pt",
+      "bytes": 321175,
+      "sha256": "8c7a9573be34ab4402db4ebb897b2e0f8f76c5f70f803af8c3c79b8d77316451",
+      "mtime_utc": "2026-09-19T09:30:22.995694+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-l14-quickgelu__cifar100/COMPLETE",
+      "bytes": 9,
+      "sha256": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+      "mtime_utc": "2026-09-19T09:30:31.523167+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-l14-quickgelu__cifar100/metrics.json",
+      "bytes": 12455,
+      "sha256": "4686c899bc249779eb9d092cb540145901a96e6bf9f9b18a34bf1a463a737012",
+      "mtime_utc": "2026-09-19T09:30:31.149956+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-l14-quickgelu__cifar100/sufficient_statistics.pt",
+      "bytes": 9351383,
+      "sha256": "3e4b6902a17322ca533bcc172a1ad93d45424a84cbb9f7e052548c4232bd9e26",
+      "mtime_utc": "2026-09-19T09:30:30.781525+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-l14-quickgelu__eurosat/COMPLETE",
+      "bytes": 9,
+      "sha256": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+      "mtime_utc": "2026-09-19T09:30:33.588778+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-l14-quickgelu__eurosat/metrics.json",
+      "bytes": 12336,
+      "sha256": "28da3edf8f421c65a2918bef4a8cb6734b50d4ba5505b678983b6ce221103164",
+      "mtime_utc": "2026-09-19T09:30:33.221797+00:00"
+    },
+    {
+      "path": "confirmation/openai-clip-vit-l14-quickgelu__eurosat/sufficient_statistics.pt",
+      "bytes": 403095,
+      "sha256": "a0ea3c52e2cf00f45b975a5b49cd0beb1e45799641d8741baf73e03e80285e58",
+      "mtime_utc": "2026-09-19T09:30:32.831990+00:00"
+    },
+    {
+      "path": "preflight.json",
+      "bytes": 1789,
+      "sha256": "d02dbda86c1fb4cb13a1a8863a158609653639515e9c0e08e718abe61def9b0f",
+      "mtime_utc": "2026-09-19T09:23:43.529659+00:00"
+    },
+    {
+      "path": "run.log",
+      "bytes": 17929,
+      "sha256": "d72146e639e2684eeb646e962794dbdb3b1c6978dcd5e3714151eb955d596e92",
+      "mtime_utc": "2026-09-19T09:23:44.818894+00:00"
+    },
+    {
+      "path": "screening_report.json",
+      "bytes": 24608,
+      "sha256": "aabc397c26d241349d3807d5b47721ee3258b751b38651984020e6baa8f0f4c7",
+      "mtime_utc": "2026-09-19T09:30:13.987054+00:00"
+    },
+    {
+      "path": "splits/assignments.csv",
+      "bytes": 526807,
+      "sha256": "eb58533a736c75b25dee351ca4ba4e654f7c4e629ee8bbca2494524a4762d8ca",
+      "mtime_utc": "2026-09-19T09:23:47.546016+00:00"
+    },
+    {
+      "path": "splits/manifest.json",
+      "bytes": 895,
+      "sha256": "cdda5225e1220b207d084a57a23c6771e396c0ba5dda57d3f7223710097d960d",
+      "mtime_utc": "2026-09-19T09:23:47.920240+00:00"
+    },
+    {
+      "path": "supervisord.log",
+      "bytes": 957,
+      "sha256": "ec8f59861fa30b3ddf79a123a5ae10114dc11abb60204daec78cc5ab36a82934",
+      "mtime_utc": "2026-09-19T09:23:43.926605+00:00"
+    },
+    {
+      "path": "supervisord.pid",
+      "bytes": 5,
+      "sha256": "2f1ff629fa76989ad59d0c114f26f005fe9d5db1ba346d676a37f8b3bd514c28",
+      "mtime_utc": "2026-09-19T09:23:44.327437+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__cifar100/farla_full_direct_supervised.pt",
+      "bytes": 626222,
+      "sha256": "6f16240f23ddd2193080f5f825b16736228a9c319c52eba94021c931ba6ff54c",
+      "mtime_utc": "2026-09-19T09:29:56.972758+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__cifar100/farla_full_r4_supervised.pt",
+      "bytes": 431463,
+      "sha256": "32edc855ecf2645fc25bd59a1d213c8392c1b8d7cef7f6dd613fd19502a8f47c",
+      "mtime_utc": "2026-09-19T09:29:55.136071+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__cifar100/farla_full_r8_pseudo.pt",
+      "bytes": 441215,
+      "sha256": "17818aa4b377b9ca81d5cbdc228bd8036898a4f0194564819bee8fd02cb42512",
+      "mtime_utc": "2026-09-19T09:29:57.730727+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__cifar100/farla_full_r8_supervised.pt",
+      "bytes": 441255,
+      "sha256": "2a728e8b61a8ca723cc0a3cb12e5c3ee673505afb7f09f317f1df22cb9dbef92",
+      "mtime_utc": "2026-09-19T09:29:55.981382+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__cifar100/lowrank_ce_r8_supervised.pt",
+      "bytes": 441255,
+      "sha256": "4eb90f3b410a4d4d8fa81b6213e3614e02c84be648bcb931a0011bb76d6e799c",
+      "mtime_utc": "2026-09-19T09:29:53.379763+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__cifar100/lowrank_tail_r8_supervised.pt",
+      "bytes": 441275,
+      "sha256": "848a8181c1c0e36344fd470fb02b15c7426f318faf9b789a9b5f3ca1ac4e0020",
+      "mtime_utc": "2026-09-19T09:29:54.298341+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__cifar100/shared_translation_ce_supervised.pt",
+      "bytes": 423506,
+      "sha256": "f0807986a225774a4e0ca4c5a451c14683646dffc616e7cd308a8d921e49ae7b",
+      "mtime_utc": "2026-09-19T09:29:52.051175+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__eurosat/farla_full_direct_supervised.pt",
+      "bytes": 73262,
+      "sha256": "fb13a45e1a6a6f5cacbc78432e6766f0e29aaacc6a49398c7964331970d17460",
+      "mtime_utc": "2026-09-19T09:30:01.490322+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__eurosat/farla_full_r4_supervised.pt",
+      "bytes": 61415,
+      "sha256": "70c567ec85aff0786f03089731bd9ad15db1410ff4b1a19983dfe438cea895df",
+      "mtime_utc": "2026-09-19T09:30:00.030739+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__eurosat/farla_full_r8_pseudo.pt",
+      "bytes": 69695,
+      "sha256": "ed3b6744e897978a88a10146d20330afe626e21249aa78681d226d89f897397c",
+      "mtime_utc": "2026-09-19T09:30:02.027685+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__eurosat/farla_full_r8_supervised.pt",
+      "bytes": 69735,
+      "sha256": "9d46bdde0eea4ec60a716ae3cab2638018b50a040216e8680179404824b4647e",
+      "mtime_utc": "2026-09-19T09:30:00.695452+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__eurosat/lowrank_ce_r8_supervised.pt",
+      "bytes": 69735,
+      "sha256": "2401e52c4fd2a0ef6b219bf4785d9e84899bb7923649d05310c0e441dde90b7e",
+      "mtime_utc": "2026-09-19T09:29:59.061954+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__eurosat/lowrank_tail_r8_supervised.pt",
+      "bytes": 69755,
+      "sha256": "194033a337af4aff92c66fe4e6a1a29ccafa3eba9deab7c7eb5c6ae761e8b87c",
+      "mtime_utc": "2026-09-19T09:29:59.532945+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-b32-quickgelu__eurosat/shared_translation_ce_supervised.pt",
+      "bytes": 54866,
+      "sha256": "5bdc40089ad6674fb9f534b9615766591e65dae6f11c579d861fb8d29af9f074",
+      "mtime_utc": "2026-09-19T09:29:58.586556+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__cifar100/farla_full_direct_supervised.pt",
+      "bytes": 933422,
+      "sha256": "8e9b10cc89795c75100d8a80690fdfc749cabcef8b8a12e5b6b194e21bbfe986",
+      "mtime_utc": "2026-09-19T09:30:08.321020+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__cifar100/farla_full_r4_supervised.pt",
+      "bytes": 640359,
+      "sha256": "4c0ad81e0e1ec61e2a79ff8c8aea2fa7c3f8b65b9f29b5e29cac77d3f3d4d0ad",
+      "mtime_utc": "2026-09-19T09:30:06.254737+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__cifar100/farla_full_r8_pseudo.pt",
+      "bytes": 654207,
+      "sha256": "99a4bbd818e0bdeb13cdcbd3b3f0d862a580677fa5bcb7830ed99944723fed13",
+      "mtime_utc": "2026-09-19T09:30:09.425425+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__cifar100/farla_full_r8_supervised.pt",
+      "bytes": 654247,
+      "sha256": "8aa954e1625c68720a1dc0cc0a56773f564b5a7a61dc0b6349582a525b67f62f",
+      "mtime_utc": "2026-09-19T09:30:07.203864+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__cifar100/lowrank_ce_r8_supervised.pt",
+      "bytes": 654247,
+      "sha256": "2225075a39274c52d3f7e7c6109ef5c3995d6e7d78ff8589e93e32d890a886ad",
+      "mtime_utc": "2026-09-19T09:30:04.362252+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__cifar100/lowrank_tail_r8_supervised.pt",
+      "bytes": 654267,
+      "sha256": "4c94f827daf362c4de7b94edaff73d58ba6fdb6a3eb3c4c1f417dc4653b13726",
+      "mtime_utc": "2026-09-19T09:30:05.307363+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__cifar100/shared_translation_ce_supervised.pt",
+      "bytes": 629330,
+      "sha256": "ee3c82018c8a52bf152d71f5afa6e0469fb9ad0a24b2bf4d02519822e6dddc51",
+      "mtime_utc": "2026-09-19T09:30:03.349684+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__eurosat/farla_full_direct_supervised.pt",
+      "bytes": 103982,
+      "sha256": "2123dd1c857aa8f40c5e9fcd4b24e87e4bb1f6cd511064a6942c99d1ee88c605",
+      "mtime_utc": "2026-09-19T09:30:13.042499+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__eurosat/farla_full_r4_supervised.pt",
+      "bytes": 85991,
+      "sha256": "9ffc95be6360a3351f422b0991460888e099d56a5902335ae7d6c008a9ce3872",
+      "mtime_utc": "2026-09-19T09:30:11.900976+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__eurosat/farla_full_r8_pseudo.pt",
+      "bytes": 98367,
+      "sha256": "59ede9a03a69da2ad1fb5889cc1478e81758a92d22e352d929504305a95034d8",
+      "mtime_utc": "2026-09-19T09:30:13.610908+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__eurosat/farla_full_r8_supervised.pt",
+      "bytes": 98407,
+      "sha256": "ab6d9b4283672a449692cec7889d78a2995836611dea3f0bf74ea3f0f2c23bbe",
+      "mtime_utc": "2026-09-19T09:30:12.472317+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__eurosat/lowrank_ce_r8_supervised.pt",
+      "bytes": 98407,
+      "sha256": "be46d40ec0f33658fcb8602c3bf69a70da97e081032dabab02c54c214986f2ea",
+      "mtime_utc": "2026-09-19T09:30:10.866294+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__eurosat/lowrank_tail_r8_supervised.pt",
+      "bytes": 98427,
+      "sha256": "e732272b56d5aafd30c285b066b0d1c3ac420c98c1452ad7f1b0481242b6c4c0",
+      "mtime_utc": "2026-09-19T09:30:11.429534+00:00"
+    },
+    {
+      "path": "trained/openai-clip-vit-l14-quickgelu__eurosat/shared_translation_ce_supervised.pt",
+      "bytes": 76370,
+      "sha256": "19ed531654d8d168074ad3b48c7946fb4f4980315b66eec8e887fdd10dc449c2",
+      "mtime_utc": "2026-09-19T09:30:10.308412+00:00"
+    }
+  ]
+}

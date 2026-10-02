@@ -1,0 +1,286 @@
+{
+  "case_count": 3,
+  "cases": [
+    {
+      "case_id": "witness_kappa_gt_1",
+      "checks": [
+        "unit prototype",
+        "unit prototype",
+        "unit prototype",
+        "unit prototype",
+        "same prototype mean",
+        "same prototype mean",
+        "same prototype mean",
+        "same complete global gap",
+        "same complete global gap",
+        "same complete global gap",
+        "same clean margin",
+        "unique positive clean prediction",
+        "same prototype correlation",
+        "Cohen radius 1 closed form",
+        "Cohen radius 2 closed form",
+        "different Cohen radii",
+        "encoder denominator globally nonzero",
+        "finite global encoder Lipschitz bound",
+        "zero tie probability"
+      ],
+      "class_probabilities": [
+        0.907443991692656,
+        0.7462031415676719
+      ],
+      "clean_margins": [
+        0.6072729928169686,
+        0.6072729928169686
+      ],
+      "closed_form_radii": [
+        0.3312945782245396,
+        0.1656472891122698
+      ],
+      "decision_boundaries": [
+        -0.3312945782245396,
+        -0.1656472891122698
+      ],
+      "encoder_global_lipschitz_bound": 2.5310570914145734,
+      "encoder_nonzero_floor": 0.8834522085987724,
+      "expected_prototype_mean": [
+        0.0,
+        0.0,
+        0.4
+      ],
+      "global_gap_1": [
+        -0.3312945782245396,
+        -0.3312945782245396,
+        -0.48345220859877236
+      ],
+      "global_gap_2": [
+        -0.3312945782245396,
+        -0.3312945782245396,
+        -0.48345220859877236
+      ],
+      "population_cohen_radii": [
+        0.33129457822453956,
+        0.16564728911226975
+      ],
+      "prototype_correlations": [
+        -0.6799999999999999,
+        -0.6799999999999999
+      ],
+      "prototype_mean_1": [
+        0.0,
+        0.0,
+        0.4
+      ],
+      "prototype_mean_2": [
+        0.0,
+        0.0,
+        0.4
+      ],
+      "prototype_norms": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "q": 0.3312945782245396,
+      "radius_difference": 0.1656472891122698,
+      "s": 0.916515138991168,
+      "tie_probability_under_continuous_gaussian": 0.0,
+      "z0": [
+        0.3312945782245396,
+        0.3312945782245396,
+        0.8834522085987724
+      ]
+    },
+    {
+      "case_id": "witness_kappa_lt_1",
+      "checks": [
+        "unit prototype",
+        "unit prototype",
+        "unit prototype",
+        "unit prototype",
+        "same prototype mean",
+        "same prototype mean",
+        "same prototype mean",
+        "same complete global gap",
+        "same complete global gap",
+        "same complete global gap",
+        "same clean margin",
+        "unique positive clean prediction",
+        "same prototype correlation",
+        "Cohen radius 1 closed form",
+        "Cohen radius 2 closed form",
+        "different Cohen radii",
+        "encoder denominator globally nonzero",
+        "finite global encoder Lipschitz bound",
+        "zero tie probability"
+      ],
+      "class_probabilities": [
+        0.9171580805434985,
+        0.997217881484721
+      ],
+      "clean_margins": [
+        1.1089652481338754,
+        1.1089652481338754
+      ],
+      "closed_form_radii": [
+        0.6931032800836721,
+        1.3862065601673441
+      ],
+      "decision_boundaries": [
+        -0.6931032800836721,
+        -1.3862065601673441
+      ],
+      "encoder_global_lipschitz_bound": 5.645794895318106,
+      "encoder_nonzero_floor": 0.1980295085953349,
+      "expected_prototype_mean": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "global_gap_1": [
+        -0.6931032800836721,
+        -0.6931032800836721,
+        0.40197049140466506
+      ],
+      "global_gap_2": [
+        -0.6931032800836721,
+        -0.6931032800836721,
+        0.40197049140466506
+      ],
+      "population_cohen_radii": [
+        0.693103280083672,
+        1.3862065601673395
+      ],
+      "prototype_correlations": [
+        -0.28000000000000014,
+        -0.28000000000000014
+      ],
+      "prototype_mean_1": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "prototype_mean_2": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "prototype_norms": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "q": 0.6931032800836721,
+      "radius_difference": -0.6931032800836675,
+      "s": 0.8,
+      "tie_probability_under_continuous_gaussian": 0.0,
+      "z0": [
+        0.6931032800836721,
+        0.6931032800836721,
+        0.1980295085953349
+      ]
+    },
+    {
+      "case_id": "witness_small_q",
+      "checks": [
+        "unit prototype",
+        "unit prototype",
+        "unit prototype",
+        "unit prototype",
+        "same prototype mean",
+        "same prototype mean",
+        "same prototype mean",
+        "same complete global gap",
+        "same complete global gap",
+        "same complete global gap",
+        "same clean margin",
+        "unique positive clean prediction",
+        "same prototype correlation",
+        "Cohen radius 1 closed form",
+        "Cohen radius 2 closed form",
+        "different Cohen radii",
+        "encoder denominator globally nonzero",
+        "finite global encoder Lipschitz bound",
+        "zero tie probability"
+      ],
+      "class_probabilities": [
+        0.670113086743913,
+        0.5583320949514262
+      ],
+      "clean_margins": [
+        0.21130821751814965,
+        0.21130821751814965
+      ],
+      "closed_form_radii": [
+        0.17609018126512474,
+        0.058696727088374916
+      ],
+      "decision_boundaries": [
+        -0.17609018126512474,
+        -0.058696727088374916
+      ],
+      "encoder_global_lipschitz_bound": 3.2651427265578135,
+      "encoder_nonzero_floor": 0.9684959969581861,
+      "expected_prototype_mean": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "global_gap_1": [
+        -0.17609018126512474,
+        -0.17609018126512474,
+        -0.16849599695818607
+      ],
+      "global_gap_2": [
+        -0.17609018126512474,
+        -0.17609018126512474,
+        -0.16849599695818607
+      ],
+      "population_cohen_radii": [
+        0.17609018126512468,
+        0.058696727088374936
+      ],
+      "prototype_correlations": [
+        0.2800000000000003,
+        0.2800000000000003
+      ],
+      "prototype_mean_1": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "prototype_mean_2": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "prototype_norms": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "q": 0.17609018126512474,
+      "radius_difference": 0.11739345417674975,
+      "s": 0.5999999999999999,
+      "tie_probability_under_continuous_gaussian": 0.0,
+      "z0": [
+        0.17609018126512474,
+        0.17609018126512474,
+        0.9684959969581861
+      ]
+    }
+  ],
+  "check_count": 61,
+  "config_path": "configs/negative_paper_gate_n3_theory_v1.json",
+  "config_sha256": "B72608E305AA53CEAB0DFD588E72315B7ADBB23D371190DD3DE1781A008718A6",
+  "exp018_authorized": false,
+  "final_test_authorized": false,
+  "gate_n3_independently_verified": false,
+  "sampling_performed": false,
+  "schema_version": "negative_paper.gate_n3_primary_verification.v1",
+  "scientific_data_accessed": false,
+  "source_hash_checks": 4,
+  "status": "PRIMARY_VERIFIED_PENDING_INDEPENDENT_GATE_N3_REVIEW"
+}

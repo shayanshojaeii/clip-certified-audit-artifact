@@ -1,0 +1,56 @@
+\section{Positive Control: Is Certified Correctness Recoverable at All?}
+\label{sec:control}
+
+A negative result for shared operators says little unless some intervention
+can move the certificate in the same regime. We therefore report a separate, exploratory, supervised
+\FarlaShots-shot class-specific pilot, originally developed as a candidate class-specific method and
+used here only as a positive control, on fresh reserved items of the same two
+backbones, datasets and noise level, with \FarlaCifarConfirmItems{} CIFAR-100
+and \FarlaEurosatConfirmItems{} EuroSAT confirmation items per cell and the same
+certification budget. Using \FarlaShots{} labeled images per class, it trained
+class-specific low-rank tangent adjustments of the prototype bank in the spirit
+of parameter-efficient adaptation~\cite{hu2022lora} under a noisy-and-clean
+cross-entropy objective. Seven variants were evaluated (Table~\ref{tab:farla}):
+a supervised \emph{shared} translation (one common correction, the
+comparator); a \emph{low-rank} adapter with the cross-entropy objective only; a
+\emph{tail-only} variant that adds a loss on the vote fraction near the
+certification threshold; the \emph{full} objective at rank 8, at rank 4, and in
+a direct (non-tangent) parametrization; and a \emph{pseudo-label} variant of the
+full objective trained on the model's own clean predictions instead of labels.
+The pilot was registered with its own configuration and
+custody package, but its planned smoke run was skipped, so we call it
+exploratory.
+
+\input{generated/table_farla}
+
+Table~\ref{tab:farla} shows that class-specific adaptation recovers a large
+share of certified correctness in a regime where shared translations did not:
+standard certified accuracy at $r=0.25$ rises from \FarlaIdentityStdCA\% to
+\FarlaFullStdCA\% for the full rank-8 variant, a paired macro gain of
+$\FarlaVsNoCorrDelta$ points with 95\% interval
+$[\FarlaVsNoCorrLower,\FarlaVsNoCorrUpper]$, while the supervised shared
+translation reaches only \FarlaSharedStdCA\%. The certified-wrong rate falls
+from \FarlaIdentityCW\% to \FarlaFullCW\%. Four qualifications bound the
+reading. The tail-only ablation reaches \FarlaTailStdCA\%, above the full variant's
+point estimate, with a certified-wrong rate of \FarlaTailCW\%, and the full
+variant's contrast against it is
+$\FarlaVsTailDelta$ points with interval
+$[\FarlaVsTailLower,\FarlaVsTailUpper]$; that interval does not establish a
+difference, so the additional certificate-aware terms are not shown to be
+necessary. Clean accuracy also rises, from
+\FarlaIdentityClean\% to \FarlaFullClean\% (and to \FarlaTailClean\% for the
+tail-only variant), so these results do not isolate a benefit specific to
+certificate targeting from ordinary accuracy improvement under supervised
+adaptation. The pseudo-label variant, the only one that uses no
+ground truth, reaches \FarlaPseudoStdCA\% standard certified accuracy
+($\FarlaPseudoVsNoCorrDelta$ points,
+$[\FarlaPseudoVsNoCorrLower,\FarlaPseudoVsNoCorrUpper]$) but lowers clean
+accuracy to \FarlaPseudoClean\%, a drop of \FarlaPseudoCleanDrop{} points that
+fails the clean gate: it buys certified stability at the cost of clean
+correctness, which is the trade this paper argues must be reported explicitly.
+Finally, the pilot itself was not compared with noise-aware prompt
+learning~\cite{hussein2024promptsmooth}, the natural baseline for any text-side
+adaptation; the follow-up adds a few-shot prompt control inspired by it
+(Section~\ref{sec:followup}). The control therefore establishes a scope boundary: the certificate
+in this regime is movable by class-specific supervised adaptation, and the
+result of Section~\ref{sec:results} concerns shared operators only.
