@@ -6,7 +6,8 @@ and whether the review states that it was AI-assisted. Reviewers are named by ro
 **Who reviewed.** Every review listed here was run by a member of the author team. Several team members ran their
 reviews with AI assistants; the "AI assistance" column records this as each review states it ("not stated" means the
 review does not say). The project owner confirmed in writing, for the team, that team members re-evaluated or replayed
-every result reported in the paper (column "Confirmed").
+every result reported in the paper (column "Confirmed"), and on 2026-10-02 that every reviewer listed here is a member
+of the author team.
 
 **Not listed.** Automated checks of the experiment-control code by AI coding agents, which the paper does not report,
 are not reviews by team members and are not listed.
