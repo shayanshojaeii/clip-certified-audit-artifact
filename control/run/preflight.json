@@ -1,0 +1,53 @@
+{
+  "assets": [
+    {
+      "exists": true,
+      "matches": true,
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "path": "/workspace/FARLA/.cache/models/vit_base_patch32_clip_224.openai/open_clip_model.safetensors",
+      "sha256": "e6d1bd7789aa45192b3bf90570a789b478bae1b74ebcce7eddd908e83a2b7c31"
+    },
+    {
+      "exists": true,
+      "matches": true,
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "path": "/workspace/FARLA/.cache/models/vit_large_patch14_clip_224.openai/open_clip_model.safetensors",
+      "sha256": "9ce2e8a8ebfff3793d7d375ad6d3c35cb9aebf3de7ace0fc7308accab7cd207e"
+    }
+  ],
+  "certification": {
+    "alpha": 0.001,
+    "confirmation_draws": 4096,
+    "minimum_successes": 3518,
+    "population_probability_threshold": 0.8413447460685429,
+    "radius": 0.25,
+    "sigma": 0.25
+  },
+  "checks": {
+    "checkpoint_openai-clip-vit-b32-quickgelu": true,
+    "checkpoint_openai-clip-vit-l14-quickgelu": true,
+    "cifar100_present": true,
+    "cuda_available": true,
+    "eurosat_present": true,
+    "open_clip_3_3_0": true,
+    "phase3_exp018_locked": true,
+    "phase3_final_test_locked": true,
+    "python_3_12": true
+  },
+  "config_sha256": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+  "cuda_device": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "cuda_memory_bytes": 101973950464,
+  "experiment_id": "EXP-20260917-020-FARLA-FULL",
+  "packages": {
+    "PIL": "12.3.0",
+    "huggingface_hub": "0.35.3",
+    "numpy": "2.3.5",
+    "open_clip": "3.3.0",
+    "scipy": "1.17.0",
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130"
+  },
+  "platform": "Linux-6.8.0-117-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "schema_version": "phase4.preflight.v1"
+}

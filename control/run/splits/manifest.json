@@ -1,0 +1,26 @@
+{
+  "allowed_source_role": "reserved_not_accessed",
+  "assignments_sha256": "eb58533a736c75b25dee351ca4ba4e654f7c4e629ee8bbca2494524a4762d8ca",
+  "config_sha256": "562608ac874240bf2350bb29c821e0797505d16884d147e253227f8b659ac885",
+  "datasets": [
+    {
+      "class_count": 100,
+      "confirmation_count": 1000,
+      "dataset_id": "cifar100",
+      "selection_count": 500,
+      "train_count": 2000
+    },
+    {
+      "class_count": 10,
+      "confirmation_count": 100,
+      "dataset_id": "eurosat",
+      "selection_count": 50,
+      "train_count": 200
+    }
+  ],
+  "experiment_id": "EXP-20260917-020-FARLA-FULL",
+  "phase3_final_test_accessed": false,
+  "schema_version": "phase4.split_manifest.v1",
+  "source_phase3_assignments": "artifacts/day14/phase3_splits_v1/assignments.csv",
+  "source_phase3_assignments_sha256": "b98d298282238c2825a519526c00e76c719911e1492c53361b35ea5aeafb1f38"
+}

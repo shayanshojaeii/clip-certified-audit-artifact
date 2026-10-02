@@ -1,7 +1,11 @@
 {
+ ".gitattributes": {
+  "bytes": 9,
+  "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+ },
  ".gitignore": {
-  "bytes": 27,
-  "sha256": "b3f3715e5749ce6308a1e8045fe89009dc2e9431dc81c5be7b6be5aff172619f"
+  "bytes": 28,
+  "sha256": "c09da6fdef8a363870101e6b8fe921683c536ea3c4ebdac4922f28d57c217196"
  },
  "analysis/exp017_scientific_soundness_audit_v1.json": {
   "bytes": 437279,

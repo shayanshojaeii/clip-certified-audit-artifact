@@ -1,0 +1,255 @@
+{
+  "schema_version": "phase4.farla.v1",
+  "experiment_id": "EXP-20260917-020-FARLA-FULL",
+  "status": "EXPLORATORY_NEW_PROTOCOL",
+  "seed": 20260916,
+  "source_phase3_assignments": "artifacts/day14/phase3_splits_v1/assignments.csv",
+  "output_root": "results/phase4/EXP-20260917-020-FARLA-FULL",
+  "models": [
+    "openai-clip-vit-b32-quickgelu",
+    "openai-clip-vit-l14-quickgelu"
+  ],
+  "datasets": [
+    {
+      "dataset_id": "cifar100",
+      "class_count": 100,
+      "train_per_class": 20,
+      "selection_per_class": 5,
+      "confirmation_per_class": 10
+    },
+    {
+      "dataset_id": "eurosat",
+      "class_count": 10,
+      "train_per_class": 20,
+      "selection_per_class": 5,
+      "confirmation_per_class": 10
+    }
+  ],
+  "model_runtime": [
+    {
+      "model_id": "openai-clip-vit-b32-quickgelu",
+      "clean_config": "configs/clean_pipeline_v1.json",
+      "clean_batch_size": 256,
+      "noise_batch_size": 64,
+      "huggingface_repo": "timm/vit_base_patch32_clip_224.openai",
+      "checkpoint_filename": "open_clip_model.safetensors"
+    },
+    {
+      "model_id": "openai-clip-vit-l14-quickgelu",
+      "clean_config": "configs/clean_pipeline_vit_l14_v1.json",
+      "clean_batch_size": 16,
+      "noise_batch_size": 16,
+      "huggingface_repo": "timm/vit_large_patch14_clip_224.openai",
+      "checkpoint_filename": "open_clip_model.safetensors"
+    }
+  ],
+  "dataset_runtime": [
+    {
+      "dataset_id": "cifar100",
+      "root": "data",
+      "prompt_config": "configs/prompts/cifar100_openai_readme.json"
+    },
+    {
+      "dataset_id": "eurosat",
+      "root": "data",
+      "prompt_config": "configs/prompts/eurosat_openai_ensemble_v1.json"
+    }
+  ],
+  "noise": {
+    "sigma": 0.25,
+    "train_draws": 16,
+    "screen_draws": 512,
+    "train_seed": 2026091601,
+    "screen_seed": 2026091602
+  },
+  "training": {
+    "epochs": 80,
+    "batch_size": 128,
+    "learning_rate": 0.005,
+    "adamw_weight_decay": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "spectral_initialization_scale": 0.1,
+    "classification_temperature": 0.05,
+    "vote_temperature": 0.01,
+    "transition_temperature": 0.02
+  },
+  "variants": [
+    {
+      "variant_id": "shared_translation_ce_supervised",
+      "adapter": "shared_translation",
+      "target_mode": "supervised",
+      "loss_weights": {
+        "noisy_ce": 1.0,
+        "clean_ce": 0.5,
+        "certificate_tail": 0.0,
+        "hubness": 0.0,
+        "displacement": 10.0,
+        "stable_error_repair": 0.0
+      }
+    },
+    {
+      "variant_id": "lowrank_ce_r8_supervised",
+      "adapter": "low_rank_tangent",
+      "rank": 8,
+      "target_mode": "supervised",
+      "loss_weights": {
+        "noisy_ce": 1.0,
+        "clean_ce": 0.5,
+        "certificate_tail": 0.0,
+        "hubness": 0.0,
+        "displacement": 10.0,
+        "stable_error_repair": 0.0
+      }
+    },
+    {
+      "variant_id": "lowrank_tail_r8_supervised",
+      "adapter": "low_rank_tangent",
+      "rank": 8,
+      "target_mode": "supervised",
+      "loss_weights": {
+        "noisy_ce": 1.0,
+        "clean_ce": 0.5,
+        "certificate_tail": 0.25,
+        "hubness": 0.0,
+        "displacement": 10.0,
+        "stable_error_repair": 0.0
+      }
+    },
+    {
+      "variant_id": "farla_full_r4_supervised",
+      "adapter": "low_rank_tangent",
+      "rank": 4,
+      "target_mode": "supervised",
+      "loss_weights": {
+        "noisy_ce": 1.0,
+        "clean_ce": 0.5,
+        "certificate_tail": 0.25,
+        "hubness": 0.05,
+        "displacement": 10.0,
+        "stable_error_repair": 2.0
+      }
+    },
+    {
+      "variant_id": "farla_full_r8_supervised",
+      "adapter": "low_rank_tangent",
+      "rank": 8,
+      "target_mode": "supervised",
+      "loss_weights": {
+        "noisy_ce": 1.0,
+        "clean_ce": 0.5,
+        "certificate_tail": 0.25,
+        "hubness": 0.05,
+        "displacement": 10.0,
+        "stable_error_repair": 2.0
+      }
+    },
+    {
+      "variant_id": "farla_full_direct_supervised",
+      "adapter": "direct_tangent",
+      "target_mode": "supervised",
+      "loss_weights": {
+        "noisy_ce": 1.0,
+        "clean_ce": 0.5,
+        "certificate_tail": 0.25,
+        "hubness": 0.05,
+        "displacement": 10.0,
+        "stable_error_repair": 2.0
+      }
+    },
+    {
+      "variant_id": "farla_full_r8_pseudo",
+      "adapter": "low_rank_tangent",
+      "rank": 8,
+      "target_mode": "clean_pseudo",
+      "loss_weights": {
+        "noisy_ce": 1.0,
+        "clean_ce": 0.5,
+        "certificate_tail": 0.25,
+        "hubness": 0.05,
+        "displacement": 10.0,
+        "stable_error_repair": 2.0
+      }
+    }
+  ],
+  "screening": {
+    "class_selection_draws": 64,
+    "alpha_per_example": 0.01,
+    "radii": [
+      0.0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "purpose": "diagnostic_only_all_predeclared_candidates_continue_to_confirmation"
+  },
+  "confirmation": {
+    "selection_draws": 128,
+    "confirmation_draws": 4096,
+    "alpha_per_example": 0.001,
+    "sigma": 0.25,
+    "primary_radius": 0.25,
+    "selection_seed": 2026091603,
+    "confirmation_seed": 2026091604,
+    "checkpoint_every_examples": 10
+  },
+  "metrics": {
+    "radii": [
+      0.0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "primary": "standard_cohen_certified_accuracy_at_0.25",
+    "secondary": [
+      "legacy_raw_anchor_certified_accuracy",
+      "certified_wrong_class_rate",
+      "clean_accuracy",
+      "smoothed_accuracy",
+      "selected_class_radius"
+    ],
+    "primary_candidate": "farla_full_r8_supervised",
+    "reference_candidate": "no_correction",
+    "clean_macro_drop_percentage_points_max": 1.0,
+    "clean_any_cell_drop_percentage_points_max": 2.0,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 2026091605,
+    "planned_contrasts": [
+      {
+        "contrast_id": "farla_vs_no_correction",
+        "proposed": "farla_full_r8_supervised",
+        "comparator": "no_correction"
+      },
+      {
+        "contrast_id": "farla_vs_lowrank_ce",
+        "proposed": "farla_full_r8_supervised",
+        "comparator": "lowrank_ce_r8_supervised"
+      },
+      {
+        "contrast_id": "farla_vs_lowrank_tail",
+        "proposed": "farla_full_r8_supervised",
+        "comparator": "lowrank_tail_r8_supervised"
+      },
+      {
+        "contrast_id": "lowrank_ce_vs_shared_translation",
+        "proposed": "lowrank_ce_r8_supervised",
+        "comparator": "shared_translation_ce_supervised"
+      },
+      {
+        "contrast_id": "farla_r8_vs_r4",
+        "proposed": "farla_full_r8_supervised",
+        "comparator": "farla_full_r4_supervised"
+      }
+    ],
+    "decision_required_contrasts": [
+      "farla_vs_no_correction",
+      "farla_vs_lowrank_ce"
+    ]
+  },
+  "safety": {
+    "allowed_source_phase3_role": "reserved_not_accessed",
+    "phase3_exp018_authorized": false,
+    "phase3_final_test_access_authorized": false,
+    "may_overwrite_phase3_results": false,
+    "phase4_confirmation_is_not_phase3_final_test": true
+  }
+}

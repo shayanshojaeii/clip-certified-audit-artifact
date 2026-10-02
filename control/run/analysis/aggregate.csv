@@ -1,0 +1,9 @@
+candidate_id,cell_count,macro_clean_accuracy,macro_smoothed_accuracy,macro_standard_ca_primary,macro_anchored_ca_primary,macro_certified_wrong_primary,macro_average_selected_class_radius,macro_clean_drop_percentage_points,maximum_cell_clean_drop_percentage_points,clean_constraint_satisfied
+no_correction,4,0.60875,0.22374999999999998,0.11599999999999999,0.08425,0.34175,0.27746656889852317,0.0,0.0,True
+shared_translation_ce_supervised,4,0.61275,0.21625,0.1175,0.08675000000000001,0.33425,0.28488875837992583,-0.4,1.0,True
+lowrank_ce_r8_supervised,4,0.7250000000000001,0.446,0.271,0.23349999999999999,0.13575,0.24404154031511238,-11.625,-5.1,True
+lowrank_tail_r8_supervised,4,0.7080000000000001,0.54325,0.365,0.2875,0.0905,0.2796639327801159,-9.925,-4.3,True
+farla_full_r4_supervised,4,0.6214999999999999,0.516,0.3335,0.246,0.11775,0.27527719744229656,-1.275,1.0,True
+farla_full_r8_supervised,4,0.6857500000000001,0.5455,0.3505,0.2955,0.10425,0.283507653857695,-7.7,-3.1,True
+farla_full_direct_supervised,4,0.66225,0.48975,0.346,0.312,0.11425,0.2820731899830928,-5.35,2.6,False
+farla_full_r8_pseudo,4,0.46975,0.4205,0.271,0.21150000000000002,0.1775,0.265376752402163,13.9,20.0,False
